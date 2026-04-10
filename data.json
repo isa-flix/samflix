@@ -2,28 +2,20 @@
   "movies": [
     { "id": "tt28650488", "title": "Mario Galaxy", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg" },
     { "id": "tt6718170", "title": "Super Mario Bros", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg" },
-  { id: "tt0108255", title: "Super Mario Bros 1993", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg" },
-    { id: "tt26443616", title: "Hoppers", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg" },
-  { id: "tt27613895", title: "GOAT", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg" }
+  { "id": "tt0108255", title: "Super Mario Bros 1993", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg" },
+    { "id": "tt26443616", title: "Hoppers", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg" },
+  { "id": "tt27613895", title: "GOAT", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg" }
   ],
   "series": [
     {
-      "id": "",
-      "title": "",
+      "id": "tt14688458",
+      "title": "SILO",
       "seasons": [
         { "number": 1, "episodes": 10 },
         { "number": 2, "episodes": 10 }
       ],
-      "img": ""
+      "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2QOuYPE6ZCqgVfhClNotQR06uVj.jpg"
     },
-    {
-      "id": "",
-      "title": "",
-      "seasons": [
-        { "number": 1, "episodes": 7 },
-        { "number": 2, "episodes": 13 }
-      ],
-      "img": ""
-    }
+    
   ]
 }
