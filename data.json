@@ -20,8 +20,8 @@
       "id": "tt7631058",
       "title": "The Lord of the Rings: The Rings of Power",
       "seasons": [
-        { "number": 1, "episodes": 08 },
-        { "number": 2, "episodes": 08 }
+        { "number": 1, "episodes": 8 },
+        { "number": 2, "episodes": 8 }
       ],
       "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kf5Hz70tjNAHg4swGDzOr9BfoZ1.jpg"
     }
