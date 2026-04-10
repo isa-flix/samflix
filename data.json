@@ -5,9 +5,16 @@
   { "id": "tt0108255", "title": "Super Mario Bros 1993", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg" },
     { "id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg" },
   { "id": "tt27613895", "title": "GOAT", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg" },
-{ "id": "tt12042730", "title": "Project Hail Mary", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yjBFdmFMTE1Mki2Rbj71DqSBvOD.jpg" },
+
+    { "id": "tt2948356", "title": "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg" },
+{ "id": "1084242", "title": "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg" },
+{ "id": "tt15678738", "title": "David", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg" }
+    /*
+{ "id": "tt0427340", "title": "Masters of the Universe", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ygwUbKRywrYOOpcdTihJcqzGdYM.jpg" },
+{ "id": "tt0427340", "title": "Masters of the Universe", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ygwUbKRywrYOOpcdTihJcqzGdYM.jpg" },
+{ "id": "tt0427340", "title": "Masters of the Universe", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ygwUbKRywrYOOpcdTihJcqzGdYM.jpg" },
 { "id": "tt0427340", "title": "Masters of the Universe", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ygwUbKRywrYOOpcdTihJcqzGdYM.jpg" }
-  
+  */
   
   ],
   "series": [
