@@ -1,43 +1,39 @@
 const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
-
 const IMG = "https://image.tmdb.org/t/p/w500";
 
 const moviesContainer = document.getElementById("movies");
 const searchInput = document.getElementById("search");
-const genreSelect = document.getElementById("genre");
-const watchlistContainer = document.getElementById("watchlist");
 
 const player = document.getElementById("player");
-
-const loadMoreBtn = document.getElementById("load-more");
 
 const overlay = document.getElementById("overlay");
 const overlayPlayer = document.getElementById("overlay-player");
 const closeBtn = document.getElementById("close");
 const fullscreenBtn = document.getElementById("fullscreen-btn");
 
-let currentMovies = [];
-let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
-
 let page = 1;
+let loading = false;
+let currentQuery = "";
 
-/* ---------------- FETCH MOVIES (PAGINATION) ---------------- */
+/* ---------------- LOAD MOVIES (INFINITE) ---------------- */
 
-async function loadMovies(pageNum = 1) {
-  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${pageNum}`);
+async function loadMovies() {
+  if (loading) return;
+  loading = true;
+
+  const url = currentQuery
+    ? `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${currentQuery}&page=${page}`
+    : `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${page}`;
+
+  const res = await fetch(url);
   const data = await res.json();
 
-  currentMovies = [...currentMovies, ...data.results];
-  displayMovies(currentMovies);
+  renderMovies(data.results);
+
+  loading = false;
 }
 
-loadMovies();
-
-/* ---------------- DISPLAY ---------------- */
-
-function displayMovies(list) {
-  moviesContainer.innerHTML = "";
-
+function renderMovies(list) {
   list.forEach(movie => {
     if (!movie.poster_path) return;
 
@@ -47,74 +43,33 @@ function displayMovies(list) {
     card.innerHTML = `
       <img src="${IMG + movie.poster_path}">
       <p>${movie.title}</p>
-      <button class="heart">❤</button>
     `;
 
-    card.onclick = (e) => {
-      if (e.target.classList.contains("heart")) return;
-
+    card.onclick = () => {
       player.src = `https://www.2embed.cc/embed/${movie.id}`;
-    };
-
-    card.querySelector(".heart").onclick = (e) => {
-      e.stopPropagation();
-      toggleWatchlist(movie);
     };
 
     moviesContainer.appendChild(card);
   });
 }
 
-/* ---------------- LOAD MORE ---------------- */
+/* ---------------- INFINITE SCROLL ---------------- */
 
-loadMoreBtn.onclick = () => {
-  page++;
-  loadMovies(page);
-};
-
-/* ---------------- WATCHLIST ---------------- */
-
-function toggleWatchlist(movie) {
-  const exists = watchlist.find(m => m.id === movie.id);
-
-  if (exists) {
-    watchlist = watchlist.filter(m => m.id !== movie.id);
-  } else {
-    watchlist.push(movie);
+window.addEventListener("scroll", () => {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
+    page++;
+    loadMovies();
   }
-
-  localStorage.setItem("watchlist", JSON.stringify(watchlist));
-  renderWatchlist();
-}
-
-function renderWatchlist() {
-  watchlistContainer.innerHTML = "";
-
-  watchlist.forEach(movie => {
-    const item = document.createElement("div");
-    item.className = "watch-item";
-    item.innerText = movie.title;
-
-    item.onclick = () => {
-      player.src = `https://www.2embed.cc/embed/${movie.id}`;
-    };
-
-    watchlistContainer.appendChild(item);
-  });
-}
-
-renderWatchlist();
+});
 
 /* ---------------- SEARCH ---------------- */
 
 searchInput.addEventListener("input", () => {
-  const q = searchInput.value.toLowerCase();
+  moviesContainer.innerHTML = "";
+  page = 1;
+  currentQuery = searchInput.value;
 
-  const filtered = currentMovies.filter(m =>
-    m.title.toLowerCase().includes(q)
-  );
-
-  displayMovies(filtered);
+  loadMovies();
 });
 
 /* ---------------- FULLSCREEN PLAYER ---------------- */
@@ -128,3 +83,6 @@ closeBtn.onclick = () => {
   overlay.style.display = "none";
   overlayPlayer.src = "";
 };
+
+/* INIT */
+loadMovies();
