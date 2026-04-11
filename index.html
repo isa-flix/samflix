@@ -1,33 +1,346 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>SamFlix</title>
-  <link rel="stylesheet" href="style.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SamFlix</title>
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #141414;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #141414;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.search-box input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    background: #333;
+    color: white;
+}
+
+/* Section Titles */
+h2 {
+    margin: 20px 0 10px 10px;
+    font-size: 20px;
+}
+
+/* Grid layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 0 10px 20px 10px;
+}
+
+/* Movie/Series Card */
+.movie {
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+}
+
+.movie .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 6px;
+    font-size: 14px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    border-radius: 0 0 8px 8px;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+/* Player */
+.player {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    display: none;
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.player iframe {
+    width: 90%;
+    height: 90%;
+    border: none;
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
+    cursor: pointer;
+    color: white;
+}
+
+/* Series selector */
+#selectorUI {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #111;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    z-index: 2000;
+}
+
+#selectorUI select {
+    padding: 6px 8px;
+    margin: 8px 0;
+    border-radius: 5px;
+    border: none;
+    background: #333;
+    color: white;
+}
+
+#selectorUI button {
+    padding: 8px 16px;
+    background: red;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#selectorUI button:hover {
+    background: darkred;
+}
+
+/* Mobile adjustments */
+@media (max-width: 600px) {
+    .grid {
+        gap: 8px;
+        padding: 0 5px 15px 5px;
+    }
+
+    .movie {
+        min-width: 120px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+}
+</style>
 </head>
 <body>
 
-<header class="header">
-  <h1>SamFlix</h1>
-</header>
-
-<main>
-  <div id="movieGrid" class="movie-grid"></div>
-  <button id="loadMoreBtn">Load More</button>
-</main>
-
-<!-- Player Modal -->
-
-  <div id="playerModal" class="hidden">
-  <div class="player-container">
-    <button onclick="closePlayer()">✖</button>
-    <iframe id="videoFrame" allowfullscreen></iframe>
-
-    <div class="server-buttons" id="serverButtons"></div>
-  </div>
+<div class="navbar">
+    <div class="logo">SamFlix</div>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search movies...">
+    </div>
 </div>
-<script src="data.js"></script>
-<script src="script.js"></script>
+
+<div class="container" id="mainContainer"></div>
+
+<!-- Player -->
+<div class="player" id="player">
+    <div class="close-btn" onclick="closePlayer()">✖</div>
+    <iframe id="frame" allowfullscreen></iframe>
+</div>
+
+<script>
+// Movies
+const movies = [
+    { id: "tt28650488", title: "Mario Galaxy", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg" },
+    { id: "tt6718170", title: "Super Mario Bros", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg" },
+    { id: "tt0108255", title: "Super Mario Bros 1993", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg" },
+    { id: "tt26443616", title: "Hoppers", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg" },
+    { id: "tt1375666", title: "Inception", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg" },
+    { id: "tt0816692", title: "Interstellar", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg" },
+    { id: "tt0468569", title: "Dark Knight", img: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" },
+    { id: "tt0111161", title: "Shawshank", img: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" },
+    { id: "tt1392170", title: "The Hunger Games", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/dqGZnJiVwlanUab6R4SOP1E1qEs.jpg" },
+    { id: "tt1951264", title: "The Hunger Games: Catching Fire", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5EEeUbSPi3lr6YsLUpiGcYtRMWk.jpg" },
+    { id: "tt1951265", title: "The Hunger Games: Mocking Jay Part I", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg" },
+    { id: "tt1951266", title: "The Hunger Games: Mocking Jay Part II", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg" },
+    { id: "tt10545296", title: "The Hunger Games: The Ballad of Songbirds & Snakes", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg" }
+    
+];
+/*
+// Series
+const series = [
+    { 
+        id: "tt0944947", 
+        title: "Game of Thrones", 
+        seasons: [
+            { number: 1, episodes: 10 },
+            { number: 2, episodes: 10 },
+            { number: 3, episodes: 10 },
+            { number: 4, episodes: 10 },
+            { number: 5, episodes: 10 },
+            { number: 6, episodes: 10 },
+            { number: 7, episodes: 7 },
+            { number: 8, episodes: 6 }
+        ], 
+        img: "https://image.tmdb.org/t/p/w500/u3bZgnGQ9T01sWNhyveQz0wH0Hl.jpg" 
+    },
+    { 
+        id: "tt0903747", 
+        title: "Breaking Bad", 
+        seasons: [
+            { number: 1, episodes: 7 },
+            { number: 2, episodes: 13 },
+            { number: 3, episodes: 13 },
+            { number: 4, episodes: 13 },
+            { number: 5, episodes: 16 }
+        ],
+        img: "https://image.tmdb.org/t/p/w500/ggFHVNu6YYI5L9pCfOacjizRGt.jpg" 
+    }
+];
+*/
+
+// Display content
+function displayAll() {
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "";
+
+    const moviesTitle = document.createElement("h2");
+    moviesTitle.innerText = "Movies";
+    container.appendChild(moviesTitle);
+
+    const movieGrid = document.createElement("div");
+    movieGrid.classList.add("grid");
+    movies.forEach(m => movieGrid.appendChild(createCard(m, false)));
+    container.appendChild(movieGrid);
+
+    const seriesTitle = document.createElement("h2");
+    seriesTitle.innerText = "Series";
+    container.appendChild(seriesTitle);
+
+    const seriesGrid = document.createElement("div");
+    seriesGrid.classList.add("grid");
+    series.forEach(s => seriesGrid.appendChild(createCard(s, true)));
+    container.appendChild(seriesGrid);
+}
+
+// Create card
+function createCard(item, isSeries) {
+    const div = document.createElement("div");
+    div.classList.add("movie");
+    div.innerHTML = `
+        <img src="${item.img}">
+        <div class="title">${item.title}</div>
+    `;
+    div.onclick = () => isSeries ? openSelector(item) : playMovie(item.id);
+    return div;
+}
+
+// Play movie
+function playMovie(id) {
+    showPlayer(`https://www.2embed.cc/embed/${id}`);
+}
+
+// Open series selector with mini-episode navigator
+function openSelector(show) {
+    const player = document.getElementById("player");
+    player.style.display = "flex";
+
+    const oldUI = document.getElementById("selectorUI");
+    if (oldUI) oldUI.remove();
+
+    const selectorUI = document.createElement("div");
+    selectorUI.id = "selectorUI";
+    selectorUI.innerHTML = `
+        <h3>${show.title}</h3>
+        <label>Season:</label>
+        <select id="season"></select>
+        <br><br>
+        <label>Episode:</label>
+        <select id="episode"></select>
+        <br><br>
+        <button id="playBtn">▶ Play</button>
+    `;
+    document.body.appendChild(selectorUI);
+
+    const seasonSelect = document.getElementById("season");
+    const episodeSelect = document.getElementById("episode");
+    const playBtn = document.getElementById("playBtn");
+
+    show.seasons.forEach(s => seasonSelect.innerHTML += `<option value="${s.number}">Season ${s.number}</option>`);
+
+    updateEpisodes(show, show.seasons[0].number);
+
+    seasonSelect.onchange = () => updateEpisodes(show, parseInt(seasonSelect.value));
+
+    playBtn.onclick = () => {
+        const season = seasonSelect.value;
+        const episode = episodeSelect.value;
+        selectorUI.remove();
+        showPlayer(`https://www.2embed.cc/embed/tv?id=${show.id}&s=${season}&e=${episode}`);
+    };
+}
+
+// Update episodes
+function updateEpisodes(show, seasonNumber) {
+    const epSelect = document.getElementById("episode");
+    epSelect.innerHTML = "";
+    const season = show.seasons.find(s => s.number === seasonNumber);
+    for (let i = 1; i <= season.episodes; i++) {
+        epSelect.innerHTML += `<option value="${i}">Episode ${i}</option>`;
+    }
+}
+
+// Show player
+function showPlayer(src) {
+    const player = document.getElementById("player");
+    const frame = document.getElementById("frame");
+    frame.src = src;
+    player.style.display = "flex";
+}
+
+// Close player
+function closePlayer() {
+    document.getElementById("player").style.display = "none";
+    document.getElementById("frame").src = "";
+    const ui = document.getElementById("selectorUI");
+    if (ui) ui.remove();
+}
+
+// Load content
+displayAll();
+</script>
 </body>
 </html>
