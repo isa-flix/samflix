@@ -1,159 +1,59 @@
-<style>
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #141414;
-    color: white;
+  margin: 0;
+  font-family: Arial;
+  background: #141414;
+  color: white;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #141414;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+header {
+  padding: 15px;
+  background: black;
+  color: red;
+  font-size: 24px;
 }
 
-.logo {
-    color: red;
-    font-size: 28px;
-    font-weight: bold;
+#player-container {
+  width: 100%;
+  height: 300px;
 }
 
-.search-box input {
-    padding: 8px 12px;
-    border-radius: 5px;
-    border: none;
-    width: 200px;
-    background: #333;
-    color: white;
+#player {
+  width: 100%;
+  height: 100%;
 }
 
-/* Section Titles */
-h2 {
-    margin: 20px 0 10px 10px;
-    font-size: 20px;
+.row {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px;
 }
 
-/* Grid layout */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-    padding: 0 10px 20px 10px;
+.card {
+  min-width: 150px;
+  margin-right: 10px;
+  cursor: pointer;
 }
 
-/* Movie/Series Card */
-.movie {
-    cursor: pointer;
-    transition: transform 0.3s;
-    position: relative;
+.card img {
+  width: 100%;
+  border-radius: 8px;
 }
 
-.movie img {
-    width: 100%;
-    border-radius: 8px;
-    display: block;
+#episodes {
+  padding: 10px;
 }
 
-.movie .title {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 6px;
-    font-size: 14px;
-    background: linear-gradient(transparent, rgba(0,0,0,0.8));
-    border-radius: 0 0 8px 8px;
+.episode-btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  background: red;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.movie:hover {
-    transform: scale(1.05);
+@media (min-width: 768px) {
+  #player-container {
+    height: 500px;
+  }
 }
-
-/* Player */
-.player {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #000;
-    display: none;
-    z-index: 1000;
-    align-items: center;
-    justify-content: center;
-}
-
-.player iframe {
-    width: 90%;
-    height: 90%;
-    border: none;
-    border-radius: 8px;
-}
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 32px;
-    cursor: pointer;
-    color: white;
-}
-
-/* Series selector */
-#selectorUI {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: #111;
-    padding: 25px;
-    border-radius: 12px;
-    text-align: center;
-    z-index: 2000;
-}
-
-#selectorUI select {
-    padding: 6px 8px;
-    margin: 8px 0;
-    border-radius: 5px;
-    border: none;
-    background: #333;
-    color: white;
-}
-
-#selectorUI button {
-    padding: 8px 16px;
-    background: red;
-    border: none;
-    color: white;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#selectorUI button:hover {
-    background: darkred;
-}
-
-/* Mobile adjustments */
-@media (max-width: 600px) {
-    .grid {
-        gap: 8px;
-        padding: 0 5px 15px 5px;
-    }
-
-    .movie {
-        min-width: 120px;
-    }
-
-    .logo {
-        font-size: 24px;
-    }
-}
-</style>
