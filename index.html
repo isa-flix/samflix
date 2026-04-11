@@ -1,26 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SamFlix</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="navbar">
-    <div class="logo">SamFlix</div>
-    <div class="search-box">
-        <input type="text" id="search" placeholder="Search movies...">
-    </div>
+
+<header>
+  <h1>SamFlix</h1>
+</header>
+
+<!-- Player -->
+<div id="player-container">
+  <iframe id="player" src="" frameborder="0" allowfullscreen></iframe>
 </div>
 
-<div class="container" id="mainContainer"></div>
+<!-- Movies -->
+<h2>Movies</h2>
+<div id="movies" class="row"></div>
 
-<div class="player" id="player">
-    <div class="close-btn" onclick="closePlayer()">✖</div>
-    <iframe id="frame" allowfullscreen></iframe>
-</div>
+<!-- Series -->
+<h2>Series</h2>
+<div id="series" class="row"></div>
 
+<!-- Episodes -->
+<div id="episodes"></div>
+
+<script src="data.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
