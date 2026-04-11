@@ -144,7 +144,7 @@ document.addEventListener("keydown", (e) => {
 function play(id) {
     const player = document.getElementById("player");
     const frame = document.getElementById("frame");
-    frame.src = `https://www.2embed.cc/embed/${id}`;
+    frame.src = `https://vidsrc.to/embed/movie/${id}`;
     player.style.display = "flex";
 }
 
@@ -152,6 +152,31 @@ function closePlayer() {
     const player = document.getElementById("player");
     document.getElementById("frame").src = "";
     player.style.display = "none";
+}
+
+    function play(id) {
+    const player = document.getElementById("player");
+    const frame = document.getElementById("frame");
+
+    const sources = [
+        `https://vidsrc.to/embed/movie/${id}`,
+        `https://vidsrc.xyz/embed/movie/${id}`,
+        `https://www.2embed.cc/embed/${id}`
+    ];
+
+    let index = 0;
+
+    function loadSource() {
+        frame.src = sources[index];
+    }
+
+    frame.onerror = () => {
+        index++;
+        if (index < sources.length) loadSource();
+    };
+
+    loadSource();
+    player.style.display = "flex";
 }
 </script>
 
