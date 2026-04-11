@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  background: #0b0b0b;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.header {
+  padding: 15px 20px;
+  font-size: 24px;
+  background: black;
+  color: red;
+  font-weight: bold;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  padding: 20px;
+}
+
+.movie-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #111;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.movie-card img,
+.movie-card video {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+}
+
+.movie-card video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.movie-card:hover video {
+  opacity: 1;
+}
+
+.movie-title {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 8px;
+  background: linear-gradient(transparent, black);
+  font-size: 14px;
+}
+
+#loadMoreBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: red;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Player Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+
+.modal video {
+  width: 100%;
+  height: 100%;
+}
+
+#closePlayer {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 30px;
+  cursor: pointer;
+}
