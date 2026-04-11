@@ -18,11 +18,15 @@
 </main>
 
 <!-- Player Modal -->
-<div id="playerModal" class="modal">
-  <span id="closePlayer">&times;</span>
-  <video id="player" controls autoplay></video>
-</div>
 
+  <div id="playerModal" class="hidden">
+  <div class="player-container">
+    <button onclick="closePlayer()">✖</button>
+    <iframe id="videoFrame" allowfullscreen></iframe>
+
+    <div class="server-buttons" id="serverButtons"></div>
+  </div>
+</div>
 <script src="data.js"></script>
 <script src="script.js"></script>
 </body>
