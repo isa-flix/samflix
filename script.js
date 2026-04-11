@@ -1,146 +1,91 @@
 const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
-const IMG = "https://image.tmdb.org/t/p/original";
+const API_KEY = "YOUR_API_KEY_HERE";
+const IMG = "https://image.tmdb.org/t/p/w500";
 
-const player = document.getElementById("player");
-const hero = document.getElementById("hero");
-const heroTitle = document.getElementById("hero-title");
-const heroDesc = document.getElementById("hero-desc");
-const playBtn = document.getElementById("play-btn");
+const moviesContainer = document.getElementById("movies");
+const searchInput = document.getElementById("search");
+const genreSelect = document.getElementById("genre");
 
-const trending = document.getElementById("trending");
-const moviesRow = document.getElementById("movies");
-const tvRow = document.getElementById("tv");
-const results = document.getElementById("results");
+let currentMovies = [];
+let genres = [];
 
-const search = document.getElementById("search");
-
-let currentHeroId = null;
-
-// 🎬 HERO + TRENDING
-fetch(`https://api.themoviedb.org/3/trending/movie/week?api_key=${API_KEY}`)
+// 🎬 Load Genres
+fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
   .then(res => res.json())
   .then(data => {
-    setHero(data.results[0]);
-    show(data.results, trending);
+    genres = data.genres;
+    populateGenres();
   });
 
-// 🎬 MOVIES
-fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
-  .then(res => res.json())
-  .then(data => show(data.results, moviesRow));
-
-// 📺 TV
-fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}`)
-  .then(res => res.json())
-  .then(data => showTV(data.results));
-
-// 🎯 SET HERO
-function setHero(movie) {
-  hero.style.backgroundImage = `url(${IMG + movie.backdrop_path})`;
-  heroTitle.innerText = movie.title;
-  heroDesc.innerText = movie.overview;
-  currentHeroId = movie.id;
+// 🎬 Load Movies
+function loadMovies() {
+  fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
+    .then(res => res.json())
+    .then(data => {
+      currentMovies = data.results;
+      displayMovies(currentMovies);
+    });
 }
 
-// ▶ PLAY HERO
-playBtn.onclick = () => {
-  player.src = `https://www.2embed.cc/embed/${currentHeroId}`;
-};
+// 🎯 Display Movies
+function displayMovies(list) {
+  moviesContainer.innerHTML = "";
 
-// 🎬 SHOW MOVIES
-function show(list, container) {
-  container.innerHTML = "";
-
-  list.forEach(item => {
-    if (!item.poster_path) return;
+  list.forEach(movie => {
+    if (!movie.poster_path) return;
 
     const card = document.createElement("div");
     card.className = "card";
 
     card.innerHTML = `
-  <img src="${IMG + item.poster_path}">
-  <p>${item.title || item.name}</p>
-`;
+      <img src="${IMG + movie.poster_path}">
+      <p>${movie.title}</p>
+    `;
 
     card.onclick = () => {
-      setHero(item);
-      player.src = `https://www.2embed.cc/embed/${item.id}`;
+      window.open(`https://www.2embed.cc/embed/${movie.id}`, "_blank");
     };
 
-    container.appendChild(card);
+    moviesContainer.appendChild(card);
   });
 }
 
-// 📺 SHOW TV
-function showTV(list) {
-  tvRow.innerHTML = "";
-
-  list.forEach(show => {
-    if (!show.poster_path) return;
-
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `<img src="${IMG + show.poster_path}">`;
-
-    card.onclick = () => loadSeasons(show.id);
-
-    tvRow.appendChild(card);
+// 🎯 Populate Genre Dropdown
+function populateGenres() {
+  genres.forEach(g => {
+    const option = document.createElement("option");
+    option.value = g.id;
+    option.innerText = g.name;
+    genreSelect.appendChild(option);
   });
 }
 
-// 📺 LOAD SEASONS
-function loadSeasons(id) {
-  fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}`)
-    .then(res => res.json())
-    .then(data => {
-      results.innerHTML = "<h3>Seasons</h3>";
+// 🔍 Search
+searchInput.addEventListener("input", () => {
+  const query = searchInput.value.toLowerCase();
 
-      data.seasons.forEach(s => {
-        if (s.season_number === 0) return;
+  const filtered = currentMovies.filter(m =>
+    m.title.toLowerCase().includes(query)
+  );
 
-        const btn = document.createElement("div");
-        btn.className = "card";
-        btn.innerText = "Season " + s.season_number;
-
-        btn.onclick = () => loadEpisodes(id, s.season_number);
-
-        results.appendChild(btn);
-      });
-    });
-}
-
-// 📺 LOAD EPISODES
-function loadEpisodes(id, season) {
-  fetch(`https://api.themoviedb.org/3/tv/${id}/season/${season}?api_key=${API_KEY}`)
-    .then(res => res.json())
-    .then(data => {
-      results.innerHTML = "<h3>Episodes</h3>";
-
-      data.episodes.forEach(ep => {
-        const btn = document.createElement("div");
-        btn.className = "card";
-        btn.innerText = ep.name;
-
-        btn.onclick = () => {
-          player.src = `https://www.2embed.cc/embed/tmdb/tv?id=${id}&s=${season}&e=${ep.episode_number}`;
-        };
-
-        results.appendChild(btn);
-      });
-    });
-}
-
-// 🔍 SEARCH
-search.addEventListener("input", () => {
-  const q = search.value;
-
-  if (q.length < 3) return;
-
-  fetch(`https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${q}`)
-    .then(res => res.json())
-    .then(data => {
-      results.innerHTML = "";
-      show(data.results, results);
-    });
+  displayMovies(filtered);
 });
+
+// 🎭 Filter by Genre
+genreSelect.addEventListener("change", () => {
+  const genreId = genreSelect.value;
+
+  if (!genreId) {
+    displayMovies(currentMovies);
+    return;
+  }
+
+  const filtered = currentMovies.filter(m =>
+    m.genre_ids.includes(Number(genreId))
+  );
+
+  displayMovies(filtered);
+});
+
+// 🚀 INIT
+loadMovies();
