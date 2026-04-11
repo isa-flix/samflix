@@ -1,32 +1,42 @@
 const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
+const API_KEY = "YOUR_API_KEY_HERE";
 const IMG = "https://image.tmdb.org/t/p/w500";
 
 const moviesContainer = document.getElementById("movies");
 const searchInput = document.getElementById("search");
 const genreSelect = document.getElementById("genre");
+const watchlistContainer = document.getElementById("watchlist");
+
+const player = document.getElementById("player");
 
 let currentMovies = [];
 let genres = [];
 
-// 🎬 Load Genres
+let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
+
+/* ---------------- LOAD DATA ---------------- */
+
+fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
+  .then(res => res.json())
+  .then(data => {
+    currentMovies = data.results;
+    displayMovies(currentMovies);
+  });
+
 fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
   .then(res => res.json())
   .then(data => {
     genres = data.genres;
-    populateGenres();
+    genres.forEach(g => {
+      const opt = document.createElement("option");
+      opt.value = g.id;
+      opt.innerText = g.name;
+      genreSelect.appendChild(opt);
+    });
   });
 
-// 🎬 Load Movies
-function loadMovies() {
-  fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
-    .then(res => res.json())
-    .then(data => {
-      currentMovies = data.results;
-      displayMovies(currentMovies);
-    });
-}
+/* ---------------- DISPLAY MOVIES ---------------- */
 
-// 🎯 Display Movies
 function displayMovies(list) {
   moviesContainer.innerHTML = "";
 
@@ -39,52 +49,77 @@ function displayMovies(list) {
     card.innerHTML = `
       <img src="${IMG + movie.poster_path}">
       <p>${movie.title}</p>
+      <button class="heart">❤</button>
     `;
 
-    card.onclick = () => {
-      window.open(`https://www.2embed.cc/embed/${movie.id}`, "_blank");
+    /* PLAY INSIDE PAGE */
+    card.onclick = (e) => {
+      if (e.target.classList.contains("heart")) return;
+      player.src = `https://www.2embed.cc/embed/${movie.id}`;
+    };
+
+    /* WATCHLIST */
+    const heartBtn = card.querySelector(".heart");
+    heartBtn.onclick = (e) => {
+      e.stopPropagation();
+      toggleWatchlist(movie);
     };
 
     moviesContainer.appendChild(card);
   });
 }
 
-// 🎯 Populate Genre Dropdown
-function populateGenres() {
-  genres.forEach(g => {
-    const option = document.createElement("option");
-    option.value = g.id;
-    option.innerText = g.name;
-    genreSelect.appendChild(option);
+/* ---------------- WATCHLIST ---------------- */
+
+function toggleWatchlist(movie) {
+  const exists = watchlist.find(m => m.id === movie.id);
+
+  if (exists) {
+    watchlist = watchlist.filter(m => m.id !== movie.id);
+  } else {
+    watchlist.push(movie);
+  }
+
+  localStorage.setItem("watchlist", JSON.stringify(watchlist));
+  renderWatchlist();
+}
+
+function renderWatchlist() {
+  watchlistContainer.innerHTML = "";
+
+  watchlist.forEach(movie => {
+    const item = document.createElement("div");
+    item.className = "watch-item";
+    item.innerText = movie.title;
+
+    item.onclick = () => {
+      player.src = `https://www.2embed.cc/embed/${movie.id}`;
+    };
+
+    watchlistContainer.appendChild(item);
   });
 }
 
-// 🔍 Search
+renderWatchlist();
+
+/* ---------------- SEARCH ---------------- */
+
 searchInput.addEventListener("input", () => {
-  const query = searchInput.value.toLowerCase();
+  const q = searchInput.value.toLowerCase();
 
-  const filtered = currentMovies.filter(m =>
-    m.title.toLowerCase().includes(query)
+  displayMovies(
+    currentMovies.filter(m => m.title.toLowerCase().includes(q))
   );
-
-  displayMovies(filtered);
 });
 
-// 🎭 Filter by Genre
+/* ---------------- GENRE FILTER ---------------- */
+
 genreSelect.addEventListener("change", () => {
-  const genreId = genreSelect.value;
+  const id = genreSelect.value;
 
-  if (!genreId) {
-    displayMovies(currentMovies);
-    return;
-  }
+  if (!id) return displayMovies(currentMovies);
 
-  const filtered = currentMovies.filter(m =>
-    m.genre_ids.includes(Number(genreId))
+  displayMovies(
+    currentMovies.filter(m => m.genre_ids.includes(Number(id)))
   );
-
-  displayMovies(filtered);
 });
-
-// 🚀 INIT
-loadMovies();
