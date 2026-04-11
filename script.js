@@ -1,4 +1,4 @@
-const API_KEY = "YOUR_API_KEY_HERE";
+const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
 const IMG = "https://image.tmdb.org/t/p/w500";
 
 const player = document.getElementById("player");
