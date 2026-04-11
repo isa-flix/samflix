@@ -4,7 +4,12 @@
       "title": "Inception",
       "img": "https://image.tmdb.org/t/p/w500/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
       "id": "tt1375666"
-    }
+    },
+        {
+          "title": "Mario Galaxy",
+          "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg"
+          "id": "tt28650488"
+        }
   ],
   "series": [
     {
