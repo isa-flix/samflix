@@ -1,4 +1,5 @@
 const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
+const API_KEY = "YOUR_API_KEY_HERE";
 const IMG = "https://image.tmdb.org/t/p/w500";
 
 const moviesContainer = document.getElementById("movies");
@@ -8,33 +9,31 @@ const watchlistContainer = document.getElementById("watchlist");
 
 const player = document.getElementById("player");
 
-let currentMovies = [];
-let genres = [];
+const loadMoreBtn = document.getElementById("load-more");
 
+const overlay = document.getElementById("overlay");
+const overlayPlayer = document.getElementById("overlay-player");
+const closeBtn = document.getElementById("close");
+const fullscreenBtn = document.getElementById("fullscreen-btn");
+
+let currentMovies = [];
 let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
 
-/* ---------------- LOAD DATA ---------------- */
+let page = 1;
 
-fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}`)
-  .then(res => res.json())
-  .then(data => {
-    currentMovies = data.results;
-    displayMovies(currentMovies);
-  });
+/* ---------------- FETCH MOVIES (PAGINATION) ---------------- */
 
-fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`)
-  .then(res => res.json())
-  .then(data => {
-    genres = data.genres;
-    genres.forEach(g => {
-      const opt = document.createElement("option");
-      opt.value = g.id;
-      opt.innerText = g.name;
-      genreSelect.appendChild(opt);
-    });
-  });
+async function loadMovies(pageNum = 1) {
+  const res = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&page=${pageNum}`);
+  const data = await res.json();
 
-/* ---------------- DISPLAY MOVIES ---------------- */
+  currentMovies = [...currentMovies, ...data.results];
+  displayMovies(currentMovies);
+}
+
+loadMovies();
+
+/* ---------------- DISPLAY ---------------- */
 
 function displayMovies(list) {
   moviesContainer.innerHTML = "";
@@ -51,15 +50,13 @@ function displayMovies(list) {
       <button class="heart">❤</button>
     `;
 
-    /* PLAY INSIDE PAGE */
     card.onclick = (e) => {
       if (e.target.classList.contains("heart")) return;
+
       player.src = `https://www.2embed.cc/embed/${movie.id}`;
     };
 
-    /* WATCHLIST */
-    const heartBtn = card.querySelector(".heart");
-    heartBtn.onclick = (e) => {
+    card.querySelector(".heart").onclick = (e) => {
       e.stopPropagation();
       toggleWatchlist(movie);
     };
@@ -67,6 +64,13 @@ function displayMovies(list) {
     moviesContainer.appendChild(card);
   });
 }
+
+/* ---------------- LOAD MORE ---------------- */
+
+loadMoreBtn.onclick = () => {
+  page++;
+  loadMovies(page);
+};
 
 /* ---------------- WATCHLIST ---------------- */
 
@@ -106,19 +110,21 @@ renderWatchlist();
 searchInput.addEventListener("input", () => {
   const q = searchInput.value.toLowerCase();
 
-  displayMovies(
-    currentMovies.filter(m => m.title.toLowerCase().includes(q))
+  const filtered = currentMovies.filter(m =>
+    m.title.toLowerCase().includes(q)
   );
+
+  displayMovies(filtered);
 });
 
-/* ---------------- GENRE FILTER ---------------- */
+/* ---------------- FULLSCREEN PLAYER ---------------- */
 
-genreSelect.addEventListener("change", () => {
-  const id = genreSelect.value;
+fullscreenBtn.onclick = () => {
+  overlay.style.display = "flex";
+  overlayPlayer.src = player.src;
+};
 
-  if (!id) return displayMovies(currentMovies);
-
-  displayMovies(
-    currentMovies.filter(m => m.genre_ids.includes(Number(id)))
-  );
-});
+closeBtn.onclick = () => {
+  overlay.style.display = "none";
+  overlayPlayer.src = "";
+};
