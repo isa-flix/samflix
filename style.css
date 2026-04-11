@@ -1,96 +1,66 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
+  background: #000;
   color: white;
-}
-
-/* TOP BAR */
-.topbar {
-  position: sticky;
-  top: 0;
-  background: #020617;
-  display: flex;
-  justify-content: space-between;
-  padding: 12px;
-  z-index: 10;
-}
-
-.topbar h1 {
-  color: #38bdf8;
-}
-
-#search {
-  padding: 8px;
-  border-radius: 6px;
-  border: none;
-}
-
-/* PLAYER */
-#player-container {
-  width: 100%;
-  height: 300px;
-}
-
-#player {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-  gap: 15px;
-  padding: 15px;
-}
-
-.card {
-  background: #020617;
-  border-radius: 10px;
+  font-family: Arial, sans-serif;
   overflow: hidden;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
-.card:hover {
-  transform: scale(1.05);
+/* Rows */
+.row {
+  margin: 40px;
+}
+
+.row h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* Horizontal list */
+.row-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* Movie Card */
+.card {
+  width: 220px;
+  height: 330px;
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  outline: none;
+  transition: 0.2s;
 }
 
 .card img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.card p {
-  padding: 6px;
-  font-size: 14px;
+/* Focus (TV highlight) */
+.card:focus {
+  transform: scale(1.2);
+  border: 4px solid #00ffcc;
+  z-index: 10;
 }
 
-/* FULLSCREEN */
-.overlay {
+/* Player */
+#playerScreen {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: black;
   display: none;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.overlay iframe {
-  flex: 1;
+video {
   width: 100%;
-}
-
-#close {
-  background: red;
-  color: white;
-  border: none;
-  padding: 10px;
-}
-
-/* MOBILE */
-@media (min-width: 768px) {
-  #player-container {
-    height: 450px;
-  }
+  height: 100%;
+  background: black;
 }
