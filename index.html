@@ -9,39 +9,27 @@
 
 <body>
 
-<header class="navbar">
-  <h1>SamFlix</h1>
-  <input type="text" id="search" placeholder="Search...">
-</header>
+<div class="app">
 
-<!-- HERO BANNER -->
-<div id="hero" class="hero">
-  <div class="hero-content">
-    <h2 id="hero-title"></h2>
-    <p id="hero-desc"></p>
-    <button id="play-btn">▶ Play</button>
-  </div>
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>SamFlix</h2>
+
+    <input type="text" id="search" placeholder="Search movies...">
+
+    <select id="genre">
+      <option value="">All Genres</option>
+    </select>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <h1>Movies</h1>
+    <div id="movies" class="grid"></div>
+  </main>
+
 </div>
-
-<!-- PLAYER -->
-<div id="player-container">
-  <iframe id="player" frameborder="0" allowfullscreen></iframe>
-</div>
-
-<!-- ROWS -->
-<h2>Trending</h2>
-<div id="trending" class="row"></div>
-
-<h2>Movies</h2>
-<div id="movies" class="row"></div>
-
-<h2>TV Shows</h2>
-<div id="tv" class="row"></div>
-
-<h2>Results</h2>
-<div id="results" class="row"></div>
 
 <script src="script.js"></script>
-
 </body>
 </html>
