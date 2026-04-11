@@ -57,7 +57,10 @@ function show(list, container) {
     const card = document.createElement("div");
     card.className = "card";
 
-    card.innerHTML = `<img src="${IMG + item.poster_path}">`;
+    card.innerHTML = `
+  <img src="${IMG + item.poster_path}">
+  <p>${item.title || item.name}</p>
+`;
 
     card.onclick = () => {
       setHero(item);
