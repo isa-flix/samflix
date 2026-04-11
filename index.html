@@ -1,21 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SamFlix TV</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>SamFlix TV</title>
+
+<style>
+body {
+    margin: 0;
+    background: #141414;
+    font-family: Arial;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    padding: 20px;
+    font-size: 32px;
+    color: red;
+    font-weight: bold;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+    padding: 20px;
+}
+
+/* Cards */
+.card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    transform: scale(1);
+    transition: 0.2s;
+}
+
+.card img {
+    width: 100%;
+    display: block;
+}
+
+.card .title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    background: linear-gradient(transparent, black);
+}
+
+/* FOCUS (important for TV) */
+.card.focused {
+    outline: 4px solid red;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+/* Player */
+.player {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.player iframe {
+    width: 90%;
+    height: 90%;
+}
+</style>
 </head>
+
 <body>
 
-<div id="app"></div>
+<div class="navbar">SamFlix TV</div>
 
-<!-- Player Screen -->
-<div id="playerScreen">
-  <video id="player" controls autoplay></video>
+<div class="grid" id="grid"></div>
+
+<div class="player" id="player">
+    <iframe id="frame"></iframe>
 </div>
 
-<script src="data.js"></script>
-<script src="app.js"></script>
+<script>
+const movies = [
+    { id: "tt1375666", title: "Inception", img: "https://image.tmdb.org/t/p/w500/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg" },
+    { id: "tt0816692", title: "Interstellar", img: "https://image.tmdb.org/t/p/w500/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg" },
+    { id: "tt0468569", title: "Dark Knight", img: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" },
+    { id: "tt0111161", title: "Shawshank", img: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" }
+];
+
+const grid = document.getElementById("grid");
+
+movies.forEach((m, i) => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.setAttribute("data-index", i);
+    div.innerHTML = `
+        <img src="${m.img}">
+        <div class="title">${m.title}</div>
+    `;
+    grid.appendChild(div);
+});
+
+let currentIndex = 0;
+const cards = document.querySelectorAll(".card");
+
+function updateFocus() {
+    cards.forEach(c => c.classList.remove("focused"));
+    cards[currentIndex].classList.add("focused");
+    cards[currentIndex].scrollIntoView({ block: "center", behavior: "smooth" });
+}
+
+updateFocus();
+
+/* Remote Navigation */
+document.addEventListener("keydown", (e) => {
+    const cols = 6;
+
+    if (e.key === "ArrowRight") currentIndex++;
+    if (e.key === "ArrowLeft") currentIndex--;
+    if (e.key === "ArrowDown") currentIndex += cols;
+    if (e.key === "ArrowUp") currentIndex -= cols;
+
+    if (currentIndex < 0) currentIndex = 0;
+    if (currentIndex >= cards.length) currentIndex = cards.length - 1;
+
+    if (e.key === "Enter") {
+        play(movies[currentIndex].id);
+    }
+
+    if (e.key === "Escape") {
+        closePlayer();
+    }
+
+    updateFocus();
+});
+
+/* Player */
+function play(id) {
+    const player = document.getElementById("player");
+    const frame = document.getElementById("frame");
+    frame.src = `https://www.2embed.cc/embed/${id}`;
+    player.style.display = "flex";
+}
+
+function closePlayer() {
+    const player = document.getElementById("player");
+    document.getElementById("frame").src = "";
+    player.style.display = "none";
+}
+</script>
+
 </body>
 </html>
