@@ -252,14 +252,7 @@ function displayAll() {
     movies.forEach(m => movieGrid.appendChild(createCard(m, false)));
     container.appendChild(movieGrid);
 
-    const seriesTitle = document.createElement("h2");
-    seriesTitle.innerText = "Series";
-    container.appendChild(seriesTitle);
-
-    const seriesGrid = document.createElement("div");
-    seriesGrid.classList.add("grid");
-    series.forEach(s => seriesGrid.appendChild(createCard(s, true)));
-    container.appendChild(seriesGrid);
+  
 }
 
 // Create card
