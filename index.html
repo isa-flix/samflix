@@ -130,7 +130,7 @@ h2 {
     </div>
 </div>
 
-<div class="container" id="mainContainer"></div>
+<div id="mainContainer"></div>
 
 <!-- Player -->
 <div class="player" id="player">
@@ -166,17 +166,14 @@ const movies = [
 // Display content
 function displayAll() {
     const container = document.getElementById("mainContainer");
-    container.innerHTML = "";
+    container.innerHTML = "<h2>Movies</h2>";
 
-    const moviesTitle = document.createElement("h2");
-    moviesTitle.innerText = "Movies";
-    container.appendChild(moviesTitle);
+    const grid = document.createElement("div");
+    grid.className = "grid";
 
-    const movieGrid = document.createElement("div");
-    movieGrid.classList.add("grid");
-    movies.forEach(m => movieGrid.appendChild(createCard(m, false)));
-    container.appendChild(movieGrid);
-
+    movies.forEach(m => grid.appendChild(createCard(m)));
+    container.appendChild(grid);
+    
   
 }
 
