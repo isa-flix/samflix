@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SamFlix HLS</title>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #141414;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.logo {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* Search */
+.search-box input {
+    padding: 8px;
+    background: #333;
+    border: none;
+    color: white;
+}
+
+/* Section */
+h2 {
+    margin: 20px 10px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 10px;
+}
+
+.movie {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.movie:hover {
+    transform: scale(1.05);
+}
+
+/* Player */
+.player {
+    position: fixed;
+    inset: 0;
+    background: black;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+video {
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 30px;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+    <div class="logo">SamFlix</div>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search...">
+    </div>
+</div>
+
+<div id="mainContainer"></div>
+
+<!-- Player -->
+<div class="player" id="player">
+    <div class="close-btn" onclick="closePlayer()">✖</div>
+    <video id="videoPlayer" controls autoplay></video>
+</div>
+
+<script>
+
+let visible = 20;
+const step = 6;
+
+/* =========================
+   DATA (3 TYPES)
+========================= */
+
+const sections = [
+
+/* OPTION 1: DEMO MOVIES */
+{
+    title: "Demo Movies",
+    items: [
+        {
+            title: "Sintel",
+            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Sintel_poster.jpg/800px-Sintel_poster.jpg",
+            video: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
+        },
+        {
+            title: "Big Buck Bunny",
+            img: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
+            video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+    ]
+},
+
+/* OPTION 2: LIVE TV */
+{
+    title: "Live TV",
+    items: [
+        {
+            title: "NHK World",
+            img: "https://upload.wikimedia.org/wikipedia/commons/7/7b/NHK_World.svg",
+            video: "https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index.m3u8"
+        }
+    ]
+},
+
+/* OPTION 3: YOUR OWN CONTENT */
+{
+    title: "My Videos",
+    items: [
+        {
+            title: "My Hosted Video",
+            img: "https://via.placeholder.com/300x450",
+            video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+        }
+    ]
+}
+
+];
+
+/* =========================
+   RENDER
+========================= */
+
+function displayAll() {
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "";
+
+    sections.forEach(section => {
+        const title = document.createElement("h2");
+        title.textContent = section.title;
+
+        const grid = document.createElement("div");
+        grid.className = "grid";
+
+        section.items.slice(0, visible).forEach(item => {
+            grid.appendChild(createCard(item));
+        });
+
+        container.appendChild(title);
+        container.appendChild(grid);
+    });
+}
+
+/* Card */
+function createCard(movie) {
+    const div = document.createElement("div");
+    div.className = "movie";
+
+    div.innerHTML = `
+        <img src="${movie.img}">
+        <div>${movie.title}</div>
+    `;
+
+    div.onclick = () => playMovie(movie.video);
+    return div;
+}
+
+/* =========================
+   HLS PLAYER
+========================= */
+
+let hls;
+
+function playMovie(src) {
+    const video = document.getElementById("videoPlayer");
+
+    if (hls) {
+        hls.destroy();
+    }
+
+    if (Hls.isSupported()) {
+        hls = new Hls();
+        hls.loadSource(src);
+        hls.attachMedia(video);
+    } else {
+        video.src = src;
+    }
+
+    document.getElementById("player").style.display = "flex";
+}
+
+/* Close */
+function closePlayer() {
+    const video = document.getElementById("videoPlayer");
+
+    if (hls) {
+        hls.destroy();
+    }
+
+    video.pause();
+    video.src = "";
+
+    document.getElementById("player").style.display = "none";
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+document.getElementById("search").addEventListener("input", function () {
+    const value = this.value.toLowerCase();
+    const container = document.getElementById("mainContainer");
+
+    container.innerHTML = "<h2>Search Results</h2>";
+
+    const grid = document.createElement("div");
+    grid.className = "grid";
+
+    sections.forEach(section => {
+        section.items.forEach(item => {
+            if (item.title.toLowerCase().includes(value)) {
+                grid.appendChild(createCard(item));
+            }
+        });
+    });
+
+    container.appendChild(grid);
+});
+
+/* =========================
+   INIT
+========================= */
+
+displayAll();
+
+</script>
+
+</body>
+</html>
