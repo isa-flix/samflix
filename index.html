@@ -130,6 +130,8 @@ h2 {
 </div>
 
 <script>
+    let visible = 8; // how many load first
+const step = 8;  // how many load each scroll
 // Movies
 const movies = [
     { id: "", title: "Coming Soon", img: "" },
@@ -152,10 +154,15 @@ function displayAll() {
 
     const grid = document.createElement("div");
     grid.className = "grid";
+    grid.id = "movieGrid";
 
-    movies.forEach(m => grid.appendChild(createCard(m)));
+    movies.slice(0, visible).forEach(m => {
+        grid.appendChild(createCard(m));
+    });
+
     container.appendChild(grid);
 }
+
 
 // Card
 function createCard(movie) {
