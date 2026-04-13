@@ -133,74 +133,135 @@ h2 {
 </div>
 
 <script>
-    let visible = 20; // how many load first
-const step = 8;  // how many load each scroll
+let visible = 20;
+const step = 8;
+
 // Movies
 const movies = [
     { id: "", title: "Coming Soon", img: "" },
-    // cartoon
-    {"id": "tt27613895", title: "GOAT", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg", category: "Cartoons"},
-    { "id": "tt2948356", title: "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg", category: "Cartoons"},
-    { "id": "1084242",   title: "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg", category: "Cartoons" },
-    { "id": "tt15678738", title: "David", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg", category: "Cartoons" },
-    { id: "tt18259086", title: "Sonic the Hedgehog 3", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg", category: "Cartoons" },    
-    { id: "tt26443616", title: "Hoppers", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", category: "Cartoons" },
-    
-    //movie sets
-    
-    /***************************** SUPER MARIO BROS **********************/
-    
+
+    // cartoons
+    { id: "tt27613895", title: "GOAT", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg", category: "Cartoons" },
+    { id: "tt2948356", title: "Zootopia", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg", category: "Cartoons" },
+    { id: "1084242", title: "Zootopia 2", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg", category: "Cartoons" },
+
+    // Movie Sets
     { id: "tt28650488", title: "Mario Galaxy", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg", category: "MovieSet" },
     { id: "tt6718170", title: "Super Mario Bros", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg", category: "MovieSet" },
     { id: "tt0108255", title: "Super Mario Bros 1993", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg", category: "MovieSet" },
-    
-    /*************************** THE HUNGER GAMES**********************************************/
-    
+
     { id: "tt1392170", title: "The Hunger Games", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/3Z9LDLiNp9j3GthL02pzHt9d6r.jpg", category: "MovieSet" },
-    { id: "tt1951264", title: "The Hunger Games: Catching Fire", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5EEeUbSPi3lr6YsLUpiGcYtRMWk.jpg", category: "MovieSet" },
-    { id: "tt1951265", title: "The Hunger Games: MokingJay Part I", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", category: "MovieSet" },
-    { id: "tt1951266", title: "The Hunger Games: MokingJay Part II", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg", category: "MovieSet" },
-    { id: "tt10545296", title: "The Hunger Games: The Ballad of Songbirds & Snakes", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", category: "MovieSet" },
-    { id: "tt32558705", title: "The Hunger Games: Sunrise on the Reaping", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", category: "MovieSet" },
+    { id: "tt1951264", title: "Catching Fire", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5EEeUbSPi3lr6YsLUpiGcYtRMWk.jpg", category: "MovieSet" },
+    { id: "tt1951265", title: "Mockingjay Part I", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", category: "MovieSet" },
 
-    /**************************************************************************/
-
-    
-
-    //movies
+    // Movies
     { id: "tt15398776", title: "Oppenheimer", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", category: "Movie" },
-    { id: "tt12042730", title: "Project Hail Mary", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg", category: "Movie" },
-    { id: "tt1375666", title: "Inception", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg", category: "Movie" },
-    { id: "tt0816692", title: "Interstellar", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg", category: "Movie" },
-    { id: "tt0468569", title: "Dark Knight", img: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", category: "Movie" },
-    { id: "tt0111161", title: "Shawshank", img: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", category: "Movie" }
+    { id: "tt1375666", title: "Inception", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg", category: "Movie" }
 ];
 
-// Render
+let currentView = "home"; // home | set
+let currentSet = null;
+
+/* ---------------- GROUP MOVIE SETS ---------------- */
+
+function buildSets() {
+    const sets = {};
+
+    movies
+        .filter(m => m.category === "MovieSet")
+        .forEach(m => {
+            let key = "Other Set";
+
+            if (m.title.toLowerCase().includes("mario")) key = "Super Mario Bros Set";
+            else if (m.title.toLowerCase().includes("hunger")) key = "The Hunger Games Set";
+
+            if (!sets[key]) sets[key] = [];
+            sets[key].push(m);
+        });
+
+    return sets;
+}
+
+/* ---------------- RENDER HOME ---------------- */
+
 function displayAll() {
+    currentView = "home";
     const container = document.getElementById("mainContainer");
     container.innerHTML = "";
 
-    const categories = [...new Set(movies.map(m => m.category))];
+    const sets = buildSets();
 
-    categories.forEach(cat => {
-        const section = document.createElement("div");
+    /* ===== Movie Sets (1 CARD EACH) ===== */
+    const setSection = document.createElement("div");
+    setSection.innerHTML = `<h2>Movie Sets</h2>`;
 
-        section.innerHTML = `<h2>${cat}</h2>`;
+    const setGrid = document.createElement("div");
+    setGrid.className = "grid";
 
-        const grid = document.createElement("div");
-        grid.className = "grid";
+    Object.keys(sets).forEach(setName => {
+        const firstMovie = sets[setName][0];
 
-        movies
-            .filter(m => m.category === cat)
-            .forEach(m => grid.appendChild(createCard(m)));
+        const card = document.createElement("div");
+        card.className = "movie";
 
-        section.appendChild(grid);
-        container.appendChild(section);
+        card.innerHTML = `
+            <img src="${firstMovie.img}">
+            <div class="title">${setName}</div>
+        `;
+
+        card.onclick = () => openSet(setName, sets[setName]);
+
+        setGrid.appendChild(card);
     });
+
+    setSection.appendChild(setGrid);
+    container.appendChild(setSection);
+
+    /* ===== Normal Movies ===== */
+    const moviesSection = document.createElement("div");
+    moviesSection.innerHTML = `<h2>Movies</h2>`;
+
+    const grid = document.createElement("div");
+    grid.className = "grid";
+
+    movies
+        .filter(m => m.category === "Movie")
+        .forEach(m => grid.appendChild(createCard(m)));
+
+    moviesSection.appendChild(grid);
+    container.appendChild(moviesSection);
 }
 
-// Card
+/* ---------------- OPEN SET ---------------- */
+
+function openSet(name, list) {
+    currentView = "set";
+    currentSet = list;
+
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "";
+
+    const backBtn = document.createElement("button");
+    backBtn.innerText = "← Back";
+    backBtn.style.margin = "10px";
+    backBtn.style.padding = "10px";
+    backBtn.onclick = displayAll;
+
+    const title = document.createElement("h2");
+    title.innerText = name;
+
+    const grid = document.createElement("div");
+    grid.className = "grid";
+
+    list.forEach(m => grid.appendChild(createCard(m)));
+
+    container.appendChild(backBtn);
+    container.appendChild(title);
+    container.appendChild(grid);
+}
+
+/* ---------------- CARD ---------------- */
+
 function createCard(movie) {
     const div = document.createElement("div");
     div.className = "movie";
@@ -214,7 +275,8 @@ function createCard(movie) {
     return div;
 }
 
-// Play
+/* ---------------- PLAYER ---------------- */
+
 function playMovie(id) {
     if (!id) return alert("Not available");
 
@@ -222,13 +284,13 @@ function playMovie(id) {
     document.getElementById("player").style.display = "flex";
 }
 
-// Close
 function closePlayer() {
     document.getElementById("player").style.display = "none";
     document.getElementById("frame").src = "";
 }
 
-// Search
+/* ---------------- SEARCH ---------------- */
+
 document.getElementById("search").addEventListener("input", function () {
     const value = this.value.toLowerCase();
 
@@ -246,9 +308,9 @@ document.getElementById("search").addEventListener("input", function () {
 
     container.appendChild(grid);
 });
-// Init
+
+/* INIT */
 displayAll();
 </script>
-
 </body>
 </html>
