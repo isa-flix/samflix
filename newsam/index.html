@@ -3,21 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix HLS</title>
-
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<title>SamFlix Free</title>
 
 <style>
-
-    .logo a {
-  color: red;
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold;
-}
 body {
     margin: 0;
-    font-family: Arial;
+    font-family: Arial, sans-serif;
     background: #141414;
     color: white;
 }
@@ -26,39 +17,38 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 15px 20px;
+    align-items: center;
+    padding: 15px;
+    background: black;
 }
 
 .logo {
-    color: red;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: bold;
 }
 
-/* Search */
-.search-box input {
+.search {
     padding: 8px;
-    background: #333;
+    border-radius: 5px;
     border: none;
-    color: white;
-}
-
-/* Section */
-h2 {
-    margin: 20px 10px;
+    width: 200px;
 }
 
 /* Grid */
-.grid {
+.movies {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 15px;
-    padding: 10px;
+    padding: 15px;
 }
 
 .movie {
     cursor: pointer;
-    transition: 0.3s;
+    transition: transform 0.3s;
+}
+
+.movie:hover {
+    transform: scale(1.08);
 }
 
 .movie img {
@@ -66,33 +56,36 @@ h2 {
     border-radius: 8px;
 }
 
-.movie:hover {
-    transform: scale(1.05);
-}
-
 /* Player */
 .player {
     position: fixed;
-    inset: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: black;
     display: none;
     justify-content: center;
     align-items: center;
-    z-index: 999;
 }
 
 video {
     width: 90%;
-    height: 90%;
-    border-radius: 10px;
+    height: 80%;
 }
 
-.close-btn {
+.close {
     position: absolute;
     top: 20px;
     right: 30px;
     font-size: 30px;
     cursor: pointer;
+}
+
+/* Loader */
+.loader {
+    text-align: center;
+    padding: 20px;
 }
 </style>
 </head>
@@ -100,179 +93,126 @@ video {
 <body>
 
 <div class="navbar">
-    <div class="logo"><a href="..//index.html">SamFlix</a></div>
-    <div class="search-box">
-        <input type="text" id="search" placeholder="Search...">
-    </div>
+    <div class="logo">🎬 SamFlix Free</div>
+    <input type="text" class="search" id="search" placeholder="Search movies...">
 </div>
 
-<div id="mainContainer"></div>
+<div class="movies" id="movies"></div>
+<div class="loader" id="loader">Loading...</div>
 
-<!-- Player -->
 <div class="player" id="player">
-    <div class="close-btn" onclick="closePlayer()">✖</div>
+    <div class="close" onclick="closePlayer()">✖</div>
     <video id="videoPlayer" controls autoplay></video>
 </div>
 
 <script>
 
-let visible = 20;
-const step = 6;
-
-/* =========================
-   DATA (3 TYPES)
-========================= */
-
-const sections = [
-
-/* OPTION 1: DEMO MOVIES */
-{
-    title: "Demo Movies",
-    items: [
-        {
-            title: "Sintel",
-            img: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Sintel_poster.jpg/800px-Sintel_poster.jpg",
-            video: "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"
-        },
-        {
-            title: "Big Buck Bunny",
-            img: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
-            video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-    ]
-},
-
-/* OPTION 2: LIVE TV */
-{
-    title: "Live TV",
-    items: [
-        {
-            title: "NHK World",
-            img: "https://upload.wikimedia.org/wikipedia/commons/7/7b/NHK_World.svg",
-            video: "https://nhkwlive-ojp.akamaized.net/hls/live/2003459/nhkwlive-ojp-en/index.m3u8"
-        }
-    ]
-},
-
-/* OPTION 3: YOUR OWN CONTENT */
-{
-    title: "My Videos",
-    items: [
-        {
-            title: "My Hosted Video",
-            img: "https://via.placeholder.com/300x450",
-            video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-        }
-    ]
-}
-
+// 🎬 PUBLIC DOMAIN MOVIES (expand anytime)
+const allMovies = [
+    {
+        title: "Night of the Living Dead",
+        img: "https://archive.org/download/night_of_the_living_dead/night_of_the_living_dead.jpg",
+        video: "https://archive.org/download/night_of_the_living_dead/night_of_the_living_dead_512kb.mp4"
+    },
+    {
+        title: "Nosferatu",
+        img: "https://archive.org/download/nosferatu_201705/nosferatu.jpg",
+        video: "https://archive.org/download/nosferatu_201705/nosferatu_512kb.mp4"
+    },
+    {
+        title: "The General",
+        img: "https://archive.org/download/TheGeneral1926/TheGeneral1926.jpg",
+        video: "https://archive.org/download/TheGeneral1926/TheGeneral1926_512kb.mp4"
+    },
+    {
+        title: "The Kid",
+        img: "https://archive.org/download/TheKid1921/TheKid1921.jpg",
+        video: "https://archive.org/download/TheKid1921/TheKid1921_512kb.mp4"
+    },
+    {
+        title: "Metropolis",
+        img: "https://archive.org/download/Metropolis_2010/Metropolis.jpg",
+        video: "https://archive.org/download/Metropolis_2010/Metropolis_512kb.mp4"
+    },
+    {
+        title: "Sherlock Jr",
+        img: "https://archive.org/download/SherlockJr_201507/SherlockJr.jpg",
+        video: "https://archive.org/download/SherlockJr_201507/SherlockJr_512kb.mp4"
+    }
 ];
 
-/* =========================
-   RENDER
-========================= */
+let visibleMovies = [];
+let index = 0;
+const batch = 4;
 
-function displayAll() {
-    const container = document.getElementById("mainContainer");
-    container.innerHTML = "";
+const container = document.getElementById("movies");
+const loader = document.getElementById("loader");
 
-    sections.forEach(section => {
-        const title = document.createElement("h2");
-        title.textContent = section.title;
+// Load movies in chunks (infinite scroll)
+function loadMovies() {
+    const next = allMovies.slice(index, index + batch);
+    visibleMovies = visibleMovies.concat(next);
+    renderMovies(next);
+    index += batch;
 
-        const grid = document.createElement("div");
-        grid.className = "grid";
+    if (index >= allMovies.length) loader.innerText = "No more movies";
+}
 
-        section.items.slice(0, visible).forEach(item => {
-            grid.appendChild(createCard(item));
-        });
+function renderMovies(movies) {
+    movies.forEach(movie => {
+        const div = document.createElement("div");
+        div.classList.add("movie");
 
-        container.appendChild(title);
-        container.appendChild(grid);
+        div.innerHTML = `
+            <img src="${movie.img}">
+            <p>${movie.title}</p>
+        `;
+
+        div.onclick = () => playMovie(movie.video);
+
+        container.appendChild(div);
     });
 }
 
-/* Card */
-function createCard(movie) {
-    const div = document.createElement("div");
-    div.className = "movie";
-
-    div.innerHTML = `
-        <img src="${movie.img}">
-        <div>${movie.title}</div>
-    `;
-
-    div.onclick = () => playMovie(movie.video);
-    return div;
-}
-
-/* =========================
-   HLS PLAYER
-========================= */
-
-let hls;
-
-function playMovie(src) {
+// Player
+function playMovie(url) {
+    const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
 
-    if (hls) {
-        hls.destroy();
-    }
-
-    if (Hls.isSupported()) {
-        hls = new Hls();
-        hls.loadSource(src);
-        hls.attachMedia(video);
-    } else {
-        video.src = src;
-    }
-
-    document.getElementById("player").style.display = "flex";
+    video.src = url;
+    player.style.display = "flex";
 }
 
-/* Close */
 function closePlayer() {
+    const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
-
-    if (hls) {
-        hls.destroy();
-    }
 
     video.pause();
     video.src = "";
-
-    document.getElementById("player").style.display = "none";
+    player.style.display = "none";
 }
 
-/* =========================
-   SEARCH
-========================= */
+// Search
+document.getElementById("search").addEventListener("input", e => {
+    const value = e.target.value.toLowerCase();
+    container.innerHTML = "";
 
-document.getElementById("search").addEventListener("input", function () {
-    const value = this.value.toLowerCase();
-    const container = document.getElementById("mainContainer");
+    const filtered = allMovies.filter(m =>
+        m.title.toLowerCase().includes(value)
+    );
 
-    container.innerHTML = "<h2>Search Results</h2>";
-
-    const grid = document.createElement("div");
-    grid.className = "grid";
-
-    sections.forEach(section => {
-        section.items.forEach(item => {
-            if (item.title.toLowerCase().includes(value)) {
-                grid.appendChild(createCard(item));
-            }
-        });
-    });
-
-    container.appendChild(grid);
+    renderMovies(filtered);
 });
 
-/* =========================
-   INIT
-========================= */
+// Infinite scroll
+window.addEventListener("scroll", () => {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
+        loadMovies();
+    }
+});
 
-displayAll();
+// Init
+loadMovies();
 
 </script>
 
