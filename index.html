@@ -139,48 +139,55 @@ const step = 8;  // how many load each scroll
 const movies = [
     { id: "", title: "Coming Soon", img: "" },
     // cartoon
-    {"id": "tt27613895", title: "GOAT", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg"},
+    {"id": "tt27613895", title: "GOAT", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg", category: "Cartoons"},
     
-    { "id": "tt2948356", title: "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg"},
-    { "id": "1084242",   title: "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg" },
+    { "id": "tt2948356", title: "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg", category: "Cartoons"},
+    { "id": "1084242",   title: "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg", category: "Cartoons" },
     
-    { "id": "tt15678738", title: "David", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg" },
+    { "id": "tt15678738", title: "David", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg", category: "Cartoons" },
     
-    { id: "tt18259086", title: "Sonic the Hedgehog 3", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg" },
+    { id: "tt18259086", title: "Sonic the Hedgehog 3", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg", category: "Cartoons" },
     
-    { id: "tt28650488", title: "Mario Galaxy", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg" },
-    { id: "tt6718170", title: "Super Mario Bros", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg" },
-    { id: "tt0108255", title: "Super Mario Bros 1993", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg" },
+    { id: "tt28650488", title: "Mario Galaxy", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg", category: "MovieSet" },
+    { id: "tt6718170", title: "Super Mario Bros", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg", category: "MovieSet" },
+    { id: "tt0108255", title: "Super Mario Bros 1993", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg", category: "MovieSet" },
     
-    { id: "tt26443616", title: "Hoppers", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg" },
+    { id: "tt26443616", title: "Hoppers", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", category: "Cartoons" },
     //movie sets
 
 
     //movies
-    { id: "tt15398776", title: "Oppenheimer", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg" },
-    { id: "tt12042730", title: "Project Hail Mary", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg" },
-    { id: "tt1375666", title: "Inception", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg" },
-    { id: "tt0816692", title: "Interstellar", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg" },
-    { id: "tt0468569", title: "Dark Knight", img: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg" },
-    { id: "tt0111161", title: "Shawshank", img: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg" }
+    { id: "tt15398776", title: "Oppenheimer", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", category: "Movie" },
+    { id: "tt12042730", title: "Project Hail Mary", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg", category: "Movie" },
+    { id: "tt1375666", title: "Inception", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg", category: "Movie" },
+    { id: "tt0816692", title: "Interstellar", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg", category: "Movie" },
+    { id: "tt0468569", title: "Dark Knight", img: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", category: "Movie" },
+    { id: "tt0111161", title: "Shawshank", img: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", category: "Movie" }
 ];
 
 // Render
 function displayAll() {
     const container = document.getElementById("mainContainer");
-    container.innerHTML = "<h2>Movies</h2>";
+    container.innerHTML = "";
 
-    const grid = document.createElement("div");
-    grid.className = "grid";
-    grid.id = "movieGrid";
+    const categories = [...new Set(movies.map(m => m.category))];
 
-    movies.slice(0, visible).forEach(m => {
-        grid.appendChild(createCard(m));
+    categories.forEach(cat => {
+        const section = document.createElement("div");
+
+        section.innerHTML = `<h2>${cat}</h2>`;
+
+        const grid = document.createElement("div");
+        grid.className = "grid";
+
+        movies
+            .filter(m => m.category === cat)
+            .forEach(m => grid.appendChild(createCard(m)));
+
+        section.appendChild(grid);
+        container.appendChild(section);
     });
-
-    container.appendChild(grid);
 }
-
 
 // Card
 function createCard(movie) {
@@ -213,7 +220,10 @@ function closePlayer() {
 // Search
 document.getElementById("search").addEventListener("input", function () {
     const value = this.value.toLowerCase();
-    const filtered = movies.filter(m => m.title.toLowerCase().includes(value));
+
+    const filtered = movies.filter(m =>
+        m.title.toLowerCase().includes(value)
+    );
 
     const container = document.getElementById("mainContainer");
     container.innerHTML = "<h2>Search Results</h2>";
@@ -222,9 +232,9 @@ document.getElementById("search").addEventListener("input", function () {
     grid.className = "grid";
 
     filtered.forEach(m => grid.appendChild(createCard(m)));
+
     container.appendChild(grid);
 });
-
 // Init
 displayAll();
 </script>
