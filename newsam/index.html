@@ -3,216 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix Free</title>
+<title>SamFlix IPTV</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #141414;
+    font-family: Arial;
+    background: #111;
     color: white;
 }
 
-/* Navbar */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 15px;
+    font-size: 22px;
     background: black;
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.search {
-    padding: 8px;
-    border-radius: 5px;
-    border: none;
-    width: 200px;
-}
-
-/* Grid */
-.movies {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    gap: 15px;
-    padding: 15px;
-}
-
-.movie {
-    cursor: pointer;
-    transition: transform 0.3s;
-}
-
-.movie:hover {
-    transform: scale(1.08);
-}
-
-.movie img {
-    width: 100%;
-    border-radius: 8px;
+.container {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 /* Player */
 .player {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: black;
-    display: none;
-    justify-content: center;
-    align-items: center;
+    flex: 2;
+    padding: 10px;
 }
 
 video {
-    width: 90%;
-    height: 80%;
+    width: 100%;
+    height: 60vh;
+    background: black;
 }
 
-.close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    font-size: 30px;
+/* Playlist */
+.playlist {
+    flex: 1;
+    max-height: 70vh;
+    overflow-y: auto;
+    background: #1a1a1a;
+}
+
+.item {
+    padding: 10px;
+    border-bottom: 1px solid #333;
     cursor: pointer;
 }
 
-/* Loader */
-.loader {
-    text-align: center;
-    padding: 20px;
+.item:hover {
+    background: #333;
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">🎬 SamFlix Free</div>
-    <input type="text" class="search" id="search" placeholder="Search movies...">
+<div class="navbar">📺 SamFlix IPTV (Dropbox M3U)</div>
+
+<div class="container">
+    
+    <div class="player">
+        <video id="video" controls autoplay></video>
+    </div>
+
+    <div class="playlist" id="playlist"></div>
+
 </div>
 
-<div class="movies" id="movies"></div>
-<div class="loader" id="loader">Loading...</div>
-
-<div class="player" id="player">
-    <div class="close" onclick="closePlayer()">✖</div>
-    <video id="videoPlayer" controls autoplay></video>
-</div>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>
 
-// 🎬 PUBLIC DOMAIN MOVIES (expand anytime)
-const allMovies = [
-    {
-        title: "2012 Hunger Games",
-        img: "",
-        video: "https://mega.nz/file/9DggDbYK#2rJ_dsH7PJMSKcfnSsuRt6SXEQCVVvVeJJYSEoeYET0"
-    },
-    {
-        title: "Nosferatu",
-        img: "https://archive.org/download/nosferatu_201705/nosferatu.jpg",
-        video: "https://archive.org/download/nosferatu_201705/nosferatu_512kb.mp4"
-    },
-    {
-        title: "The General",
-        img: "https://archive.org/download/TheGeneral1926/TheGeneral1926.jpg",
-        video: "https://archive.org/download/TheGeneral1926/TheGeneral1926_512kb.mp4"
-    },
-    {
-        title: "The Kid",
-        img: "https://archive.org/download/TheKid1921/TheKid1921.jpg",
-        video: "https://archive.org/download/TheKid1921/TheKid1921_512kb.mp4"
-    },
-    {
-        title: "Metropolis",
-        img: "https://archive.org/download/Metropolis_2010/Metropolis.jpg",
-        video: "https://archive.org/download/Metropolis_2010/Metropolis_512kb.mp4"
-    },
-    {
-        title: "Sherlock Jr",
-        img: "https://archive.org/download/SherlockJr_201507/SherlockJr.jpg",
-        video: "https://archive.org/download/SherlockJr_201507/SherlockJr_512kb.mp4"
-    }
-];
+// ✅ YOUR FIXED DROPBOX LINK
+const M3U_URL = "https://www.dropbox.com/scl/fi/193hc1meegjqtja90vgw4/eng.m3u?rlkey=kqbjyvs26m36sme7lmssj3unl&raw=1";
 
-let visibleMovies = [];
-let index = 0;
-const batch = 4;
+const video = document.getElementById("video");
+const playlistDiv = document.getElementById("playlist");
 
-const container = document.getElementById("movies");
-const loader = document.getElementById("loader");
+// Parse M3U
+function parseM3U(data) {
+    const lines = data.split("\n");
+    const list = [];
+    let name = "";
 
-// Load movies in chunks (infinite scroll)
-function loadMovies() {
-    const next = allMovies.slice(index, index + batch);
-    visibleMovies = visibleMovies.concat(next);
-    renderMovies(next);
-    index += batch;
+    lines.forEach(line => {
+        line = line.trim();
 
-    if (index >= allMovies.length) loader.innerText = "No more movies";
-}
-
-function renderMovies(movies) {
-    movies.forEach(movie => {
-        const div = document.createElement("div");
-        div.classList.add("movie");
-
-        div.innerHTML = `
-            <img src="${movie.img}">
-            <p>${movie.title}</p>
-        `;
-
-        div.onclick = () => playMovie(movie.video);
-
-        container.appendChild(div);
+        if (line.startsWith("#EXTINF")) {
+            name = line.split(",")[1];
+        } else if (line && !line.startsWith("#")) {
+            list.push({ name, url: line });
+        }
     });
+
+    return list;
 }
 
-// Player
-function playMovie(url) {
-    const player = document.getElementById("player");
-    const video = document.getElementById("videoPlayer");
+// Load playlist
+fetch(M3U_URL)
+    .then(res => res.text())
+    .then(data => {
+        const items = parseM3U(data);
 
-    video.src = url;
-    player.style.display = "flex";
-}
+        items.forEach(item => {
+            const div = document.createElement("div");
+            div.className = "item";
+            div.innerText = item.name;
 
-function closePlayer() {
-    const player = document.getElementById("player");
-    const video = document.getElementById("videoPlayer");
+            div.onclick = () => playStream(item.url);
 
-    video.pause();
-    video.src = "";
-    player.style.display = "none";
-}
+            playlistDiv.appendChild(div);
+        });
 
-// Search
-document.getElementById("search").addEventListener("input", e => {
-    const value = e.target.value.toLowerCase();
-    container.innerHTML = "";
+        if (items.length > 0) playStream(items[0].url);
+    });
 
-    const filtered = allMovies.filter(m =>
-        m.title.toLowerCase().includes(value)
-    );
-
-    renderMovies(filtered);
-});
-
-// Infinite scroll
-window.addEventListener("scroll", () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-        loadMovies();
+// Play stream
+function playStream(url) {
+    if (Hls.isSupported()) {
+        const hls = new Hls();
+        hls.loadSource(url);
+        hls.attachMedia(video);
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = url;
+    } else {
+        alert("HLS not supported");
     }
-});
-
-// Init
-loadMovies();
+}
 
 </script>
 
