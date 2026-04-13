@@ -201,12 +201,8 @@ function buildSets() {
     movies
         .filter(m => m.category === "MovieSet")
         .forEach(m => {
-            let key = "Other Set";
 
-            if (m.title.toLowerCase().includes("mario")) key = "Super Mario Bros";
-            else if (m.title.toLowerCase().includes("hunger")) key = "The Hunger Games";
-			else if (m.title.toLowerCase().includes("zootopia")) key = "Zootpia";
-			else if (m.title.toLowerCase().includes("sonic")) key = "Sonic";
+            const key = m.set || "Other Set";
 
             if (!sets[key]) sets[key] = [];
             sets[key].push(m);
@@ -214,7 +210,6 @@ function buildSets() {
 
     return sets;
 }
-
 /* ---------------- RENDER HOME ---------------- */
 
 function displayAll() {
