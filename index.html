@@ -209,7 +209,7 @@ function displayAll() {
 
     const sets = buildSets();
 
-    /* ===== Movie Sets (1 CARD EACH) ===== */
+    /* ================= MOVIE SETS ================= */
     const setSection = document.createElement("div");
     setSection.innerHTML = `<h2>Movie Sets</h2>`;
 
@@ -235,21 +235,29 @@ function displayAll() {
     setSection.appendChild(setGrid);
     container.appendChild(setSection);
 
-    /* ===== Normal Movies ===== */
-    const moviesSection = document.createElement("div");
-    moviesSection.innerHTML = `<h2>Movies</h2>`;
+    /* ================= OTHER CATEGORIES ================= */
 
-    const grid = document.createElement("div");
-    grid.className = "grid";
+    const categories = [...new Set(movies.map(m => m.category))];
 
-    movies
-        .filter(m => m.category === "Movie")
-        .forEach(m => grid.appendChild(createCard(m)));
+    categories.forEach(cat => {
 
-    moviesSection.appendChild(grid);
-    container.appendChild(moviesSection);
+        // skip MovieSet because it's already handled above
+        if (cat === "MovieSet") return;
+
+        const section = document.createElement("div");
+        section.innerHTML = `<h2>${cat}</h2>`;
+
+        const grid = document.createElement("div");
+        grid.className = "grid";
+
+        movies
+            .filter(m => m.category === cat)
+            .forEach(m => grid.appendChild(createCard(m)));
+
+        section.appendChild(grid);
+        container.appendChild(section);
+    });
 }
-
 /* ---------------- OPEN SET ---------------- */
 
 function openSet(name, list) {
