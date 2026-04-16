@@ -127,7 +127,8 @@ h2 {
     <div class="close-btn" onclick="closePlayer()">✖</div>
 
     <!-- VIDEO PLAYER -->
-    <video id="videoPlayer" controls autoplay style="display:none;"></video>
+    <video id="videoPlayer" controls>
+    //<video id="videoPlayer" controls autoplay style="display:none;"></video>
 
     <!-- IFRAME PLAYER -->
     <iframe id="frame" allowfullscreen style="display:none;"></iframe>
@@ -144,7 +145,7 @@ const movies = [
   id: "tt1375666",
   title: "Inception",
   img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
-  category: "01Test",
+  category: "00Test",
   video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.mp4" // ✅ sample working mp4
 },
     {"id":"tt27613895",title:"GOAT",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg",category:"Cartoons"},
