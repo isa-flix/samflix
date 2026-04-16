@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -13,6 +14,7 @@ body {
     color: white;
 }
 
+/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -30,15 +32,20 @@ body {
 }
 
 .search-box input {
-    padding: 8px;
+    padding: 8px 12px;
     border-radius: 5px;
     border: none;
+    width: 200px;
     background: #333;
     color: white;
 }
 
-h2 { margin: 20px 10px; }
+/* Titles */
+h2 {
+    margin: 20px 0 10px 10px;
+}
 
+/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -46,10 +53,11 @@ h2 { margin: 20px 10px; }
     padding: 0 10px 20px;
 }
 
+/* Movie Card */
 .movie {
     cursor: pointer;
+    transition: transform 0.3s;
     position: relative;
-    transition: 0.3s;
 }
 
 .movie img {
@@ -64,24 +72,28 @@ h2 { margin: 20px 10px; }
     padding: 6px;
     font-size: 14px;
     background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    border-radius: 0 0 8px 8px;
 }
 
-.movie:hover { transform: scale(1.08); }
+.movie:hover {
+    transform: scale(1.1);
+}
 
+/* Player */
 .player {
     position: fixed;
     inset: 0;
     background: #000;
     display: none;
-    z-index: 999;
-    justify-content: center;
+    z-index: 1000;
     align-items: center;
+    justify-content: center;
 }
 
-.player iframe,
-.player video {
+.player iframe {
     width: 90%;
     height: 90%;
+    border: none;
     border-radius: 8px;
 }
 
@@ -89,8 +101,14 @@ h2 { margin: 20px 10px; }
     position: absolute;
     top: 20px;
     right: 30px;
-    font-size: 30px;
+    font-size: 32px;
     cursor: pointer;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .grid { gap: 8px; padding: 0 5px 15px; }
+    .logo { font-size: 24px; }
 }
 </style>
 </head>
@@ -99,183 +117,257 @@ h2 { margin: 20px 10px; }
 
 <div class="navbar">
     <div class="logo">SamFlix</div>
-    <input id="search" placeholder="Search...">
+   <!--
+    <div class="logo">  <a href="newsam/index.html">Stream</a></div>
+    -->
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search movies...">
+    </div>
 </div>
 
 <div id="mainContainer"></div>
 
+<!-- Player -->
 <div class="player" id="player">
     <div class="close-btn" onclick="closePlayer()">✖</div>
-
-    <video id="videoPlayer" controls style="display:none;"></video>
-    <iframe id="frame" allowfullscreen style="display:none;"></iframe>
+    <iframe id="frame" allowfullscreen></iframe>
 </div>
 
 <script>
+let visible = 20;
+const step = 8;
 
-// ================= DATA =================
+// Movies
 const movies = [
+    
+    // cartoon 
+	/**********************************************************\__ Cartoons __/**********************************************************/
 
-{
-  id: "tt1375666",
-  title: "Inception",
-  img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
-  category: "05Test",
-  video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.mp4"
-},
+	
+	{"id": "tt27613895", title: "GOAT", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg", category: "Cartoons"}, 	
+    { "id": "tt15678738", title: "David", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg", category: "Cartoons" },
+	{ id: "tt26443616", title: "Hoppers", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", category: "Cartoons" },
 
-{"id":"tt27613895",title:"GOAT",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg",category:"Cartoons"},
-{"id":"tt15678738",title:"David",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",category:"Cartoons"},
+	
+	
+	/**************************************************************************/
 
-{id:"tt15398776",title:"Oppenheimer",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg",category:"Movie"},
-{id:"tt0816692",title:"Interstellar",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",category:"Movie"},
+	
+	//movies
+	/**********************************************************\__ Movies __/**********************************************************/
 
-{"id":"tt0114709",title:"Toy Story",img:"https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",category:"MovieSet",set:"Toy story"},
-{"id":"tt0120363",title:"Toy Story 2",img:"https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg",category:"MovieSet",set:"Toy story"}
+	{ id: "tt15398776", title: "Oppenheimer", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", category: "Movie" },
+	{ id: "tt12042730", title: "Project Hail Mary", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg", category: "Movie" },
+	{ id: "tt1375666", title: "Inception", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg", category: "Movie" },
+	{ id: "tt0816692", title: "Interstellar", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg", category: "Movie" },
+	{ id: "tt0468569", title: "Dark Knight", img: "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", category: "Movie" },
+	{ id: "tt0111161", title: "Shawshank", img: "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", category: "Movie" },
+
+
+	//movie sets
+
+ /**********************************************************\__ Toy Story __/**********************************************************/
+
+	{"id": "tt0114709", title: "Toy Story", img: "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", category: "MovieSet", set: "Toy story"},
+	{"id": "tt0120363", title: "Toy Story 2", img: "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", category: "MovieSet", set: "Toy story"},
+	{"id": "tt0435761", title: "Toy Story 3", img: "https://www.themoviedb.org/t/p/w1280/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg", category: "MovieSet", set: "Toy story"},
+	{"id": "tt1979376", title: "Toy Story 4", img: "https://www.themoviedb.org/t/p/w1280/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg", category: "MovieSet", set: "Toy story"},
+	{"id": "tt29355505", title: "Toy Story 5", img: "https://www.themoviedb.org/t/p/w1280/gaiMtK2ll6BLdK1qKFuZGDwwEuD.jpg", category: "MovieSet", set: "Toy story"},
+
+
+
+	
+	/**********************************************************\__ The Lesgo Mosvie __/**********************************************************/
+
+	{"id": "tt1490017", title: "The LEGO Movie", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/9klB7qKC9aCeGyyM4uU5hSA6xDV.jpg", category: "MovieSet", set: "The Lego Movie"},
+	{"id": "tt3513498", title: "The LEGO Movie 2: The Second Part", img: "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg", category: "MovieSet", set: "The Lego Movie"},
+	{"id": "tt4116284", title: "The Lego Batman Movie", img: "https://www.themoviedb.org/t/p/w1280/auwW8g1btlXdDCwHkhsD3XcQDxZ.jpg", category: "MovieSet", set: "The Lego Movie"},
+	//{"id": "tt9673190", title: "The Lego Batman Movie 2: The Second Part", img: "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg", category: "MovieSet", set: "The Lego Movie"},
+	{"id": "tt3014284", title: "Rhe Lego Ninjago Movie", img: "https://www.themoviedb.org/t/p/w1280/etPGtOrDCuRAw4NI34RCOK6bAoS.jpg", category: "MovieSet", set: "The Lego Movie"},
+	 
+	 /**********************************************************\__ Sonic __/**********************************************************/
+	
+	{ id: "tt3794354", title: "Sonic the Hedgehog", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/bljXY2zZSD6poD4dOPwIxQkFTUB.jpg", category: "MovieSet", set: "Sonic the Hedgehog" },
+	{ id: "tt12412888", title: "Sonic the Hedgehog 2", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8E7mIpEpSATxX5JEuw55GYx9hfk.jpg", category: "MovieSet", set: "Sonic the Hedgehog" },
+	{ id: "tt18259086", title: "Sonic the Hedgehog 3", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg", category: "MovieSet", set: "Sonic the Hedgehog" },
+	
+	/**********************************************************\__ Zootopia __/**********************************************************/
+    { "id": "tt2948356", title: "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg", category: "MovieSet", set: "Zootopia"},
+    { "id": "1084242", title: "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg", category: "MovieSet", set: "Zootopia" },
+    
+    /**********************************************************\__ SUPER MARIO BROS __/**********************************************************/
+	{ id: "tt28650488", title: "Mario Galaxy", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg", category: "MovieSet", set: "Super Mario Bros" },
+	{ id: "tt6718170", title: "Super Mario Bros", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg", category: "MovieSet", set: "Super Mario Bros" },
+	{ id: "tt0108255", title: "Super Mario Bros 1993", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg", category: "MovieSet", set: "Super Mario Bros" },
+
+	
+	/**********************************************************\__ THE HUNGER GAMES __/**********************************************************/
+	{ id: "tt1392170", title: "The Hunger Games", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/3Z9LDLiNp9j3GthL02pzHt9d6r.jpg", category: "MovieSet", set: "The Hunger Games" },
+	{ id: "tt1951264", title: "The Hunger Games: Catching Fire", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5EEeUbSPi3lr6YsLUpiGcYtRMWk.jpg", category: "MovieSet", set: "The Hunger Games" },
+	{ id: "tt1951265", title: "The Hunger Games: MokingJay Part I", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", category: "MovieSet", set: "The Hunger Games" },
+	{ id: "tt1951266", title: "The Hunger Games: MokingJay Part II", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg", category: "MovieSet", set: "The Hunger Games" },
+	{ id: "tt10545296", title: "The Hunger Games: The Ballad of Songbirds & Snakes", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", category: "MovieSet", set: "The Hunger Games" },
+	{ id: "tt32558705", title: "The Hunger Games: Sunrise on the Reaping", img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", category: "MovieSet", set: "The Hunger Games" },
 
 ];
 
-// ================= UI =================
+let currentView = "home"; // home | set
+let currentSet = null;
+
+/* ---------------- GROUP MOVIE SETS ---------------- */
 
 function buildSets() {
     const sets = {};
-    movies.filter(m => m.category === "MovieSet").forEach(m => {
-        if (!sets[m.set]) sets[m.set] = [];
-        sets[m.set].push(m);
-    });
+
+    movies
+        .filter(m => m.category === "MovieSet")
+        .forEach(m => {
+
+            const key = m.set || "Other Set";
+
+            if (!sets[key]) sets[key] = [];
+            sets[key].push(m);
+        });
+
     return sets;
 }
+/* ---------------- RENDER HOME ---------------- */
 
 function displayAll() {
+    currentView = "home";
     const container = document.getElementById("mainContainer");
     container.innerHTML = "";
 
     const sets = buildSets();
 
-    // Movie sets
-    container.innerHTML += "<h2>Movie Sets</h2>";
+    /* ================= MOVIE SETS ================= */
+    const setSection = document.createElement("div");
+    setSection.innerHTML = `<h2>Movie Sets</h2>`;
+
     const setGrid = document.createElement("div");
     setGrid.className = "grid";
 
-    Object.keys(sets).forEach(name => {
-        const m = sets[name][0];
+    Object.keys(sets).forEach(setName => {
+        const firstMovie = sets[setName][0];
 
         const card = document.createElement("div");
         card.className = "movie";
-        card.innerHTML = `<img src="${m.img}"><div class="title">${name}</div>`;
-        card.onclick = () => openSet(name, sets[name]);
+
+        card.innerHTML = `
+            <img src="${firstMovie.img}">
+            <div class="title">${setName}</div>
+        `;
+
+        card.onclick = () => openSet(setName, sets[setName]);
 
         setGrid.appendChild(card);
     });
 
-    container.appendChild(setGrid);
+    setSection.appendChild(setGrid);
+    container.appendChild(setSection);
 
-    // Other categories
+    /* ================= OTHER CATEGORIES ================= */
+
     const categories = [...new Set(movies.map(m => m.category))];
 
     categories.forEach(cat => {
+
+        // skip MovieSet because it's already handled above
         if (cat === "MovieSet") return;
 
-        container.innerHTML += `<h2>${cat}</h2>`;
+        const section = document.createElement("div");
+        section.innerHTML = `<h2>${cat}</h2>`;
+
         const grid = document.createElement("div");
         grid.className = "grid";
 
-        movies.filter(m => m.category === cat)
-              .forEach(m => grid.appendChild(createCard(m)));
+        movies
+            .filter(m => m.category === cat)
+            .forEach(m => grid.appendChild(createCard(m)));
 
-        container.appendChild(grid);
+        section.appendChild(grid);
+        container.appendChild(section);
     });
 }
+/* ---------------- OPEN SET ---------------- */
 
 function openSet(name, list) {
+    currentView = "set";
+    currentSet = list;
+
     const container = document.getElementById("mainContainer");
-    container.innerHTML = `<button onclick="displayAll()">← Back</button><h2>${name}</h2>`;
+    container.innerHTML = "";
+
+    const backBtn = document.createElement("button");
+    backBtn.innerText = "← Back";
+    backBtn.style.margin = "10px";
+    backBtn.style.padding = "10px";
+    backBtn.onclick = displayAll;
+
+    const title = document.createElement("h2");
+    title.innerText = name;
 
     const grid = document.createElement("div");
     grid.className = "grid";
 
     list.forEach(m => grid.appendChild(createCard(m)));
+
+    container.appendChild(backBtn);
+    container.appendChild(title);
     container.appendChild(grid);
 }
+
+/* ---------------- CARD ---------------- */
 
 function createCard(movie) {
     const div = document.createElement("div");
     div.className = "movie";
 
-    div.innerHTML = `<img src="${movie.img}"><div class="title">${movie.title}</div>`;
-    div.onclick = () => playMovie(movie);
+    div.innerHTML = `
+        <img src="${movie.img}">
+        <div class="title">${movie.title}</div>
+    `;
 
+    div.onclick = () => playMovie(movie.id);
     return div;
 }
 
-// ================= PLAYER =================
+/* ---------------- PLAYER ---------------- */
 
-function playMovie(movie) {
-    const player = document.getElementById("player");
-    const video = document.getElementById("videoPlayer");
-    const frame = document.getElementById("frame");
+function playMovie(id) {
+    if (!id) return alert("Not available");
 
-    // RESET
-    video.pause();
-    video.removeAttribute("src");
-    video.load();
-
-    frame.src = "";
-    video.style.display = "none";
-    frame.style.display = "none";
-
-    // PLAY
-    if (movie.video) {
-        video.style.display = "block";
-        video.src = movie.video;
-
-        video.play().catch(() => {
-            alert("Video blocked, press play manually");
-        });
-
-    } else if (movie.id) {
-        frame.style.display = "block";
-        frame.src = `https://vidsrc.to/embed/movie/${movie.id}`;
-    } else {
-        alert("No source");
-        return;
-    }
-
-    player.style.display = "flex";
+    document.getElementById("frame").src = `https://www.2embed.cc/embed/${id}`;
+    document.getElementById("player").style.display = "flex";
 }
 
 function closePlayer() {
-    const video = document.getElementById("videoPlayer");
-    const frame = document.getElementById("frame");
-
-    video.pause();
-    video.removeAttribute("src");
-    video.load();
-
-    frame.src = "";
     document.getElementById("player").style.display = "none";
+    document.getElementById("frame").src = "";
 }
 
-// ================= SEARCH =================
+/* ---------------- SEARCH ---------------- */
 
 document.getElementById("search").addEventListener("input", function () {
     const value = this.value.toLowerCase();
-    const container = document.getElementById("mainContainer");
 
-    container.innerHTML = "<h2>Search</h2>";
+    const filtered = movies.filter(m =>
+        m.title.toLowerCase().includes(value)
+    );
+
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "<h2>Search Results</h2>";
 
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    movies.filter(m => m.title.toLowerCase().includes(value))
-          .forEach(m => grid.appendChild(createCard(m)));
+    filtered.forEach(m => grid.appendChild(createCard(m)));
 
     container.appendChild(grid);
 });
 
+/* INIT */
 displayAll();
-
 </script>
-
 </body>
 </html>
