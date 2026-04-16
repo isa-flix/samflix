@@ -3,197 +3,279 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix IPTV Pro</title>
+<title>SamFlix</title>
 
 <style>
 body {
     margin: 0;
-    font-family: Arial;
-    background: #111;
+    font-family: Arial, sans-serif;
+    background: #141414;
     color: white;
 }
 
 /* Navbar */
 .navbar {
-    padding: 15px;
-    font-size: 22px;
-    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
-/* Layout */
-.container {
-    display: flex;
+.logo {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.search-box input {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    width: 200px;
+    background: #333;
+    color: white;
+}
+
+h2 {
+    margin: 20px 0 10px 10px;
+}
+
+/* Grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 0 10px 20px;
+}
+
+/* Movie Card */
+.movie {
+    cursor: pointer;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.movie .title {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 6px;
+    font-size: 14px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    border-radius: 0 0 8px 8px;
+}
+
+.movie:hover {
+    transform: scale(1.1);
 }
 
 /* Player */
 .player {
-    flex: 2;
-    padding: 10px;
-}
-
-video {
-    width: 100%;
-    height: 60vh;
-    background: black;
-}
-
-/* Sidebar */
-.sidebar {
-    flex: 1;
-    background: #1a1a1a;
-    overflow-y: auto;
-    max-height: 80vh;
-}
-
-/* Group */
-.group {
-    padding: 10px;
-    background: #222;
-    font-weight: bold;
-}
-
-/* Channel */
-.channel {
-    display: flex;
+    position: fixed;
+    inset: 0;
+    background: #000;
+    display: none;
+    z-index: 1000;
     align-items: center;
-    padding: 8px;
+    justify-content: center;
+}
+
+.player iframe,
+.player video {
+    width: 90%;
+    height: 90%;
+    border: none;
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 32px;
     cursor: pointer;
-    border-bottom: 1px solid #333;
 }
 
-.channel:hover {
-    background: #333;
-}
-
-.channel.active {
-    background: #555;
-}
-
-.channel img {
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    object-fit: cover;
+@media (max-width: 600px) {
+    .grid { gap: 8px; padding: 0 5px 15px; }
+    .logo { font-size: 24px; }
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">📺 SamFlix IPTV Pro</div>
-
-<div class="container">
-    <div class="player">
-        <video id="video" controls autoplay></video>
+<div class="navbar">
+    <div class="logo">SamFlix</div>
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search movies...">
     </div>
-
-    <div class="sidebar" id="sidebar"></div>
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<div id="mainContainer"></div>
+
+<!-- Player -->
+<div class="player" id="player">
+    <div class="close-btn" onclick="closePlayer()">✖</div>
+
+    <!-- VIDEO PLAYER -->
+    <video id="videoPlayer" controls autoplay style="display:none;"></video>
+
+    <!-- IFRAME PLAYER -->
+    <iframe id="frame" allowfullscreen style="display:none;"></iframe>
+</div>
 
 <script>
+let visible = 20;
+const step = 8;
 
-// ✅ CHANGE THIS to your local file
-const M3U_URL = "chanel.m3u";
+// ================= YOUR MOVIE DATA (UNCHANGED) =================
+const movies = [
+    {"id":"tt27613895",title:"GOAT",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg",category:"Cartoons"},
+    {"id":"tt15678738",title:"David",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",category:"Cartoons"},
+    {id:"tt26443616",title:"Hoppers",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg",category:"Cartoons"},
 
-const video = document.getElementById("video");
-const sidebar = document.getElementById("sidebar");
+    {id:"tt15398776",title:"Oppenheimer",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg",category:"Movie"},
+    {id:"tt12042730",title:"Project Hail Mary",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg",category:"Movie"},
+    {id:"tt1375666",title:"Inception",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",category:"Movie"},
+    {id:"tt0816692",title:"Interstellar",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",category:"Movie"},
 
-let currentActive = null;
+    {"id":"tt0114709",title:"Toy Story",img:"https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg",category:"MovieSet",set:"Toy story"},
+    {"id":"tt0120363",title:"Toy Story 2",img:"https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg",category:"MovieSet",set:"Toy story"},
 
-// 🔥 Advanced M3U parser
-function parseM3U(data) {
-    const lines = data.split("\n");
-    const channels = [];
-    let current = {};
+    {id:"tt3794354",title:"Sonic the Hedgehog",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/bljXY2zZSD6poD4dOPwIxQkFTUB.jpg",category:"MovieSet",set:"Sonic the Hedgehog"},
+    {id:"tt12412888",title:"Sonic the Hedgehog 2",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/8E7mIpEpSATxX5JEuw55GYx9hfk.jpg",category:"MovieSet",set:"Sonic the Hedgehog"}
+];
 
-    lines.forEach(line => {
-        line = line.trim();
+// ================= LOGIC =================
 
-        if (line.startsWith("#EXTINF")) {
-            current = {};
-
-            const name = line.split(",")[1];
-            current.name = name;
-
-            // Extract attributes
-            const logoMatch = line.match(/tvg-logo="(.*?)"/);
-            const groupMatch = line.match(/group-title="(.*?)"/);
-
-            current.logo = logoMatch ? logoMatch[1] : "";
-            current.group = groupMatch ? groupMatch[1] : "Other";
-        }
-        else if (line && !line.startsWith("#")) {
-            current.url = line;
-            channels.push(current);
-        }
+function buildSets() {
+    const sets = {};
+    movies.filter(m => m.category === "MovieSet").forEach(m => {
+        if (!sets[m.set]) sets[m.set] = [];
+        sets[m.set].push(m);
     });
-
-    return channels;
+    return sets;
 }
 
-// 🎯 Group channels
-function groupChannels(channels) {
-    const groups = {};
+function displayAll() {
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "";
 
-    channels.forEach(ch => {
-        if (!groups[ch.group]) groups[ch.group] = [];
-        groups[ch.group].push(ch);
+    const sets = buildSets();
+
+    const setGrid = document.createElement("div");
+    setGrid.className = "grid";
+
+    Object.keys(sets).forEach(setName => {
+        const firstMovie = sets[setName][0];
+
+        const card = document.createElement("div");
+        card.className = "movie";
+        card.innerHTML = `<img src="${firstMovie.img}"><div class="title">${setName}</div>`;
+        card.onclick = () => openSet(setName, sets[setName]);
+
+        setGrid.appendChild(card);
     });
 
-    return groups;
+    container.innerHTML += "<h2>Movie Sets</h2>";
+    container.appendChild(setGrid);
+
+    const categories = [...new Set(movies.map(m => m.category))];
+
+    categories.forEach(cat => {
+        if (cat === "MovieSet") return;
+
+        const grid = document.createElement("div");
+        grid.className = "grid";
+
+        movies.filter(m => m.category === cat)
+              .forEach(m => grid.appendChild(createCard(m)));
+
+        container.innerHTML += `<h2>${cat}</h2>`;
+        container.appendChild(grid);
+    });
 }
 
-// ▶️ Play stream
-function playStream(url, element) {
-    if (currentActive) currentActive.classList.remove("active");
-    element.classList.add("active");
-    currentActive = element;
+function openSet(name, list) {
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = `<button onclick="displayAll()">← Back</button><h2>${name}</h2>`;
 
-    if (Hls.isSupported()) {
-        const hls = new Hls();
-        hls.loadSource(url);
-        hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = url;
+    const grid = document.createElement("div");
+    grid.className = "grid";
+
+    list.forEach(m => grid.appendChild(createCard(m)));
+    container.appendChild(grid);
+}
+
+function createCard(movie) {
+    const div = document.createElement("div");
+    div.className = "movie";
+    div.innerHTML = `<img src="${movie.img}"><div class="title">${movie.title}</div>`;
+
+    div.onclick = () => playMovie(movie); // ✅ IMPORTANT FIX
+    return div;
+}
+
+// ================= PLAYER =================
+
+function playMovie(movie) {
+    const video = document.getElementById("videoPlayer");
+    const frame = document.getElementById("frame");
+
+    if (movie.video) {
+        frame.style.display = "none";
+        video.style.display = "block";
+        video.src = movie.video;
+        video.play();
+    } else if (movie.id) {
+        video.style.display = "none";
+        frame.style.display = "block";
+        frame.src = `https://www.2embed.cc/embed/${movie.id}`;
+    } else {
+        alert("Not available");
+        return;
     }
+
+    document.getElementById("player").style.display = "flex";
 }
 
-// 🚀 Load M3U
-fetch(M3U_URL)
-    .then(res => res.text())
-    .then(data => {
-        const channels = parseM3U(data);
-        const grouped = groupChannels(channels);
+function closePlayer() {
+    const video = document.getElementById("videoPlayer");
+    const frame = document.getElementById("frame");
 
-        Object.keys(grouped).forEach(group => {
+    video.pause();
+    video.src = "";
+    frame.src = "";
 
-            const groupDiv = document.createElement("div");
-            groupDiv.className = "group";
-            groupDiv.innerText = group;
-            sidebar.appendChild(groupDiv);
+    document.getElementById("player").style.display = "none";
+}
 
-            grouped[group].forEach(ch => {
-                const div = document.createElement("div");
-                div.className = "channel";
+// ================= SEARCH =================
 
-                div.innerHTML = `
-                    <img src="${ch.logo || 'https://via.placeholder.com/40'}">
-                    <span>${ch.name}</span>
-                `;
+document.getElementById("search").addEventListener("input", function () {
+    const value = this.value.toLowerCase();
+    const filtered = movies.filter(m => m.title.toLowerCase().includes(value));
 
-                div.onclick = () => playStream(ch.url, div);
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "<h2>Search Results</h2>";
 
-                sidebar.appendChild(div);
-            });
-        });
+    const grid = document.createElement("div");
+    grid.className = "grid";
 
-        // Auto play first
-        const first = document.querySelector(".channel");
-        if (first) first.click();
-    });
+    filtered.forEach(m => grid.appendChild(createCard(m)));
+    container.appendChild(grid);
+});
 
+displayAll();
 </script>
 
 </body>
