@@ -1,5 +1,5 @@
 let movies = [
-[
+
   {
     "id": "mp4_test",
     "title": "MP4 Test Video",
