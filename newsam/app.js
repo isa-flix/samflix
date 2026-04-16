@@ -1,4 +1,7 @@
 let movies = [];
+let hlsInstance = null;
+
+/* ---------------- LOAD DATA ---------------- */
 
 fetch("./data.json")
 .then(res => {
@@ -16,7 +19,9 @@ fetch("./data.json")
     document.getElementById("mainContainer").innerHTML =
         "<h2 style='color:red'>Failed to load data.json</h2>";
 });
-/* ---------------- UI ---------------- */
+
+
+/* ---------------- DISPLAY ALL ---------------- */
 
 function displayAll() {
     const container = document.getElementById("mainContainer");
@@ -25,20 +30,22 @@ function displayAll() {
     const categories = [...new Set(movies.map(m => m.category))];
 
     categories.forEach(cat => {
-
         const section = document.createElement("div");
+
         section.innerHTML = `<h2>${cat}</h2>`;
 
         const grid = document.createElement("div");
         grid.className = "grid";
 
-        movies.filter(m => m.category === cat)
-        .forEach(m => grid.appendChild(createCard(m)));
+        movies
+            .filter(m => m.category === cat)
+            .forEach(m => grid.appendChild(createCard(m)));
 
         section.appendChild(grid);
         container.appendChild(section);
     });
 }
+
 
 /* ---------------- CARD ---------------- */
 
@@ -47,79 +54,114 @@ function createCard(movie) {
     div.className = "movie";
 
     div.innerHTML = `
-        <img src="${movie.img}">
-        <div class="title">${movie.title}</div>
+        <img src="${movie.img || ''}" onerror="this.style.display='none'">
+        <div class="title">${movie.title || "No Title"}</div>
     `;
 
     div.onclick = () => playMovie(movie);
     return div;
 }
 
+
 /* ---------------- PLAYER ---------------- */
 
 function playMovie(movie) {
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
+    const player = document.getElementById("player");
 
+    // reset old sources
     video.pause();
-    video.src = "";
-    frame.src = "";
+    video.removeAttribute("src");
+    video.load();
 
-    video.style.display = "none";
+    frame.src = "";
     frame.style.display = "none";
+    video.style.display = "none";
+
+    // destroy old HLS instance (IMPORTANT FIX)
+    if (hlsInstance) {
+        hlsInstance.destroy();
+        hlsInstance = null;
+    }
 
     if (movie.video) {
 
+        // MP4
         if (movie.video.endsWith(".mp4")) {
             video.src = movie.video;
             video.style.display = "block";
-            video.play();
+            video.load();
+            video.play().catch(() => {});
         }
 
+        // HLS (.m3u8)
         else if (movie.video.endsWith(".m3u8")) {
+
             video.style.display = "block";
 
-            if (Hls.isSupported()) {
-                const hls = new Hls();
-                hls.loadSource(movie.video);
-                hls.attachMedia(video);
+            if (window.Hls && Hls.isSupported()) {
+                hlsInstance = new Hls();
+                hlsInstance.loadSource(movie.video);
+                hlsInstance.attachMedia(video);
             } else {
+                // fallback (may not work on all browsers)
                 video.src = movie.video;
+                video.play().catch(() => {});
             }
         }
 
-    } else {
+    } else if (movie.id) {
+        // fallback embed
         frame.src = `https://www.2embed.cc/embed/${movie.id}`;
         frame.style.display = "block";
     }
 
-    document.getElementById("player").style.display = "flex";
+    player.style.display = "flex";
 }
 
-/* ---------------- CLOSE ---------------- */
+
+/* ---------------- CLOSE PLAYER ---------------- */
 
 function closePlayer() {
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
 
     video.pause();
-    video.src = "";
+    video.removeAttribute("src");
+    video.load();
+
     frame.src = "";
+
+    if (hlsInstance) {
+        hlsInstance.destroy();
+        hlsInstance = null;
+    }
 
     document.getElementById("player").style.display = "none";
 }
 
+
 /* ---------------- SEARCH ---------------- */
 
 document.getElementById("search").addEventListener("input", function () {
-    const val = this.value.toLowerCase();
+    const val = this.value.toLowerCase().trim();
+
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "";
+
+    if (!val) {
+        displayAll();
+        return;
+    }
 
     const filtered = movies.filter(m =>
         (m.title || "").toLowerCase().includes(val)
     );
 
-    const container = document.getElementById("mainContainer");
-    container.innerHTML = "<h2>Search Results</h2>";
+    const title = document.createElement("h2");
+    title.textContent = "Search Results";
+    container.appendChild(title);
 
     const grid = document.createElement("div");
     grid.className = "grid";
