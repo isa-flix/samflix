@@ -84,7 +84,7 @@ let movies = [
 	{ "id": "tt1951265", "title": "The Hunger Games: MokingJay Part I", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 	{ "id": "tt1951266", "title": "The Hunger Games: MokingJay Part II", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "MovieSet", "set": "The Hunger Games" },
-	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" }
 
   
 
