@@ -90,8 +90,8 @@ let movies = [
 
 ];
 
-let hlsInstance = null;
 
+let hlsInstance = null;
 
 /* ---------------- INIT ---------------- */
 
@@ -116,23 +116,26 @@ function displayAll() {
         const grid = document.createElement("div");
         grid.className = "grid";
 
-        // 🔥 handle MovieSet grouping
         if (cat === "MovieSet") {
-            const sets = [...new Set(movies.filter(m => m.category === cat).map(m => m.set))];
+            const sets = [...new Set(
+                movies
+                    .filter(m => m.category === "MovieSet")
+                    .map(m => m.set)
+            )];
 
             sets.forEach(setName => {
                 const firstMovie = movies.find(m => m.set === setName);
-                const card = createCard(firstMovie);
 
-                card.onclick = () => openSet(setName);
-
+                const card = createCard(firstMovie, () => openSet(setName));
                 grid.appendChild(card);
             });
 
         } else {
             movies
                 .filter(m => m.category === cat)
-                .forEach(m => grid.appendChild(createCard(m)));
+                .forEach(m => {
+                    grid.appendChild(createCard(m));
+                });
         }
 
         section.appendChild(grid);
@@ -145,14 +148,20 @@ function displayAll() {
 
 function openSet(setName) {
     const container = document.getElementById("mainContainer");
-    container.innerHTML = `<h2>${setName}</h2>`;
+
+    container.innerHTML = `
+        <h2>${setName}</h2>
+        <button onclick="displayAll()">⬅ Back</button>
+    `;
 
     const grid = document.createElement("div");
     grid.className = "grid";
 
     movies
         .filter(m => m.set === setName)
-        .forEach(m => grid.appendChild(createCard(m)));
+        .forEach(m => {
+            grid.appendChild(createCard(m));
+        });
 
     container.appendChild(grid);
 }
@@ -160,7 +169,7 @@ function openSet(setName) {
 
 /* ---------------- CARD ---------------- */
 
-function createCard(movie) {
+function createCard(movie, customClick) {
     const div = document.createElement("div");
     div.className = "movie";
 
@@ -169,7 +178,9 @@ function createCard(movie) {
         <div class="title">${movie.title || "No Title"}</div>
     `;
 
-    div.onclick = () => playMovie(movie);
+    // ✅ FIX: allow override click (MovieSet)
+    div.onclick = customClick || (() => playMovie(movie));
+
     return div;
 }
 
@@ -181,14 +192,17 @@ function playMovie(movie) {
     const frame = document.getElementById("frame");
     const player = document.getElementById("player");
 
+    // reset video
     video.pause();
     video.removeAttribute("src");
     video.load();
 
+    // reset iframe
     frame.src = "";
     frame.style.display = "none";
     video.style.display = "none";
 
+    // destroy HLS
     if (hlsInstance) {
         hlsInstance.destroy();
         hlsInstance = null;
@@ -196,15 +210,16 @@ function playMovie(movie) {
 
     if (movie.video) {
 
+        video.style.display = "block";
+
+        // MP4
         if (movie.video.endsWith(".mp4")) {
             video.src = movie.video;
-            video.style.display = "block";
             video.play().catch(() => {});
         }
 
+        // HLS
         else if (movie.video.endsWith(".m3u8")) {
-            video.style.display = "block";
-
             if (window.Hls && Hls.isSupported()) {
                 hlsInstance = new Hls();
                 hlsInstance.loadSource(movie.video);
@@ -249,8 +264,8 @@ function closePlayer() {
 
 document.getElementById("search").addEventListener("input", function () {
     const val = this.value.toLowerCase().trim();
-
     const container = document.getElementById("mainContainer");
+
     container.innerHTML = "";
 
     if (!val) {
@@ -269,7 +284,9 @@ document.getElementById("search").addEventListener("input", function () {
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    filtered.forEach(m => grid.appendChild(createCard(m)));
+    filtered.forEach(m => {
+        grid.appendChild(createCard(m));
+    });
 
     container.appendChild(grid);
 });
