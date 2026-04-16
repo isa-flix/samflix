@@ -1,12 +1,21 @@
 let movies = [];
 
-fetch("data.json")
-.then(res => res.json())
+fetch("./data.json")
+.then(res => {
+    if (!res.ok) {
+        throw new Error("Failed to load JSON: " + res.status);
+    }
+    return res.json();
+})
 .then(data => {
-    movies = data.filter(m=> m.disabled !=== true);
+    movies = data.filter(m => m.disabled !== true);
     displayAll();
+})
+.catch(err => {
+    console.error("DATA LOAD ERROR:", err);
+    document.getElementById("mainContainer").innerHTML =
+        "<h2 style='color:red'>Failed to load data.json</h2>";
 });
-
 /* ---------------- UI ---------------- */
 
 function displayAll() {
