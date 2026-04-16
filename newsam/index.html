@@ -235,11 +235,13 @@ function createCard(movie) {
 // ================= PLAYER =================
 
 function playMovie(movie) {
+    if (!movie) return;
+
     const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
 
-    // RESET EVERYTHING FIRST (VERY IMPORTANT)
+    // RESET
     video.pause();
     video.removeAttribute("src");
     video.load();
@@ -248,27 +250,25 @@ function playMovie(movie) {
     frame.style.display = "none";
     video.style.display = "none";
 
-    // NOW DECIDE WHAT TO PLAY
-    if (movie.video) {
+    // PLAY LOGIC
+    if (movie.video && movie.video.trim() !== "") {
         video.style.display = "block";
         video.src = movie.video;
 
-        // play safely (handles browser restrictions)
-        video.play().catch(() => {
-            console.log("Autoplay blocked, user must click play");
-        });
-
-    } else if (movie.id) {
+        video.play().catch(() => {});
+    } 
+    else if (movie.id && movie.id.startsWith("tt")) {
         frame.style.display = "block";
         frame.src = `https://www.2embed.cc/embed/${movie.id}`;
-    } else {
-        alert("Not available");
+    } 
+    else {
+        alert("No valid source");
         return;
     }
 
     player.style.display = "flex";
 }
-function closePlayer() {
+    function closePlayer() {
     const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
