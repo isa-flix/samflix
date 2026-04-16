@@ -3,7 +3,7 @@ let movies = [];
 fetch("data.json")
 .then(res => res.json())
 .then(data => {
-    movies = data;
+    movies = data.filter(m=> m.disabled !=== true);
     displayAll();
 });
 
