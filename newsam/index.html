@@ -13,7 +13,6 @@ body {
     color: white;
 }
 
-/* Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -22,7 +21,6 @@ body {
     position: sticky;
     top: 0;
     background: #141414;
-    z-index: 100;
 }
 
 .logo {
@@ -40,12 +38,10 @@ body {
     color: white;
 }
 
-/* Titles */
 h2 {
-    margin: 20px 0 10px 10px;
+    margin: 20px 10px 10px;
 }
 
-/* Grid */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -53,10 +49,9 @@ h2 {
     padding: 0 10px 20px;
 }
 
-/* Movie Card */
 .movie {
     cursor: pointer;
-    transition: transform 0.3s;
+    transition: 0.3s;
     position: relative;
 }
 
@@ -79,11 +74,10 @@ h2 {
     transform: scale(1.08);
 }
 
-/* Player */
 .player {
     position: fixed;
     inset: 0;
-    background: #000;
+    background: black;
     display: none;
     align-items: center;
     justify-content: center;
@@ -100,14 +94,13 @@ video, iframe {
 .close-btn {
     position: absolute;
     top: 15px;
-    right: 25px;
+    right: 20px;
     font-size: 30px;
     cursor: pointer;
     z-index: 1000;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+@media (max-width:600px){
     .grid { gap: 8px; }
     .logo { font-size: 22px; }
 }
@@ -128,33 +121,33 @@ video, iframe {
 <!-- Player -->
 <div class="player" id="player">
     <div class="close-btn" onclick="closePlayer()">✖</div>
-
     <video id="videoPlayer" controls style="display:none;"></video>
     <iframe id="frame" style="display:none;"></iframe>
 </div>
 
-<!-- HLS Library -->
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <script>
 const movies = [
-    // Movies
+    // 🎬 MP4 TEST
     {
-        id: "tt1375666",
-        title: "Inception",
-        img: "https://image.tmdb.org/t/p/w500/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
-        category: "Movies",
-        video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
-    },
-    {
-        id: "tt0816692",
-        title: "Interstellar",
-        img: "https://image.tmdb.org/t/p/w500/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg",
+        id: "mp4_test",
+        title: "MP4 Test Video",
+        img: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
         category: "Movies",
         video: "https://www.w3schools.com/html/mov_bbb.mp4"
     },
 
-    // Movie Set
+    // 📺 HLS TEST
+    {
+        id: "hls_test",
+        title: "HLS Test Stream",
+        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Big_Buck_Bunny_full_movie_cover.png/800px-Big_Buck_Bunny_full_movie_cover.png",
+        category: "Movies",
+        video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"
+    },
+
+    // 🎞 Movie Set
     {
         id: "1",
         title: "Toy Story",
@@ -173,159 +166,161 @@ const movies = [
     }
 ];
 
-/* ---------------- GROUP SETS ---------------- */
-function buildSets() {
+/* GROUP SETS */
+function buildSets(){
     const sets = {};
-    movies.filter(m => m.category === "MovieSet").forEach(m => {
-        if (!sets[m.set]) sets[m.set] = [];
+    movies.filter(m => m.category==="MovieSet").forEach(m=>{
+        if(!sets[m.set]) sets[m.set]=[];
         sets[m.set].push(m);
     });
     return sets;
 }
 
-/* ---------------- RENDER HOME ---------------- */
-function displayAll() {
-    const container = document.getElementById("mainContainer");
-    container.innerHTML = "";
+/* HOME */
+function displayAll(){
+    const container=document.getElementById("mainContainer");
+    container.innerHTML="";
 
-    const sets = buildSets();
+    const sets=buildSets();
 
-    // Movie Sets
-    const setSection = document.createElement("div");
-    setSection.innerHTML = "<h2>Movie Sets</h2>";
+    const setSection=document.createElement("div");
+    setSection.innerHTML="<h2>Movie Sets</h2>";
 
-    const setGrid = document.createElement("div");
-    setGrid.className = "grid";
+    const setGrid=document.createElement("div");
+    setGrid.className="grid";
 
-    Object.keys(sets).forEach(name => {
-        const first = sets[name][0];
+    Object.keys(sets).forEach(name=>{
+        const first=sets[name][0];
 
-        const card = document.createElement("div");
-        card.className = "movie";
+        const card=document.createElement("div");
+        card.className="movie";
 
-        card.innerHTML = `
+        card.innerHTML=`
             <img src="${first.img}">
             <div class="title">${name}</div>
         `;
 
-        card.onclick = () => openSet(name, sets[name]);
+        card.onclick=()=>openSet(name,sets[name]);
         setGrid.appendChild(card);
     });
 
     setSection.appendChild(setGrid);
     container.appendChild(setSection);
 
-    // Movies
-    const moviesSection = document.createElement("div");
-    moviesSection.innerHTML = "<h2>Movies</h2>";
+    const movieSection=document.createElement("div");
+    movieSection.innerHTML="<h2>Movies</h2>";
 
-    const grid = document.createElement("div");
-    grid.className = "grid";
+    const grid=document.createElement("div");
+    grid.className="grid";
 
-    movies.filter(m => m.category === "Movies")
-        .forEach(m => grid.appendChild(createCard(m)));
+    movies.filter(m=>m.category==="Movies")
+    .forEach(m=>grid.appendChild(createCard(m)));
 
-    moviesSection.appendChild(grid);
-    container.appendChild(moviesSection);
+    movieSection.appendChild(grid);
+    container.appendChild(movieSection);
 }
 
-/* ---------------- OPEN SET ---------------- */
-function openSet(name, list) {
-    const container = document.getElementById("mainContainer");
-    container.innerHTML = "";
+/* SET */
+function openSet(name,list){
+    const container=document.getElementById("mainContainer");
+    container.innerHTML="";
 
-    const back = document.createElement("button");
-    back.innerText = "← Back";
-    back.style.margin = "10px";
-    back.onclick = displayAll;
+    const back=document.createElement("button");
+    back.innerText="← Back";
+    back.style.margin="10px";
+    back.onclick=displayAll;
 
-    const title = document.createElement("h2");
-    title.innerText = name;
+    const title=document.createElement("h2");
+    title.innerText=name;
 
-    const grid = document.createElement("div");
-    grid.className = "grid";
+    const grid=document.createElement("div");
+    grid.className="grid";
 
-    list.forEach(m => grid.appendChild(createCard(m)));
+    list.forEach(m=>grid.appendChild(createCard(m)));
 
     container.appendChild(back);
     container.appendChild(title);
     container.appendChild(grid);
 }
 
-/* ---------------- CARD ---------------- */
-function createCard(movie) {
-    const div = document.createElement("div");
-    div.className = "movie";
+/* CARD */
+function createCard(movie){
+    const div=document.createElement("div");
+    div.className="movie";
 
-    div.innerHTML = `
+    div.innerHTML=`
         <img src="${movie.img}">
         <div class="title">${movie.title}</div>
     `;
 
-    div.onclick = () => playMovie(movie);
+    div.onclick=()=>playMovie(movie);
     return div;
 }
 
-/* ---------------- PLAYER ---------------- */
-function playMovie(movie) {
-    const video = document.getElementById("videoPlayer");
-    const frame = document.getElementById("frame");
+/* PLAYER */
+function playMovie(movie){
+    const video=document.getElementById("videoPlayer");
+    const frame=document.getElementById("frame");
 
     video.pause();
-    video.style.display = "none";
-    frame.style.display = "none";
+    video.src="";
+    frame.src="";
 
-    if (!movie.video) {
-        frame.src = `https://www.2embed.cc/embed/${movie.id}`;
-        frame.style.display = "block";
-    }
-    else if (movie.video.endsWith(".mp4")) {
-        video.src = movie.video;
-        video.style.display = "block";
-        video.play();
-    }
-    else if (movie.video.endsWith(".m3u8")) {
-        video.style.display = "block";
+    video.style.display="none";
+    frame.style.display="none";
 
-        if (Hls.isSupported()) {
-            const hls = new Hls();
-            hls.loadSource(movie.video);
-            hls.attachMedia(video);
-        } else {
-            video.src = movie.video;
+    if(movie.video){
+        if(movie.video.endsWith(".mp4")){
+            video.src=movie.video;
+            video.style.display="block";
+            video.play();
         }
+        else if(movie.video.endsWith(".m3u8")){
+            video.style.display="block";
+
+            if(Hls.isSupported()){
+                const hls=new Hls();
+                hls.loadSource(movie.video);
+                hls.attachMedia(video);
+            } else {
+                video.src=movie.video;
+            }
+        }
+    } else {
+        frame.src=`https://www.2embed.cc/embed/${movie.id}`;
+        frame.style.display="block";
     }
 
-    document.getElementById("player").style.display = "flex";
+    document.getElementById("player").style.display="flex";
 }
 
-/* ---------------- CLOSE ---------------- */
-function closePlayer() {
-    const video = document.getElementById("videoPlayer");
-    const frame = document.getElementById("frame");
+/* CLOSE */
+function closePlayer(){
+    const video=document.getElementById("videoPlayer");
+    const frame=document.getElementById("frame");
 
     video.pause();
-    video.src = "";
-    frame.src = "";
+    video.src="";
+    frame.src="";
 
-    document.getElementById("player").style.display = "none";
+    document.getElementById("player").style.display="none";
 }
 
-/* ---------------- SEARCH ---------------- */
-document.getElementById("search").addEventListener("input", function () {
-    const val = this.value.toLowerCase();
+/* SEARCH */
+document.getElementById("search").addEventListener("input",function(){
+    const val=this.value.toLowerCase();
 
-    const filtered = movies.filter(m =>
+    const filtered=movies.filter(m=>
         m.title.toLowerCase().includes(val)
     );
 
-    const container = document.getElementById("mainContainer");
-    container.innerHTML = "<h2>Search Results</h2>";
+    const container=document.getElementById("mainContainer");
+    container.innerHTML="<h2>Search Results</h2>";
 
-    const grid = document.createElement("div");
-    grid.className = "grid";
+    const grid=document.createElement("div");
+    grid.className="grid";
 
-    filtered.forEach(m => grid.appendChild(createCard(m)));
+    filtered.forEach(m=>grid.appendChild(createCard(m)));
 
     container.appendChild(grid);
 });
