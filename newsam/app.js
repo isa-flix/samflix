@@ -3,7 +3,7 @@ let hlsInstance = null;
 
 /* ---------------- LOAD DATA ---------------- */
 
-fetch("samflix/newsam/data.json")
+fetch("https://isa-flix.github.io/samflix/newsam/data.json")
 .then(res => {
     if (!res.ok) {
         throw new Error("Failed to load JSON: " + res.status);
