@@ -10,7 +10,7 @@ let movies = [
   {
     "id": "hls_test",
     "title": "Willow Sports",
-    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Big_Buck_Bunny_full_movie_cover.png/800px-Big_Buck_Bunny_full_movie_cover.png",
+    "img": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
     "category": "Movies test",
     "video": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
   },
