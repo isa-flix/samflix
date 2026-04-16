@@ -145,7 +145,7 @@ const movies = [
   title: "Inception",
   img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg",
   category: "Movie",
-  video: "https://www.w3schools.com/html/mov_bbb.mp4" // ✅ sample working mp4
+  video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.mp4" // ✅ sample working mp4
 },
     {"id":"tt27613895",title:"GOAT",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg",category:"Cartoons"},
     {"id":"tt15678738",title:"David",img:"https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",category:"Cartoons"},
@@ -235,16 +235,30 @@ function createCard(movie) {
 // ================= PLAYER =================
 
 function playMovie(movie) {
+    const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
 
+    // RESET EVERYTHING FIRST (VERY IMPORTANT)
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+
+    frame.src = "";
+    frame.style.display = "none";
+    video.style.display = "none";
+
+    // NOW DECIDE WHAT TO PLAY
     if (movie.video) {
-        frame.style.display = "none";
         video.style.display = "block";
         video.src = movie.video;
-        video.play();
+
+        // play safely (handles browser restrictions)
+        video.play().catch(() => {
+            console.log("Autoplay blocked, user must click play");
+        });
+
     } else if (movie.id) {
-        video.style.display = "none";
         frame.style.display = "block";
         frame.src = `https://www.2embed.cc/embed/${movie.id}`;
     } else {
@@ -252,20 +266,22 @@ function playMovie(movie) {
         return;
     }
 
-    document.getElementById("player").style.display = "flex";
+    player.style.display = "flex";
 }
-
 function closePlayer() {
+    const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
 
+    // FULL RESET
     video.pause();
-    video.src = "";
+    video.removeAttribute("src");
+    video.load();
+
     frame.src = "";
 
-    document.getElementById("player").style.display = "none";
+    player.style.display = "none";
 }
-
 // ================= SEARCH =================
 
 document.getElementById("search").addEventListener("input", function () {
