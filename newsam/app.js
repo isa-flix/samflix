@@ -1,4 +1,5 @@
 let movies = [
+[
   {
     "id": "mp4_test",
     "title": "MP4 Test Video",
@@ -14,21 +15,79 @@ let movies = [
     "video": "https://fl1.moveonjoy.com/STARZ_ENCORE_CLASSIC/index.m3u8"
   },
 
-  { "id": "tt27613895", "title": "GOAT", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg", "category": "Cartoons" },
-  { "id": "tt15678738", "title": "David", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg", "category": "Cartoons" },
-  { "id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" },
+  	
+	{
+		"id": "tt27613895",
+		"title": "GOAT",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg",
+		"category": "Cartoons"
+	},
+	
+    { 
+		"id": "tt15678738",
+		"title": "David", 
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",
+		"category": "Cartoons"
+	},
+	{ 
+		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
+	},
 
-  { "id": "tt15398776", "title": "Oppenheimer", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", "category": "Movie" },
-  { "id": "tt12042730", "title": "Project Hail Mary", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg", "category": "Movie" },
-  { "id": "tt1375666", "title": "Inception", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg", "category": "Movie" },
+	
+	
+	{ "id": "tt15398776", "title": "Oppenheimer", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", "category": "Movie" },
+	{ "id": "tt12042730", "title": "Project Hail Mary", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg", "category": "Movie" },
+	{ "id": "tt1375666", "title": "Inception", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg", "category": "Movie" },
+	{ "id": "tt0816692", "title": "Interstellar", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yQvGrMoipbRoddT0ZR8tPoR7NfX.jpg", "category": "Movie" },
+	{ "id": "tt0468569", "title": "Dark Knight", "img": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", "category": "Movie" },
+	{ "id": "tt0111161", "title": "Shawshank", "img": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", "category": "Movie" },
 
-  // Movie Sets
-  { "id": "tt0114709", "title": "Toy Story", "img": "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", "category": "MovieSet", "set": "Toy Story" },
-  { "id": "tt0120363", "title": "Toy Story 2", "img": "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", "category": "MovieSet", "set": "Toy Story" },
-  { "id": "tt0435761", "title": "Toy Story 3", "img": "https://www.themoviedb.org/t/p/w1280/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg", "category": "MovieSet", "set": "Toy Story" },
 
-  { "id": "tt3794354", "title": "Sonic the Hedgehog", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bljXY2zZSD6poD4dOPwIxQkFTUB.jpg", "category": "MovieSet", "set": "Sonic" },
-  { "id": "tt12412888", "title": "Sonic 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8E7mIpEpSATxX5JEuw55GYx9hfk.jpg", "category": "MovieSet", "set": "Sonic" }
+
+	{"id": "tt0114709", "title": "Toy Story", "img": "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", "category": "MovieSet", "set": "Toy story"},
+	{"id": "tt0120363", "title": "Toy Story 2", "img": "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", "category": "MovieSet", "set": "Toy story"},
+	{"id": "tt0435761", "title": "Toy Story 3", "img": "https://www.themoviedb.org/t/p/w1280/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg", "category": "MovieSet", "set": "Toy story"},
+	{"id": "tt1979376", "title": "Toy Story 4", "img": "https://www.themoviedb.org/t/p/w1280/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg", "category": "MovieSet", "set": "Toy story"},
+	{"id": "tt29355505", "title": "Toy Story 5", "img": "https://www.themoviedb.org/t/p/w1280/gaiMtK2ll6BLdK1qKFuZGDwwEuD.jpg", "category": "MovieSet", "set": "Toy story"},
+
+
+
+
+	{"id": "tt1490017", "title": "The LEGO Movie", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9klB7qKC9aCeGyyM4uU5hSA6xDV.jpg", "category": "MovieSet", "set": "The Lego Movie"},
+	{"id": "tt3513498", "title": "The LEGO Movie 2: The Second Part", "img": "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg", "category": "MovieSet", "set": "The Lego Movie"},
+	{"id": "tt4116284", "title": "The Lego Batman Movie", "img": "https://www.themoviedb.org/t/p/w1280/auwW8g1btlXdDCwHkhsD3XcQDxZ.jpg", "category": "MovieSet", "set": "The Lego Movie"},
+	{
+		"id": "tt9673190",
+		"title": "The Lego Batman Movie 2: The Second Part",
+		"img": "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg",
+		"category": "MovieSet",
+		"set": "The Lego Movie",
+		"disabled": true
+	},
+	{"id": "tt3014284", "title": "Rhe Lego Ninjago Movie", "img": "https://www.themoviedb.org/t/p/w1280/etPGtOrDCuRAw4NI34RCOK6bAoS.jpg", "category": "MovieSet", "set": "The Lego Movie"},
+	 
+	
+	{ "id": "tt3794354", "title": "Sonic the Hedgehog", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bljXY2zZSD6poD4dOPwIxQkFTUB.jpg", "category": "MovieSet", "set": "Sonic the Hedgehog" },
+	{ "id": "tt12412888", "title": "Sonic the Hedgehog 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8E7mIpEpSATxX5JEuw55GYx9hfk.jpg", "category": "MovieSet", "set": "Sonic the Hedgehog" },
+	{ "id": "tt18259086", "title": "Sonic the Hedgehog 3", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg", "category": "MovieSet", "set": "Sonic the Hedgehog" },
+	
+    { "id": "tt2948356", "title": "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg", "category": "MovieSet", "set": "Zootopia"},
+    { "id": "1084242", "title": "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg", "category": "MovieSet", "set": "Zootopia" },
+    
+	{ "id": "tt28650488", "title": "Mario Galaxy", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
+	{ "id": "tt6718170", "title": "Super Mario Bros", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
+	{ "id": "tt0108255", "title": "Super Mario Bros 1993", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
+
+	
+	{ "id": "tt1392170", "title": "The Hunger Games", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3Z9LDLiNp9j3GthL02pzHt9d6r.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+	{ "id": "tt1951264", "title": "The Hunger Games: Catching Fire", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5EEeUbSPi3lr6YsLUpiGcYtRMWk.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+	{ "id": "tt1951265", "title": "The Hunger Games: MokingJay Part I", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+	{ "id": "tt1951266", "title": "The Hunger Games: MokingJay Part II", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+
+  
+
 ];
 
 let hlsInstance = null;
