@@ -48,7 +48,7 @@ let movies = [
 	},
 
 	
-	{ "id": "tt1392170", "title": "tt0383010", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gElz0Gu4Opl79upXWVA3FWPzPqn.jpg", "category": "Movie" },
+	{ "id": "tt0383010", "title": "The Three Stooges 2012", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gElz0Gu4Opl79upXWVA3FWPzPqn.jpg", "category": "Movie" },
 	{ "id": "tt15398776", "title": "Oppenheimer", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", "category": "Movie" },
 	{ "id": "tt12042730", "title": "Project Hail Mary", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg", "category": "Movie" },
 	{ "id": "tt1375666", "title": "Inception", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xlaY2zyzMfkhk0HSC5VUwzoZPU1.jpg", "category": "Movie" },
