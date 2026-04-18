@@ -1,17 +1,17 @@
 let movies = [
-
+/*
   {
     "id": "mp4_test",
     "title": "MP4 Test Video",
     "img": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
     "category": "Movies test",
     "video": "https://www.w3schools.com/html/mov_bbb.mp4"
-  },
+  },*/
   {
     "id": "hls_test",
     "title": "Willow Sports",
-    "img": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
-    "category": "Movies test",
+    "img": "https://logos.fandom.com/wiki/Willow_(TV_network)?file=Willow_2023_stacked.svg",
+    "category": "Live Stream",
     "video": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
   },
 
