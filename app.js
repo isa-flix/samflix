@@ -1,12 +1,12 @@
 let movies = [
-
+/*
   {
     "id": "mp4_test",
     "title": "MP4 Test Video",
     "img": "live.png",
     "category": "Movies test",
     "video": "https://ia601605.us.archive.org/13/items/GlorifyingTheAmericanGirl_119/GlorifyingTheAmericanGirl1929FsDvdripDivx5_512kb.mp4"
-  },
+  },*/
   {
     "id": "001hls",
     "title": "Willow Sports",
@@ -14,7 +14,8 @@ let movies = [
     "category": "Live Stream",
     "video": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
   },
-{
+/*
+	{
     "id": "002hls",
     "title": "Flick Of Furry",
     "img": "live.png",
@@ -28,7 +29,7 @@ let movies = [
     "category": "Live Stream",
     "video": "https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991745"
   },
-  	
+*/  	
 	{
 		"id": "tt27613895",
 		"title": "GOAT",
