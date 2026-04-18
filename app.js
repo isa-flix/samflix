@@ -75,7 +75,7 @@ let movies = [
 		"img": "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg",
 		"category": "MovieSet",
 		"set": "The Lego Movie",
-		"disabled": true
+		//"disabled": true
 	},
 	{"id": "tt3014284", "title": "Rhe Lego Ninjago Movie", "img": "https://www.themoviedb.org/t/p/w1280/etPGtOrDCuRAw4NI34RCOK6bAoS.jpg", "category": "MovieSet", "set": "The Lego Movie"},
 	 
@@ -99,7 +99,21 @@ let movies = [
 	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" }
 
-  
+/* ---------------- The Maze Runner ---------------- */
+	{
+		"id": "tt1790864",
+		"title": "The Maze Runner",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2rOonEo6b6wENhucsuoXXzoXejM.jpg",
+		"category": "MovieSet",
+		"set": "The Maze Runner",
+	},
+		{
+		"id": "tt4046784",
+		"title": "Maze Runner: The Scorch Trials",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/pCIdUSdcSfXzSlBGjqfzIREeFIl.jpg",
+		"category": "MovieSet",
+		"set": "The Maze Runner",
+	},
 
 ];
 
