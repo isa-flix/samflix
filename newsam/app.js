@@ -17,11 +17,17 @@ let movies = [
 {
     "id": "002hls",
     "title": "Flick Of Furry",
-    "img": "https://logos.fandom.com/wiki/Willow_(TV_network)?file=Willow_2023_stacked.svg",
+    "img": "live.png",
     "category": "Live Stream",
-    "video": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
+    "video": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/58e55b14ad8e9c364d55f717/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c28ca66-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=671a0e89-5b21-406b-95a9-b395c4ef4b07"
   },
-
+{
+    "id": "003hls",
+    "title": "Wu Tang Collection",
+    "img": "live.png",
+    "category": "Live Stream",
+    "video": "https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991745"
+  },
   	
 	{
 		"id": "tt27613895",
