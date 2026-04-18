@@ -8,8 +8,15 @@ let movies = [
     "video": "https://www.w3schools.com/html/mov_bbb.mp4"
   },*/
   {
-    "id": "hls_test",
+    "id": "001hls",
     "title": "Willow Sports",
+    "img": "live.png",
+    "category": "Live Stream",
+    "video": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
+  },
+{
+    "id": "002hls",
+    "title": "Flick Of Furry",
     "img": "https://logos.fandom.com/wiki/Willow_(TV_network)?file=Willow_2023_stacked.svg",
     "category": "Live Stream",
     "video": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
