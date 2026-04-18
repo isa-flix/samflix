@@ -102,15 +102,22 @@ let movies = [
 /* ---------------- The Maze Runner ---------------- */
 	{
 		"id": "tt1790864",
-		"title": "The Maze Runner",
+		"title": "The Maze Runner 2014",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2rOonEo6b6wENhucsuoXXzoXejM.jpg",
 		"category": "MovieSet",
 		"set": "The Maze Runner",
 	},
 		{
 		"id": "tt4046784",
-		"title": "Maze Runner: The Scorch Trials",
+		"title": "Maze Runner: The Scorch Trials 2015",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/pCIdUSdcSfXzSlBGjqfzIREeFIl.jpg",
+		"category": "MovieSet",
+		"set": "The Maze Runner",
+	},
+		{
+		"id": "tt4500922",
+		"title": "Maze Runner: The Death Cure 2018",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2zYfzA3TBwrMC8tfFbpiTLODde0.jpg",
 		"category": "MovieSet",
 		"set": "The Maze Runner",
 	},
