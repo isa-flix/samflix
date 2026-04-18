@@ -29,7 +29,9 @@ let movies = [
     "category": "Live Stream",
     "video": "https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991745"
   },
-*/  	
+*/
+
+	/* ---------------- Cartoons ---------------- */
 	{
 		"id": "tt27613895",
 		"title": "GOAT",
@@ -46,7 +48,7 @@ let movies = [
 	{ 
 		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
 	},
-
+/* ---------------- Movies ---------------- */
 	
 	{ "id": "tt0383010", "title": "The Three Stooges 2012", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gElz0Gu4Opl79upXWVA3FWPzPqn.jpg", "category": "Movie" },
 	{ "id": "tt15398776", "title": "Oppenheimer", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", "category": "Movie" },
@@ -56,7 +58,7 @@ let movies = [
 	{ "id": "tt0468569", "title": "Dark Knight", "img": "https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg", "category": "Movie" },
 	{ "id": "tt0111161", "title": "Shawshank", "img": "https://image.tmdb.org/t/p/w500/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", "category": "Movie" },
 
-
+/* ---------------- Movie Sets ---------------- */
 /* ---------------- Toy Story ---------------- */
 
 	{"id": "tt0114709", "title": "Toy Story", "img": "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", "category": "MovieSet", "set": "Toy story"},
