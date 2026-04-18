@@ -3,7 +3,7 @@ let movies = [
   {
     "id": "mp4_test",
     "title": "MP4 Test Video",
-    "img": "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
+    "img": "live.png",
     "category": "Movies test",
     "video": "https://ia601605.us.archive.org/13/items/GlorifyingTheAmericanGirl_119/GlorifyingTheAmericanGirl1929FsDvdripDivx5_512kb.mp4"
   },
