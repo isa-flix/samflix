@@ -14,6 +14,13 @@ let movies = [
     "category": "Live Stream",
     "video": "https://amg01269-amg01269c1-firetv-us-5377.playouts.now.amagi.tv/playlist.m3u8"
   },
+	{
+    "id": "002hls",
+    "title": "PTV Sports",
+    "img": "live.png",
+    "category": "Live Stream",
+    "video": "https://tvsen5.aynaott.com/Ptvsports/index.m3u8"
+  },
 /*
 	{
     "id": "002hls",
