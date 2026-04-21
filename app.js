@@ -19,7 +19,7 @@ let movies = [
     "title": "PTV Sports",
     "img": "live.png",
     "category": "Live Stream",
-    "video": "https://tvsen5.aynaott.com/Ptvsports/index.m3u8"
+    "video": "https://amg00793-bbcstudios-amg00793c3-lg-us-2528.playouts.now.amagi.tv/playlist/amg00793-bbcstudios-bbcearta-lgus/playlist.m3u8"
   },
 /*
 	{
