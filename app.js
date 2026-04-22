@@ -115,7 +115,16 @@ let movies = [
 	{ "id": "tt6718170", "title": "Super Mario Bros", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
 	{ "id": "tt0108255", "title": "Super Mario Bros 1993", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
 
-/* ---------------- The Maze Runner ---------------- */
+/* ---------------- Mortal Kombat ---------------- */
+
+	{"id": "tt0113855", "title": "Mortal Kombat 1995", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jY4b61Jm8v5iayxYx0VRPaD0AF1.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
+	{"id": "tt0120363", "title": "Mortal Kombat", "img": "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
+	{"id": "tt0435761", "title": "Mortal Kombat", "img": "https://www.themoviedb.org/t/p/w1280/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
+	{"id": "tt1979376", "title": "Mortal Kombat", "img": "https://www.themoviedb.org/t/p/w1280/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
+	{"id": "tt29355505", "title": "Mortal Kombat", "img": "https://www.themoviedb.org/t/p/w1280/gaiMtK2ll6BLdK1qKFuZGDwwEuD.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
+
+	
+	/* ---------------- The Maze Runner ---------------- */
 	{
 		"id": "tt1790864",
 		"title": "The Maze Runner 2014",
