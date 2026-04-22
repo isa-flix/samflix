@@ -22,11 +22,11 @@ let movies = [
     "video": "https://amg00793-bbcstudios-amg00793c3-lg-us-2528.playouts.now.amagi.tv/playlist/amg00793-bbcstudios-bbcearta-lgus/playlist.m3u8"
   },
 {
-    "id": "002hls",
+    "id": "003hls",
     "title": "ARY Digita",
     "img": "live.png",
     "category": "Live Stream",
-    "video": "https://arydigital.aryzap.com/dc2dc67658cc5a71a92476b702cd2ae8/69ea2a66/v1/0183ea2408f90b8ed5941a38bc72/0183ea24302d0b8ed5941a38bc75/ARYDigitalHDh264_360p.m3u8?uuid=861c62b3-962b-4e76-a9fa-4d03044495eb&isSubM3u8=1"
+    "video": "https://arydigital.aryzap.com/dc2dc67658cc5a71a92476b702cd2ae8/69ea2a66/v1/0183ea2408f90b8ed5941a38bc72/0183ea24302d0b8ed5941a38bc75/634E5F8E000072F08E6D-p0_tmpl360p_360p-1776867496168.ts"
   },
 
 	
