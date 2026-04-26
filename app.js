@@ -73,7 +73,6 @@ let movies = [
 	
 	/* ---------------- Hindi ---------------- */
 	{ "id": "tt29540862", "title": "Bhooth Bangla 2026", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg", "category": "Indian Movies" },
-	{ "id": "tt0074949", "title": "Nagin 1976", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yvIsc4W1g6GO79ZtMNxHXZhaQ5R.jpg", "category": "Indian Movies" },
 
 
 	
