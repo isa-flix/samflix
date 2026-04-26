@@ -69,10 +69,15 @@ let movies = [
 	{ "id": "tt0383010", "title": "The Three Stooges 2012", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gElz0Gu4Opl79upXWVA3FWPzPqn.jpg", "category": "Movie" },
 	{ "id": "tt15398776", "title": "Oppenheimer", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2y48XTa483LRFIb5fDKOwr8DHWz.jpg", "category": "Movie" },
 	{ "id": "tt12042730", "title": "Project Hail Mary", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wXmoUdNvLx8Iiplgbuc1svl3b2d.jpg", "category": "Movie" },
-/* ---------------- Hindi ---------------- */
-	{ "id": "tt29540862", "title": "Bhooth Bangla", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg", "category": "Indian Movies" },
 
-/* ---------------- Movie Sets ---------------- */
+	
+	/* ---------------- Hindi ---------------- */
+	{ "id": "tt29540862", "title": "Bhooth Bangla 2026", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg", "category": "Indian Movies" },
+	{ "id": "tt0074949", "title": "Nagin 1976", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yvIsc4W1g6GO79ZtMNxHXZhaQ5R.jpg", "category": "Indian Movies" },
+
+
+	
+	/* ---------------- Movie Sets ---------------- */
 
 	{"id": "tt0114709", "title": "Toy Story", "img": "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", "category": "MovieSet", "set": "Toy story"},
 	{"id": "tt0120363", "title": "Toy Story 2", "img": "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", "category": "MovieSet", "set": "Toy story"},
