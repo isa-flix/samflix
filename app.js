@@ -81,8 +81,8 @@ let movies = [
 	/* ---------------- Cars ---------------- */
 
 	{"id": "tt0317219", "title": "Cars 2006", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg", "category": "MovieSet", "set": "Cars"},
-	{"id": "tt1216475", "title": "Cars II 2011", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg", "category": "MovieSet", "set": "Cars"},
-	{"id": "tt3606752", "title": "Cars III 2017", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg", "category": "MovieSet", "set": "Cars"},
+	{"id": "tt1216475", "title": "Cars II 2011", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vu2PuKtP24Php0vKzhEKbqft59Q.jpg", "category": "MovieSet", "set": "Cars"},
+	{"id": "tt3606752", "title": "Cars III 2017", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jJ8TnHvWHaVadW5JJjGYsM07j9i.jpg", "category": "MovieSet", "set": "Cars"},
 
 		/* ---------------- Super Troopers ---------------- */
 
