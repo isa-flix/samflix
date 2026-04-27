@@ -77,7 +77,11 @@ let movies = [
 
 	
 	/* ---------------- Movie Sets ---------------- */
-{"id": "tt0247745", "title": "Super Troopers 2001", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xBvAHPOSSOdmjJ4Se5fT4ipYQy2.jpg", "category": "MovieSet", "set": "Super Troopers"},
+
+{"id": "tt0317219", "title": "Cars 2006", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg", "category": "MovieSet", "set": "Cars"},
+
+	
+	{"id": "tt0247745", "title": "Super Troopers 2001", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xBvAHPOSSOdmjJ4Se5fT4ipYQy2.jpg", "category": "MovieSet", "set": "Super Troopers"},
 {"id": "tt0859635", "title": "Super Troopers 2018", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/57SZgdugVClIy22rfnANeBJ5KsN.jpg", "category": "MovieSet", "set": "Super Troopers"},
 	
 
