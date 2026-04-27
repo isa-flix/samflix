@@ -68,9 +68,9 @@ let movies = [
 	},
 /* ---------------- Movies ---------------- */
 	{
-		"id": "tt2120120",
-		"title": "Pixels 2015",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4aE5mGxjP8S1YOE4lpwj6OQcLZy.jpg",
+		"id": "tt33244668",
+		"title": "Anaconda 2025",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qxMv3HwAB3XPuwNLMhVRg795Ktp.jpg",
 		"category": "Movie"
 	},
 	{
