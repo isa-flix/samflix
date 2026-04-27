@@ -77,6 +77,9 @@ let movies = [
 
 	
 	/* ---------------- Movie Sets ---------------- */
+{"id": "tt0247745", "title": "Super Troopers 2001", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xBvAHPOSSOdmjJ4Se5fT4ipYQy2.jpg", "category": "MovieSet", "set": "Super Troopers"},
+{"id": "tt0859635", "title": "Super Troopers 2018", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/57SZgdugVClIy22rfnANeBJ5KsN.jpg", "category": "MovieSet", "set": "Super Troopers"},
+	
 
 	{"id": "tt0114709", "title": "Toy Story", "img": "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", "category": "MovieSet", "set": "Toy story"},
 	{"id": "tt0120363", "title": "Toy Story 2", "img": "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", "category": "MovieSet", "set": "Toy story"},
