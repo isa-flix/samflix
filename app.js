@@ -68,6 +68,18 @@ let movies = [
 	},
 /* ---------------- Movies ---------------- */
 	{
+		"id": "tt2120120",
+		"title": "Pixels 2015",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4aE5mGxjP8S1YOE4lpwj6OQcLZy.jpg",
+		"category": "Movie"
+	},
+	{
+		"id": "tt2120120",
+		"title": "Pixels 2015",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4aE5mGxjP8S1YOE4lpwj6OQcLZy.jpg",
+		"category": "Movie"
+	},
+	{
 		"id": "tt3566834",
 		"title": "A Minecraft Movie",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iPPTGh2OXuIv6d7cwuoPkw8govp.jpg",
