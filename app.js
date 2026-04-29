@@ -30,35 +30,36 @@ let movies = [
   },
 /* ---------------- excempt later ---------------- */
 	{
-		"id": "tt37268550",
-		"title": "Risque",
+		"id": "",
+		"title": "",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "tt1588398",
-		"title": "sleeping beauty",
+		"id": "",
+		"title": "",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "tt4016934",
-		"title": "the handmaiden",
+		"id": "",
+		"title": ",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "tt3181822",
-		"title": "boy next door",
+		"id": "",
+		"title": ",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "tt7598076",
-		"title": "Curiosa",
+		"id": "",
+		"title": "",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
+	
 /*
 	{
     "id": "002hls",
