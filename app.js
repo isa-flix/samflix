@@ -54,8 +54,8 @@ let movies = [
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "",
-		"title": "",
+		"id": "tt7598076",
+		"title": "Curiosa",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
