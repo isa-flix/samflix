@@ -35,6 +35,18 @@ let movies = [
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
+	{
+		"id": "tt1588398",
+		"title": "sleeping beauty",
+		"img": "live.png",
+		"category": "Junk Chunk"
+	},
+	{
+		"id": "tt4016934",
+		"title": "the handmaiden",
+		"img": "live.png",
+		"category": "Junk Chunk"
+	},
 	
 /*
 	{
