@@ -29,12 +29,7 @@ let movies = [
     "video": "https://arydigital.aryzap.com/dc2dc67658cc5a71a92476b702cd2ae8/69ea2a66/v1/0183ea2408f90b8ed5941a38bc72/0183ea24302d0b8ed5941a38bc75/634E5F8E000072F08E6D-p0_tmpl360p_360p-1776867496168.ts"
   },
 /* ---------------- excempt later ---------------- */
-	{
-		"id": "tt13570066",
-		"title": "Desert Warrior",
-		"img": "live.png",
-		"category": "Movie"
-	},
+	
 	{
 		"id": "1",
 		"title": "0",
@@ -97,6 +92,12 @@ let movies = [
 		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
 	},
 /* ---------------- Movies ---------------- */
+	{
+		"id": "tt13570066",
+		"title": "Desert Warrior",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sxn4XI0EPaF3IOagjRaQ3yxHHNS.jpg",
+		"category": "Movie"
+	},
 	{
 		"id": "tt33244668",
 		"title": "Anaconda 2025",
