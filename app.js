@@ -30,10 +30,10 @@ let movies = [
   },
 /* ---------------- excempt later ---------------- */
 	{
-		"id": "0",
-		"title": "0",
+		"id": "tt13570066",
+		"title": "Desert Warrior",
 		"img": "live.png",
-		"category": "Junk Chunk"
+		"category": "Movie"
 	},
 	{
 		"id": "1",
