@@ -30,32 +30,32 @@ let movies = [
   },
 /* ---------------- excempt later ---------------- */
 	{
-		"id": "",
-		"title": "",
+		"id": "0",
+		"title": "0",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "",
-		"title": "",
+		"id": "1",
+		"title": "0",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "",
-		"title": ",
+		"id": "2",
+		"title": "0",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "",
-		"title": ",
+		"id": "3",
+		"title": "0",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
 	{
-		"id": "",
-		"title": "",
+		"id": "4",
+		"title": "0",
 		"img": "live.png",
 		"category": "Junk Chunk"
 	},
