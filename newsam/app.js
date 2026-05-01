@@ -36,7 +36,9 @@ let seriesList = [
         tmdb_id: "119051",
         seasons: [
             { season: 1, episodes: 8 },
-            { season: 2, episodes: 8 }
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 1 }
+            
         ]
     }
 ];
