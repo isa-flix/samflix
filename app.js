@@ -34,7 +34,7 @@ let movies = [
 		"id": "tt0121164",
 		"title": "Corpse Bride",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
-		"category": "Junk Chunk"
+		"category": "Cartoon"
 	},
 	{
 		"id": "2",
