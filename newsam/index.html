@@ -3,196 +3,228 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix Pro</title>
+<title>SamFlix Series</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
-body { margin:0; background:#141414; color:white; font-family:Arial; }
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #141414;
+    color: white;
+}
 
-h1 { padding:20px; }
+h1 { padding: 20px; }
 
-.row {
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
     padding: 20px;
 }
 
-.row h2 {
-    margin-bottom: 10px;
-}
-
-.slider {
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
-}
-
-.card {
-    min-width:150px;
-    cursor:pointer;
-}
+.card { cursor: pointer; }
 
 .card img {
-    width:100%;
-    border-radius:8px;
+    width: 100%;
+    border-radius: 10px;
 }
 
 /* PLAYER */
-#player video, #player iframe {
-    width:100%;
-    height:500px;
-    background:black;
+#player {
+    padding: 20px;
+}
+
+video, iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+    background: black;
 }
 
 /* EPISODES */
-.episode-row {
-    display:flex;
-    overflow-x:auto;
-    gap:10px;
-    padding:10px;
+.controls {
+    padding: 0 20px;
 }
 
-.ep {
-    min-width:120px;
-    cursor:pointer;
-    background:#222;
-    padding:5px;
-    border-radius:6px;
+.episode-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 10px;
+    padding: 20px;
 }
 
-.ep.active { background:#e50914; }
-
-.ep img {
-    width:100%;
-    border-radius:5px;
+.ep-btn {
+    background: #222;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
 }
 
-/* SEARCH */
-input {
-    width:90%;
-    margin:10px;
-    padding:10px;
+.ep-btn.active {
+    background: #e50914;
+}
+
+.ep-btn img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+/* BUTTON */
+button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
 }
 </style>
 </head>
 
 <body>
 
-<h1>SamFlix Pro</h1>
-<input placeholder="Search series..." oninput="search(this.value)">
+<h1>SamFlix Series</h1>
 <div id="app"></div>
 
 <script>
 
-const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
+/* ================= DATA ================= */
 
-/* ================= STATE ================= */
+let seriesList = [
+    {
+        id: "breaking_bad",
+        title: "Breaking Bad",
+        img: "https://image.tmdb.org/t/p/w500/eSzpy96DwBujGFj0xMbXBcGcfxX.jpg",
+        tmdb_id: "1396",
+        seasons: [
+            { season: 1, episodes: 7 },
+            { season: 2, episodes: 13 }
+        ]
+    }
+];
 
-let trending = [];
-let currentShow = null;
-let currentEp = {};
-
-/* ================= FETCH TRENDING ================= */
-
-async function loadTrending() {
-    let res = await fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${API_KEY}`);
-    let data = await res.json();
-    trending = data.results;
-    renderHome();
-}
+let current = {};
 
 /* ================= HOME ================= */
 
-function renderHome() {
-    let html = `<div class="row"><h2>Trending</h2><div class="slider">`;
-
-    trending.forEach(show => {
+function showSeries() {
+    let html = '<div class="grid">';
+    seriesList.forEach(s => {
         html += `
-            <div class="card" onclick="openShow(${show.id})">
-                <img src="https://image.tmdb.org/t/p/w300${show.poster_path}">
+            <div class="card" onclick="openSeries('${s.id}')">
+                <img src="${s.img}">
+                <p>${s.title}</p>
             </div>
         `;
     });
-
-    html += `</div></div>`;
+    html += '</div>';
     document.getElementById("app").innerHTML = html;
 }
 
-/* ================= SEARCH ================= */
+/* ================= SERIES ================= */
 
-async function search(q) {
-    if (!q) return renderHome();
+function openSeries(id) {
+    let s = seriesList.find(x => x.id === id);
 
-    let res = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${q}`);
-    let data = await res.json();
+    current = {
+        id: id,
+        season: 1,
+        episode: 1
+    };
 
-    let html = `<div class="row"><h2>Results</h2><div class="slider">`;
+    let saved = JSON.parse(localStorage.getItem(id));
+    if (saved) current = saved;
 
-    data.results.forEach(show => {
-        html += `
-            <div class="card" onclick="openShow(${show.id})">
-                <img src="https://image.tmdb.org/t/p/w300${show.poster_path}">
-            </div>
-        `;
-    });
+    let html = `
+        <button onclick="showSeries()">⬅ Back</button>
+        <h2>${s.title}</h2>
 
-    html += `</div></div>`;
-    document.getElementById("app").innerHTML = html;
-}
-
-/* ================= OPEN SHOW ================= */
-
-async function openShow(id) {
-    let res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}`);
-    let show = await res.json();
-    currentShow = show;
-
-    let html = `<button onclick="renderHome()">⬅ Back</button>`;
-    html += `<h2>${show.name}</h2>`;
-
-    for (let s of show.seasons) {
-        if (s.season_number === 0) continue;
-
-        html += `<h3>Season ${s.season_number}</h3><div class="episode-row">`;
-
-        let res2 = await fetch(`https://api.themoviedb.org/3/tv/${id}/season/${s.season_number}?api_key=${API_KEY}`);
-        let season = await res2.json();
-
-        season.episodes.forEach(ep => {
-            html += `
-                <div class="ep" onclick="playEpisode(${id},${s.season_number},${ep.episode_number})">
-                    <img src="https://image.tmdb.org/t/p/w300${ep.still_path}">
-                    S${s.season_number}E${ep.episode_number}
-                </div>
-            `;
-        });
-
-        html += `</div>`;
-    }
-
-    html += `<div id="player"></div>`;
-    document.getElementById("app").innerHTML = html;
-}
-
-/* ================= PLAYER ================= */
-
-function playEpisode(id, season, episode) {
-    currentEp = {id, season, episode};
-
-    let player = document.getElementById("player");
-
-    let embed = `https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}`;
-    let fallback = `https://vidsrc.to/embed/tv/${id}/${season}/${episode}`;
-
-    player.innerHTML = `
-        <iframe src="${embed}" onerror="this.src='${fallback}'" allowfullscreen></iframe>
+        <div class="controls">
+            Season:
+            <select onchange="changeSeason('${id}', this.value)">
     `;
 
-    localStorage.setItem("continue", JSON.stringify(currentEp));
+    s.seasons.forEach(se => {
+        html += `<option value="${se.season}" ${se.season == current.season ? "selected":""}>Season ${se.season}</option>`;
+    });
+
+    html += `</select></div>`;
+
+    html += `<div id="episodes"></div><div id="player"></div>`;
+
+    document.getElementById("app").innerHTML = html;
+
+    renderEpisodes(s);
+    playEpisode(current.season, current.episode);
+}
+
+/* ================= EPISODES ================= */
+
+function renderEpisodes(s) {
+    let seasonData = s.seasons.find(x => x.season == current.season);
+
+    let html = `<div class="episode-grid">`;
+
+    for (let ep = 1; ep <= seasonData.episodes; ep++) {
+
+        let thumb = `https://image.tmdb.org/t/p/w300/${s.tmdb_id}_S${current.season}_E${ep}.jpg`;
+
+        html += `
+            <div class="ep-btn ${ep == current.episode ? "active":""}"
+            onclick="playEpisode(${current.season}, ${ep})">
+                <img src="${thumb}" onerror="this.style.display='none'">
+                S${current.season}E${ep}
+            </div>
+        `;
+    }
+
+    html += `</div>`;
+    document.getElementById("episodes").innerHTML = html;
+}
+
+/* ================= CHANGE SEASON ================= */
+
+function changeSeason(id, season) {
+    current.season = season;
+    current.episode = 1;
+    let s = seriesList.find(x => x.id === id);
+    renderEpisodes(s);
+}
+
+/* ================= PLAY ================= */
+
+function playEpisode(season, episode) {
+    current.season = season;
+    current.episode = episode;
+
+    let s = seriesList.find(x => x.id === current.id);
+
+    localStorage.setItem(current.id, JSON.stringify(current));
+
+    renderEpisodes(s);
+
+    let url = `https://www.2embed.cc/embedtv/${s.tmdb_id}&s=${season}&e=${episode}`;
+
+    document.getElementById("player").innerHTML = `
+        <iframe src="${url}" allowfullscreen></iframe>
+    `;
+
+    document.getElementById("player").scrollIntoView({ behavior: "smooth" });
+
+    // AUTO NEXT (iframe fallback not perfect)
+    setTimeout(() => {
+        current.episode++;
+        if (current.episode <= s.seasons.find(x=>x.season==season).episodes) {
+            // optional auto next trigger (disabled by default)
+        }
+    }, 30000);
 }
 
 /* ================= INIT ================= */
 
-loadTrending();
+showSeries();
 
 </script>
 
