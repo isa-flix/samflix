@@ -29,6 +29,18 @@ let seriesList = [
             { season: 9, episodes: 13 }
         ]
     },
+
+    {
+        id: "avatar_the_last_airbender",
+        title: "Avatar: The Last Airbender",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg",
+        tmdb_id: "82452",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 7 }            
+        ]
+    },
+    
     {
         id: "Wednesday",
         title: "Wednesday",
