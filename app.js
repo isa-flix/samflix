@@ -31,9 +31,9 @@ let movies = [
 /* ---------------- excempt later ---------------- */
 	
 	{
-		"id": "tt30460310",
-		"title": "Spider-Noir",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/cRAzL6mmdM6Q6UuQgc335UMgcfd.jpg",
+		"id": "tt0121164",
+		"title": "Corpse Bride",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
 		"category": "Junk Chunk"
 	},
 	{
