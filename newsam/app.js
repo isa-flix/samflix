@@ -6,7 +6,27 @@ let seriesList = [
         tmdb_id: "1396",
         seasons: [
             { season: 1, episodes: 7 },
-            { season: 2, episodes: 13 }
+            { season: 2, episodes: 13 },
+            { season: 3, episodes: 13 },
+            { season: 4, episodes: 13 },
+            { season: 5, episodes: 16 }
+        ]
+    },
+    {
+        id: "the_flash",
+        title: "The Flash",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
+        tmdb_id: "60735",
+        seasons: [
+            { season: 1, episodes: 23 },
+            { season: 2, episodes: 23 },
+            { season: 3, episodes: 23 },
+            { season: 4, episodes: 23 },
+            { season: 5, episodes: 22 },
+            { season: 6, episodes: 19 },
+            { season: 7, episodes: 18 },
+            { season: 8, episodes: 20 },
+            { season: 9, episodes: 13 }
         ]
     },
     {
