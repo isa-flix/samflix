@@ -12,6 +12,19 @@ let seriesList = [
             { season: 5, episodes: 16 }
         ]
     },
+
+{
+        id: "house_of-the-dragon",
+        title: "House of the Dragon",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
+        tmdb_id: "94997",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 0 }
+        ]
+    },
+    
     {
         id: "the_flash",
         title: "The Flash",
