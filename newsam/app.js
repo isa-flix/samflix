@@ -1,4 +1,20 @@
 let seriesList = [
+    
+    {
+        id: "high_school_dxd",
+        title: "High School",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+        tmdb_id: "45950",
+        seasons: [
+            { season: 1, episodes: 12 },
+            { season: 2, episodes: 13 },
+            { season: 3, episodes: 13 },
+            { season: 4, episodes: 13 }
+        ]
+    },
+
+    
+    
     {
         id: "breaking_bad",
         title: "Breaking Bad",
