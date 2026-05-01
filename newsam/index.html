@@ -14,7 +14,21 @@ body {
     background: #141414;
     color: white;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    background: #141414;
+}
 
+.logo {
+    color: red;
+    font-size: 28px;
+    font-weight: bold;
+}
 h1 { padding: 20px; }
 
 /* GRID */
@@ -85,8 +99,8 @@ button {
 
 <body>
 
-<div>SamFlix Series</div>
-    
+<div class="navbar">
+    <div class="logo">SamFlix Series</div>    
 
     <div style="position:fixed; top:10px; left:200px; z-index:9999; display:flex; gap:10px;">
 
@@ -101,6 +115,7 @@ button {
      style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
      📺Series
   </a>
+</div>
 </div>
 
         <div id="app"></div>
