@@ -3,199 +3,196 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix Series</title>
+<title>SamFlix Pro</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <style>
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #141414;
-    color: white;
-}
+body { margin:0; background:#141414; color:white; font-family:Arial; }
 
-h1 { padding: 20px; }
+h1 { padding:20px; }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
+.row {
     padding: 20px;
 }
 
-.card { cursor: pointer; }
+.row h2 {
+    margin-bottom: 10px;
+}
+
+.slider {
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+}
+
+.card {
+    min-width:150px;
+    cursor:pointer;
+}
 
 .card img {
-    width: 100%;
-    border-radius: 10px;
+    width:100%;
+    border-radius:8px;
 }
 
-#player {
-    padding: 20px;
+/* PLAYER */
+#player video, #player iframe {
+    width:100%;
+    height:500px;
+    background:black;
 }
 
-video, iframe {
-    width: 100%;
-    height: 500px;
-    border: none;
-    background: black;
+/* EPISODES */
+.episode-row {
+    display:flex;
+    overflow-x:auto;
+    gap:10px;
+    padding:10px;
 }
 
-.episode {
-    padding: 10px;
-    border-bottom: 1px solid #333;
-    cursor: pointer;
+.ep {
+    min-width:120px;
+    cursor:pointer;
+    background:#222;
+    padding:5px;
+    border-radius:6px;
 }
 
-.episode:hover {
-    background: #333;
+.ep.active { background:#e50914; }
+
+.ep img {
+    width:100%;
+    border-radius:5px;
 }
 
-button {
-    margin: 10px;
-    padding: 10px;
-    cursor: pointer;
+/* SEARCH */
+input {
+    width:90%;
+    margin:10px;
+    padding:10px;
 }
 </style>
 </head>
 
 <body>
 
-<h1>SamFlix Series</h1>
+<h1>SamFlix Pro</h1>
+<input placeholder="Search series..." oninput="search(this.value)">
 <div id="app"></div>
 
 <script>
 
-/* ================= DATA ================= */
+const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
 
-let seriesList = [
-    {
-        id: "breaking_bad",
-        title: "Breaking Bad (2embed)",
-        img: "https://image.tmdb.org/t/p/w500/eSzpy96DwBujGFj0xMbXBcGcfxX.jpg",
-        tmdb_id: "1396",
-        seasons: [{ season: 1, episodes: 7 }]
-    },
-    {
-        id: "direct_mp4",
-        title: "MP4 Test",
-        img: "https://peach.blender.org/wp-content/uploads/title_anouncement.jpg",
-        type: "direct",
-        episodes: [
-            { title: "Episode 1", video: "https://www.w3schools.com/html/mov_bbb.mp4" }
-        ]
-    },
-    {
-        id: "hls_test",
-        title: "HLS Stream",
-        img: "https://dummyimage.com/300x450/000/fff&text=HLS",
-        type: "direct",
-        episodes: [
-            { title: "Episode 1", video: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8" }
-        ]
-    }
-];
+/* ================= STATE ================= */
 
-/* ================= SHOW SERIES ================= */
+let trending = [];
+let currentShow = null;
+let currentEp = {};
 
-function showSeries() {
-    let html = '<div class="grid">';
+/* ================= FETCH TRENDING ================= */
 
-    seriesList.forEach(s => {
+async function loadTrending() {
+    let res = await fetch(`https://api.themoviedb.org/3/trending/tv/week?api_key=${API_KEY}`);
+    let data = await res.json();
+    trending = data.results;
+    renderHome();
+}
+
+/* ================= HOME ================= */
+
+function renderHome() {
+    let html = `<div class="row"><h2>Trending</h2><div class="slider">`;
+
+    trending.forEach(show => {
         html += `
-            <div class="card" onclick="openSeries('${s.id}')">
-                <img src="${s.img}">
-                <p>${s.title}</p>
+            <div class="card" onclick="openShow(${show.id})">
+                <img src="https://image.tmdb.org/t/p/w300${show.poster_path}">
             </div>
         `;
     });
 
-    html += '</div>';
+    html += `</div></div>`;
     document.getElementById("app").innerHTML = html;
 }
 
-/* ================= OPEN SERIES ================= */
+/* ================= SEARCH ================= */
 
-function openSeries(id) {
-    let s = seriesList.find(x => x.id === id);
+async function search(q) {
+    if (!q) return renderHome();
 
-    let html = `
-        <button onclick="showSeries()">⬅ Back</button>
-        <h2>${s.title}</h2>
-    `;
+    let res = await fetch(`https://api.themoviedb.org/3/search/tv?api_key=${API_KEY}&query=${q}`);
+    let data = await res.json();
 
-    // 2EMBED TYPE
-    if (s.tmdb_id) {
-        s.seasons.forEach(season => {
-            html += `<h3>Season ${season.season}</h3>`;
-            for (let ep = 1; ep <= season.episodes; ep++) {
-                html += `
-                    <div class="episode"
-                    onclick="playEmbed('${s.tmdb_id}', ${season.season}, ${ep})">
-                        Episode ${ep}
-                    </div>
-                `;
-            }
-        });
-    }
+    let html = `<div class="row"><h2>Results</h2><div class="slider">`;
 
-    // DIRECT TYPE
-    if (s.type === "direct") {
-        s.episodes.forEach((ep, i) => {
+    data.results.forEach(show => {
+        html += `
+            <div class="card" onclick="openShow(${show.id})">
+                <img src="https://image.tmdb.org/t/p/w300${show.poster_path}">
+            </div>
+        `;
+    });
+
+    html += `</div></div>`;
+    document.getElementById("app").innerHTML = html;
+}
+
+/* ================= OPEN SHOW ================= */
+
+async function openShow(id) {
+    let res = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}`);
+    let show = await res.json();
+    currentShow = show;
+
+    let html = `<button onclick="renderHome()">⬅ Back</button>`;
+    html += `<h2>${show.name}</h2>`;
+
+    for (let s of show.seasons) {
+        if (s.season_number === 0) continue;
+
+        html += `<h3>Season ${s.season_number}</h3><div class="episode-row">`;
+
+        let res2 = await fetch(`https://api.themoviedb.org/3/tv/${id}/season/${s.season_number}?api_key=${API_KEY}`);
+        let season = await res2.json();
+
+        season.episodes.forEach(ep => {
             html += `
-                <div class="episode"
-                onclick="playVideo('${ep.video}')">
-                    ${ep.title || "Episode " + (i+1)}
+                <div class="ep" onclick="playEpisode(${id},${s.season_number},${ep.episode_number})">
+                    <img src="https://image.tmdb.org/t/p/w300${ep.still_path}">
+                    S${s.season_number}E${ep.episode_number}
                 </div>
             `;
         });
+
+        html += `</div>`;
     }
 
     html += `<div id="player"></div>`;
     document.getElementById("app").innerHTML = html;
 }
 
-/* ================= PLAY 2EMBED ================= */
+/* ================= PLAYER ================= */
 
-function playEmbed(tmdb, season, episode) {
-    let url = `https://www.2embed.cc/embedtv/${tmdb}&s=${season}&e=${episode}`;
+function playEpisode(id, season, episode) {
+    currentEp = {id, season, episode};
 
-    document.getElementById("player").innerHTML = `
-        <iframe src="${url}" allowfullscreen></iframe>
-    `;
-}
-
-/* ================= PLAY VIDEO (AUTO DETECT) ================= */
-
-function playVideo(url) {
     let player = document.getElementById("player");
 
-    // HLS (.m3u8)
-    if (url.includes(".m3u8")) {
-        player.innerHTML = `<video id="video" controls autoplay></video>`;
-        let video = document.getElementById("video");
+    let embed = `https://www.2embed.cc/embedtv/${id}&s=${season}&e=${episode}`;
+    let fallback = `https://vidsrc.to/embed/tv/${id}/${season}/${episode}`;
 
-        if (Hls.isSupported()) {
-            let hls = new Hls();
-            hls.loadSource(url);
-            hls.attachMedia(video);
-        } else {
-            video.src = url;
-        }
-    }
+    player.innerHTML = `
+        <iframe src="${embed}" onerror="this.src='${fallback}'" allowfullscreen></iframe>
+    `;
 
-    // MP4 / DIRECT
-    else {
-        player.innerHTML = `
-            <video controls autoplay src="${url}"></video>
-        `;
-    }
+    localStorage.setItem("continue", JSON.stringify(currentEp));
 }
 
 /* ================= INIT ================= */
 
-showSeries();
+loadTrending();
 
 </script>
 
