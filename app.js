@@ -31,9 +31,9 @@ let movies = [
 /* ---------------- excempt later ---------------- */
 	
 	{
-		"id": "1",
-		"title": "0",
-		"img": "live.png",
+		"id": "tt30460310",
+		"title": "Spider-Noir",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/cRAzL6mmdM6Q6UuQgc335UMgcfd.jpg",
 		"category": "Junk Chunk"
 	},
 	{
