@@ -1,15 +1,6 @@
 let seriesList = [
     
-    {
-        id: "veneno",
-        title: "veneno",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
-        tmdb_id: "100834",
-        seasons: [
-            { season: 1, episodes: 8 }
-           
-        ]
-    },
+    
 
     
     
