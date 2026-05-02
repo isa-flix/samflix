@@ -30,24 +30,7 @@ let movies = [
   },
 /* ---------------- excempt later ---------------- */
 	
-	{
-		"id": "tt0121164",
-		"title": "Corpse Bride",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
-		"category": "Cartoon"
-	},
-	{
-		"id": "1318447",
-		"title": "a[rc",
-		"img": "live.png",
-		"category": "Junk Chunk"
-	},
-	{
-		"id": "3",
-		"title": "0",
-		"img": "live.png",
-		"category": "Junk Chunk"
-	},
+	
 	{
 		"id": "4",
 		"title": "0",
@@ -74,7 +57,18 @@ let movies = [
 
 	/* ---------------- Cartoons ---------------- */
 	
-	
+	{
+		"id": "tt0121164",
+		"title": "Corpse Bride",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
+		"category": "Cartoon"
+	},
+	{
+		"id": "1007757",
+		"title": "Swapped",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tHhxWxge06goXU6ZQH1hj7vK8Hd.jpg",
+		"category": "Cartoon"
+	},
 	{
 		"id": "tt27613895",
 		"title": "GOAT",
