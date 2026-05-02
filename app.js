@@ -61,13 +61,13 @@ let movies = [
 		"id": "tt0121164",
 		"title": "Corpse Bride",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
-		"category": "Cartoon"
+		"category": "Cartoons"
 	},
 	{
 		"id": "1007757",
 		"title": "Swapped",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tHhxWxge06goXU6ZQH1hj7vK8Hd.jpg",
-		"category": "Cartoon"
+		"category": "Cartoons"
 	},
 	{
 		"id": "tt27613895",
