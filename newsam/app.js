@@ -1,56 +1,35 @@
-/* ---------------- MOVIES ---------------- */
-let moviesList = [
-    {
-        id: "inception",
-        title: "Inception",
-        img: "https://image.tmdb.org/t/p/w600_and_h900_face/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
-        tmdb_id: "27205"
-    },
-    {
-        id: "john_wick",
-        title: "John Wick",
-        img: "https://image.tmdb.org/t/p/w600_and_h900_face/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg",
-        tmdb_id: "245891"
-    }
-];
+/* ---------------- CONFIG ---------------- */
+const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
 
-/* ---------------- SERIES ---------------- */
-let seriesList = [
-    {
-        id: "stranger_things",
-        title: "Stranger Things",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
-        tmdb_id: "66732",
-        seasons: [
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 9 },
-            { season: 3, episodes: 8 },
-            { season: 4, episodes: 9 }
-        ]
-    },
-    {
-        id: "breaking_bad",
-        title: "Breaking Bad",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
-        tmdb_id: "1396",
-        seasons: [
-            { season: 1, episodes: 7 },
-            { season: 2, episodes: 13 },
-            { season: 3, episodes: 13 },
-            { season: 4, episodes: 13 },
-            { season: 5, episodes: 16 }
-        ]
-    }
-];
+/* ---------------- STORAGE ---------------- */
+let moviesList = JSON.parse(localStorage.getItem("movies")) || [];
+let seriesList = JSON.parse(localStorage.getItem("series")) || [];
 
 let current = {};
+
+/* ---------------- HELPERS ---------------- */
+function extractIMDB(input) {
+    let match = input.match(/tt\d+/);
+    return match ? match[0] : null;
+}
+
+async function getTMDBfromIMDB(imdb_id, type="movie") {
+    let url = `https://api.themoviedb.org/3/find/${imdb_id}?api_key=${API_KEY}&external_source=imdb_id`;
+    let res = await fetch(url);
+    let data = await res.json();
+
+    return type === "movie"
+        ? data.movie_results[0]
+        : data.tv_results[0];
+}
 
 /* ---------------- HOME ---------------- */
 function showHome() {
     document.getElementById("app").innerHTML = `
-        <div class="home">
+        <div class="grid">
             <button onclick="showMovies()">🎬 Movies</button>
             <button onclick="showSeries()">📺 Series</button>
+            <button onclick="showAdmin()">⚙️ Admin</button>
         </div>
     `;
 }
@@ -76,10 +55,7 @@ function playMovie(id) {
     document.getElementById("app").innerHTML = `
         <button onclick="showMovies()">⬅ Back</button>
         <h2>${m.title}</h2>
-
-        <div id="player">
-            <iframe src="https://www.2embed.cc/embed/${m.tmdb_id}" allowfullscreen></iframe>
-        </div>
+        <iframe src="https://www.2embed.cc/embed/${m.tmdb_id}" allowfullscreen></iframe>
     `;
 }
 
@@ -100,57 +76,36 @@ function showSeries() {
 
 function openSeries(id) {
     let s = seriesList.find(x => x.id === id);
+    current = { id, season: 1, episode: 1 };
 
-    current = { id: id, season: 1, episode: 1 };
-
-    let saved = JSON.parse(localStorage.getItem(id));
-    if (saved) current = saved;
-
-    let html = `
+    document.getElementById("app").innerHTML = `
         <button onclick="showSeries()">⬅ Back</button>
         <h2>${s.title}</h2>
-
-        Season:
         <select onchange="changeSeason('${id}', this.value)">
+            ${s.seasons.map(se => `<option value="${se.season}">Season ${se.season}</option>`).join("")}
+        </select>
+        <div id="episodes"></div>
+        <div id="player"></div>
     `;
 
-    s.seasons.forEach(se => {
-        html += `<option value="${se.season}" ${se.season == current.season ? "selected":""}>
-            Season ${se.season}
-        </option>`;
-    });
-
-    html += `</select>`;
-    html += `<div id="episodes"></div><div id="player"></div>`;
-
-    document.getElementById("app").innerHTML = html;
-
     renderEpisodes(s);
-    playEpisode(current.season, current.episode);
+    playEpisode(1,1);
 }
 
 function renderEpisodes(s) {
     let seasonData = s.seasons.find(x => x.season == current.season);
 
-    let html = `<div class="episode-grid">`;
-
-    for (let ep = 1; ep <= seasonData.episodes; ep++) {
-        html += `
-            <div class="ep-btn ${ep == current.episode ? "active":""}"
-                onclick="playEpisode(${current.season}, ${ep})">
-                S${current.season}E${ep}
-            </div>
-        `;
+    let html = '<div class="episode-grid">';
+    for (let i=1;i<=seasonData.episodes;i++) {
+        html += `<div class="ep-btn" onclick="playEpisode(${current.season},${i})">E${i}</div>`;
     }
+    html += '</div>';
 
-    html += `</div>`;
     document.getElementById("episodes").innerHTML = html;
 }
 
 function changeSeason(id, season) {
     current.season = parseInt(season);
-    current.episode = 1;
-
     let s = seriesList.find(x => x.id === id);
     renderEpisodes(s);
 }
@@ -161,17 +116,72 @@ function playEpisode(season, episode) {
 
     let s = seriesList.find(x => x.id === current.id);
 
-    localStorage.setItem(current.id, JSON.stringify(current));
-
-    renderEpisodes(s);
-
-    let url = `https://www.2embed.cc/embedtv/${s.tmdb_id}&s=${season}&e=${episode}`;
-
     document.getElementById("player").innerHTML = `
-        <iframe src="${url}" allowfullscreen></iframe>
+        <iframe src="https://www.2embed.cc/embedtv/${s.tmdb_id}&s=${season}&e=${episode}" allowfullscreen></iframe>
     `;
+}
 
-    document.getElementById("player").scrollIntoView({ behavior: "smooth" });
+/* ---------------- ADMIN ---------------- */
+function showAdmin() {
+    document.getElementById("app").innerHTML = `
+        <div class="admin">
+            <h2>Add Content</h2>
+
+            <select id="type">
+                <option value="movie">Movie</option>
+                <option value="tv">Series</option>
+            </select>
+
+            <input id="imdb" placeholder="Paste IMDb link or ID (tt1234567)">
+            <input id="seasons" placeholder="Seasons (for series, e.g. 1:8,2:10)">
+
+            <button onclick="addContent()">Add</button>
+        </div>
+    `;
+}
+
+async function addContent() {
+    let type = document.getElementById("type").value;
+    let imdbInput = document.getElementById("imdb").value;
+    let seasonsInput = document.getElementById("seasons").value;
+
+    let imdb = extractIMDB(imdbInput);
+
+    if (!imdb) {
+        alert("Invalid IMDb ID");
+        return;
+    }
+
+    let data = await getTMDBfromIMDB(imdb, type);
+
+    if (!data) {
+        alert("Not found");
+        return;
+    }
+
+    let item = {
+        id: data.id,
+        title: data.title || data.name,
+        img: `https://image.tmdb.org/t/p/w500${data.poster_path}`,
+        tmdb_id: data.id
+    };
+
+    if (type === "movie") {
+        moviesList.push(item);
+        localStorage.setItem("movies", JSON.stringify(moviesList));
+        alert("Movie added!");
+    } else {
+        let seasons = seasonsInput.split(",").map(s => {
+            let [season, eps] = s.split(":");
+            return { season: parseInt(season), episodes: parseInt(eps) };
+        });
+
+        item.seasons = seasons;
+
+        seriesList.push(item);
+        localStorage.setItem("series", JSON.stringify(seriesList));
+        alert("Series added!");
+    }
 }
 
 /* INIT */
