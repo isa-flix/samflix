@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix Unified Pro</title>
+<title>SamFlix Unified</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
@@ -20,7 +20,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 15px;
     position: sticky;
     top: 0;
     background: #141414;
@@ -34,7 +34,7 @@ body {
 }
 
 .search-box input {
-    padding: 8px 12px;
+    padding: 8px;
     border-radius: 5px;
     border: none;
     width: 200px;
@@ -42,42 +42,44 @@ body {
     color: white;
 }
 
-/* NAV BUTTONS */
 .nav-buttons {
     position: fixed;
     top: 10px;
     left: 220px;
     display: flex;
     gap: 10px;
-    z-index: 9999;
 }
 
 .nav-buttons a {
     padding: 10px;
     background: #111;
-    color: white;
-    text-decoration: none;
     border-radius: 50%;
-    font-size: 18px;
     cursor: pointer;
 }
 
 /* GRID */
 h2 {
-    margin: 20px 10px 10px;
+    margin: 15px;
 }
 
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 15px;
-    padding: 0 10px 20px;
+    padding: 10px;
+}
+
+.set-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    padding: 10px;
 }
 
 .card {
     cursor: pointer;
-    transition: 0.3s;
     position: relative;
+    transition: 0.3s;
 }
 
 .card img {
@@ -96,7 +98,7 @@ h2 {
 }
 
 .card:hover {
-    transform: scale(1.06);
+    transform: scale(1.05);
 }
 
 /* PLAYER */
@@ -158,9 +160,7 @@ button {
 
 <script>
 
-/* =========================
-   FULL DATA (UNCHANGED LOGIC)
-========================= */
+/* ================= DATA ================= */
 
 let movies = [
 {
@@ -185,7 +185,7 @@ let movies = [
 },
 {
     id: "tt1216475",
-    title: "Cars 2 2011",
+    title: "Cars 2",
     img: "https://www.themoviedb.org/t/p/w600_and_h900_face/vu2PuKtP24Php0vKzhEKbqft59Q.jpg",
     category: "MovieSet",
     set: "Cars"
@@ -200,31 +200,21 @@ let seriesList = [
     tmdb_id: "66732",
     seasons: [
         { season: 1, episodes: 8 },
-        { season: 2, episodes: 9 },
-        { season: 3, episodes: 8 },
-        { season: 4, episodes: 9 }
+        { season: 2, episodes: 9 }
     ]
 }
 ];
 
-/* =========================
-   STATE
-========================= */
+/* ================= STATE ================= */
 
 let currentView = "movies";
 let hlsInstance = null;
 
-/* =========================
-   INIT
-========================= */
+/* ================= INIT ================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-    renderMovies();
-});
+document.addEventListener("DOMContentLoaded", render);
 
-/* =========================
-   VIEW SWITCH
-========================= */
+/* ================= SWITCH ================= */
 
 function switchView(v) {
     currentView = v;
@@ -237,53 +227,64 @@ function render() {
     else renderSeries();
 }
 
-/* =========================
-   MOVIES (FULL RESTORED LOGIC)
-========================= */
+/* ================= MOVIES ================= */
 
 function renderMovies() {
     const app = document.getElementById("app");
     app.innerHTML = "";
 
-    const categories = [...new Set(movies.map(m => m.category))];
+    const cats = [...new Set(movies.map(m => m.category))];
 
-    categories.forEach(cat => {
+    cats.forEach(cat => {
 
-        let section = `<h2>${cat}</h2><div class="grid">`;
+        let html = `<h2>${cat}</h2>`;
 
         if (cat === "MovieSet") {
+
             const sets = [...new Set(movies.filter(m => m.set).map(m => m.set))];
 
-            sets.forEach(setName => {
-                let first = movies.find(m => m.set === setName);
+            html += `<div class="grid">`;
 
-                section += `
-                <div class="card" onclick="openSet('${setName}')">
+            sets.forEach(set => {
+                const first = movies.find(m => m.set === set);
+
+                html += `
+                <div class="card" onclick="openSet('${set}')">
                     <img src="${first.img}">
-                    <div class="title">${setName}</div>
+                    <div class="title">${set}</div>
                 </div>`;
             });
 
+            html += `</div>`;
+
         } else {
+
+            html += `<div class="grid">`;
+
             movies.filter(m => m.category === cat).forEach(m => {
-                section += `
+                html += `
                 <div class="card" onclick='playMovie(${JSON.stringify(m)})'>
                     <img src="${m.img}">
                     <div class="title">${m.title}</div>
                 </div>`;
             });
+
+            html += `</div>`;
         }
 
-        section += `</div>`;
-        app.innerHTML += section;
+        app.innerHTML += html;
     });
 }
 
-/* MOVIE SET (RESTORED) */
+/* SET PAGE FIXED */
 function openSet(name) {
     const app = document.getElementById("app");
 
-    app.innerHTML = `<button onclick="renderMovies()">⬅ Back</button><h2>${name}</h2><div class="grid">`;
+    app.innerHTML = `
+        <button onclick="renderMovies()">⬅ Back</button>
+        <h2>${name}</h2>
+        <div class="set-grid">
+    `;
 
     movies.filter(m => m.set === name).forEach(m => {
         app.innerHTML += `
@@ -296,12 +297,11 @@ function openSet(name) {
     app.innerHTML += `</div>`;
 }
 
-/* =========================
-   SERIES (UNCHANGED LOGIC STYLE)
-========================= */
+/* ================= SERIES ================= */
 
 function renderSeries() {
     const app = document.getElementById("app");
+
     let html = `<h2>Series</h2><div class="grid">`;
 
     seriesList.forEach(s => {
@@ -319,44 +319,58 @@ function renderSeries() {
 function openSeries(id) {
     let s = seriesList.find(x => x.id === id);
 
-    let html = `<button onclick="renderSeries()">⬅ Back</button><h2>${s.title}</h2><div class="grid">`;
+    let html = `
+    <button onclick="renderSeries()">⬅ Back</button>
+    <h2>${s.title}</h2>
+
+    Season:
+    <select onchange="changeSeason('${id}', this.value)">
+    `;
 
     s.seasons.forEach(se => {
-        for (let i = 1; i <= se.episodes; i++) {
-            html += `
-            <div class="card" onclick="playEpisode('${s.tmdb_id}', ${se.season}, ${i})">
-                <div class="title">S${se.season}E${i}</div>
-            </div>`;
-        }
+        html += `<option value="${se.season}">Season ${se.season}</option>`;
     });
 
-    html += `</div>`;
+    html += `</select><div id="episodes"></div>`;
+
     document.getElementById("app").innerHTML = html;
+
+    renderEpisodes(s, s.seasons[0].season);
 }
 
-/* =========================
-   PLAYER (UNCHANGED CORE)
-========================= */
+function changeSeason(id, season) {
+    let s = seriesList.find(x => x.id === id);
+    renderEpisodes(s, parseInt(season));
+}
+
+function renderEpisodes(s, season) {
+    let data = s.seasons.find(x => x.season == season);
+
+    let html = `<div class="grid">`;
+
+    for (let i = 1; i <= data.episodes; i++) {
+        html += `
+        <div class="card" onclick="playEpisode('${s.tmdb_id}', ${season}, ${i})">
+            <div class="title">E${i}</div>
+        </div>`;
+    }
+
+    html += `</div>`;
+
+    document.getElementById("episodes").innerHTML = html;
+}
+
+/* ================= PLAYER FIXED ================= */
 
 function playMovie(m) {
     const v = document.getElementById("videoPlayer");
     const f = document.getElementById("frame");
 
-    v.pause();
-    v.removeAttribute("src");
-    v.load();
-
-    f.src = "";
-    f.style.display = "none";
-    v.style.display = "none";
-
-    if (hlsInstance) {
-        hlsInstance.destroy();
-        hlsInstance = null;
-    }
+    stop();
 
     if (m.video) {
         v.style.display = "block";
+        f.style.display = "none";
 
         if (m.video.includes(".m3u8")) {
             if (Hls.isSupported()) {
@@ -367,29 +381,47 @@ function playMovie(m) {
         } else v.src = m.video;
 
         v.play().catch(()=>{});
+
     } else {
-        f.src = `https://www.2embed.cc/embed/${m.id}`;
         f.style.display = "block";
+        f.src = `https://www.2embed.cc/embed/${m.id}`;
     }
 
     document.getElementById("player").style.display = "flex";
 }
 
 function playEpisode(tmdb, s, e) {
-    document.getElementById("frame").style.display = "block";
-    document.getElementById("frame").src =
-        `https://www.2embed.cc/embedtv/${tmdb}&s=${s}&e=${e}`;
+    stop();
+
+    const f = document.getElementById("frame");
+    f.style.display = "block";
+    f.src = `https://www.2embed.cc/embedtv/${tmdb}&s=${s}&e=${e}`;
 
     document.getElementById("player").style.display = "flex";
 }
 
 function closePlayer() {
+    stop();
     document.getElementById("player").style.display = "none";
 }
 
-/* =========================
-   GLOBAL SEARCH (MOVIES + SERIES + SETS)
-========================= */
+function stop() {
+    const v = document.getElementById("videoPlayer");
+    const f = document.getElementById("frame");
+
+    v.pause();
+    v.removeAttribute("src");
+    v.load();
+
+    f.src = "";
+
+    if (hlsInstance) {
+        hlsInstance.destroy();
+        hlsInstance = null;
+    }
+}
+
+/* ================= SEARCH ================= */
 
 document.getElementById("search").addEventListener("input", function () {
     let val = this.value.toLowerCase();
@@ -398,12 +430,12 @@ document.getElementById("search").addEventListener("input", function () {
 
     const app = document.getElementById("app");
 
-    let movieRes = movies.filter(m => m.title.toLowerCase().includes(val));
-    let seriesRes = seriesList.filter(s => s.title.toLowerCase().includes(val));
+    let mv = movies.filter(m => m.title.toLowerCase().includes(val));
+    let sv = seriesList.filter(s => s.title.toLowerCase().includes(val));
 
     let html = `<h2>Search Results</h2><div class="grid">`;
 
-    movieRes.forEach(m => {
+    mv.forEach(m => {
         html += `
         <div class="card" onclick='playMovie(${JSON.stringify(m)})'>
             <img src="${m.img}">
@@ -411,7 +443,7 @@ document.getElementById("search").addEventListener("input", function () {
         </div>`;
     });
 
-    seriesRes.forEach(s => {
+    sv.forEach(s => {
         html += `
         <div class="card" onclick="openSeries('${s.id}')">
             <img src="${s.img}">
