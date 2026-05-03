@@ -2,7 +2,19 @@ let seriesList = [
     
     
 
-    
+    {
+        id: "stranger_things",
+        title: "Stranger Things",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+        tmdb_id: "66732",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 9 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 9 },
+            { season: 5, episodes: 9 }
+        ]
+    },
     
     {
         id: "breaking_bad",
