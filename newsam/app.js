@@ -1,7 +1,17 @@
 let seriesList = [
     
     
-
+{
+        id: "stranger_things_tales_from_85",
+        title: "Stranger Things: Tales from 85'",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
+        tmdb_id: "224263",
+        seasons: [
+            { season: 1, episodes: 10 }
+           
+        ]
+    },
+    
     {
         id: "stranger_things",
         title: "Stranger Things",
@@ -15,6 +25,22 @@ let seriesList = [
             { season: 5, episodes: 9 }
         ]
     },
+
+
+        {
+        id: "the_boys",
+        title: "The Boys",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
+        tmdb_id: "76479",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 8 },
+            { season: 5, episodes: 7 }
+        ]
+    },
+
     
     {
         id: "breaking_bad",
