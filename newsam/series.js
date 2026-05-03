@@ -1,17 +1,14 @@
 let seriesList = [
-    
-    
-{
+    {
         id: "stranger_things_tales_from_85",
         title: "Stranger Things: Tales from 85'",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
         tmdb_id: "224263",
         seasons: [
             { season: 1, episodes: 10 }
-           
         ]
     },
-    
+
     {
         id: "stranger_things",
         title: "Stranger Things",
@@ -26,8 +23,7 @@ let seriesList = [
         ]
     },
 
-
-        {
+    {
         id: "the_boys",
         title: "The Boys",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
@@ -41,8 +37,7 @@ let seriesList = [
         ]
     },
 
-
-      {
+    {
         id: "the_tudors",
         title: "The Tudors",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/7pdeNK1CUqj1yuG9VMDeynnq9xK.jpg",
@@ -55,8 +50,6 @@ let seriesList = [
         ]
     },
 
-    
-    
     {
         id: "breaking_bad",
         title: "Breaking Bad",
@@ -71,8 +64,8 @@ let seriesList = [
         ]
     },
 
-{
-        id: "house_of-the-dragon",
+    {
+        id: "house_of_the_dragon",
         title: "House of the Dragon",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
         tmdb_id: "94997",
@@ -82,7 +75,7 @@ let seriesList = [
             { season: 3, episodes: 0 }
         ]
     },
-    
+
     {
         id: "the_flash",
         title: "The Flash",
@@ -108,12 +101,12 @@ let seriesList = [
         tmdb_id: "82452",
         seasons: [
             { season: 1, episodes: 10 },
-            { season: 2, episodes: 7 }            
+            { season: 2, episodes: 7 }
         ]
     },
-    
+
     {
-        id: "Wednesday",
+        id: "wednesday",
         title: "Wednesday",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
         tmdb_id: "119051",
@@ -121,7 +114,6 @@ let seriesList = [
             { season: 1, episodes: 8 },
             { season: 2, episodes: 8 },
             { season: 3, episodes: 1 }
-            
         ]
     }
 ];
