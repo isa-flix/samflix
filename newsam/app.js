@@ -41,6 +41,21 @@ let seriesList = [
         ]
     },
 
+
+      {
+        id: "the_tudors",
+        title: "The Tudors",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/7pdeNK1CUqj1yuG9VMDeynnq9xK.jpg",
+        tmdb_id: "2942",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 10 }
+        ]
+    },
+
+    
     
     {
         id: "breaking_bad",
