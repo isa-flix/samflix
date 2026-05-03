@@ -1,25 +1,17 @@
-/* ---------------- CONFIG ---------------- */
-const API_KEY = "b824da48e49048e6783eb8e6b585c7d9";
-
-
-/* ---------------- MOVIES ---------------- */
-let moviesList = [
-    {
-        id: "inception",
-        title: "Inception",
-        img: "https://image.tmdb.org/t/p/w600_and_h900_face/qmDpIHrmpJINaRKAfWQfftjCdyi.jpg",
-        tmdb_id: "27205"
-    },
-    {
-        id: "john_wick",
-        title: "John Wick",
-        img: "https://image.tmdb.org/t/p/w600_and_h900_face/fZPSd91yGE9fCcCe6OoQr6E3Bev.jpg",
-        tmdb_id: "245891"
-    }
-];
-
-/* ---------------- SERIES ---------------- */
 let seriesList = [
+    
+    
+{
+        id: "stranger_things_tales_from_85",
+        title: "Stranger Things: Tales from 85'",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
+        tmdb_id: "224263",
+        seasons: [
+            { season: 1, episodes: 10 }
+           
+        ]
+    },
+    
     {
         id: "stranger_things",
         title: "Stranger Things",
@@ -29,9 +21,42 @@ let seriesList = [
             { season: 1, episodes: 8 },
             { season: 2, episodes: 9 },
             { season: 3, episodes: 8 },
-            { season: 4, episodes: 9 }
+            { season: 4, episodes: 9 },
+            { season: 5, episodes: 9 }
         ]
     },
+
+
+        {
+        id: "the_boys",
+        title: "The Boys",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
+        tmdb_id: "76479",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 8 },
+            { season: 5, episodes: 7 }
+        ]
+    },
+
+
+      {
+        id: "the_tudors",
+        title: "The Tudors",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/7pdeNK1CUqj1yuG9VMDeynnq9xK.jpg",
+        tmdb_id: "2942",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 10 }
+        ]
+    },
+
+    
+    
     {
         id: "breaking_bad",
         title: "Breaking Bad",
@@ -44,50 +69,66 @@ let seriesList = [
             { season: 4, episodes: 13 },
             { season: 5, episodes: 16 }
         ]
+    },
+
+{
+        id: "house_of-the-dragon",
+        title: "House of the Dragon",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
+        tmdb_id: "94997",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 0 }
+        ]
+    },
+    
+    {
+        id: "the_flash",
+        title: "The Flash",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
+        tmdb_id: "60735",
+        seasons: [
+            { season: 1, episodes: 23 },
+            { season: 2, episodes: 23 },
+            { season: 3, episodes: 23 },
+            { season: 4, episodes: 23 },
+            { season: 5, episodes: 22 },
+            { season: 6, episodes: 19 },
+            { season: 7, episodes: 18 },
+            { season: 8, episodes: 20 },
+            { season: 9, episodes: 13 }
+        ]
+    },
+
+    {
+        id: "avatar_the_last_airbender",
+        title: "Avatar: The Last Airbender",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg",
+        tmdb_id: "82452",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 7 }            
+        ]
+    },
+    
+    {
+        id: "Wednesday",
+        title: "Wednesday",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
+        tmdb_id: "119051",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 1 }
+            
+        ]
     }
 ];
 
 let current = {};
 
-/* ---------------- HOME ---------------- */
-function showHome() {
-    document.getElementById("app").innerHTML = `
-        <div class="home">
-            <button onclick="showMovies()">🎬 Movies</button>
-            <button onclick="showSeries()">📺 Series</button>
-        </div>
-    `;
-}
-
-/* ---------------- MOVIES ---------------- */
-function showMovies() {
-    let html = '<div class="grid">';
-    moviesList.forEach(m => {
-        html += `
-            <div class="card" onclick="playMovie('${m.id}')">
-                <img src="${m.img}">
-                <p>${m.title}</p>
-            </div>
-        `;
-    });
-    html += '</div>';
-    document.getElementById("app").innerHTML = html;
-}
-
-function playMovie(id) {
-    let m = moviesList.find(x => x.id === id);
-
-    document.getElementById("app").innerHTML = `
-        <button onclick="showMovies()">⬅ Back</button>
-        <h2>${m.title}</h2>
-
-        <div id="player">
-            <iframe src="https://www.2embed.cc/embed/${m.tmdb_id}" allowfullscreen></iframe>
-        </div>
-    `;
-}
-
-/* ---------------- SERIES ---------------- */
+/* HOME */
 function showSeries() {
     let html = '<div class="grid">';
     seriesList.forEach(s => {
@@ -99,9 +140,11 @@ function showSeries() {
         `;
     });
     html += '</div>';
+
     document.getElementById("app").innerHTML = html;
 }
 
+/* OPEN SERIES */
 function openSeries(id) {
     let s = seriesList.find(x => x.id === id);
 
@@ -114,8 +157,9 @@ function openSeries(id) {
         <button onclick="showSeries()">⬅ Back</button>
         <h2>${s.title}</h2>
 
-        Season:
-        <select onchange="changeSeason('${id}', this.value)">
+        <div class="controls">
+            Season:
+            <select onchange="changeSeason('${id}', this.value)">
     `;
 
     s.seasons.forEach(se => {
@@ -124,7 +168,7 @@ function openSeries(id) {
         </option>`;
     });
 
-    html += `</select>`;
+    html += `</select></div>`;
     html += `<div id="episodes"></div><div id="player"></div>`;
 
     document.getElementById("app").innerHTML = html;
@@ -133,15 +177,19 @@ function openSeries(id) {
     playEpisode(current.season, current.episode);
 }
 
+/* EPISODES */
 function renderEpisodes(s) {
     let seasonData = s.seasons.find(x => x.season == current.season);
 
     let html = `<div class="episode-grid">`;
 
     for (let ep = 1; ep <= seasonData.episodes; ep++) {
+        let thumb = `https://image.tmdb.org/t/p/w300/${s.tmdb_id}_S${current.season}_E${ep}.jpg`;
+
         html += `
             <div class="ep-btn ${ep == current.episode ? "active":""}"
-                onclick="playEpisode(${current.season}, ${ep})">
+            onclick="playEpisode(${current.season}, ${ep})">
+                <img src="${thumb}" onerror="this.style.display='none'">
                 S${current.season}E${ep}
             </div>
         `;
@@ -151,6 +199,7 @@ function renderEpisodes(s) {
     document.getElementById("episodes").innerHTML = html;
 }
 
+/* CHANGE SEASON */
 function changeSeason(id, season) {
     current.season = parseInt(season);
     current.episode = 1;
@@ -159,6 +208,7 @@ function changeSeason(id, season) {
     renderEpisodes(s);
 }
 
+/* PLAY EPISODE */
 function playEpisode(season, episode) {
     current.season = season;
     current.episode = episode;
@@ -179,4 +229,4 @@ function playEpisode(season, episode) {
 }
 
 /* INIT */
-showHome();
+showSeries();
