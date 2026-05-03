@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix merge</title>
+<title>SamFlix Unified</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
@@ -71,11 +71,12 @@ h2 {
 
 .set-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
     padding: 10px;
 }
 
+/* CARD */
 .card {
     cursor: pointer;
     position: relative;
@@ -99,6 +100,26 @@ h2 {
 
 .card:hover {
     transform: scale(1.05);
+}
+
+/* SERIES UI FIX */
+.season-box {
+    padding: 10px 15px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.season-box select {
+    padding: 6px;
+    background: #222;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#episodes {
+    margin-top: 10px;
 }
 
 /* PLAYER */
@@ -214,7 +235,7 @@ let hlsInstance = null;
 
 document.addEventListener("DOMContentLoaded", render);
 
-/* ================= SWITCH ================= */
+/* ================= VIEW SWITCH ================= */
 
 function switchView(v) {
     currentView = v;
@@ -276,13 +297,14 @@ function renderMovies() {
     });
 }
 
-/* SET PAGE FIXED */
+/* MOVIE SET FIXED */
 function openSet(name) {
     const app = document.getElementById("app");
 
     app.innerHTML = `
         <button onclick="renderMovies()">⬅ Back</button>
         <h2>${name}</h2>
+
         <div class="set-grid">
     `;
 
@@ -323,15 +345,21 @@ function openSeries(id) {
     <button onclick="renderSeries()">⬅ Back</button>
     <h2>${s.title}</h2>
 
-    Season:
-    <select onchange="changeSeason('${id}', this.value)">
+    <div class="season-box">
+        Season:
+        <select onchange="changeSeason('${id}', this.value)">
     `;
 
     s.seasons.forEach(se => {
         html += `<option value="${se.season}">Season ${se.season}</option>`;
     });
 
-    html += `</select><div id="episodes"></div>`;
+    html += `
+        </select>
+    </div>
+
+    <div id="episodes"></div>
+    `;
 
     document.getElementById("app").innerHTML = html;
 
@@ -362,15 +390,32 @@ function renderEpisodes(s, season) {
 
 /* ================= PLAYER FIXED ================= */
 
-function playMovie(m) {
+function stop() {
     const v = document.getElementById("videoPlayer");
     const f = document.getElementById("frame");
 
+    v.pause();
+    v.removeAttribute("src");
+    v.load();
+    v.style.display = "none";
+
+    f.src = "";
+    f.style.display = "none";
+
+    if (hlsInstance) {
+        hlsInstance.destroy();
+        hlsInstance = null;
+    }
+}
+
+function playMovie(m) {
     stop();
+
+    const v = document.getElementById("videoPlayer");
+    const f = document.getElementById("frame");
 
     if (m.video) {
         v.style.display = "block";
-        f.style.display = "none";
 
         if (m.video.includes(".m3u8")) {
             if (Hls.isSupported()) {
@@ -403,22 +448,6 @@ function playEpisode(tmdb, s, e) {
 function closePlayer() {
     stop();
     document.getElementById("player").style.display = "none";
-}
-
-function stop() {
-    const v = document.getElementById("videoPlayer");
-    const f = document.getElementById("frame");
-
-    v.pause();
-    v.removeAttribute("src");
-    v.load();
-
-    f.src = "";
-
-    if (hlsInstance) {
-        hlsInstance.destroy();
-        hlsInstance = null;
-    }
 }
 
 /* ================= SEARCH ================= */
@@ -456,5 +485,6 @@ document.getElementById("search").addEventListener("input", function () {
 });
 
 </script>
+
 </body>
 </html>
