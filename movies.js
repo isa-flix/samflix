@@ -5,7 +5,7 @@ let movies = [
     "title": "MP4 Test Video",
     "img": "live.png",
     "category": "Movies test",
-    "video": "https://mega.nz/file/9DggDbYK#2rJ_dsH7PJMSKcfnSsuRt6SXEQCVVvVeJJYSEoeYET0"
+    "video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4"
   },*/
   {
     "id": "001hls",
@@ -120,10 +120,11 @@ let movies = [
 	/* ---------------- Hindi ---------------- */
 	{ "id": "tt29540862", "title": "Bhooth Bangla 2026", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg", "category": "Indian Movies" },
 {
-		"id": "tt0063404",
-		"title": "Padosan 1968",
+		"id": "mp4",
+		"title": "Padosan",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
 		"category": "Indian Movies"
+		"video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4"
 	},
 
 	
