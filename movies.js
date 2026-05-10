@@ -121,7 +121,7 @@ let movies = [
 	{ "id": "tt29540862", "title": "Bhooth Bangla 2026", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg", "category": "Indian Movies" },
 {
 		"id": "tt0063404",
-		"title": "padosan",
+		"title": "Padosan 1968",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
 		"category": "Indian Movies"
 	},
