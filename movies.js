@@ -123,8 +123,9 @@ let movies = [
 		"id": "mp4",
 		"title": "Padosan",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
-		"category": "Indian Movies"
+	
 		"video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4",
+		"category": "Indian Movies"
 	},
 
 	
