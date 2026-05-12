@@ -122,7 +122,7 @@ let movies = [
 
 	/* ---------------- TV Friendly ---------------- */
 	{
-		"id": "mp4",
+		"id": "20622",
 		"title": "Padosan",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
 	
