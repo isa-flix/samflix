@@ -119,13 +119,15 @@ let movies = [
 	
 	/* ---------------- Hindi ---------------- */
 	{ "id": "tt29540862", "title": "Bhooth Bangla 2026", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg", "category": "Indian Movies" },
-{
+
+	/* ---------------- TV Friendly ---------------- */
+	{
 		"id": "mp4",
 		"title": "Padosan",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
 	
 		"video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4",
-		"category": "Indian Movies"
+		"category": "TV Friendly"
 	},
 
 	
