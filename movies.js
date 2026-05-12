@@ -126,6 +126,14 @@ let movies = [
 		"title": "Padosan",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
 	
+		"video": "https://ia601708.us.archive.org/9/items/ek-phool-char-kante-1960-hindi.-webrip.-480p.-x-264.-aac..-arabic.-esubs.-by.juleyano/Padosan%20%281968%29%20Hindi.WEB.DL.480p.Amazon.AVC.x264.AAC.Arabic.ESubs.BY.juleyano.ia.mp4",
+		"category": "TV Friendly"
+	},
+	{
+		"id": "20622",
+		"title": "Padosan",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
+	
 		"video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4",
 		"category": "TV Friendly"
 	},
