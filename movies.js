@@ -230,13 +230,13 @@ let movies = [
 	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 
 
-/* ---------------- Series ---------------- */
+/* ---------------- Dev Anand Movies ---------------- */
 {
 		"id": "20622",
-		"title": "Padosan",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
+		"title": "Funtoosh 1956",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gj77sHJPpArt7tw76Gl7WgRpLwR.jpg",
 	
-		"video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4",
+		"video": "https://dn710002.ca.archive.org/0/items/funtoosh-1956-hindi.-dv-drip.-480p.x-264.-aac.-ex-dt-by.juleyano/Funtoosh%20%281956%29%20Hindi.DvDrip.480p.x264.AAC.%5BExDT%5DBY.juleyano.mp4",
 		"category": "MovieSet",
 		"set": "Dev Anand"
 	},
