@@ -229,6 +229,29 @@ let movies = [
 	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 
+	/* ---------------- The Hunger Games ---------------- */
+
+	
+	{ "id": "9532", "title": "final_destination",
+	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg",
+	 		"category": "MovieSet", "set": "Final Destination" },
+	{ "id": "9358", "title": "final_destination_2",
+	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vnFgxRlLTA9fDNcGXLiHmgwmIEo.jpg",
+	 		"category": "MovieSet", "set": "Final Destination" },
+	{ "id": "9286", "title": "final_destination_3",
+	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/p7ARuNKUGPGvkBiDtIDvAzYzonX.jpg",
+	 		"category": "MovieSet", "set": "Final Destination" },
+	{ "id": "19912", "title": "final_destination_4", 
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5vxXrr1MqGsT4NNeRITpfDnl4Rq.jpg", 
+	 		"category": "MovieSet", "set": "Final Destination" },
+	{ "id": "55779", "title": "final_destination_5",
+	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/Akx1Po4ZLetOWfYJhQf75tbhTtK.jpg", 
+	 		"category": "MovieSet", "set": "Final Destination" },
+	{ "id": "574475", "title": "Final Destination: Bloodlines",
+	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg", 
+	 	"category": "MovieSet", "set": "Final Destination" },
+
+
 
 /* ---------------- Dev Anand Movies ---------------- */
 {
