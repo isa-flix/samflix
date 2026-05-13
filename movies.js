@@ -129,6 +129,23 @@ let movies = [
 		"video": "https://ia601708.us.archive.org/9/items/ek-phool-char-kante-1960-hindi.-webrip.-480p.-x-264.-aac..-arabic.-esubs.-by.juleyano/Padosan%20%281968%29%20Hindi.WEB.DL.480p.Amazon.AVC.x264.AAC.Arabic.ESubs.BY.juleyano.ia.mp4",
 		"category": "Indian Movies"
 	},
+/* ---------------- Dev Anand Movies ---------------- */
+{
+		"id": "326498",
+		"title": "Funtoosh 1956",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gj77sHJPpArt7tw76Gl7WgRpLwR.jpg",	
+		"video": "https://dn710002.ca.archive.org/0/items/funtoosh-1956-hindi.-dv-drip.-480p.x-264.-aac.-ex-dt-by.juleyano/Funtoosh%20%281956%29%20Hindi.DvDrip.480p.x264.AAC.%5BExDT%5DBY.juleyano.mp4",
+		"category": "Indian Movies"
+		
+	},
+{
+		"id": "80484",
+		"title": "Guide 1965",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4Ia8UFQno1eE5XqVDjjDiMdijhA.jpg",	
+		"video": "https://dn710002.ca.archive.org/0/items/funtoosh-1956-hindi.-dv-drip.-480p.x-264.-aac.-ex-dt-by.juleyano/Guide%20%281965%29%20Hindi.Shemarooo.DvDRip.480p.%20x264.AAC.ESubs.BY.juleyano.mp4",
+		"category": "Indian Movies"
+		
+	},
 	
 	
 	/* ---------------- Movie Sets ---------------- */
@@ -253,23 +270,6 @@ let movies = [
 
 
 
-/* ---------------- Dev Anand Movies ---------------- */
-{
-		"id": "326498",
-		"title": "Funtoosh 1956",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gj77sHJPpArt7tw76Gl7WgRpLwR.jpg",	
-		"video": "https://dn710002.ca.archive.org/0/items/funtoosh-1956-hindi.-dv-drip.-480p.x-264.-aac.-ex-dt-by.juleyano/Funtoosh%20%281956%29%20Hindi.DvDrip.480p.x264.AAC.%5BExDT%5DBY.juleyano.mp4",
-		"category": "MovieSet",
-		"set": "Dev Anand"
-	},
-{
-		"id": "80484",
-		"title": "Guide 1965",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4Ia8UFQno1eE5XqVDjjDiMdijhA.jpg",	
-		"video": "https://dn710002.ca.archive.org/0/items/funtoosh-1956-hindi.-dv-drip.-480p.x-264.-aac.-ex-dt-by.juleyano/Guide%20%281965%29%20Hindi.Shemarooo.DvDRip.480p.%20x264.AAC.ESubs.BY.juleyano.mp4",
-		"category": "MovieSet",
-		"set": "Dev Anand"
-	},
 
 		
 		/* ---------------- The Three Stooges ---------------- */
