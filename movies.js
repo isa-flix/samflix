@@ -271,12 +271,107 @@ let movies = [
 	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg", 
 	 	"category": "MovieSet", "set": "Final Destination" },
 
-
-
-
 		
-		/* ---------------- The Three Stooges ---------------- */
-/* ---------------- Season 01 1960 ---------------- */
+		/* ---------------- James Bond 007 ---------------- */
+{
+		"id": "646",
+		"title": "dr_no",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/f9HsemSsBEHN5eoMble1bj6fDxs.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "657",
+		"title": "from_russia_with_love",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/zx4V17FP8oclNvOpTgs2iCCtiYk.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "658",
+		"title": "goldfinger",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dSfUkFBIvjRNehHeK8dQKCY04yZ.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "660",
+		"title": "thunderball",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3TXQJXpURF16nM43Mdf1X3VZhBE.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "667",
+		"title": "you_only_live_twice",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/d4TsrvH9Rw5OG1xYcjdnDiHN4qm.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "668",
+		"title": "on-her-majesty-s-secret-service",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iLAp1ODaZ8lbBh0K8bldHkUHITx.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "681",
+		"title": "diamonds-are-forever",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ooDT0eKrWCxJCsn9JehPkD0QYNj.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "253",
+		"title": "Live and Let Die",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/39qkrjqMZs6utwNmihVImC3ghas.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "682",
+		"title": "The Man with the Golden Gun",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xVkbKwGnBVNQ122GN5bCTMyPbWz.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "691",
+		"title": "The Spy Who Loved Me",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mQD9XMe6Z6mrVzdf3Ca3fJSn5xz.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "698",
+		"title": "Moonraker",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6LrJdXNmu5uHOVALZxVYd44Lva0.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
+{
+		"id": "699",
+		"title": "For Your Eyes Only",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xV4Nnr6DjjERlqNikqDQX8LUgua.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+	
+	
+	
+	/* ---------------- Season 01 1960 ---------------- */
 
 	
 ];
