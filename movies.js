@@ -118,14 +118,17 @@ let movies = [
 
 	
 	/* ---------------- Hindi ---------------- */
-	{ "id": "tt29540862", "title": "Bhooth Bangla 2026", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg", "category": "Indian Movies" },
+	{
+		"id": "tt29540862", "title": "Bhooth Bangla 2026",
+	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg",
+	 	"category": "Indian Movies"
+	},
 
 	/* ---------------- TV Friendly ---------------- */
 	{
 		"id": "20622",
-		"title": "Padosan",
+		"title": "Padosan_1968",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b3saYvaYdzuXCEfIfNJiKaO58qO.jpg",
-	
 		"video": "https://ia601708.us.archive.org/9/items/ek-phool-char-kante-1960-hindi.-webrip.-480p.-x-264.-aac..-arabic.-esubs.-by.juleyano/Padosan%20%281968%29%20Hindi.WEB.DL.480p.Amazon.AVC.x264.AAC.Arabic.ESubs.BY.juleyano.ia.mp4",
 		"category": "Indian Movies"
 	},
@@ -246,7 +249,7 @@ let movies = [
 	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" },
 
-	/* ---------------- The Hunger Games ---------------- */
+	/* ---------------- Final Destination ---------------- */
 
 	
 	{ "id": "9532", "title": "final_destination",
