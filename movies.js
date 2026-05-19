@@ -313,6 +313,14 @@ let movies = [
 		"set": "James Bond",
 	},
 
+	{
+		"id": "12208",
+		"title": "Casino Royale 1967 (unofficial)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9wdw5H018bgIM8bK2HuDvh8BwOh.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+
 {
 		"id": "668",
 		"title": "on-her-majesty-s-secret-service",
@@ -425,9 +433,37 @@ let movies = [
 		"set": "James Bond",
 	},
 {
-		"id": "36669",
-		"title": "Die Another Day",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/i67gII3CoM4bpyTGuZb1TiRKUbZ.jpg",
+		"id": "36557",
+		"title": "Casino Royale 2006",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wmRTS3WrXRi8GJdpDae1NifYNwx.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+{
+		"id": "10764",
+		"title": "Quantum of Solace",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/e3DXXLJHGqMx9yYpXsql1XNljmM.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+{
+		"id": "37724",
+		"title": "Skyfall 2012",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/izrHg2UzxG3YXTBcKFaUbYp9LWA.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+{
+		"id": "206647",
+		"title": "Spectre 2015",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/672kUEMtTHcaVYSVY4eiHEliHFa.jpg",
+		"category": "MovieSet",
+		"set": "James Bond",
+	},
+{
+		"id": "370172",
+		"title": "No Time to Die",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
