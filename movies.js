@@ -275,7 +275,7 @@ let movies = [
 		/* ---------------- James Bond 007 ---------------- */
 {
 		"id": "646",
-		"title": "dr_no",
+		"title": "dr_no 1962",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/f9HsemSsBEHN5eoMble1bj6fDxs.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -283,7 +283,7 @@ let movies = [
 
 {
 		"id": "657",
-		"title": "from_russia_with_love",
+		"title": "from_russia_with_love 1963",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/zx4V17FP8oclNvOpTgs2iCCtiYk.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -291,7 +291,7 @@ let movies = [
 
 {
 		"id": "658",
-		"title": "goldfinger",
+		"title": "goldfinger 1964",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dSfUkFBIvjRNehHeK8dQKCY04yZ.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -299,7 +299,7 @@ let movies = [
 
 {
 		"id": "660",
-		"title": "thunderball",
+		"title": "thunderball 1964",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3TXQJXpURF16nM43Mdf1X3VZhBE.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -307,7 +307,7 @@ let movies = [
 
 {
 		"id": "667",
-		"title": "you_only_live_twice",
+		"title": "you_only_live_twice 1967",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/d4TsrvH9Rw5OG1xYcjdnDiHN4qm.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -323,7 +323,7 @@ let movies = [
 
 {
 		"id": "668",
-		"title": "on-her-majesty-s-secret-service",
+		"title": "on-her-majesty-s-secret-service 1969",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iLAp1ODaZ8lbBh0K8bldHkUHITx.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -331,7 +331,7 @@ let movies = [
 
 {
 		"id": "681",
-		"title": "diamonds-are-forever",
+		"title": "diamonds-are-forever 1971",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ooDT0eKrWCxJCsn9JehPkD0QYNj.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -339,7 +339,7 @@ let movies = [
 
 {
 		"id": "253",
-		"title": "Live and Let Die",
+		"title": "Live and Let Die 1973",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/39qkrjqMZs6utwNmihVImC3ghas.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -347,7 +347,7 @@ let movies = [
 
 {
 		"id": "682",
-		"title": "The Man with the Golden Gun",
+		"title": "The Man with the Golden Gun 1974",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xVkbKwGnBVNQ122GN5bCTMyPbWz.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -355,7 +355,7 @@ let movies = [
 
 {
 		"id": "691",
-		"title": "The Spy Who Loved Me",
+		"title": "The Spy Who Loved Me 1977",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mQD9XMe6Z6mrVzdf3Ca3fJSn5xz.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -363,7 +363,7 @@ let movies = [
 
 {
 		"id": "698",
-		"title": "Moonraker",
+		"title": "Moonraker 1979",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6LrJdXNmu5uHOVALZxVYd44Lva0.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -371,63 +371,63 @@ let movies = [
 
 {
 		"id": "699",
-		"title": "For Your Eyes Only",
+		"title": "For Your Eyes Only 1981",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xV4Nnr6DjjERlqNikqDQX8LUgua.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "700",
-		"title": "Octopussy",
+		"title": "Octopussy 1983",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yoosZitM9igSk3Sd0sBXIhKlAh1.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "707",
-		"title": "A view to a Kill",
+		"title": "A view to a Kill 1985",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/arJF829RP9cYvh0NU70dC5TtXSa.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "708",
-		"title": "The Living Daylights",
+		"title": "The Living Daylights 1987",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1oRlmWX9hewpn2B44wawBjHd7dx.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "709",
-		"title": "Licence to Kill",
+		"title": "Licence to Kill 1989",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8nzJve63EXA79HGAyidZwivZrQ2.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "710",
-		"title": "GoldenEye",
+		"title": "GoldenEye 1995",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/z0ljRnNxIO7CRBhLEO0DvLgAFPR.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "714",
-		"title": "Tomorrow Never Dies",
+		"title": "Tomorrow Never Dies 1997",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yEhv6K79FAvBj5zUAqYs9rRgvfO.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "36643",
-		"title": "The World Is Not Enough",
+		"title": "The World Is Not Enough 1999",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xv73kIAm5xba6cDh6tlK36GtdQ1.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
 	},
 {
 		"id": "36669",
-		"title": "Die Another Day",
+		"title": "Die Another Day 2002",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/i67gII3CoM4bpyTGuZb1TiRKUbZ.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -441,7 +441,7 @@ let movies = [
 	},
 {
 		"id": "10764",
-		"title": "Quantum of Solace",
+		"title": "Quantum of Solace 2008",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/e3DXXLJHGqMx9yYpXsql1XNljmM.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
@@ -462,7 +462,7 @@ let movies = [
 	},
 {
 		"id": "370172",
-		"title": "No Time to Die",
+		"title": "No Time to Die 2021",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
 		"category": "MovieSet",
 		"set": "James Bond",
