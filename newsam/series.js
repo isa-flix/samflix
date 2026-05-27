@@ -8,6 +8,18 @@ let seriesList = [
             { season: 1, episodes: 8 }
         ]
     },
+
+    {
+        id: "foundation",
+        title: "Foundation",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/tg9I5pOY4M9CKj8U0cxVBTsm5eh.jpg",
+        tmdb_id: "93740",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 }
+        ]
+    },
     {
         id: "stranger_things_tales_from_85",
         title: "Stranger Things: Tales from 85'",
