@@ -1,5 +1,14 @@
 let seriesList = [
     {
+        id: "spider_noir",
+        title: "Spider Noir'",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/oD8WSVqz84ZRfelkr7JPeJwR9Iv.jpg",
+        tmdb_id: "220102",
+        seasons: [
+            { season: 1, episodes: 8 }
+        ]
+    },
+    {
         id: "stranger_things_tales_from_85",
         title: "Stranger Things: Tales from 85'",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
