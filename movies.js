@@ -87,6 +87,12 @@ let movies = [
 	},
 /* ---------------- Movies ---------------- */
 	{
+		"id": "1116201",
+		"title": "Iron Lung 2026",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sIwakdbMGS1krtgendTWpxTY9Hw.jpg",
+		"category": "Movie"
+	},
+	{
 		"id": "tt13570066",
 		"title": "Desert Warrior",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sxn4XI0EPaF3IOagjRaQ3yxHHNS.jpg",
