@@ -176,6 +176,31 @@ let movies = [
 	
 	/* ---------------- Movie Sets ---------------- */
 
+/* ---------------- Tom And Jerry ---------------- */
+
+		{"id": "587807", "title": "Tom & Jerry 2021",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8XZI9QZ7Pm3fVkigWJPbrXCMzjq.jpg",
+	 "category": "MovieSet", "set": "Tom & Jerry"},
+		{"id": "1497970", "title": "Tom & Jerry: Forbidden Compass 2025",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fb91YKKxeG7kzB1oEicmvQICwC5.jpg",
+	 "category": "MovieSet", "set": "Tom & Jerry"},
+		{"id": "892153", "title": "Tom & Jerry: Cow Boy UP! 2022",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/muIaHotSaSUQr0KZCIJOYQEe7y2.jpg",
+	 "category": "MovieSet", "set": "Tom & Jerry"},
+	{"id": "22582", "title": "Tom & Jerry: The Movie 1993",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/rfxBsSLoB2caPAxsNhKVZyxZ6CB.jpg",
+	 "category": "MovieSet", "set": "Tom & Jerry"},
+	{"id": "42246", "title": "Tom & Jerry: The Fast and the Furry 2005",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7PeNpz4mDyRqDxMhC0g0FCpVwPB.jpg",
+	 "category": "MovieSet", "set": "Tom & Jerry"},
+{"id": "60293", "title": "Tom & Jerry: Shiver Me Whisker 2006",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b964RtitRMbUSwTnv4qdbRzUwug.jpg",
+	 "category": "MovieSet", "set": "Tom & Jerry"},
+{"id": "14787", "title": "Tom & Jerry: The Magic Ring 2002",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fF6I48WGKktHfGYYSVKPTVildWE.jpg",
+	 "category": "MovieSet", "set": "Tom & Jerry"},
+
+	
 	/* ---------------- Cars ---------------- */
 
 	{"id": "tt0317219", "title": "Cars 2006", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg", "category": "MovieSet", "set": "Cars"},
