@@ -58,6 +58,14 @@ let movies = [
 	/* ---------------- Cartoons ---------------- */
 	
 	{
+		"id": "539745",
+		"title": "Animal Farm",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6pzI1DIlxwAFffw9OZcG6cr031U.jpg",
+		"category": "Cartoons"
+
+	},
+	
+	{
 		"id": "tt0121164",
 		"title": "Corpse Bride",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
