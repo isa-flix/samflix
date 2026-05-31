@@ -56,10 +56,19 @@ let movies = [
 */
 
 	/* ---------------- Cartoons ---------------- */
+
+		{
+		"id": "1301421",
+		"title": "The Sheep Detectives 2026",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mGWOmj2jHFol3kOGNv1EhbSDDE1.jpg",
+		"category": "Cartoons"
+
+	},
+
 	
 	{
 		"id": "539745",
-		"title": "Animal Farm",
+		"title": "Animal Farm 2026",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6pzI1DIlxwAFffw9OZcG6cr031U.jpg",
 		"category": "Cartoons"
 
