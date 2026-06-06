@@ -104,6 +104,12 @@ let movies = [
 	},
 /* ---------------- Movies ---------------- */
 	{
+		"id": "454639",
+		"title": "Master of the Universe",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3YMd9Ogae4rDKLWuAZFuse9xhc5.jpg",
+		"category": "Movie"
+	},
+	{
 		"id": "1116201",
 		"title": "Iron Lung 2026",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sIwakdbMGS1krtgendTWpxTY9Hw.jpg",
