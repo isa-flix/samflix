@@ -124,7 +124,7 @@ let seriesList = [
         ]
     },
     {
-        id: "",
+        id: "game-of-thrones",
         title: "Game of Thrones",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijKEdinAQUfYNQTKfrhGnSdm5HQ.jpg",
         tmdb_id: "1399",
@@ -149,7 +149,7 @@ let seriesList = [
             { season: 0, episodes: 31 },
             { season: 1, episodes: 9 },
             { season: 2, episodes: 10 },
-            { season: 3, episodes: 10 }
+            { season: 3, episodes: 10 },
             { season: 4, episodes: 20 },
             { season: 5, episodes: 20 },
             { season: 6, episodes: 20 }
