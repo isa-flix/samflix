@@ -1,4 +1,18 @@
 let seriesList = [
+    
+    {
+        id: "silo",
+        title: "Silo",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/sFHqpRoGiwUkwhvwW93udP7ImFa.jpg",
+        tmdb_id: "125988",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 }            
+
+        ]
+    },
+    
     {
         id: "your-friends-and-neighbors",
         title: "Your Friends And Neighbors",
@@ -10,6 +24,7 @@ let seriesList = [
 
         ]
     },
+    
     {
         id: "spider_noir",
         title: "Spider Noir'",
@@ -102,12 +117,56 @@ let seriesList = [
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
         tmdb_id: "94997",
         seasons: [
+            { season: 0, episodes: 73 },
             { season: 1, episodes: 10 },
             { season: 2, episodes: 8 },
-            { season: 3, episodes: 0 }
+            { season: 3, episodes: 8 }
+        ]
+    },
+    {
+        id: "",
+        title: "Game of Thrones",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijKEdinAQUfYNQTKfrhGnSdm5HQ.jpg",
+        tmdb_id: "1399",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 },
+            { season: 4, episodes: 10 },
+            { season: 5, episodes: 10 },
+            { season: 6, episodes: 10 },
+            { season: 7, episodes: 7 },
+            { season: 8, episodes: 6 }
         ]
     },
 
+{
+        id: "vikings",
+        title: "Vikings",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
+        tmdb_id: "44217",
+        seasons: [
+            { season: 0, episodes: 31 },
+            { season: 1, episodes: 9 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 }
+            { season: 4, episodes: 20 },
+            { season: 5, episodes: 20 },
+            { season: 6, episodes: 20 }
+        ]
+    },
+{
+        id: "vikings-valhalla",
+        title: "Vikings Valhalla",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uCr7Ov7Rpzx0c0EPqbPcoEruTYl.jpg",
+        tmdb_id: "116135",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 }
+        ]
+    },
+    
     {
         id: "the_flash",
         title: "The Flash",
