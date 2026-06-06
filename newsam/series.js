@@ -1,5 +1,16 @@
 let seriesList = [
     {
+        id: "your-friends-and-neighbors",
+        title: "Your Friends And Neighbors",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lcp63INKEsVHUly9eayx7gEEOcG.jpg",
+        tmdb_id: "241609",
+        seasons: [
+            { season: 1, episodes: 9 },
+            { season: 2, episodes: 10 }
+
+        ]
+    },
+    {
         id: "spider_noir",
         title: "Spider Noir'",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/oD8WSVqz84ZRfelkr7JPeJwR9Iv.jpg",
