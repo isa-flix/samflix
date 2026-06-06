@@ -186,7 +186,7 @@ let seriesList = [
     },
 
     {
-        id: "avatar_the_last_airbender",
+        id: "avatar-the-last-airbender",
         title: "Avatar: The Last Airbender",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg",
         tmdb_id: "82452",
