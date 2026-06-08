@@ -83,7 +83,21 @@ let seriesList = [
             { season: 5, episodes: 7 }
         ]
     },
-
+  {
+        id: "prison-break",
+        title: "Prison Break",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg",
+        tmdb_id: "2288",
+        seasons: [
+            { season: 0, episodes: 10 },
+            { season: 1, episodes: 22 },
+            { season: 2, episodes: 22 },
+            { season: 3, episodes: 13 },
+            { season: 4, episodes: 22 },
+            { season: 5, episodes: 9 }
+            
+        ]
+    },
     {
         id: "the_tudors",
         title: "The Tudors",
