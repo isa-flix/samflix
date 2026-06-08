@@ -1,5 +1,28 @@
 let seriesList = [
     
+{
+        id: "the-munsters",
+        title: "The Munsters",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5yZqkRP79TXqeeedTuHMlF0TZn7.jpg",
+        tmdb_id: "1712",
+        seasons: [
+            { season: 1, episodes: 38 },
+            { season: 2, episodes: 32 }
+        ]
+    },
+{
+        id: "the-munsters-today",
+        title: "The Munsters Today",
+        img: "",
+        tmdb_id: "",
+        seasons: [
+            { season: 1, episodes: 25 },
+            { season: 2, episodes: 24 },
+            { season: 3, episodes: 24 }
+
+        ]
+    },
+
     {
         id: "silo",
         title: "Silo",
