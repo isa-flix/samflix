@@ -13,8 +13,8 @@ let seriesList = [
 {
         id: "the-munsters-today",
         title: "The Munsters Today",
-        img: "",
-        tmdb_id: "",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u1rQAFFmRDRgWOdqxv6VRXL5P0b.jpg",
+        tmdb_id: "11030",
         seasons: [
             { season: 1, episodes: 25 },
             { season: 2, episodes: 24 },
