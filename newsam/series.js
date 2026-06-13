@@ -1,15 +1,5 @@
 let seriesList = [
-
-    {
-        id: "chief-of-war",
-        title: "Chief Of War",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Mckh3qJRTzXTQNZtpb133RHmO4.jpg",
-        tmdb_id: "196890",
-        seasons: [
-            { season: 1, episodes: 9 }
-        ]
-    },
-    {
+{
         id: "tom-and-jerry-show",
         title: "Tom and Jerry Show 2014",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/41EWXLXTZO4MLb2BL28mWZuydyq.jpg",
@@ -33,7 +23,54 @@ let seriesList = [
         ]
     },
 
-{
+    {
+        id: "stranger_things_tales_from_85",
+        title: "Stranger Things: Tales from 85'",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
+        tmdb_id: "224263",
+        seasons: [
+            { season: 1, episodes: 10 }
+        ]
+    },
+
+    {
+        id: "stranger_things",
+        title: "Stranger Things",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+        tmdb_id: "66732",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 9 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 9 },
+            { season: 5, episodes: 9 }
+        ]
+    },
+    {
+        id: "stranger_things_tales_from_85",
+        title: "Stranger Things: Tales from 85'",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
+        tmdb_id: "224263",
+        seasons: [
+            { season: 1, episodes: 10 }
+        ]
+    },
+
+    {
+        id: "stranger_things",
+        title: "Stranger Things",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+        tmdb_id: "66732",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 9 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 9 },
+            { season: 5, episodes: 9 }
+        ]
+    },
+
+    {
         id: "the-munsters",
         title: "The Munsters",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5yZqkRP79TXqeeedTuHMlF0TZn7.jpg",
@@ -56,6 +93,16 @@ let seriesList = [
         ]
     },
 
+    {
+        id: "chief-of-war",
+        title: "Chief Of War",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Mckh3qJRTzXTQNZtpb133RHmO4.jpg",
+        tmdb_id: "196890",
+        seasons: [
+            { season: 1, episodes: 9 }
+        ]
+    },
+    
     {
         id: "silo",
         title: "Silo",
@@ -100,29 +147,6 @@ let seriesList = [
             { season: 1, episodes: 10 },
             { season: 2, episodes: 10 },
             { season: 3, episodes: 10 }
-        ]
-    },
-    {
-        id: "stranger_things_tales_from_85",
-        title: "Stranger Things: Tales from 85'",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
-        tmdb_id: "224263",
-        seasons: [
-            { season: 1, episodes: 10 }
-        ]
-    },
-
-    {
-        id: "stranger_things",
-        title: "Stranger Things",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
-        tmdb_id: "66732",
-        seasons: [
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 9 },
-            { season: 3, episodes: 8 },
-            { season: 4, episodes: 9 },
-            { season: 5, episodes: 9 }
         ]
     },
 
@@ -236,6 +260,35 @@ let seriesList = [
             { season: 3, episodes: 8 }
         ]
     },
+
+{
+        id: "the-witcher",
+        title: "The Witcher",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
+        tmdb_id: "71912",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 8 }
+        ]
+    },
+{
+        id: "the-100",
+        title: "The 100",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg",
+        tmdb_id: "48866",
+        seasons: [
+            { season: 1, episodes: 13 },
+            { season: 2, episodes: 16 },
+            { season: 3, episodes: 16 },
+            { season: 4, episodes: 13 },
+            { season: 5, episodes: 13 },
+            { season: 6, episodes: 13 },
+            { season: 7, episodes: 16 }
+        ]
+    },
+
     
     {
         id: "the_flash",
