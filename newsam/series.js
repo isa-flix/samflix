@@ -22,6 +22,16 @@ let seriesList = [
             { season: 5, episodes: 39 }
         ]
     },
+    {
+        id: "tom-and-jerry-tales",
+        title: "Tom and Jerry Tales 2006",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gthxkV1MHAwqsVNLIU93MDm3ApL.jpg",
+        tmdb_id: "676",
+        seasons: [
+            { season: 1, episodes: 39 },
+            { season: 2, episodes: 39 }
+        ]
+    },
 
 {
         id: "the-munsters",
