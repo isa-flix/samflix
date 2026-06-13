@@ -192,7 +192,7 @@ let seriesList = [
     },
 
     {
-        id: "breaking_bad",
+        id: "breaking-bad",
         title: "Breaking Bad",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
         tmdb_id: "1396",
@@ -202,6 +202,20 @@ let seriesList = [
             { season: 3, episodes: 13 },
             { season: 4, episodes: 13 },
             { season: 5, episodes: 16 }
+        ]
+    },
+        {
+        id: "better-call-saul",
+        title: "Better Call Saul",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+        tmdb_id: "60059",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 },
+            { season: 4, episodes: 10 },
+            { season: 5, episodes: 10 },
+            { season: 6, episodes: 13 }
         ]
     },
 
