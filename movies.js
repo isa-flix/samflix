@@ -206,6 +206,21 @@ let movies = [
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fF6I48WGKktHfGYYSVKPTVildWE.jpg",
 	 "category": "MovieSet", "set": "Tom & Jerry"},
 
+
+	/* ---------------- The Hunger Games ---------------- */
+
+	
+
+		{ "id": "557", "title": "spider-man", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kjdJntyBeEvqm9w97QGBdxPptzj.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "558", "title": "spider-man-2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/myvj6Slsv3wWtDKKS2IOmbqBTCa.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "559", "title": "spider-man-3", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "1930", "title": "the-amazing-spder-man", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3zbb5XD0hEA8IpAcUmv1J9Rej3B.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "102382", "title": "the-amazing-spder-man 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/op0a1oqtQgmbkfzGgwnMIOk8QzC.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "315635", "title": "spider-man-homecoming", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wFNNv1ZHglNdXJLYiEgpLY5sa9S.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "429617", "title": "spider-man-far-from-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8QwrFOKh7rhWPa0XaXrowMcyAio.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "634649", "title": "spider-man-no-way-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "969681", "title": "spider-man-brand-new-day", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yyB2VJEW3an2xCdcYCPQhn9QERR.jpg", "category": "MovieSet", "set": "Spider Man" },
+		
 	
 	/* ---------------- Cars ---------------- */
 
