@@ -9,6 +9,19 @@ let seriesList = [
             { season: 1, episodes: 9 }
         ]
     },
+    {
+        id: "tom-and-jerry-show",
+        title: "Tom and Jerry Show 2014",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/41EWXLXTZO4MLb2BL28mWZuydyq.jpg",
+        tmdb_id: "47480",
+        seasons: [
+            { season: 1, episodes: 52 },
+            { season: 2, episodes: 78 },
+            { season: 3, episodes: 78 },
+            { season: 4, episodes: 78 },
+            { season: 5, episodes: 39 }
+        ]
+    },
 
 {
         id: "the-munsters",
