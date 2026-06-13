@@ -145,7 +145,7 @@ let seriesList = [
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg",
         tmdb_id: "2288",
         seasons: [
-            { season: 0, episodes: 10 },
+      
             { season: 1, episodes: 22 },
             { season: 2, episodes: 22 },
             { season: 3, episodes: 13 },
