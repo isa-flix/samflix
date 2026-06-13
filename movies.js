@@ -207,9 +207,8 @@ let movies = [
 	 "category": "MovieSet", "set": "Tom & Jerry"},
 
 
-	/* ---------------- The Hunger Games ---------------- */
+	/* ---------------- Spider Man ---------------- */
 
-	
 
 		{ "id": "557", "title": "spider-man", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kjdJntyBeEvqm9w97QGBdxPptzj.jpg", "category": "MovieSet", "set": "Spider Man" },
 		{ "id": "558", "title": "spider-man-2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/myvj6Slsv3wWtDKKS2IOmbqBTCa.jpg", "category": "MovieSet", "set": "Spider Man" },
@@ -220,7 +219,23 @@ let movies = [
 		{ "id": "429617", "title": "spider-man-far-from-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8QwrFOKh7rhWPa0XaXrowMcyAio.jpg", "category": "MovieSet", "set": "Spider Man" },
 		{ "id": "634649", "title": "spider-man-no-way-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg", "category": "MovieSet", "set": "Spider Man" },
 		{ "id": "969681", "title": "spider-man-brand-new-day", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yyB2VJEW3an2xCdcYCPQhn9QERR.jpg", "category": "MovieSet", "set": "Spider Man" },
+
+		/* ---------------- Fast and Furious ---------------- */
+
+
+		{ "id": "9799", "title": "The Fast and the Furious (2001)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gqY0ITBgT7A82poL9jv851qdnIb.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "584", "title": "2 Fast 2 Furious (2003)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6nDZExrDKIXvSAghsFKVFRVJuSf.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "9615", "title": "The Fast and the Furious: Tokyo Drift (2006)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/46xqGOwHbh2TH2avWSw3SMXph4E.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "13804", "title": "Fast & Furious (2009)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/lUtVoRukW7WNtUySwd8hWlByBds.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "51497", "title": "Fast Five (2011)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gEfQjjQwY7fh5bI4GlG0RrBu7Pz.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "82992", "title": "Fast & Furious 6 (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/thSmnRdrzPBBospIOJjLZBReqzo.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "337339", "title": "The Fate of the Furious (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dImWM7GJqryWJO9LHa3XQ8DD5NH.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "384018", "title": "Fast & Furious Presents: Hobbs & Shaw (2019)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "385128", "title": "F9 (2021)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/deEmLILTPejEb6OGsXRJ5MCvyDW.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "385687", "title": "Fast X (2023)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fiVW06jE7z9YnO4trhaMEdclSiC.jpg", "category": "MovieSet", "set": "Fast and Furious" },
 		
+
+
 	
 	/* ---------------- Cars ---------------- */
 
