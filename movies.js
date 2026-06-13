@@ -206,6 +206,15 @@ let movies = [
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fF6I48WGKktHfGYYSVKPTVildWE.jpg",
 	 "category": "MovieSet", "set": "Tom & Jerry"},
 
+	/* ---------------- The Smurfs ---------------- */
+
+
+		{ "id": "41513", "title": "The Smurfs (2011)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vRhnslP2gW0QDym7BsMeSuioUfK.jpg", "category": "MovieSet", "set": "The Smurfs" },
+		{ "id": "77931", "title": "The Smurfs 2 (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tmjvgbEH4BKYFfHmWXjXrHgi8wT.jpg", "category": "MovieSet", "set": "The Smurfs" },
+		{ "id": "137116", "title": "Smurfs: The Lost Village (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/swt9crREg1UcKgg3wGWfoFNlXOz.jpg", "category": "MovieSet", "set": "The Smurfs" },
+		{ "id": "936108", "title": "Smurfs (2025)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8o6lkhL32xQJeB52IIG1us5BVey.jpg", "category": "MovieSet", "set": "The Smurfs" },
+		{ "id": "220845", "title": "The Smurfs: The Legend of Smurfy Hollow (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AgFkdZawIUFY20rLRX9ejQtn0q2.jpg", "category": "MovieSet", "set": "The Smurfs" },
+	
 
 	/* ---------------- Spider Man ---------------- */
 
