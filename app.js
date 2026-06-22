@@ -1,5 +1,3 @@
-
-
 let hlsInstance = null;
 
 /* ---------------- INIT ---------------- */
@@ -19,6 +17,7 @@ function displayAll() {
     const categories = [...new Set(movies.map(m => m.category))];
 
     categories.forEach(cat => {
+
         const section = document.createElement("div");
         section.innerHTML = `<h2>${cat}</h2>`;
 
@@ -26,6 +25,7 @@ function displayAll() {
         grid.className = "grid";
 
         if (cat === "MovieSet") {
+
             const sets = [...new Set(
                 movies
                     .filter(m => m.category === "MovieSet")
@@ -33,17 +33,24 @@ function displayAll() {
             )];
 
             sets.forEach(setName => {
-                const firstMovie = movies.find(m => m.set === setName);
 
-                const card = createCard(firstMovie, () => openSet(setName));
-                grid.appendChild(card);
+                const firstMovie = movies.find(
+                    m => m.category === "MovieSet" && m.set === setName
+                );
+
+                if (firstMovie) {
+                    grid.appendChild(
+                        createCard(firstMovie, () => openSet(setName))
+                    );
+                }
             });
 
         } else {
+
             movies
                 .filter(m => m.category === cat)
-                .forEach(m => {
-                    grid.appendChild(createCard(m));
+                .forEach(movie => {
+                    grid.appendChild(createCard(movie));
                 });
         }
 
@@ -56,6 +63,7 @@ function displayAll() {
 /* ---------------- OPEN SET ---------------- */
 
 function openSet(setName) {
+
     const container = document.getElementById("mainContainer");
 
     container.innerHTML = `
@@ -68,8 +76,8 @@ function openSet(setName) {
 
     movies
         .filter(m => m.set === setName)
-        .forEach(m => {
-            grid.appendChild(createCard(m));
+        .forEach(movie => {
+            grid.appendChild(createCard(movie));
         });
 
     container.appendChild(grid);
@@ -79,6 +87,7 @@ function openSet(setName) {
 /* ---------------- CARD ---------------- */
 
 function createCard(movie, customClick) {
+
     const div = document.createElement("div");
     div.className = "movie";
 
@@ -87,83 +96,118 @@ function createCard(movie, customClick) {
         <div class="title">${movie.title || "No Title"}</div>
     `;
 
-    // ✅ FIX: allow override click (MovieSet)
     div.onclick = customClick || (() => playMovie(movie));
 
     return div;
 }
 
 
+/* ---------------- PROVIDER ---------------- */
+
+function getEmbedUrl(movie) {
+
+    // TMDB movie id stored in movie.id
+    return `https://vidsrc.xyz/embed/movie/${movie.id}`;
+}
+
+
 /* ---------------- PLAYER ---------------- */
 
 function playMovie(movie) {
+
+    const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
-    const player = document.getElementById("player");
 
-    // reset video
-    video.pause();
-    video.removeAttribute("src");
-    video.load();
+    // cleanup old player
+    cleanupPlayer();
 
-    // reset iframe
-    frame.src = "";
-    frame.style.display = "none";
-    video.style.display = "none";
-
-    // destroy HLS
-    if (hlsInstance) {
-        hlsInstance.destroy();
-        hlsInstance = null;
-    }
-
+    // VIDEO FILE
     if (movie.video) {
 
         video.style.display = "block";
+        frame.style.display = "none";
 
         // MP4
-        if (movie.video.endsWith(".mp4")) {
+        if (movie.video.includes(".mp4")) {
+
             video.src = movie.video;
+
             video.play().catch(() => {});
+
         }
 
         // HLS
-        else if (movie.video.endsWith(".m3u8")) {
+        else if (
+            movie.video.includes(".m3u8") ||
+            movie.video.endsWith(".m3u8")
+        ) {
+
             if (window.Hls && Hls.isSupported()) {
+
                 hlsInstance = new Hls();
+
                 hlsInstance.loadSource(movie.video);
                 hlsInstance.attachMedia(video);
+
+                hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
+                    video.play().catch(() => {});
+                });
+
             } else {
+
                 video.src = movie.video;
                 video.play().catch(() => {});
             }
         }
 
-    } else if (movie.id) {
-        frame.src = `https://www.2embed.cc/embed/${movie.id}`;
+        // Fallback
+        else {
+
+            video.src = movie.video;
+            video.play().catch(() => {});
+        }
+    }
+
+    // TMDB EMBED
+    else if (movie.id) {
+
+        video.style.display = "none";
         frame.style.display = "block";
+
+        frame.src = getEmbedUrl(movie);
     }
 
     player.style.display = "flex";
 }
 
 
-/* ---------------- CLOSE PLAYER ---------------- */
+/* ---------------- CLEANUP ---------------- */
 
-function closePlayer() {
+function cleanupPlayer() {
+
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
-
-    video.pause();
-    video.removeAttribute("src");
-    video.load();
-
-    frame.src = "";
 
     if (hlsInstance) {
         hlsInstance.destroy();
         hlsInstance = null;
     }
+
+    video.pause();
+
+    video.removeAttribute("src");
+    video.load();
+
+    frame.src = "";
+}
+
+
+/* ---------------- CLOSE PLAYER ---------------- */
+
+function closePlayer() {
+
+    cleanupPlayer();
 
     document.getElementById("player").style.display = "none";
 }
@@ -172,19 +216,16 @@ function closePlayer() {
 /* ---------------- SEARCH ---------------- */
 
 document.getElementById("search").addEventListener("input", function () {
-    const val = this.value.toLowerCase().trim();
-    const container = document.getElementById("mainContainer");
 
-    container.innerHTML = "";
+    const search = this.value.toLowerCase().trim();
 
-    if (!val) {
+    if (!search) {
         displayAll();
         return;
     }
 
-    const filtered = movies.filter(m =>
-        (m.title || "").toLowerCase().includes(val)
-    );
+    const container = document.getElementById("mainContainer");
+    container.innerHTML = "";
 
     const title = document.createElement("h2");
     title.textContent = "Search Results";
@@ -193,9 +234,15 @@ document.getElementById("search").addEventListener("input", function () {
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    filtered.forEach(m => {
-        grid.appendChild(createCard(m));
-    });
+    movies
+        .filter(movie =>
+            (movie.title || "")
+                .toLowerCase()
+                .includes(search)
+        )
+        .forEach(movie => {
+            grid.appendChild(createCard(movie));
+        });
 
     container.appendChild(grid);
 });
