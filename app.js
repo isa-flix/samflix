@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     displayAll();
 });
 
-
 /* ---------------- DISPLAY ALL ---------------- */
 
 function displayAll() {
@@ -17,7 +16,6 @@ function displayAll() {
     const categories = [...new Set(movies.map(m => m.category))];
 
     categories.forEach(cat => {
-
         const section = document.createElement("div");
         section.innerHTML = `<h2>${cat}</h2>`;
 
@@ -25,7 +23,6 @@ function displayAll() {
         grid.className = "grid";
 
         if (cat === "MovieSet") {
-
             const sets = [...new Set(
                 movies
                     .filter(m => m.category === "MovieSet")
@@ -33,24 +30,16 @@ function displayAll() {
             )];
 
             sets.forEach(setName => {
-
-                const firstMovie = movies.find(
-                    m => m.category === "MovieSet" && m.set === setName
-                );
-
-                if (firstMovie) {
-                    grid.appendChild(
-                        createCard(firstMovie, () => openSet(setName))
-                    );
-                }
+                const firstMovie = movies.find(m => m.set === setName);
+                const card = createCard(firstMovie, () => openSet(setName));
+                grid.appendChild(card);
             });
 
         } else {
-
             movies
                 .filter(m => m.category === cat)
-                .forEach(movie => {
-                    grid.appendChild(createCard(movie));
+                .forEach(m => {
+                    grid.appendChild(createCard(m));
                 });
         }
 
@@ -59,13 +48,10 @@ function displayAll() {
     });
 }
 
-
 /* ---------------- OPEN SET ---------------- */
 
 function openSet(setName) {
-
     const container = document.getElementById("mainContainer");
-
     container.innerHTML = `
         <h2>${setName}</h2>
         <button onclick="displayAll()">⬅ Back</button>
@@ -76,18 +62,16 @@ function openSet(setName) {
 
     movies
         .filter(m => m.set === setName)
-        .forEach(movie => {
-            grid.appendChild(createCard(movie));
+        .forEach(m => {
+            grid.appendChild(createCard(m));
         });
 
     container.appendChild(grid);
 }
 
-
 /* ---------------- CARD ---------------- */
 
 function createCard(movie, customClick) {
-
     const div = document.createElement("div");
     div.className = "movie";
 
@@ -96,136 +80,100 @@ function createCard(movie, customClick) {
         <div class="title">${movie.title || "No Title"}</div>
     `;
 
+    // allow override click (MovieSet)
     div.onclick = customClick || (() => playMovie(movie));
 
     return div;
 }
 
-
-/* ---------------- PROVIDER ---------------- */
-
-function getEmbedUrl(movies) {
-
-    // TMDB movie id stored in movie.id
-    return `https://vidlink.pro/embed/movie/${movies.id}`;
-}
-
-
 /* ---------------- PLAYER ---------------- */
 
 function playMovie(movie) {
-
-    const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
+    const player = document.getElementById("player");
 
-    // cleanup old player
-    cleanupPlayer();
+    // reset video
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
 
-    // VIDEO FILE
-    if (movies.video) {
+    // reset iframe
+    frame.src = "";
+    frame.style.display = "none";
+    video.style.display = "none";
 
+    // destroy HLS if exists
+    if (hlsInstance) {
+        hlsInstance.destroy();
+        hlsInstance = null;
+    }
+
+    if (movie.video) {
         video.style.display = "block";
-        frame.style.display = "none";
 
         // MP4
-        if (movies.video.includes(".mp4")) {
-
-            video.src = movies.video;
-
+        if (movie.video.endsWith(".mp4")) {
+            video.src = movie.video;
             video.play().catch(() => {});
-
         }
 
         // HLS
-        else if (
-            movies.video.includes(".m3u8") ||
-            movies.video.endsWith(".m3u8")
-        ) {
-
+        else if (movie.video.endsWith(".m3u8")) {
             if (window.Hls && Hls.isSupported()) {
-
                 hlsInstance = new Hls();
-
                 hlsInstance.loadSource(movie.video);
                 hlsInstance.attachMedia(video);
-
-                hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
-                    video.play().catch(() => {});
-                });
-
             } else {
-
-                video.src = movies.video;
+                video.src = movie.video;
                 video.play().catch(() => {});
             }
         }
-
-        // Fallback
-        else {
-
-            video.src = movies.video;
-            video.play().catch(() => {});
-        }
-    }
-
-    // TMDB EMBED
-    else if (movies.id) {
-
-        video.style.display = "none";
+    } 
+    else if (movie.id) {
+        frame.src = `https://www.vidlink.pro/movie/${movie.id}`;
         frame.style.display = "block";
-
-        frame.src = getEmbedUrl(movies);
     }
 
     player.style.display = "flex";
 }
 
+/* ---------------- CLOSE PLAYER ---------------- */
 
-/* ---------------- CLEANUP ---------------- */
-
-function cleanupPlayer() {
-
+function closePlayer() {
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
+
+    video.pause();
+    video.removeAttribute("src");
+    video.load();
+
+    frame.src = "";
 
     if (hlsInstance) {
         hlsInstance.destroy();
         hlsInstance = null;
     }
 
-    video.pause();
-
-    video.removeAttribute("src");
-    video.load();
-
-    frame.src = "";
-}
-
-
-/* ---------------- CLOSE PLAYER ---------------- */
-
-function closePlayer() {
-
-    cleanupPlayer();
-
     document.getElementById("player").style.display = "none";
 }
-
 
 /* ---------------- SEARCH ---------------- */
 
 document.getElementById("search").addEventListener("input", function () {
+    const val = this.value.toLowerCase().trim();
+    const container = document.getElementById("mainContainer");
 
-    const search = this.value.toLowerCase().trim();
+    container.innerHTML = "";
 
-    if (!search) {
+    if (!val) {
         displayAll();
         return;
     }
 
-    const container = document.getElementById("mainContainer");
-    container.innerHTML = "";
+    const filtered = movies.filter(m =>
+        (m.title || "").toLowerCase().includes(val)
+    );
 
     const title = document.createElement("h2");
     title.textContent = "Search Results";
@@ -234,15 +182,9 @@ document.getElementById("search").addEventListener("input", function () {
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    movies
-        .filter(movies =>
-            (movies.title || "")
-                .toLowerCase()
-                .includes(search)
-        )
-        .forEach(movie => {
-            grid.appendChild(createCard(movie));
-        });
+    filtered.forEach(m => {
+        grid.appendChild(createCard(m));
+    });
 
     container.appendChild(grid);
 });
