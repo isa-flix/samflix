@@ -104,10 +104,10 @@ function createCard(movie, customClick) {
 
 /* ---------------- PROVIDER ---------------- */
 
-function getEmbedUrl(movie) {
+function getEmbedUrl(movies) {
 
     // TMDB movie id stored in movie.id
-    return `https://vidsrc.xyz/embed/movie/${movie.id}`;
+    return `https://vidlink.pro/embed/movie/${movies.id}`;
 }
 
 
@@ -123,15 +123,15 @@ function playMovie(movie) {
     cleanupPlayer();
 
     // VIDEO FILE
-    if (movie.video) {
+    if (movies.video) {
 
         video.style.display = "block";
         frame.style.display = "none";
 
         // MP4
-        if (movie.video.includes(".mp4")) {
+        if (movies.video.includes(".mp4")) {
 
-            video.src = movie.video;
+            video.src = movies.video;
 
             video.play().catch(() => {});
 
@@ -139,8 +139,8 @@ function playMovie(movie) {
 
         // HLS
         else if (
-            movie.video.includes(".m3u8") ||
-            movie.video.endsWith(".m3u8")
+            movies.video.includes(".m3u8") ||
+            movies.video.endsWith(".m3u8")
         ) {
 
             if (window.Hls && Hls.isSupported()) {
@@ -156,7 +156,7 @@ function playMovie(movie) {
 
             } else {
 
-                video.src = movie.video;
+                video.src = movies.video;
                 video.play().catch(() => {});
             }
         }
@@ -164,18 +164,18 @@ function playMovie(movie) {
         // Fallback
         else {
 
-            video.src = movie.video;
+            video.src = movies.video;
             video.play().catch(() => {});
         }
     }
 
     // TMDB EMBED
-    else if (movie.id) {
+    else if (movies.id) {
 
         video.style.display = "none";
         frame.style.display = "block";
 
-        frame.src = getEmbedUrl(movie);
+        frame.src = getEmbedUrl(movies);
     }
 
     player.style.display = "flex";
@@ -235,8 +235,8 @@ document.getElementById("search").addEventListener("input", function () {
     grid.className = "grid";
 
     movies
-        .filter(movie =>
-            (movie.title || "")
+        .filter(movies =>
+            (movies.title || "")
                 .toLowerCase()
                 .includes(search)
         )
