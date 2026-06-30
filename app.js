@@ -12,7 +12,6 @@ const providers = [
     id => `https://vidsrc.vip/embed/movie?tmdb=${id}`,
     id => `https://vidlink.pro/movie/${id}`,
     id => `https://multiembed.mov/?video_id=${id}`,
-    id => `https://movie-web.app/embed/${id}`,
     id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.vip/embed/movie?tmdb=${id}`,
