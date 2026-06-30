@@ -1,13 +1,9 @@
-/* ---------------- GLOBAL ---------------- */
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #141414;
     color: white;
 }
-
-/* ---------------- NAVBAR ---------------- */
 
 .navbar {
     display: flex;
@@ -26,8 +22,6 @@ body {
     font-weight: bold;
 }
 
-/* ---------------- SEARCH ---------------- */
-
 .search-box input {
     padding: 8px 12px;
     border-radius: 5px;
@@ -37,13 +31,9 @@ body {
     color: white;
 }
 
-/* ---------------- HEADINGS ---------------- */
-
 h2 {
     margin: 20px 10px 10px;
 }
-
-/* ---------------- MOVIE GRID ---------------- */
 
 .grid {
     display: grid;
@@ -77,9 +67,8 @@ h2 {
     transform: scale(1.08);
 }
 
-/* ---------------- PLAYER ---------------- */
-
-.player {
+/* PLAYER OVERLAY */
+#player {
     position: fixed;
     inset: 0;
     background: black;
@@ -89,7 +78,7 @@ h2 {
     z-index: 9999;
 }
 
-/* Video + iframe inside player */
+/* Video + iframe */
 video, iframe {
     width: 90%;
     height: 90%;
@@ -97,8 +86,7 @@ video, iframe {
     border-radius: 10px;
 }
 
-/* ---------------- CLOSE BUTTON ---------------- */
-
+/* CLOSE BUTTON */
 #closeBtn {
     position: absolute;
     top: 15px;
@@ -116,8 +104,6 @@ video, iframe {
 #closeBtn:hover {
     background: rgba(255,0,0,0.7);
 }
-
-/* ---------------- MOBILE ---------------- */
 
 @media (max-width:600px){
     .grid { gap: 8px; }
