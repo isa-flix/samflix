@@ -3,7 +3,6 @@ let hlsInstance = null;
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
-
     id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
     id => `https://multiembed.mov/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
@@ -13,7 +12,6 @@ const providers = [
     id => `https://smashystream.com/play/movie/${id}`,
     id => `https://vidsrc.pro/embed/movie/${id}`,
     id => `https://www.2embed.cc/embed/${id}`,
-    
     
 ];
 
@@ -156,8 +154,9 @@ function playMovie(movie) {
     resetPlayer(video, frame);
 
     closeBtn.style.display = "block";
-
     player.style.display = "flex";
+
+    // Loading animation
     player.innerHTML = `
         <button id="closeBtn" onclick="closePlayer()">✖</button>
         <div style="
@@ -166,11 +165,12 @@ function playMovie(movie) {
             display:flex;
             align-items:center;
             justify-content:center;
+            flex-direction:column;
             background:#000;
             color:white;
-            font-size:18px;
         ">
-            Loading player...
+            <div class="loader"></div>
+            <div style="margin-top:15px; opacity:0.7;">Loading...</div>
         </div>
     `;
 
@@ -194,72 +194,7 @@ function loadWithFallback(id, frame, index) {
     const closeBtn = document.getElementById("closeBtn");
 
     if (index >= providers.length) {
-        player.innerHTML = `
-            <button id="closeBtn" onclick="closePlayer()">✖</button>
-            <div style="
-                width:100%;
-                height:100%;
-                display:flex;
-                flex-direction:column;
-                align-items:center;
-                justify-content:center;
-                background:#0d0d0d;
-                color:white;
-                text-align:center;
-                padding:20px;
-            ">
-                <div style="
-                    font-size:60px;
-                    animation:pulse 1.5s infinite;
-                ">⚠️</div>
-
-                <h2 style="margin-top:10px;">All Providers Failed</h2>
-
-                <p style="max-width:400px; opacity:0.8; margin-top:10px;">
-                    We couldn’t load this movie from any streaming provider.
-                </p>
-
-                <button onclick="retryMovie('${id}')" style="
-                    margin-top:20px;
-                    padding:12px 25px;
-                    background:#ff4444;
-                    border:none;
-                    border-radius:6px;
-                    color:white;
-                    font-size:16px;
-                    cursor:pointer;
-                ">🔄 Retry</button>
-
-                <div style="margin-top:25px; opacity:0.7;">Try a provider manually:</div>
-
-                <div style="
-                    margin-top:10px;
-                    display:flex;
-                    gap:10px;
-                    flex-wrap:wrap;
-                    justify-content:center;
-                ">
-                    ${providers.map((p, i) => `
-                        <button onclick="manualProvider('${id}', ${i})" style="
-                            padding:8px 15px;
-                            background:#222;
-                            border:1px solid #444;
-                            border-radius:5px;
-                            color:white;
-                            cursor:pointer;
-                        ">Provider ${i+1}</button>
-                    `).join("")}
-                </div>
-            </div>
-
-            <style>
-                @keyframes pulse {
-                    0% { transform:scale(1); opacity:1; }
-                    50% { transform:scale(1.2); opacity:0.6; }
-                    100% { transform:scale(1); opacity:1; }
-                }
-            </style>
-        `;
+        showErrorScreen(id);
         return;
     }
 
@@ -278,11 +213,71 @@ function loadWithFallback(id, frame, index) {
     }, 2000);
 }
 
-/* ---------------- RETRY & MANUAL PROVIDER ---------------- */
+/* ---------------- ERROR SCREEN ---------------- */
+
+function showErrorScreen(id) {
+    const player = document.getElementById("player");
+
+    player.innerHTML = `
+        <button id="closeBtn" onclick="closePlayer()">✖</button>
+        <div style="
+            width:100%;
+            height:100%;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            background:#0d0d0d;
+            color:white;
+            text-align:center;
+            padding:20px;
+        ">
+            <div style="font-size:60px; animation:pulse 1.5s infinite;">⚠️</div>
+            <h2 style="margin-top:10px;">All Providers Failed</h2>
+            <p style="max-width:400px; opacity:0.8; margin-top:10px;">
+                We couldn’t load this movie from any streaming provider.
+            </p>
+
+            <button onclick="retryMovie('${id}')" style="
+                margin-top:20px;
+                padding:12px 25px;
+                background:#ff4444;
+                border:none;
+                border-radius:6px;
+                color:white;
+                font-size:16px;
+                cursor:pointer;
+            ">🔄 Retry</button>
+
+            <div style="margin-top:25px; opacity:0.7;">Try a provider manually:</div>
+
+            <div style="
+                margin-top:10px;
+                display:flex;
+                gap:10px;
+                flex-wrap:wrap;
+                justify-content:center;
+            ">
+                ${providers.map((p, i) => `
+                    <button onclick="manualProvider('${id}', ${i})" style="
+                        padding:8px 15px;
+                        background:#222;
+                        border:1px solid #444;
+                        border-radius:5px;
+                        color:white;
+                        cursor:pointer;
+                    ">Provider ${i+1}</button>
+                `).join("")}
+            </div>
+        </div>
+    `;
+}
+
+/* ---------------- RETRY ---------------- */
 
 function retryMovie(id) {
-    const frame = document.getElementById("frame");
     const player = document.getElementById("player");
+    const frame = document.getElementById("frame");
 
     player.innerHTML = `
         <button id="closeBtn" onclick="closePlayer()">✖</button>
@@ -292,11 +287,12 @@ function retryMovie(id) {
             display:flex;
             align-items:center;
             justify-content:center;
+            flex-direction:column;
             background:#000;
             color:white;
-            font-size:20px;
         ">
-            Retrying...
+            <div class="loader"></div>
+            <div style="margin-top:15px; opacity:0.7;">Retrying...</div>
         </div>
     `;
 
@@ -307,6 +303,8 @@ function retryMovie(id) {
         loadWithFallback(id, frame, fastestProviderIndex);
     }, 800);
 }
+
+/* ---------------- MANUAL PROVIDER ---------------- */
 
 function manualProvider(id, index) {
     const frame = document.getElementById("frame");
@@ -371,7 +369,13 @@ function closePlayer() {
     resetPlayer(video, frame);
 
     player.style.display = "none";
+
+    // Restore original structure
     player.innerHTML = "";
+    player.appendChild(closeBtn);
+    player.appendChild(video);
+    player.appendChild(frame);
+
     closeBtn.style.display = "none";
 }
 
