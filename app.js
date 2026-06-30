@@ -131,7 +131,7 @@ function playMovie(movie) {
         }
     } 
     else if (movie.id) {
-        frame.src = `https://www.vidlink.pro/movie/${movie.id}`;
+        frame.src = `https://vidsrc.me/movie/${movie.id}`;
         frame.style.display = "block";
     }
 
