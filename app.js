@@ -10,7 +10,7 @@ const providers = [
     id => `https://vidsrc.to/embed/movie?tmdb=${id}`,
     id => `https://autoembed.to/movie/tmdb/${id}`,
     id => `https://smashystream.com/play/movie/${id}`,
-    id => `https://vidsrc.pro/embed/movie/${id}`
+    id => `https://vidsrc.pro/embed/movie/${id}`,
     id => `https://www.2embed.cc/embed/${id}`,
 ];
 
