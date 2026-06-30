@@ -4,6 +4,7 @@ let hlsInstance = null;
 
 const providers = [
     id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
+    id => `https://multiembed.mov/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.cc/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.to/embed/movie?tmdb=${id}`,
