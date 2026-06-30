@@ -3,9 +3,8 @@ let hlsInstance = null;
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
+
     id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
-    id => `https://multiembed.mov/?video_id=${id}`,
-    id => `https://movie-web.app/embed/${id}`,
     id => `https://multiembed.mov/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.cc/embed/movie?tmdb=${id}`,
@@ -14,6 +13,8 @@ const providers = [
     id => `https://smashystream.com/play/movie/${id}`,
     id => `https://vidsrc.pro/embed/movie/${id}`,
     id => `https://www.2embed.cc/embed/${id}`,
+    
+    
 ];
 
 let fastestProviderIndex = 0;
@@ -29,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* ---------------- AUTO-DETECT FASTEST PROVIDER ---------------- */
 
 function detectFastestProvider() {
-    const testId = 550; // sample TMDB id
+    const testId = 550; // Fight Club
     let results = new Array(providers.length).fill(Infinity);
     let completed = 0;
 
@@ -42,8 +43,7 @@ function detectFastestProvider() {
         iframe.style.display = "none";
 
         iframe.onload = () => {
-            const time = performance.now() - start;
-            results[index] = time;
+            results[index] = performance.now() - start;
             completed++;
             checkDone();
         };
@@ -61,7 +61,6 @@ function detectFastestProvider() {
                 const min = Math.min(...results);
                 fastestProviderIndex = results.indexOf(min);
                 if (min === Infinity) fastestProviderIndex = 0;
-                console.log("Fastest provider index:", fastestProviderIndex);
                 cleanup();
             }
         }
@@ -152,11 +151,15 @@ function playMovie(movie) {
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
     const player = document.getElementById("player");
+    const closeBtn = document.getElementById("closeBtn");
 
     resetPlayer(video, frame);
 
+    closeBtn.style.display = "block";
+
     player.style.display = "flex";
     player.innerHTML = `
+        <button id="closeBtn" onclick="closePlayer()">✖</button>
         <div style="
             width:100%;
             height:100%;
@@ -173,10 +176,12 @@ function playMovie(movie) {
 
     if (movie.video) {
         player.innerHTML = "";
-        player.appendChild(video.parentElement || video);
+        player.appendChild(closeBtn);
+        player.appendChild(video);
         playVideo(movie.video, video);
     } else if (movie.id) {
         player.innerHTML = "";
+        player.appendChild(closeBtn);
         player.appendChild(frame);
         loadWithFallback(movie.id, frame, fastestProviderIndex);
     }
@@ -186,9 +191,11 @@ function playMovie(movie) {
 
 function loadWithFallback(id, frame, index) {
     const player = document.getElementById("player");
+    const closeBtn = document.getElementById("closeBtn");
 
     if (index >= providers.length) {
         player.innerHTML = `
+            <button id="closeBtn" onclick="closePlayer()">✖</button>
             <div style="
                 width:100%;
                 height:100%;
@@ -210,7 +217,6 @@ function loadWithFallback(id, frame, index) {
 
                 <p style="max-width:400px; opacity:0.8; margin-top:10px;">
                     We couldn’t load this movie from any streaming provider.
-                    This usually happens when servers are down or blocked.
                 </p>
 
                 <button onclick="retryMovie('${id}')" style="
@@ -261,15 +267,12 @@ function loadWithFallback(id, frame, index) {
     frame.src = url;
     frame.style.display = "block";
 
-    // simple check after delay
     setTimeout(() => {
         try {
             if (!frame.contentWindow || frame.contentWindow.length === 0) {
-                console.warn(`Provider failed: ${url}`);
                 loadWithFallback(id, frame, index + 1);
             }
         } catch (e) {
-            console.warn(`Provider likely blocked (cross-origin): ${url}`);
             loadWithFallback(id, frame, index + 1);
         }
     }, 2000);
@@ -282,6 +285,7 @@ function retryMovie(id) {
     const player = document.getElementById("player");
 
     player.innerHTML = `
+        <button id="closeBtn" onclick="closePlayer()">✖</button>
         <div style="
             width:100%;
             height:100%;
@@ -298,6 +302,7 @@ function retryMovie(id) {
 
     setTimeout(() => {
         player.innerHTML = "";
+        player.appendChild(document.getElementById("closeBtn"));
         player.appendChild(frame);
         loadWithFallback(id, frame, fastestProviderIndex);
     }, 800);
@@ -308,6 +313,7 @@ function manualProvider(id, index) {
     const player = document.getElementById("player");
 
     player.innerHTML = "";
+    player.appendChild(document.getElementById("closeBtn"));
     player.appendChild(frame);
 
     frame.src = providers[index](id);
@@ -360,10 +366,13 @@ function closePlayer() {
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
     const player = document.getElementById("player");
+    const closeBtn = document.getElementById("closeBtn");
 
     resetPlayer(video, frame);
+
     player.style.display = "none";
     player.innerHTML = "";
+    closeBtn.style.display = "none";
 }
 
 /* ---------------- SEARCH ---------------- */
