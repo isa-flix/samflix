@@ -3,9 +3,70 @@ let hlsInstance = null;
 /* ---------------- INIT ---------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
-    movies = movies.filter(m => m.disabled !== true);
+    movies = movies.filter(m => !m.disabled);
+    detectFastestProvider();
     displayAll();
 });
+
+/* ---------------- PROVIDERS ---------------- */
+
+const providers = [
+    id => `https://vidsrc.to/embed/movie?tmdb=${id}`,
+    id => `https://www.2embed.cc/embed/${id}`,
+    id => `https://autoembed.to/movie/tmdb/${id}`,
+    id => `https://smashystream.com/play/movie/${id}`,
+    id => `https://vidsrc.pro/embed/movie/${id}`
+];
+
+let fastestProviderIndex = 0;
+
+/* ---------------- AUTO-DETECT FASTEST PROVIDER ---------------- */
+
+function detectFastestProvider() {
+    const testId = 550; // TMDB ID for "Fight Club" (safe test movie)
+    const testFrame = document.createElement("iframe");
+
+    let results = [];
+    let completed = 0;
+
+    providers.forEach((providerFn, index) => {
+        const url = providerFn(testId);
+        const start = performance.now();
+
+        const iframe = document.createElement("iframe");
+        iframe.src = url;
+        iframe.style.display = "none";
+
+        iframe.onload = () => {
+            const time = performance.now() - start;
+            results[index] = time;
+            completed++;
+            checkDone();
+        };
+
+        iframe.onerror = () => {
+            results[index] = Infinity;
+            completed++;
+            checkDone();
+        };
+
+        document.body.appendChild(iframe);
+
+        function checkDone() {
+            if (completed === providers.length) {
+                fastestProviderIndex = results.indexOf(Math.min(...results));
+                console.log("Fastest provider:", fastestProviderIndex);
+                cleanup();
+            }
+        }
+
+        function cleanup() {
+            document.querySelectorAll("iframe").forEach(f => {
+                if (f !== document.getElementById("frame")) f.remove();
+            });
+        }
+    });
+}
 
 /* ---------------- DISPLAY ALL ---------------- */
 
@@ -24,9 +85,7 @@ function displayAll() {
 
         if (cat === "MovieSet") {
             const sets = [...new Set(
-                movies
-                    .filter(m => m.category === "MovieSet")
-                    .map(m => m.set)
+                movies.filter(m => m.category === "MovieSet").map(m => m.set)
             )];
 
             sets.forEach(setName => {
@@ -38,9 +97,7 @@ function displayAll() {
         } else {
             movies
                 .filter(m => m.category === cat)
-                .forEach(m => {
-                    grid.appendChild(createCard(m));
-                });
+                .forEach(m => grid.appendChild(createCard(m)));
         }
 
         section.appendChild(grid);
@@ -62,9 +119,7 @@ function openSet(setName) {
 
     movies
         .filter(m => m.set === setName)
-        .forEach(m => {
-            grid.appendChild(createCard(m));
-        });
+        .forEach(m => grid.appendChild(createCard(m)));
 
     container.appendChild(grid);
 }
@@ -80,7 +135,6 @@ function createCard(movie, customClick) {
         <div class="title">${movie.title || "No Title"}</div>
     `;
 
-    // allow override click (MovieSet)
     div.onclick = customClick || (() => playMovie(movie));
 
     return div;
@@ -93,49 +147,77 @@ function playMovie(movie) {
     const frame = document.getElementById("frame");
     const player = document.getElementById("player");
 
-    // reset video
+    resetPlayer(video, frame);
+
+    if (movie.video) {
+        playVideo(movie.video, video);
+    } else if (movie.id) {
+        loadWithFallback(movie.id, frame, fastestProviderIndex);
+    }
+
+    player.style.display = "flex";
+}
+
+/* ---------------- FALLBACK SYSTEM ---------------- */
+
+function loadWithFallback(id, frame, index) {
+    if (index >= providers.length) {
+        frame.style.display = "block";
+        frame.src = "";
+        frame.innerHTML = "<p>❌ No provider available</p>";
+        return;
+    }
+
+    const url = providers[index](id);
+    frame.src = url;
+    frame.style.display = "block";
+
+    setTimeout(() => {
+        if (!frame.contentWindow || frame.contentWindow.length === 0) {
+            console.warn(`Provider failed: ${url}`);
+            loadWithFallback(id, frame, index + 1);
+        }
+    }, 2000);
+}
+
+/* ---------------- RESET PLAYER ---------------- */
+
+function resetPlayer(video, frame) {
     video.pause();
     video.removeAttribute("src");
     video.load();
 
-    // reset iframe
     frame.src = "";
     frame.style.display = "none";
     video.style.display = "none";
 
-    // destroy HLS if exists
     if (hlsInstance) {
         hlsInstance.destroy();
         hlsInstance = null;
     }
+}
 
-    if (movie.video) {
-        video.style.display = "block";
+/* ---------------- PLAY VIDEO ---------------- */
 
-        // MP4
-        if (movie.video.endsWith(".mp4")) {
-            video.src = movie.video;
-            video.play().catch(() => {});
-        }
+function playVideo(url, video) {
+    video.style.display = "block";
 
-        // HLS
-        else if (movie.video.endsWith(".m3u8")) {
-            if (window.Hls && Hls.isSupported()) {
-                hlsInstance = new Hls();
-                hlsInstance.loadSource(movie.video);
-                hlsInstance.attachMedia(video);
-            } else {
-                video.src = movie.video;
-                video.play().catch(() => {});
-            }
-        }
-    } 
-    else if (movie.id) {
-        frame.src = `https://vidsrc.me/movie/${movie.id}`;
-        frame.style.display = "block";
+    if (url.endsWith(".mp4")) {
+        video.src = url;
+        video.play().catch(() => {});
+        return;
     }
 
-    player.style.display = "flex";
+    if (url.endsWith(".m3u8")) {
+        if (window.Hls && Hls.isSupported()) {
+            hlsInstance = new Hls();
+            hlsInstance.loadSource(url);
+            hlsInstance.attachMedia(video);
+        } else {
+            video.src = url;
+            video.play().catch(() => {});
+        }
+    }
 }
 
 /* ---------------- CLOSE PLAYER ---------------- */
@@ -144,16 +226,7 @@ function closePlayer() {
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
 
-    video.pause();
-    video.removeAttribute("src");
-    video.load();
-
-    frame.src = "";
-
-    if (hlsInstance) {
-        hlsInstance.destroy();
-        hlsInstance = null;
-    }
+    resetPlayer(video, frame);
 
     document.getElementById("player").style.display = "none";
 }
@@ -182,9 +255,7 @@ document.getElementById("search").addEventListener("input", function () {
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    filtered.forEach(m => {
-        grid.appendChild(createCard(m));
-    });
+    filtered.forEach(m => grid.appendChild(createCard(m)));
 
     container.appendChild(grid);
 });
