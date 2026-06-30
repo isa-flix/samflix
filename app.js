@@ -22,6 +22,7 @@ const providers = [
     id => `https://smashystream.com/play/movie/${id}`,
     id => `https://vidsrc.pro/movie/${id}`,
     id => `https://www.2embed.cc/embed/${id}`,
+
     
 ];
 
