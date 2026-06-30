@@ -1,13 +1,5 @@
 let hlsInstance = null;
 
-/* ---------------- INIT ---------------- */
-
-document.addEventListener("DOMContentLoaded", () => {
-    movies = movies.filter(m => !m.disabled);
-    detectFastestProvider();
-    displayAll();
-});
-
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
@@ -20,13 +12,19 @@ const providers = [
 
 let fastestProviderIndex = 0;
 
+/* ---------------- INIT ---------------- */
+
+document.addEventListener("DOMContentLoaded", () => {
+    movies = movies.filter(m => !m.disabled);
+    detectFastestProvider();
+    displayAll();
+});
+
 /* ---------------- AUTO-DETECT FASTEST PROVIDER ---------------- */
 
 function detectFastestProvider() {
-    const testId = 550; // TMDB ID for "Fight Club" (safe test movie)
-    const testFrame = document.createElement("iframe");
-
-    let results = [];
+    const testId = 550; // sample TMDB id
+    let results = new Array(providers.length).fill(Infinity);
     let completed = 0;
 
     providers.forEach((providerFn, index) => {
@@ -54,15 +52,17 @@ function detectFastestProvider() {
 
         function checkDone() {
             if (completed === providers.length) {
-                fastestProviderIndex = results.indexOf(Math.min(...results));
-                console.log("Fastest provider:", fastestProviderIndex);
+                const min = Math.min(...results);
+                fastestProviderIndex = results.indexOf(min);
+                if (min === Infinity) fastestProviderIndex = 0;
+                console.log("Fastest provider index:", fastestProviderIndex);
                 cleanup();
             }
         }
 
         function cleanup() {
             document.querySelectorAll("iframe").forEach(f => {
-                if (f !== document.getElementById("frame")) f.remove();
+                if (f.id !== "frame") f.remove();
             });
         }
     });
@@ -149,22 +149,105 @@ function playMovie(movie) {
 
     resetPlayer(video, frame);
 
+    player.style.display = "flex";
+    player.innerHTML = `
+        <div style="
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#000;
+            color:white;
+            font-size:18px;
+        ">
+            Loading player...
+        </div>
+    `;
+
     if (movie.video) {
+        player.innerHTML = "";
+        player.appendChild(video.parentElement || video);
         playVideo(movie.video, video);
     } else if (movie.id) {
+        player.innerHTML = "";
+        player.appendChild(frame);
         loadWithFallback(movie.id, frame, fastestProviderIndex);
     }
-
-    player.style.display = "flex";
 }
 
 /* ---------------- FALLBACK SYSTEM ---------------- */
 
 function loadWithFallback(id, frame, index) {
+    const player = document.getElementById("player");
+
     if (index >= providers.length) {
-        frame.style.display = "block";
-        frame.src = "";
-        frame.innerHTML = "<p>❌ No provider available</p>";
+        player.innerHTML = `
+            <div style="
+                width:100%;
+                height:100%;
+                display:flex;
+                flex-direction:column;
+                align-items:center;
+                justify-content:center;
+                background:#0d0d0d;
+                color:white;
+                text-align:center;
+                padding:20px;
+            ">
+                <div style="
+                    font-size:60px;
+                    animation:pulse 1.5s infinite;
+                ">⚠️</div>
+
+                <h2 style="margin-top:10px;">All Providers Failed</h2>
+
+                <p style="max-width:400px; opacity:0.8; margin-top:10px;">
+                    We couldn’t load this movie from any streaming provider.
+                    This usually happens when servers are down or blocked.
+                </p>
+
+                <button onclick="retryMovie('${id}')" style="
+                    margin-top:20px;
+                    padding:12px 25px;
+                    background:#ff4444;
+                    border:none;
+                    border-radius:6px;
+                    color:white;
+                    font-size:16px;
+                    cursor:pointer;
+                ">🔄 Retry</button>
+
+                <div style="margin-top:25px; opacity:0.7;">Try a provider manually:</div>
+
+                <div style="
+                    margin-top:10px;
+                    display:flex;
+                    gap:10px;
+                    flex-wrap:wrap;
+                    justify-content:center;
+                ">
+                    ${providers.map((p, i) => `
+                        <button onclick="manualProvider('${id}', ${i})" style="
+                            padding:8px 15px;
+                            background:#222;
+                            border:1px solid #444;
+                            border-radius:5px;
+                            color:white;
+                            cursor:pointer;
+                        ">Provider ${i+1}</button>
+                    `).join("")}
+                </div>
+            </div>
+
+            <style>
+                @keyframes pulse {
+                    0% { transform:scale(1); opacity:1; }
+                    50% { transform:scale(1.2); opacity:0.6; }
+                    100% { transform:scale(1); opacity:1; }
+                }
+            </style>
+        `;
         return;
     }
 
@@ -172,12 +255,57 @@ function loadWithFallback(id, frame, index) {
     frame.src = url;
     frame.style.display = "block";
 
+    // simple check after delay
     setTimeout(() => {
-        if (!frame.contentWindow || frame.contentWindow.length === 0) {
-            console.warn(`Provider failed: ${url}`);
+        try {
+            if (!frame.contentWindow || frame.contentWindow.length === 0) {
+                console.warn(`Provider failed: ${url}`);
+                loadWithFallback(id, frame, index + 1);
+            }
+        } catch (e) {
+            console.warn(`Provider likely blocked (cross-origin): ${url}`);
             loadWithFallback(id, frame, index + 1);
         }
     }, 2000);
+}
+
+/* ---------------- RETRY & MANUAL PROVIDER ---------------- */
+
+function retryMovie(id) {
+    const frame = document.getElementById("frame");
+    const player = document.getElementById("player");
+
+    player.innerHTML = `
+        <div style="
+            width:100%;
+            height:100%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#000;
+            color:white;
+            font-size:20px;
+        ">
+            Retrying...
+        </div>
+    `;
+
+    setTimeout(() => {
+        player.innerHTML = "";
+        player.appendChild(frame);
+        loadWithFallback(id, frame, fastestProviderIndex);
+    }, 800);
+}
+
+function manualProvider(id, index) {
+    const frame = document.getElementById("frame");
+    const player = document.getElementById("player");
+
+    player.innerHTML = "";
+    player.appendChild(frame);
+
+    frame.src = providers[index](id);
+    frame.style.display = "block";
 }
 
 /* ---------------- RESET PLAYER ---------------- */
@@ -225,10 +353,11 @@ function playVideo(url, video) {
 function closePlayer() {
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
+    const player = document.getElementById("player");
 
     resetPlayer(video, frame);
-
-    document.getElementById("player").style.display = "none";
+    player.style.display = "none";
+    player.innerHTML = "";
 }
 
 /* ---------------- SEARCH ---------------- */
