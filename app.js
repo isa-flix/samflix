@@ -3,28 +3,25 @@ let hlsInstance = null;
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
-    id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.me/movie?tmdb=${id}`,
-    id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}`,
-    id => `https://multiembed.mov/movie?tmdb=${id}`,
-    id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.vip/embed/movie?tmdb=${id}`,
-    id => `https://vidlink.pro/movie/${id}`,
-    id => `https://multiembed.mov/?video_id=${id}`,
-    id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.vip/embed/movie?tmdb=${id}`,
-    id => `https://superembed.stream/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.cc/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.cc/embed/movie?tmdb=${id}`,
-    id => `https://vidsrc.to/embed/movie?tmdb=${id}`,
-    id => `https://autoembed.to/movie/tmdb/${id}`,
-    id => `https://smashystream.com/play/movie/${id}`,
-    id => `https://vidsrc.pro/movie/${id}`,
-    id => `https://www.2embed.cc/embed/${id}`,
-
+     { name: "1 Vidsrc-emded ru", url: id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}` },
+     { name: "2 Vidsrc-emded su ", url: id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}` },
+    { name: "3 Vidsrc.me", url: id => `https://vidsrc.me/movie?tmdb=${id}` },
+    { name: "4 multiembed", url: id => `https://multiembed.mov/movie?tmdb=${id}` },
+    { name: "5 Vidsrc.me/embed", url:  id => `https://vidsrc.me/embed/movie?tmdb=${id}` },
+    { name: "6 Vidsrc.vip", url: id => `https://vidsrc.vip/embed/movie?tmdb=${id}`, },
+    { name: "7", url: id => `https://vidlink.pro/movie/${id}`, },
+    { name: "8", url: id => `https://multiembed.mov/?video_id=${id}`, },
+    { name: "9", url:  id => `https://vidsrc.me/embed/movie?tmdb=${id}` },
+    { name: "10", url: id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`  },
+    { name: "11", url: id => `https://vidsrc.vip/embed/movie?tmdb=${id}`  },
+    { name: "12", url: id => `https://superembed.stream/embed/movie?tmdb=${id}`  },
+    { name: "13", url: id => `https://vidsrc.cc/embed/movie?tmdb=${id}`,  },
+    { name: "14", url: id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`  },
+    { name: "15", url: id => `https://vidsrc.cc/embed/movie?tmdb=${id}`  },
+{ name: "16", url:  id => `https://vidsrc.to/embed/movie?tmdb=${id}`  },
+{ name: "17", url: id => `https://smashystream.com/play/movie/${id}`  },
+{ name: "18", url: id => `https://www.2embed.cc/embed/${id}`  },
+{ name: "19", url: id => `https://vidsrc.pro/movie/${id}`  },
     
 ];
 
@@ -57,6 +54,8 @@ function detectFastestProvider() {
             results[index] = performance.now() - start;
             completed++;
             checkDone();
+console.log("Fastest provider detected:", providers[fastestProviderIndex].name);
+
         };
 
         iframe.onerror = () => {
@@ -211,7 +210,9 @@ function loadWithFallback(id, frame, index) {
         return;
     }
 
-    const url = providers[index](id);
+    
+    const url = providers[index].url(id);
+console.log("Streaming from provider:", providers[index].name);
     frame.src = url;
     frame.style.display = "block";
 
@@ -320,6 +321,7 @@ function retryMovie(id) {
 /* ---------------- MANUAL PROVIDER ---------------- */
 
 function manualProvider(id, index) {
+    console.log("Manual provider selected:", providers[index].name);
     const frame = document.getElementById("frame");
     const player = document.getElementById("player");
 
