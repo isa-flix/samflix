@@ -5,9 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SamFlix</title>
 
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -16,47 +15,49 @@
 <div class="navbar">
     <div class="logo">SamFlix</div>
 
-<div style="position:fixed; top:10px; left:200px; z-index:9999; display:flex; gap:10px;">
+    <div style="position:fixed; top:10px; left:200px; z-index:9999; display:flex; gap:10px;">
+        <a href="https://isa-flix.github.io/samflix/" 
+           title="Main SamFlix"
+           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
+           🎬Movies
+        </a>
 
-  <a href="https://isa-flix.github.io/samflix/" 
-     title="Main SamFlix"
-     style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-     🎬Movies
-  </a>
-
-  <a href="https://isa-flix.github.io/samflix/newsam/" 
-     title="NewSam"
-     style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-     📺Series
-  </a>
-
-</div>
+        <a href="https://isa-flix.github.io/samflix/newsam/" 
+           title="NewSam"
+           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
+           📺Series
+        </a>
+    </div>
 </div>
 
-    <div class="search-box">
+<div class="search-box">
     <input type="text" id="search" placeholder="Search ...">
-    </div>
+</div>
 
-
-    
-    <div class="navbar">
-        <marquee>upcoming movies:
-             <b style="color: red;">
-                 [19-Jun] Toy Story 5 || [31 July] Spider Man Brand New Day
-             </b></marquee>
-    </div>
-
+<div class="navbar">
+    <marquee>upcoming movies:
+         <b style="color: red;">
+             [19-Jun] Toy Story 5 || [31 July] Spider Man Brand New Day
+         </b>
+    </marquee>
+</div>
 
 <div id="mainContainer"></div>
 
-<div class="player" id="player">
-    <div class="close-btn" onclick="closePlayer()">✖</div>
+<!-- ⭐ PERFECT PLAYER SECTION ⭐ -->
+<div id="player" class="player">
+    <!-- Permanent Close Button -->
+    <button id="closeBtn" onclick="closePlayer()">✖</button>
+
+    <!-- Video Player -->
     <video id="videoPlayer" controls style="display:none;"></video>
+
+    <!-- Iframe Player -->
     <iframe id="frame" style="display:none;"></iframe>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-    <script src="movies.js"></script>
+<script src="movies.js"></script>
 <script src="app.js"></script>
 
 </body>
