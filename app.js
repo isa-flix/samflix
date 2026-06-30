@@ -3,11 +3,14 @@ let hlsInstance = null;
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
+    id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
+    id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
+    id => `https://vidsrc.cc/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.to/embed/movie?tmdb=${id}`,
-    id => `https://www.2embed.cc/embed/${id}`,
     id => `https://autoembed.to/movie/tmdb/${id}`,
     id => `https://smashystream.com/play/movie/${id}`,
     id => `https://vidsrc.pro/embed/movie/${id}`
+    id => `https://www.2embed.cc/embed/${id}`,
 ];
 
 let fastestProviderIndex = 0;
