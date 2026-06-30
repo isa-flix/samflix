@@ -1,9 +1,13 @@
+/* ---------------- GLOBAL ---------------- */
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #141414;
     color: white;
 }
+
+/* ---------------- NAVBAR ---------------- */
 
 .navbar {
     display: flex;
@@ -13,6 +17,7 @@ body {
     position: sticky;
     top: 0;
     background: #141414;
+    z-index: 900;
 }
 
 .logo {
@@ -20,6 +25,8 @@ body {
     font-size: 28px;
     font-weight: bold;
 }
+
+/* ---------------- SEARCH ---------------- */
 
 .search-box input {
     padding: 8px 12px;
@@ -30,9 +37,13 @@ body {
     color: white;
 }
 
+/* ---------------- HEADINGS ---------------- */
+
 h2 {
     margin: 20px 10px 10px;
 }
+
+/* ---------------- MOVIE GRID ---------------- */
 
 .grid {
     display: grid;
@@ -66,6 +77,8 @@ h2 {
     transform: scale(1.08);
 }
 
+/* ---------------- PLAYER ---------------- */
+
 .player {
     position: fixed;
     inset: 0;
@@ -73,9 +86,10 @@ h2 {
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 999;
+    z-index: 9999;
 }
 
+/* Video + iframe inside player */
 video, iframe {
     width: 90%;
     height: 90%;
@@ -83,16 +97,31 @@ video, iframe {
     border-radius: 10px;
 }
 
-.close-btn {
+/* ---------------- CLOSE BUTTON ---------------- */
+
+#closeBtn {
     position: absolute;
     top: 15px;
     right: 20px;
     font-size: 30px;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 10000;
 }
+
+#closeBtn:hover {
+    background: rgba(255,0,0,0.7);
+}
+
+/* ---------------- MOBILE ---------------- */
 
 @media (max-width:600px){
     .grid { gap: 8px; }
     .logo { font-size: 22px; }
+    video, iframe { width: 100%; height: 100%; border-radius: 0; }
+    #closeBtn { font-size: 26px; padding: 8px 12px; }
 }
