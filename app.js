@@ -3,7 +3,10 @@ let hlsInstance = null;
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
+    id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}`,
+    id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.me/movie?tmdb=${id}`,
+    id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}`,
     id => `https://multiembed.mov/movie?tmdb=${id}`,
     id => `https://vidsrc.me/embed/movie?tmdb=${id}`,
     id => `https://vidsrc.vip/embed/movie?tmdb=${id}`,
