@@ -1,18 +1,20 @@
-//12.10
+//12.20
 
 let hlsInstance = null;
 
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
-  { name: "Vidsrc (ru)", url: id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}` },
-  { name: "Vidsrc (su)", url: id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}` },
-  { name: "Vidsrc.me", url: id => `https://vidsrc.me/movie?tmdb=${id}` },
-  { name: "Multiembed", url: id => `https://multiembed.mov/movie?tmdb=${id}` },
-  { name: "Vidsrc.vip", url: id => `https://vidsrc.vip/embed/movie?tmdb=${id}` },
-  { name: "Vidlink", url: id => `https://vidlink.pro/movie/${id}` },
-  { name: "Superembed", url: id => `https://superembed.stream/embed/movie?tmdb=${id}` },
-  { name: "2Embed", url: id => `https://www.2embed.cc/embed/${id}` },
+  { name: "Vidsrc RU", tmdb: id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}` },
+  { name: "Vidsrc SU", tmdb: id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}` },
+  { name: "Vidsrc.me", tmdb: id => `https://vidsrc.me/embed/movie?tmdb=${id}` },
+  { name: "Multiembed", tmdb: id => `https://multiembed.mov/movie?tmdb=${id}` },
+  { name: "Vidlink", tmdb: id => `https://vidlink.pro/movie/${id}` },
+  { name: "Superembed", tmdb: id => `https://superembed.stream/embed/movie?tmdb=${id}` },
+  { name: "2Embed", tmdb: id => `https://www.2embed.cc/embed/${id}` },
+
+  // IMDb fallback provider
+  { name: "Vidsrc IMDb", imdb: id => `https://vidsrc.me/embed/movie?imdb=${id}` },
 ];
 
 let activeProviderIndex = 0;
@@ -28,19 +30,19 @@ document.addEventListener("DOMContentLoaded", () => {
   displayAll();
 });
 
-/* ---------------- PROVIDER SELECTOR ---------------- */
+/* ---------------- PROVIDER UI ---------------- */
 
 function createProviderSelector() {
-  const container = document.getElementById("providerSelector");
-  if (!container) return;
+  const el = document.getElementById("providerSelector");
+  if (!el) return;
 
   const select = document.createElement("select");
 
   providers.forEach((p, i) => {
-    const option = document.createElement("option");
-    option.value = i;
-    option.textContent = p.name;
-    select.appendChild(option);
+    const opt = document.createElement("option");
+    opt.value = i;
+    opt.textContent = p.name;
+    select.appendChild(opt);
   });
 
   select.value = activeProviderIndex;
@@ -49,7 +51,38 @@ function createProviderSelector() {
     activeProviderIndex = parseInt(select.value, 10);
   });
 
-  container.appendChild(select);
+  el.appendChild(select);
+}
+
+/* ---------------- ROUTER (FIX CORE ISSUE) ---------------- */
+
+function resolveStreamUrl(movie) {
+  if (!movie) return null;
+
+  // Local MP4 / HLS
+  if (movie.video) return { type: "video", src: movie.video };
+
+  const id = movie.id;
+
+  if (!id) return null;
+
+  // TMDB numeric ID
+  if (/^\d+$/.test(id)) {
+    const provider = providers[activeProviderIndex];
+    if (provider.tmdb) {
+      return { type: "iframe", src: provider.tmdb(id) };
+    }
+  }
+
+  // IMDb ID
+  if (id.startsWith("tt")) {
+    const imdbProvider = providers.find(p => p.imdb);
+    if (imdbProvider) {
+      return { type: "iframe", src: imdbProvider.imdb(id) };
+    }
+  }
+
+  return null;
 }
 
 /* ---------------- DISPLAY ---------------- */
@@ -79,8 +112,7 @@ function displayAll() {
         }
       });
     } else {
-      movies
-        .filter(m => m.category === cat)
+      movies.filter(m => m.category === cat)
         .forEach(m => grid.appendChild(createCard(m)));
     }
 
@@ -106,8 +138,7 @@ function openSet(setName) {
   const grid = document.createElement("div");
   grid.className = "grid";
 
-  movies
-    .filter(m => m.set === setName)
+  movies.filter(m => m.set === setName)
     .forEach(m => grid.appendChild(createCard(m)));
 
   container.appendChild(title);
@@ -137,7 +168,7 @@ function createCard(movie, customClick) {
   return div;
 }
 
-/* ---------------- PLAYER ---------------- */
+/* ---------------- PLAYER (FIX BLANK SCREEN ISSUE) ---------------- */
 
 function playMovie(movie) {
   const player = document.getElementById("player");
@@ -160,32 +191,41 @@ function playMovie(movie) {
     align-items:center;
     background:#000;
     color:#fff;
+    flex-direction:column;
   `;
   loading.textContent = "Loading...";
   player.appendChild(loading);
 
   setTimeout(() => {
+    const stream = resolveStreamUrl(movie);
+
+    if (!stream) {
+      loading.innerHTML = "❌ No playable source found";
+      return;
+    }
+
     loading.remove();
 
-    if (movie.video) {
+    if (stream.type === "video") {
       player.appendChild(video);
-      playVideo(movie.video, video);
+      playVideo(stream.src, video);
       return;
     }
 
-    if (movie.id) {
+    if (stream.type === "iframe") {
       player.appendChild(frame);
-      frame.src = providers[activeProviderIndex].url(movie.id);
       frame.style.display = "block";
+      frame.style.width = "100%";
+      frame.style.height = "100%";
+      frame.src = stream.src;
       return;
     }
 
-    loading.textContent = "No video available";
-    player.appendChild(loading);
+    loading.innerHTML = "❌ Unsupported format";
   }, 200);
 }
 
-/* ---------------- VIDEO ---------------- */
+/* ---------------- VIDEO PLAYER ---------------- */
 
 function playVideo(url, video) {
   video.style.display = "block";
@@ -261,10 +301,7 @@ if (search) {
 
     container.innerHTML = "";
 
-    if (!val) {
-      displayAll();
-      return;
-    }
+    if (!val) return displayAll();
 
     const filtered = movies.filter(m =>
       (m.title || "").toLowerCase().includes(val)
