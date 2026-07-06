@@ -41,7 +41,7 @@ function detectFastestProvider() {
     let completed = 0;
 
     providers.forEach((providerFn, index) => {
-        const url = providerFn(testId);
+        const url = providerFn.url(testId);
         const start = performance.now();
 
         const iframe = document.createElement("iframe");
@@ -327,7 +327,7 @@ function manualProvider(id, index) {
     player.appendChild(document.getElementById("closeBtn"));
     player.appendChild(frame);
 
-    frame.src = providers[index](id);
+    frame.src = providers[index].url(id);
     frame.style.display = "block";
 }
 
