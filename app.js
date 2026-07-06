@@ -169,7 +169,7 @@ function playMovie(movie) {
 
     // Loading animation
     player.innerHTML = `
-        <button id="closeBtn" onclick="closePlayer()">✖</button>
+      
         <div style="
             width:100%;
             height:100%;
