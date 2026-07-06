@@ -1,3 +1,4 @@
+//new app.js
 let hlsInstance = null;
 
 /* ---------------- PROVIDERS ---------------- */
