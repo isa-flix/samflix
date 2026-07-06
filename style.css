@@ -73,9 +73,8 @@ h2 {
     border-radius: 0 0 8px 8px;
 }
 
-/* ⭐ Better Hover Effect */
 .movie:hover {
-    transform: scale(1.12);
+    transform: scale(1.10);
     box-shadow: 0px 0px 20px rgba(255, 0, 0, 0.4);
 }
 
@@ -85,31 +84,29 @@ h2 {
     position: fixed;
     inset: 0;
     background: black;
+
     display: none;
     align-items: center;
     justify-content: center;
+
     z-index: 9999;
-    animation: fadeIn 0.3s ease;
+    overflow: hidden;
 }
 
-/* Fade-in animation */
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* Video + iframe */
-video, iframe {
+/* Ensure media fills player correctly */
+#player video,
+#player iframe {
     width: 90%;
     height: 90%;
     border: none;
     border-radius: 10px;
+    background: black;
 }
 
 /* ---------------- CLOSE BUTTON ---------------- */
 
 #closeBtn {
-    position: absolute;
+    position: fixed;
     top: 15px;
     right: 20px;
     font-size: 30px;
@@ -126,7 +123,7 @@ video, iframe {
     background: rgba(255,0,0,0.7);
 }
 
-/* ---------------- LOADING SPINNER ---------------- */
+/* ---------------- LOADING ---------------- */
 
 .loader {
     width: 60px;
@@ -144,8 +141,23 @@ video, iframe {
 /* ---------------- MOBILE ---------------- */
 
 @media (max-width:600px){
-    .grid { gap: 8px; }
-    .logo { font-size: 22px; }
-    video, iframe { width: 100%; height: 100%; border-radius: 0; }
-    #closeBtn { font-size: 26px; padding: 8px 12px; }
+    .grid {
+        gap: 8px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    #player video,
+    #player iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    #closeBtn {
+        font-size: 26px;
+        padding: 8px 12px;
+    }
 }
