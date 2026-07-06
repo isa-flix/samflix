@@ -157,47 +157,84 @@ function createCard(movie, customClick) {
 /* ---------------- PLAYER ---------------- */
 
 function playMovie(movie) {
+    if (!movie) {
+        console.error("No movie supplied.");
+        return;
+    }
+
+    const player = document.getElementById("player");
     const video = document.getElementById("videoPlayer");
     const frame = document.getElementById("frame");
-    const player = document.getElementById("player");
     const closeBtn = document.getElementById("closeBtn");
 
+    if (!player || !video || !frame || !closeBtn) {
+        console.error("Player elements are missing.");
+        return;
+    }
+
+    // Reset previous playback
     resetPlayer(video, frame);
 
-    closeBtn.style.display = "block";
+    // Show player
     player.style.display = "flex";
+    closeBtn.style.display = "block";
 
-    // Loading animation
-    player.innerHTML = `
-      
-        <div style="
-            width:100%;
-            height:100%;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            flex-direction:column;
-            background:#000;
-            color:white;
-        ">
-            <div class="loader"></div>
-            <div style="margin-top:15px; opacity:0.7;">Loading...</div>
-        </div>
+    // Keep the original elements in the DOM
+    player.replaceChildren(closeBtn);
+
+    // Loading screen
+    const loading = document.createElement("div");
+    loading.style.cssText = `
+        width:100%;
+        height:100%;
+        display:flex;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        background:#000;
+        color:#fff;
     `;
 
-    if (movie.video) {
-        player.innerHTML = "";
-        player.appendChild(closeBtn);
-        player.appendChild(video);
-        playVideo(movie.video, video);
-    } else if (movie.id) {
-        player.innerHTML = "";
-        player.appendChild(closeBtn);
-        player.appendChild(frame);
-        loadWithFallback(movie.id, frame, fastestProviderIndex);
-    }
-}
+    loading.innerHTML = `
+        <div class="loader"></div>
+        <div style="margin-top:15px;opacity:.7;">Loading...</div>
+    `;
 
+    player.appendChild(loading);
+
+    // Local or hosted video
+    if (movie.video) {
+        setTimeout(() => {
+            loading.remove();
+
+            player.appendChild(video);
+            playVideo(movie.video, video);
+        }, 100);
+
+        return;
+    }
+
+    // Placeholder for your future streaming/backend implementation
+    if (movie.id) {
+        setTimeout(() => {
+            loading.remove();
+
+            player.appendChild(frame);
+
+            // Replace this with your own backend/player later.
+            console.log("Load movie:", movie.id);
+        }, 100);
+
+        return;
+    }
+
+    // No playable source
+    loading.innerHTML = `
+        <div style="font-size:48px;">⚠️</div>
+        <h2>No video available</h2>
+        <p>This movie doesn't have a playable source.</p>
+    `;
+}
 /* ---------------- FALLBACK SYSTEM ---------------- */
 
 function loadWithFallback(id, frame, index) {
