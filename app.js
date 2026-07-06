@@ -52,7 +52,7 @@ function detectFastestProvider() {
             results[index] = performance.now() - start;
             completed++;
             checkDone();
-console.log("Fastest provider detected:", providers[fastestProviderIndex].name);
+
 
         };
 
@@ -69,7 +69,8 @@ console.log("Fastest provider detected:", providers[fastestProviderIndex].name);
                 const min = Math.min(...results);
                 fastestProviderIndex = results.indexOf(min);
                 if (min === Infinity) fastestProviderIndex = 0;
-                cleanup();
+                console.log("Fastest provider detected:", providers[fastestProviderIndex].name);
+                 cleanup();
             }
         }
 
