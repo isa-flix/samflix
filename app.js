@@ -10,7 +10,6 @@ const providers = [
     { name: "5 Vidsrc.me/embed", url:  id => `https://vidsrc.me/embed/movie?tmdb=${id}` },
     { name: "6 Vidsrc.vip", url: id => `https://vidsrc.vip/embed/movie?tmdb=${id}` },
     { name: "7", url: id => `https://vidlink.pro/movie/${id}`},
-    { name: "8", url: id => `https://multiembed.mov/?video_id=${id}` },
     { name: "9", url:  id => `https://vidsrc.me/embed/movie?tmdb=${id}` },
     { name: "10", url: id => `https://vidsrc.xyz/embed/movie?tmdb=${id}`  },
     { name: "11", url: id => `https://vidsrc.vip/embed/movie?tmdb=${id}`  },
@@ -21,7 +20,6 @@ const providers = [
 { name: "16", url:  id => `https://vidsrc.to/embed/movie?tmdb=${id}`  },
 { name: "17", url: id => `https://smashystream.com/play/movie/${id}`  },
 { name: "18", url: id => `https://www.2embed.cc/embed/${id}`  },
-{ name: "19", url: id => `https://vidsrc.pro/movie/${id}`  },
     
 ];
 
