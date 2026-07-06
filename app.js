@@ -1,24 +1,18 @@
-//12.00am
-
+//12.10
 
 let hlsInstance = null;
 
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
-  (id) => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}`,
-  (id) => `https://vidsrc-embed.su/embed/movie?tmdb=${id}`,
-  (id) => `https://vidsrc.me/movie?tmdb=${id}`,
-  (id) => `https://multiembed.mov/movie?tmdb=${id}`,
-  (id) => `https://vidsrc.me/embed/movie?tmdb=${id}`,
-  (id) => `https://vidsrc.vip/embed/movie?tmdb=${id}`,
-  (id) => `https://vidlink.pro/movie/${id}`,
-  (id) => `https://vidsrc.xyz/embed/movie?tmdb=${id}`,
-  (id) => `https://superembed.stream/embed/movie?tmdb=${id}`,
-  (id) => `https://vidsrc.cc/embed/movie?tmdb=${id}`,
-  (id) => `https://vidsrc.to/embed/movie?tmdb=${id}`,
-  (id) => `https://smashystream.com/play/movie/${id}`,
-  (id) => `https://www.2embed.cc/embed/${id}`,
+  { name: "Vidsrc (ru)", url: id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}` },
+  { name: "Vidsrc (su)", url: id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}` },
+  { name: "Vidsrc.me", url: id => `https://vidsrc.me/movie?tmdb=${id}` },
+  { name: "Multiembed", url: id => `https://multiembed.mov/movie?tmdb=${id}` },
+  { name: "Vidsrc.vip", url: id => `https://vidsrc.vip/embed/movie?tmdb=${id}` },
+  { name: "Vidlink", url: id => `https://vidlink.pro/movie/${id}` },
+  { name: "Superembed", url: id => `https://superembed.stream/embed/movie?tmdb=${id}` },
+  { name: "2Embed", url: id => `https://www.2embed.cc/embed/${id}` },
 ];
 
 let activeProviderIndex = 0;
@@ -29,8 +23,34 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof movies !== "undefined") {
     movies = movies.filter(m => !m.disabled);
   }
+
+  createProviderSelector();
   displayAll();
 });
+
+/* ---------------- PROVIDER SELECTOR ---------------- */
+
+function createProviderSelector() {
+  const container = document.getElementById("providerSelector");
+  if (!container) return;
+
+  const select = document.createElement("select");
+
+  providers.forEach((p, i) => {
+    const option = document.createElement("option");
+    option.value = i;
+    option.textContent = p.name;
+    select.appendChild(option);
+  });
+
+  select.value = activeProviderIndex;
+
+  select.addEventListener("change", () => {
+    activeProviderIndex = parseInt(select.value, 10);
+  });
+
+  container.appendChild(select);
+}
 
 /* ---------------- DISPLAY ---------------- */
 
@@ -42,6 +62,7 @@ function displayAll() {
 
   categories.forEach(cat => {
     const section = document.createElement("div");
+
     const title = document.createElement("h2");
     title.textContent = cat;
 
@@ -135,7 +156,6 @@ function playMovie(movie) {
     width:100%;
     height:100%;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     background:#000;
@@ -155,7 +175,7 @@ function playMovie(movie) {
 
     if (movie.id) {
       player.appendChild(frame);
-      frame.src = providers[activeProviderIndex](movie.id);
+      frame.src = providers[activeProviderIndex].url(movie.id);
       frame.style.display = "block";
       return;
     }
@@ -183,6 +203,7 @@ function playVideo(url, video) {
       hlsInstance = new Hls();
       hlsInstance.loadSource(url);
       hlsInstance.attachMedia(video);
+
       hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
         video.play().catch(() => {});
       });
