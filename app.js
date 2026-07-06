@@ -213,7 +213,7 @@ function playMovie(movie) {
     setTimeout(() => {
       loading.remove();
       player.appendChild(frame);
-      frame.src = ""; // Set your iframe source if available
+      frame.src = providers[fastestProviderIndex].url(movie.id); // Set your iframe source if available
       // For now, just log
       console.log("Load movie by ID:", movie.id);
     }, 100);
