@@ -5,7 +5,7 @@ let hlsInstance = null;
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
-  { name: "wootly", tmdb: id => `https://wootly.ch/?v=${id}` },
+  
   { name: "Vidsrc RU", tmdb: id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}` },
   { name: "Vidsrc SU", tmdb: id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}` },
   { name: "Vidsrc.me", tmdb: id => `https://vidsrc.me/embed/movie?tmdb=${id}` },
@@ -13,7 +13,7 @@ const providers = [
   { name: "Vidlink", tmdb: id => `https://vidlink.pro/movie/${id}` },
   { name: "Superembed", tmdb: id => `https://superembed.stream/embed/movie?tmdb=${id}` },
   { name: "2Embed", tmdb: id => `https://www.2embed.cc/embed/${id}` },
-
+{ name: "wootly", tmdb: id => `https://wootly.ch/?v=${id}` },
   // IMDb fallback provider
   { name: "Vidsrc IMDb", imdb: id => `https://vidsrc.me/embed/movie?imdb=${id}` },
 ];
