@@ -5,8 +5,7 @@ let hlsInstance = null;
 /* ---------------- PROVIDERS ---------------- */
 
 const providers = [
-  https://wootly.ch
-  { name: "wootly", tmdb: id => `https://wootly.ch/${id}` },
+  { name: "wootly", tmdb: id => `https://wootly.ch/?=${id}` },
   { name: "Vidsrc RU", tmdb: id => `https://vidsrc-embed.ru/embed/movie?tmdb=${id}` },
   { name: "Vidsrc SU", tmdb: id => `https://vidsrc-embed.su/embed/movie?tmdb=${id}` },
   { name: "Vidsrc.me", tmdb: id => `https://vidsrc.me/embed/movie?tmdb=${id}` },
