@@ -92,7 +92,8 @@ function playEpisode(season, episode) {
 
     renderEpisodes(s);
 
-    let url = `https://www.2embed.cc/embedtv/${s.tmdb_id}&s=${season}&e=${episode}`;
+    
+    let url = `https://vidsrc.cc/v2/embed/tv/${s.tmdb_id}&s=${season}&e=${episode}`;
 
     document.getElementById("player").innerHTML = `
         <iframe src="${url}" allowfullscreen></iframe>
