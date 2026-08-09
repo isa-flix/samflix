@@ -103,7 +103,16 @@ let movies = [
 		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
 	},
 /* ---------------- Movies ---------------- */
-	{ 
+	
+{ 
+		"id": "969681",
+		"title": "Spider-Man: Brand New Day (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iPOn6DinuVyLY17YM9mKuPofV08.jpg",
+		"category": "Movie"
+	},
+	
+
+{ 
 		"id": "11260",
 		"title": "meet_dave",
 		"img": "https://www.themoviedb.org/t/p/w1280/3Qfav5aVRcZmq854olMjJ795JJ2.jpg",
