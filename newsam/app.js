@@ -1,4 +1,3 @@
-
 let current = {};
 
 /* HOME */
@@ -21,7 +20,7 @@ function showSeries() {
 function openSeries(id) {
     let s = seriesList.find(x => x.id === id);
 
-    current = { id: id, season: 1, episode: 1 };
+    current = { id, season: 1, episode: 1 };
 
     let saved = JSON.parse(localStorage.getItem(id));
     if (saved) current = saved;
@@ -54,15 +53,23 @@ function openSeries(id) {
 function renderEpisodes(s) {
     let seasonData = s.seasons.find(x => x.season == current.season);
 
+    if (!seasonData) {
+        document.getElementById("episodes").innerHTML = "<p>No episodes found.</p>";
+        return;
+    }
+
     let html = `<div class="episode-grid">`;
 
     for (let ep = 1; ep <= seasonData.episodes; ep++) {
-        let thumb = `https://image.tmdb.org/t/p/w300/${s.tmdb_id}_S${current.season}_E${ep}.jpg`;
+
+        // TMDB does NOT provide episode thumbnails like your old URL.
+        // So we use a fallback thumbnail.
+        let thumb = `https://placehold.co/300x170?text=S${current.season}E${ep}`;
 
         html += `
             <div class="ep-btn ${ep == current.episode ? "active":""}"
             onclick="playEpisode(${current.season}, ${ep})">
-                <img src="${thumb}" onerror="this.style.display='none'">
+                <img src="${thumb}">
                 S${current.season}E${ep}
             </div>
         `;
@@ -92,8 +99,7 @@ function playEpisode(season, episode) {
 
     renderEpisodes(s);
 
-    
-    let url = `https://vidsrc.cc/v2/embed/tv/${s.tmdb_id}&s=${season}&e=${episode}`;
+    let url = `https://vidsrc.cc/v2/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
 
     document.getElementById("player").innerHTML = `
         <iframe src="${url}" allowfullscreen></iframe>
