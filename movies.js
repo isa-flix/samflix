@@ -199,6 +199,62 @@ let movies = [
 	
 	/* ---------------- Movie Sets ---------------- */
 
+
+		/* ---------------- Popeye ---------------- */
+	/*-------------The Movie Popeye ---------------------*/
+	{
+		"id": "11335",
+		"title": "Popeye (1980)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tH8qTYf5iLw6PN3UJymct3BoQfN.jpg",
+		"category": "Movie",
+		
+	},
+	/*-------------Popeye ITN Studio ---------------------*/
+	{
+		"id": "1393382",
+		"title": "Popeye's Revenge (2025)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aHHCXbPjI6xHJoo5fkBNmPm2lo1.jpg",
+		"category": "MovieSet",
+		"set": "Popeye ITN Studio",
+	},
+	
+{
+		"id": "1595368",
+		"title": "Popeye II: Returns (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/616thD8Ynu4DnAaMpAI39uIG4pO.jpg",
+		"category": "MovieSet",
+		"set": "Popeye ITN Studio",
+	},	
+
+{
+		"id": "1680084",
+		"title": "Popeye III: Requiem (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6DHNS74iO33ZoKYsNzvugpoYGp2.jpg",
+		"category": "MovieSet",
+		"set": "Popeye ITN Studio",
+	},
+
+	{
+		"id": "1680087",
+		"title": "Popeye IV: Resurrection (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3StKagvOBAranwkdYKgvVJps8c3.jpg",
+		"category": "MovieSet",
+		"set": "Popeye ITN Studio",
+	},
+
+	/*-------------Popeye Slayer Man Collection ---------------------*/
+	
+	{
+		"id": "1388366",
+		"title": "Popeye the Slayer Man (2025)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/nVwu3mN7hr1yF467pGct3yQFM41.jpg",
+		"category": "MovieSet",
+		"set": "Popeye The Slayer Man",
+	},
+
+	
+
+	
 /* ---------------- Tom And Jerry ---------------- */
 
 		{"id": "587807", "title": "Tom & Jerry 2021",
