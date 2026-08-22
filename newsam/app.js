@@ -1,22 +1,19 @@
 let current = {
-    provider: "vidsrc" // default provider
+    provider: "vidsrcme" // default provider
 };
 
 /* PROVIDER URL BUILDER */
 function getProviderURL(s, season, episode) {
     switch (current.provider) {
 
-        case "vidsrc":
-            return `https://vidsrc.cc/v2/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
+        case "vidsrcme":
+            return `https://vidsrc.me/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
 
-        case "smashy":
-            return `https://player.smashy.stream/tv/${s.tmdb_id}/${season}/${episode}`;
+        case "2embed":
+            return `https://www.2embed.cc/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
 
-        case "vidbinge":
-            return `https://vidbinge.dev/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
-
-        case "moviehab":
-            return `https://moviehab.com/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
+        case "flixhq":
+            return `https://flixhq.to/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
 
         default:
             return "";
@@ -25,7 +22,7 @@ function getProviderURL(s, season, episode) {
 
 /* AUTO FALLBACK */
 function autoFallback() {
-    const providers = ["vidsrc", "smashy", "vidbinge", "moviehab"];
+    const providers = ["vidsrcme", "2embed", "flixhq"];
     let index = providers.indexOf(current.provider);
 
     if (index < providers.length - 1) {
@@ -86,10 +83,9 @@ function openSeries(id) {
         <div class="controls">
             Provider:
             <select onchange="changeProvider(this.value)">
-                <option value="vidsrc">Vidsrc</option>
-                <option value="smashy">Smashy</option>
-                <option value="vidbinge">Vidbinge</option>
-                <option value="moviehab">MovieHab</option>
+                <option value="vidsrcme">VidSrc.me</option>
+                <option value="2embed">2Embed</option>
+                <option value="flixhq">FlixHQ</option>
             </select>
         </div>
 
