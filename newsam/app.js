@@ -1,6 +1,46 @@
-let current = {};
+let current = {
+    provider: "vidsrc" // default provider
+};
 
-/* HOME  22aug26 4:18*/
+/* PROVIDER URL BUILDER */
+function getProviderURL(s, season, episode) {
+    switch (current.provider) {
+
+        case "vidsrc":
+            return `https://vidsrc.cc/v2/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
+
+        case "smashy":
+            return `https://player.smashy.stream/tv/${s.tmdb_id}/${season}/${episode}`;
+
+        case "vidbinge":
+            return `https://vidbinge.dev/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
+
+        case "moviehab":
+            return `https://moviehab.com/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
+
+        default:
+            return "";
+    }
+}
+
+/* AUTO FALLBACK */
+function autoFallback() {
+    const providers = ["vidsrc", "smashy", "vidbinge", "moviehab"];
+    let index = providers.indexOf(current.provider);
+
+    if (index < providers.length - 1) {
+        current.provider = providers[index + 1];
+        playEpisode(current.season, current.episode);
+    }
+}
+
+/* CHANGE PROVIDER */
+function changeProvider(p) {
+    current.provider = p;
+    playEpisode(current.season, current.episode);
+}
+
+/* HOME */
 function showSeries() {
     const html = `
         <div class="grid">
@@ -12,7 +52,6 @@ function showSeries() {
             `).join("")}
         </div>
     `;
-
     document.getElementById("app").innerHTML = html;
 }
 
@@ -20,7 +59,9 @@ function showSeries() {
 function openSeries(id) {
     const s = seriesList.find(x => x.id === id);
 
-    current = { id, season: 1, episode: 1 };
+    current.id = id;
+    current.season = 1;
+    current.episode = 1;
 
     const saved = JSON.parse(localStorage.getItem(id));
     if (saved) current = saved;
@@ -39,6 +80,16 @@ function openSeries(id) {
             Season:
             <select onchange="changeSeason('${id}', this.value)">
                 ${seasonOptions}
+            </select>
+        </div>
+
+        <div class="controls">
+            Provider:
+            <select onchange="changeProvider(this.value)">
+                <option value="vidsrc">Vidsrc</option>
+                <option value="smashy">Smashy</option>
+                <option value="vidbinge">Vidbinge</option>
+                <option value="moviehab">MovieHab</option>
             </select>
         </div>
 
@@ -96,11 +147,10 @@ function playEpisode(season, episode) {
 
     renderEpisodes(s);
 
-    // FIXED WORKING URL
-    const url = `https://vidsrc.cc/v2/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
+    const url = getProviderURL(s, season, episode);
 
     document.getElementById("player").innerHTML = `
-        <iframe src="${url}" allowfullscreen></iframe>
+        <iframe src="${url}" allowfullscreen onerror="autoFallback()"></iframe>
     `;
 
     document.getElementById("player").scrollIntoView({ behavior: "smooth" });
