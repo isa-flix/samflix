@@ -1,17 +1,5 @@
 let seriesList = [
 
-        {
-        id: "the-lord-of-the-rings-the-rings-of-power",
-        title: "The Lord of the Rings: The Rings of Power (2022)",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/kf5Hz70tjNAHg4swGDzOr9BfoZ1.jpg",
-        tmdb_id: "84773",
-        seasons: [
-            { season: 0, episodes: 36 },
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 8 }
-        ]
-    },
-
         
         {
         id: "tom-and-jerry-show",
@@ -106,7 +94,37 @@ let seriesList = [
 
         ]
     },
-    
+
+
+        {
+        id: "the-lord-of-the-rings-the-rings-of-power",
+        title: "The Lord of the Rings: The Rings of Power (2022)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/kf5Hz70tjNAHg4swGDzOr9BfoZ1.jpg",
+        tmdb_id: "84773",
+        seasons: [
+            { season: 0, episodes: 36 },
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 }
+        ]
+    },
+
+        {
+        id: "silicon-valley",
+        title: "Silicon Valley (2014)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/4ptpmWBVD9HY9hMh8Cbs6SMiy7p.jpg",
+        tmdb_id: "60573",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 },
+            { season: 4, episodes: 10 },
+            { season: 5, episodes: 8 },
+            { season: 6, episodes: 7 }
+        ]
+    },
+
+
+        
     {
         id: "your-friends-and-neighbors",
         title: "Your Friends And Neighbors",
