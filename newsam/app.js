@@ -1,6 +1,6 @@
 let current = {};
-/*22aug26*/
-/* HOME */
+
+/* HOME  22aug26 4:18*/
 function showSeries() {
     const html = `
         <div class="grid">
@@ -96,7 +96,8 @@ function playEpisode(season, episode) {
 
     renderEpisodes(s);
 
-    const url = `https://vidsrc.cc/v2/embed/tv/${s.tmdb_id}&s=${season}&e=${episode}`;
+    // FIXED WORKING URL
+    const url = `https://vidsrc.cc/v2/embed/tv?tmdb=${s.tmdb_id}&season=${season}&episode=${episode}`;
 
     document.getElementById("player").innerHTML = `
         <iframe src="${url}" allowfullscreen></iframe>
