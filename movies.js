@@ -66,6 +66,15 @@ Movie set: 225
 
 	/* ---------------- Cartoons ---------------- */
 
+	{
+		"id": "1185806",
+		"title": "PAW Patrol: The Dino Movie (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jqxuYbNEaaGJNxmoj2n4vNyehRB.jpg",
+		"category": "Cartoons"
+
+	},
+
+	
 		{
 		"id": "980431",
 		"title": "Avatar Aang: The Last Airbender (2026)",
