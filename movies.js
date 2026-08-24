@@ -200,6 +200,53 @@ let movies = [
 	/* ---------------- Movie Sets ---------------- */
 
 		/* ----------------  ---------------- */
+	
+	/*-------------John Wick ---------------------*/
+	{
+		"id": "245891",
+		"title": "John Wick (2014)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wXqWR7dHncNRbxoEGybEy7QTe9h.jpg",
+		"category": "MovieSet",
+		"set": "John Wick",
+		
+	},
+
+	{
+		"id": "324552",
+		"title": "John Wick: Chapter 2 (2017)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg",
+		"category": "MovieSet",
+		"set": "John Wick",
+		
+	},
+
+	{
+		"id": "458156",
+		"title": "John Wick: Chapter 3 - Parabellum (2019)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg",
+		"category": "MovieSet",
+		"set": "John Wick",
+		
+	},
+
+	{
+		"id": "603692",
+		"title": "John Wick: Chapter 4 (2023)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
+		"category": "MovieSet",
+		"set": "John Wick",
+		
+	},
+
+	{
+		"id": "541671",
+		"title": "Ballerina (2025)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
+		"category": "MovieSet",
+		"set": "John Wick",
+		
+	},
+	
 	/*-------------Harry Potter ---------------------*/
 	{
 		"id": "671",
