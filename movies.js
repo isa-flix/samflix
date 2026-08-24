@@ -103,8 +103,23 @@ let movies = [
 		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
 	},
 /* ---------------- Movies ---------------- */
-	
+	/*-----sAmple-----
 { 
+		"id": "",
+		"title": "",
+		"img": "",
+		"category": "Movie"
+	},
+*/
+
+	{ 
+		"id": "1288445",
+		"title": "Mutiny (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aAnTt6KpmbbHbd6xH3FQFlppZjc.jpg",
+		"category": "Movie"
+	},
+
+	{ 
 		"id": "969681",
 		"title": "Spider-Man: Brand New Day (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iPOn6DinuVyLY17YM9mKuPofV08.jpg",
