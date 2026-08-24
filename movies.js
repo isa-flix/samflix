@@ -199,6 +199,72 @@ let movies = [
 	
 	/* ---------------- Movie Sets ---------------- */
 
+		/* ----------------  ---------------- */
+	/*-------------Harry Potter ---------------------*/
+	{
+		"id": "671",
+		"title": "Harry Potter and the Philosopher's Stone (2001)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
+	{
+		"id": "672",
+		"title": "Harry Potter and the Chamber of Secrets (2002)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
+	{
+		"id": "673",
+		"title": "Harry Potter and the Prisoner of Azkaban (2004)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
+	{
+		"id": "674",
+		"title": "Harry Potter and the Goblet of Fire (2005)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
+	{
+		"id": "675",
+		"title": "Harry Potter and the Order of the Phoenix (2007)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5aOyriWkPec0zUDxmHFP9qMmBaj.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
+	{
+		"id": "767",
+		"title": "Harry Potter and the Half-Blood Prince (2009)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
+	{
+		"id": "12444",
+		"title": "Harry Potter and the Deathly Hallows: Part 1 (2010)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
+	{
+		"id": "12445",
+		"title": "Harry Potter and the Deathly Hallows: Part 2 (2011)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/c54HpQmuwXjHq2C9wmoACjxoom3.jpg",
+		"category": "MovieSet",
+		"set": "Harry Potter",
+		
+	},
 
 		/* ---------------- Popeye ---------------- */
 	/*-------------The Movie Popeye ---------------------*/
