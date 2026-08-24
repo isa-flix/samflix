@@ -140,6 +140,14 @@ Movie set: 235
 */
 
 	{ 
+		"id": "1368337",
+		"title": "The Odyssey (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5rhTDKUhPYvpdQIijFIs5VoWsON.jpg",
+		"category": "Movie"
+	},
+
+	
+	{ 
 		"id": "1288445",
 		"title": "Mutiny (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aAnTt6KpmbbHbd6xH3FQFlppZjc.jpg",
