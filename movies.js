@@ -200,6 +200,102 @@ let movies = [
 	/* ---------------- Movie Sets ---------------- */
 
 		/* ----------------  ---------------- */
+
+	/*-------------Expandables---------------------*/
+	{
+		"id": "27578",
+		"title": "The Expendables (2010)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/j09ZkH6R4JWVylBcDai1laCmGw7.jpg",
+		"category": "MovieSet",
+		"set": "The Expendables",
+		
+	},
+
+{
+		"id": "76163",
+		"title": "The Expendables 2 (2012)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/74rTIGyGoIu5KSxDVMdr8H3MtMo.jpg",
+		"category": "MovieSet",
+		"set": "The Expendables",
+		
+	},
+
+{
+		"id": "138103",
+		"title": "The Expendables 3 (2014)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/utS5euWHlEdKBNnEFwjpZ2oGuhF.jpg",
+		"category": "MovieSet",
+		"set": "The Expendables",
+		
+	},
+
+{
+		"id": "299054",
+		"title": "Expend4bles (2023)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iwsMu0ehRPbtaSxqiaUDQB9qMWT.jpg",
+		"category": "MovieSet",
+		"set": "The Expendables",
+		
+	},
+
+	
+	/*-------------Terminator ---------------------*/
+	{
+		"id": "218",
+		"title": "The Terminator (1984)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qvktm0BHcnmDpul4Hz01GIazWPr.jpg",
+		"category": "MovieSet",
+		"set": "Terminator",
+		
+	},
+
+	{
+		"id": "280",
+		"title": "Terminator 2: Judgment Day (1991)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jFTVD4XoWQTcg7wdyJKa8PEds5q.jpg",
+		"category": "MovieSet",
+		"set": "Terminator",
+		
+	},
+
+	{
+		"id": "296",
+		"title": "Terminator 3: Rise of the Machines (2003)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vvevzdYIrk2636maNW4qeWmlPFG.jpg",
+		"category": "MovieSet",
+		"set": "Terminator",
+		
+	},
+
+	{
+		"id": "534",
+		"title": "Terminator Salvation (2009)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gw6JhlekZgtKUFlDTezq3j5JEPK.jpg",
+		"category": "MovieSet",
+		"set": "Terminator",
+		
+	},
+
+	{
+		"id": "87101",
+		"title": "Terminator Genisys (2015)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/oZRVDpNtmHk8M1VYy1aeOWUXgbC.jpg",
+		"category": "MovieSet",
+		"set": "Terminator",
+		
+	},
+
+	{
+		"id": "290859",
+		"title": "Terminator: Dark Fate (2019)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vqzNJRH4YyquRiWxCCOH0aXggHI.jpg",
+		"category": "MovieSet",
+		"set": "Terminator",
+		
+	},
+
+	
+
 	
 	/*-------------John Wick ---------------------*/
 	{
