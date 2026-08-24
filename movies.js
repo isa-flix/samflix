@@ -377,6 +377,7 @@ let movies = [
 		{ "id": "13804", "title": "Fast & Furious (2009)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/lUtVoRukW7WNtUySwd8hWlByBds.jpg", "category": "MovieSet", "set": "Fast and Furious" },
 		{ "id": "51497", "title": "Fast Five (2011)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gEfQjjQwY7fh5bI4GlG0RrBu7Pz.jpg", "category": "MovieSet", "set": "Fast and Furious" },
 		{ "id": "82992", "title": "Fast & Furious 6 (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/thSmnRdrzPBBospIOJjLZBReqzo.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "168259", "title": "Furious 7 (2015)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSJkkZMQHajPan62wrK377c6zQj.jpg", "category": "MovieSet", "set": "Fast and Furious" },
 		{ "id": "337339", "title": "The Fate of the Furious (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dImWM7GJqryWJO9LHa3XQ8DD5NH.jpg", "category": "MovieSet", "set": "Fast and Furious" },
 		{ "id": "384018", "title": "Fast & Furious Presents: Hobbs & Shaw (2019)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg", "category": "MovieSet", "set": "Fast and Furious" },
 		{ "id": "385128", "title": "F9 (2021)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/deEmLILTPejEb6OGsXRJ5MCvyDW.jpg", "category": "MovieSet", "set": "Fast and Furious" },
