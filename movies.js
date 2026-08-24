@@ -2,9 +2,9 @@ let movies = [
 /* index approx.
 Live Stream : 18
 Cartoons: 67
-Movies: 125
-indian Movies: 190
-Movie set: 225
+Movies: 135
+indian Movies: 200
+Movie set: 235
 	
 	/*
   {
