@@ -1,5 +1,12 @@
 let movies = [
-/*
+/* index approx.
+Live Stream : 18
+Cartoons: 67
+Movies: 125
+indian Movies: 190
+Movie set: 225
+	
+	/*
   {
     "id": "mp4_test",
     "title": "MP4 Test Video",
@@ -7,7 +14,9 @@ let movies = [
     "category": "Movies test",
     "video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4"
   },*/
-  {
+
+	/*---------------Live Stream------------------	*/
+	{
     "id": "001hls",
     "title": "Willow Sports",
     "img": "live.png",
