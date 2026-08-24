@@ -67,6 +67,15 @@ Movie set: 225
 	/* ---------------- Cartoons ---------------- */
 
 		{
+		"id": "980431",
+		"title": "Avatar Aang: The Last Airbender (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3sgnSfNT27Bx5O5ukr7B26mhEQq.jpg",
+		"category": "Cartoons"
+
+	},
+
+	
+		{
 		"id": "1301421",
 		"title": "The Sheep Detectives 2026",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mGWOmj2jHFol3kOGNv1EhbSDDE1.jpg",
