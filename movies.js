@@ -139,6 +139,14 @@ Movie set: 235
 	},
 */
 
+{ 
+		"id": "1204680",
+		"title": "Coyote vs. Acme (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/orkLtdgMGiO9rTVMqJ1kKwrnup1.jpg",
+		"category": "Movie"
+	},
+
+	
 	{ 
 		"id": "1368337",
 		"title": "The Odyssey (2026)",
