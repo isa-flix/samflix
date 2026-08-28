@@ -1,5 +1,16 @@
 let seriesList = [
 
+        {
+        id: "murderbot",
+        title: "Murderbot (2025)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mIKfKo2uDk3itzAPYIcSeYr4KtF.jpg",
+        tmdb_id: "241554",
+        seasons: [
+            { season: 1, episodes: 10 },
+            
+            { season: 2, episodes: 1 }
+        ]
+    },
         
         {
         id: "tom-and-jerry-show",
