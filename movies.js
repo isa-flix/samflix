@@ -126,6 +126,14 @@ Movie set: 235
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",
 		"category": "Cartoons"
 	},
+
+	{ 
+		"id": "1315772",
+		"title": "Minions & Monsters (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg",
+		"category": "Cartoons"
+	},
+	
 	{ 
 		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
 	},
