@@ -235,7 +235,7 @@ Movie set: 235
 		"id": "563011",
 		"title": "Prem Shastra (1974)",
 		"img": "https://www.themoviedb.org/t/p/w1280/qhqSIPVY38notCRWDLyXwSyqEsj.jpg",
-		"category": "Movie"
+		"category": "Indian Movies"
 	},
 
 	
