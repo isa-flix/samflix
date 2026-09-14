@@ -239,13 +239,15 @@ Movie set: 235
 
 	
 	/* ---------------- Hindi ---------------- */
-{ 
+
+	/*
+	{ 
 		"id": "563011",
 		"title": "Prem Shastra (1974)",
 		"img": "https://www.themoviedb.org/t/p/w1280/qhqSIPVY38notCRWDLyXwSyqEsj.jpg",
 		"category": "Indian Movies"
 	},
-
+*/
 	
 	{
 		"id": "tt29540862", "title": "Bhooth Bangla 2026",
