@@ -491,7 +491,7 @@ Movie set: 235
 		"set": "Harry Potter",
 		
 	},
-
+/*
 		/* ---------------- Popeye ---------------- */
 	/*-------------The Movie Popeye ---------------------*/
 	{
@@ -544,7 +544,7 @@ Movie set: 235
 		"set": "Popeye The Slayer Man",
 	},
 
-	
+*/	
 
 	
 /* ---------------- Tom And Jerry ---------------- */
