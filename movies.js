@@ -149,6 +149,14 @@ Movie set: 235
 */
 
 { 
+		"id": "1058424",
+		"title": "Hope 2026",
+		"img": "https://www.themoviedb.org/t/p/w1280/h39KOfADZB5I7JzNh9ih9GbZdoK.jpg",
+		"category": "Movie"
+	},
+
+	
+	{ 
 		"id": "1204680",
 		"title": "Coyote vs. Acme (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/orkLtdgMGiO9rTVMqJ1kKwrnup1.jpg",
