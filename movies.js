@@ -318,7 +318,7 @@ let movies = [
 		"title": "John Wick (2014)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wXqWR7dHncNRbxoEGybEy7QTe9h.jpg",
 		"category": "MovieSet",
-		"set": "John Wick",
+		"set": "John Wick"
 		
 	},
 
@@ -327,7 +327,7 @@ let movies = [
 		"title": "John Wick: Chapter 2 (2017)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg",
 		"category": "MovieSet",
-		"set": "John Wick",
+		"set": "John Wick"
 		
 	},
 
@@ -336,7 +336,7 @@ let movies = [
 		"title": "John Wick: Chapter 3 - Parabellum (2019)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg",
 		"category": "MovieSet",
-		"set": "John Wick",
+		"set": "John Wick"
 		
 	},
 
@@ -345,7 +345,7 @@ let movies = [
 		"title": "John Wick: Chapter 4 (2023)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
 		"category": "MovieSet",
-		"set": "John Wick",
+		"set": "John Wick"
 		
 	},
 
@@ -354,7 +354,7 @@ let movies = [
 		"title": "Ballerina (2025)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
 		"category": "MovieSet",
-		"set": "John Wick",
+		"set": "John Wick"
 		
 	},
 	
@@ -364,7 +364,7 @@ let movies = [
 		"title": "Harry Potter and the Philosopher's Stone (2001)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
 	{
@@ -372,7 +372,7 @@ let movies = [
 		"title": "Harry Potter and the Chamber of Secrets (2002)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
 	{
@@ -380,7 +380,7 @@ let movies = [
 		"title": "Harry Potter and the Prisoner of Azkaban (2004)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
 	{
@@ -388,7 +388,7 @@ let movies = [
 		"title": "Harry Potter and the Goblet of Fire (2005)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
 	{
@@ -396,7 +396,7 @@ let movies = [
 		"title": "Harry Potter and the Order of the Phoenix (2007)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5aOyriWkPec0zUDxmHFP9qMmBaj.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
 	{
@@ -404,7 +404,7 @@ let movies = [
 		"title": "Harry Potter and the Half-Blood Prince (2009)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
 	{
@@ -412,7 +412,7 @@ let movies = [
 		"title": "Harry Potter and the Deathly Hallows: Part 1 (2010)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
 	{
@@ -420,17 +420,15 @@ let movies = [
 		"title": "Harry Potter and the Deathly Hallows: Part 2 (2011)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/c54HpQmuwXjHq2C9wmoACjxoom3.jpg",
 		"category": "MovieSet",
-		"set": "Harry Potter",
+		"set": "Harry Potter"
 		
 	},
-
-		/* ---------------- Popeye ---------------- */
 	/*-------------The Movie Popeye ---------------------*/
 	{
 		"id": "11335",
 		"title": "Popeye (1980)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tH8qTYf5iLw6PN3UJymct3BoQfN.jpg",
-		"category": "Movie",
+		"category": "Movie"
 		
 	},
 	
@@ -624,7 +622,7 @@ let movies = [
 		"title": "dr_no 1962",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/f9HsemSsBEHN5eoMble1bj6fDxs.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -632,7 +630,7 @@ let movies = [
 		"title": "from_russia_with_love 1963",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/zx4V17FP8oclNvOpTgs2iCCtiYk.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -640,7 +638,7 @@ let movies = [
 		"title": "goldfinger 1964",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dSfUkFBIvjRNehHeK8dQKCY04yZ.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -648,7 +646,7 @@ let movies = [
 		"title": "thunderball 1964",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3TXQJXpURF16nM43Mdf1X3VZhBE.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -656,7 +654,7 @@ let movies = [
 		"title": "you_only_live_twice 1967",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/d4TsrvH9Rw5OG1xYcjdnDiHN4qm.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 	{
@@ -664,7 +662,7 @@ let movies = [
 		"title": "Casino Royale 1967 (unofficial)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9wdw5H018bgIM8bK2HuDvh8BwOh.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -672,7 +670,7 @@ let movies = [
 		"title": "on-her-majesty-s-secret-service 1969",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iLAp1ODaZ8lbBh0K8bldHkUHITx.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -680,7 +678,7 @@ let movies = [
 		"title": "diamonds-are-forever 1971",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ooDT0eKrWCxJCsn9JehPkD0QYNj.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -688,7 +686,7 @@ let movies = [
 		"title": "Live and Let Die 1973",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/39qkrjqMZs6utwNmihVImC3ghas.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -696,7 +694,7 @@ let movies = [
 		"title": "The Man with the Golden Gun 1974",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xVkbKwGnBVNQ122GN5bCTMyPbWz.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -704,7 +702,7 @@ let movies = [
 		"title": "The Spy Who Loved Me 1977",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mQD9XMe6Z6mrVzdf3Ca3fJSn5xz.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -712,7 +710,7 @@ let movies = [
 		"title": "Moonraker 1979",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6LrJdXNmu5uHOVALZxVYd44Lva0.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 
 {
@@ -720,98 +718,98 @@ let movies = [
 		"title": "For Your Eyes Only 1981",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xV4Nnr6DjjERlqNikqDQX8LUgua.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "700",
 		"title": "Octopussy 1983",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yoosZitM9igSk3Sd0sBXIhKlAh1.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "707",
 		"title": "A view to a Kill 1985",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/arJF829RP9cYvh0NU70dC5TtXSa.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "708",
 		"title": "The Living Daylights 1987",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1oRlmWX9hewpn2B44wawBjHd7dx.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "709",
 		"title": "Licence to Kill 1989",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8nzJve63EXA79HGAyidZwivZrQ2.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "710",
 		"title": "GoldenEye 1995",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/z0ljRnNxIO7CRBhLEO0DvLgAFPR.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "714",
 		"title": "Tomorrow Never Dies 1997",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yEhv6K79FAvBj5zUAqYs9rRgvfO.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "36643",
 		"title": "The World Is Not Enough 1999",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xv73kIAm5xba6cDh6tlK36GtdQ1.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "36669",
 		"title": "Die Another Day 2002",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/i67gII3CoM4bpyTGuZb1TiRKUbZ.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "36557",
 		"title": "Casino Royale 2006",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wmRTS3WrXRi8GJdpDae1NifYNwx.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "10764",
 		"title": "Quantum of Solace 2008",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/e3DXXLJHGqMx9yYpXsql1XNljmM.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "37724",
 		"title": "Skyfall 2012",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/izrHg2UzxG3YXTBcKFaUbYp9LWA.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "206647",
 		"title": "Spectre 2015",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/672kUEMtTHcaVYSVY4eiHEliHFa.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 {
 		"id": "370172",
 		"title": "No Time to Die 2021",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
 		"category": "MovieSet",
-		"set": "James Bond",
+		"set": "James Bond"
 	},
 	
 	
