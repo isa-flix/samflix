@@ -52,6 +52,21 @@ let seriesList = [
             
         ]
     },
+ {
+        id: "the-handmaids-tale",
+        title: "The Handmaid's Tale 2017",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/eGUT7j3n3rn5yGihlCgwUnD70HV.jpg",
+        tmdb_id: "69478",
+        seasons: [
+                { season: 1, episodes: 10 },
+                { season: 2, episodes: 13 },
+                { season: 3, episodes: 13 },
+                { season: 4, episodes: 10 },
+                { season: 5, episodes: 10 },
+                { season: 6, episodes: 10 }
+        ]
+    },
+
         
         {
         id: "murderbot",
