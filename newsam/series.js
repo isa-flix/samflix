@@ -10,6 +10,16 @@ let seriesList = [
             
         ]
     },
+        {
+        id: "chernobyl",
+        title: "Chernobyl (2019)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
+        tmdb_id: "87108",
+        seasons: [
+            { season: 1, episodes: 5 }
+            
+        ]
+    },
         
         {
         id: "murderbot",
