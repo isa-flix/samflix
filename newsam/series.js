@@ -1,6 +1,20 @@
 let seriesList = [
 
         {
+        id: "mtv-hustle",
+        title: "MTV Hustle (2019)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/fhh09HqAYPyK2GZJyhlLpJBK9XJ.jpg",
+        tmdb_id: "19537",
+        seasons: [
+            { season: 1, episodes: 20 },
+            { season: 2, episodes: 20 },
+            { season: 3, episodes: 20 },
+            { season: 4, episodes: 20 },
+            { season: 5, episodes: 20 }
+        ]
+    },
+        
+        {
         id: "murderbot",
         title: "Murderbot (2025)",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mIKfKo2uDk3itzAPYIcSeYr4KtF.jpg",
