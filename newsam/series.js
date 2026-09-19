@@ -1,6 +1,17 @@
 let seriesList = [
 
         {
+        id: "Landman",
+        title: "Landman (2024)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
+        tmdb_id: "157741",
+        seasons: [
+                { season: 1, episodes: 10 }
+                { season: 2, episodes: 10 },
+             ]
+    },
+        
+        {
         id: "Andor",
         title: "Andor (2022)",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
