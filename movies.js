@@ -1,11 +1,4 @@
 let movies = [
-/* index approx.
-Live Stream : 18
-Cartoons: 67
-Movies: 135
-indian Movies: 200
-Movie set: 235
-*/	
 	/*
   {
     "id": "mp4_test",
@@ -37,34 +30,6 @@ Movie set: 235
     "category": "Live Stream",
     "video": "https://arydigital.aryzap.com/dc2dc67658cc5a71a92476b702cd2ae8/69ea2a66/v1/0183ea2408f90b8ed5941a38bc72/0183ea24302d0b8ed5941a38bc75/634E5F8E000072F08E6D-p0_tmpl360p_360p-1776867496168.ts"
   },
-/* ---------------- excempt later ---------------- */
-	
-/*	
-	{
-		"id": "4",
-		"title": "0",
-		"img": "live.png",
-		"category": "Junk Chunk"
-	},
-	*/
-	
-/*
-	{
-    "id": "002hls",
-    "title": "Flick Of Furry",
-    "img": "live.png",
-    "category": "Live Stream",
-    "video": "http://cfd-v4-service-channel-stitcher-use1-1.prd.pluto.tv/stitch/hls/channel/58e55b14ad8e9c364d55f717/master.m3u8?appName=web&appVersion=unknown&clientTime=0&deviceDNT=0&deviceId=6c28ca66-30d3-11ef-9cf5-e9ddff8ff496&deviceMake=Chrome&deviceModel=web&deviceType=web&deviceVersion=unknown&includeExtendedEvents=false&serverSideAds=false&sid=671a0e89-5b21-406b-95a9-b395c4ef4b07"
-  },
-{
-    "id": "003hls",
-    "title": "Wu Tang Collection",
-    "img": "live.png",
-    "category": "Live Stream",
-    "video": "https://dbrb49pjoymg4.cloudfront.net/v1/master/3fec3e5cac39a52b2132f9c66c83dae043dc17d4/prod_default_xumo-ams-aws/master.m3u8?ads.xumo_channelId=99991745"
-  },
-*/
-
 	/* ---------------- Cartoons ---------------- */
 
 	{ 
@@ -140,14 +105,6 @@ Movie set: 235
 		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
 	},
 /* ---------------- Movies ---------------- */
-	/*-----sAmple-----
-{ 
-		"id": "",
-		"title": "",
-		"img": "",
-		"category": "Movie"
-	},
-*/
 
 { 
 		"id": "1058424",
@@ -202,24 +159,6 @@ Movie set: 235
 		"category": "Movie"
 	},
 	{
-		"id": "1116201",
-		"title": "Iron Lung 2026",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sIwakdbMGS1krtgendTWpxTY9Hw.jpg",
-		"category": "Movie"
-	},
-	{
-		"id": "tt13570066",
-		"title": "Desert Warrior",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sxn4XI0EPaF3IOagjRaQ3yxHHNS.jpg",
-		"category": "Movie"
-	},
-	{
-		"id": "tt33244668",
-		"title": "Anaconda 2025",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qxMv3HwAB3XPuwNLMhVRg795Ktp.jpg",
-		"category": "Movie"
-	},
-	{
 		"id": "tt2120120",
 		"title": "Pixels 2015",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4aE5mGxjP8S1YOE4lpwj6OQcLZy.jpg",
@@ -241,14 +180,6 @@ Movie set: 235
 	
 	/* ---------------- Hindi ---------------- */
 
-	/*
-	{ 
-		"id": "563011",
-		"title": "Prem Shastra (1974)",
-		"img": "https://www.themoviedb.org/t/p/w1280/qhqSIPVY38notCRWDLyXwSyqEsj.jpg",
-		"category": "Indian Movies"
-	},
-*/
 	
 	{
 		"id": "tt29540862", "title": "Bhooth Bangla 2026",
@@ -285,15 +216,13 @@ Movie set: 235
 	
 	/* ---------------- Movie Sets ---------------- */
 
-		/* ----------------  ---------------- */
-
 	/*-------------Expandables---------------------*/
 	{
 		"id": "27578",
 		"title": "The Expendables (2010)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/j09ZkH6R4JWVylBcDai1laCmGw7.jpg",
 		"category": "MovieSet",
-		"set": "The Expendables",
+		"set": "The Expendables"
 		
 	},
 
@@ -302,7 +231,7 @@ Movie set: 235
 		"title": "The Expendables 2 (2012)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/74rTIGyGoIu5KSxDVMdr8H3MtMo.jpg",
 		"category": "MovieSet",
-		"set": "The Expendables",
+		"set": "The Expendables"
 		
 	},
 
@@ -311,7 +240,7 @@ Movie set: 235
 		"title": "The Expendables 3 (2014)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/utS5euWHlEdKBNnEFwjpZ2oGuhF.jpg",
 		"category": "MovieSet",
-		"set": "The Expendables",
+		"set": "The Expendables"
 		
 	},
 
@@ -320,7 +249,7 @@ Movie set: 235
 		"title": "Expend4bles (2023)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iwsMu0ehRPbtaSxqiaUDQB9qMWT.jpg",
 		"category": "MovieSet",
-		"set": "The Expendables",
+		"set": "The Expendables"
 		
 	},
 
@@ -331,7 +260,7 @@ Movie set: 235
 		"title": "The Terminator (1984)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qvktm0BHcnmDpul4Hz01GIazWPr.jpg",
 		"category": "MovieSet",
-		"set": "Terminator",
+		"set": "Terminator"
 		
 	},
 
@@ -340,7 +269,7 @@ Movie set: 235
 		"title": "Terminator 2: Judgment Day (1991)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jFTVD4XoWQTcg7wdyJKa8PEds5q.jpg",
 		"category": "MovieSet",
-		"set": "Terminator",
+		"set": "Terminator"
 		
 	},
 
@@ -349,7 +278,7 @@ Movie set: 235
 		"title": "Terminator 3: Rise of the Machines (2003)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vvevzdYIrk2636maNW4qeWmlPFG.jpg",
 		"category": "MovieSet",
-		"set": "Terminator",
+		"set": "Terminator"
 		
 	},
 
@@ -358,7 +287,7 @@ Movie set: 235
 		"title": "Terminator Salvation (2009)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gw6JhlekZgtKUFlDTezq3j5JEPK.jpg",
 		"category": "MovieSet",
-		"set": "Terminator",
+		"set": "Terminator"
 		
 	},
 
@@ -367,7 +296,7 @@ Movie set: 235
 		"title": "Terminator Genisys (2015)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/oZRVDpNtmHk8M1VYy1aeOWUXgbC.jpg",
 		"category": "MovieSet",
-		"set": "Terminator",
+		"set": "Terminator"
 		
 	},
 
@@ -376,7 +305,7 @@ Movie set: 235
 		"title": "Terminator: Dark Fate (2019)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vqzNJRH4YyquRiWxCCOH0aXggHI.jpg",
 		"category": "MovieSet",
-		"set": "Terminator",
+		"set": "Terminator"
 		
 	},
 
@@ -494,7 +423,7 @@ Movie set: 235
 		"set": "Harry Potter",
 		
 	},
-/*
+
 		/* ---------------- Popeye ---------------- */
 	/*-------------The Movie Popeye ---------------------*/
 	{
