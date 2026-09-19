@@ -1,6 +1,17 @@
 let seriesList = [
 
         {
+        id: "Andor",
+        title: "Andor (2022)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
+        tmdb_id: "83867",
+        seasons: [
+                { season: 1, episodes: 12 }
+                { season: 2, episodes: 12 },
+             ]
+    },
+        
+        {
         id: "A Knight of the Seven Kingdoms (2026)",
         title: "A Knight of the Seven Kingdoms (2026)",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/k8yARbD9iYn2nRX2HvsopfKDN2r.jpg",
