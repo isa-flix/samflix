@@ -6,8 +6,8 @@ let seriesList = [
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
         tmdb_id: "157741",
         seasons: [
-                { season: 1, episodes: 10 }
-                { season: 2, episodes: 10 },
+                { season: 1, episodes: 10 },
+                { season: 2, episodes: 10 }
              ]
     },
         
@@ -17,8 +17,8 @@ let seriesList = [
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
         tmdb_id: "83867",
         seasons: [
-                { season: 1, episodes: 12 }
-                { season: 2, episodes: 12 },
+                { season: 1, episodes: 12 },
+                { season: 2, episodes: 12 }
              ]
     },
         
