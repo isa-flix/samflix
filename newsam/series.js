@@ -1,6 +1,16 @@
 let seriesList = [
 
         {
+        id: "A Knight of the Seven Kingdoms (2026)",
+        title: "A Knight of the Seven Kingdoms (2026)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/k8yARbD9iYn2nRX2HvsopfKDN2r.jpg",
+        tmdb_id: "224372",
+        seasons: [
+            { season: 1, episodes: 6 }
+            
+        ]
+    },
+        {
         id: "dutton-ranch",
         title: "Dutton Ranch (2026)",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
