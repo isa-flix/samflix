@@ -1,16 +1,13 @@
 let seriesList = [
 
         {
-        id: "mtv-hustle",
-        title: "MTV Hustle (2019)",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/fhh09HqAYPyK2GZJyhlLpJBK9XJ.jpg",
-        tmdb_id: "19537",
+        id: "dutton-ranch",
+        title: "Dutton Ranch (2026)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
+        tmdb_id: "299167",
         seasons: [
-            { season: 1, episodes: 20 },
-            { season: 2, episodes: 20 },
-            { season: 3, episodes: 20 },
-            { season: 4, episodes: 20 },
-            { season: 5, episodes: 20 }
+            { season: 1, episodes: 9 }
+            
         ]
     },
         
