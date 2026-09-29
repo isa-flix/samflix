@@ -358,6 +358,62 @@ let movies = [
 		
 	},
 	
+	/*-------------American Pie ---------------------*/
+	{
+		"id": "2105",		"title": "American Pie (1999)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5P68by2Thn8wHAziyWGEw2O7hco.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+{
+		"id": "2770",		"title": "American Pie 2 (2001)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/854ZZxXdeabAs90mrV72NqShJqR.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+	{
+		"id": "8273",		"title": "American Wedding (2003)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/pCO3lJv2PzPkJty29APxCVSjyoE.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+	{
+		"id": "8274",		"title": "American Pie Presents: Band Camp (2005)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6BgKeWEGROpWwEWvpw7vwfTCr9C.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+	{
+		"id": "8275",		"title": "American Pie Presents: The Naked Mile (2006)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6CPJVJrqVjibP5Uub8yCg4FKtJi.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+	{
+		"id": "8277",		"title": "American Pie Presents: Beta House (2007)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/j7eGbwVb9hTaRFWMlSa7C1OYp3T.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+	{
+		"id": "26123",		"title": "American Pie Presents: The Book of Love (2009)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/hwP0GEP0zy8ar965Xaht19SmMd3.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+	{
+		"id": "71552",		"title": "American Reunion (2012)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/de5QBIdVR4dnkBZ4a0zjkS4lTg.jpg",
+		"category": "MovieSet",		"set": "American Pie"
+		
+	},
+	{
+		"id": "660982",		"title": "American Pie Presents: Girls' Rules (2020)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xqvX5A24dbIWaeYsMTxxKX5qOfz.jpg",
+		"category": "MovieSet",		"set": "American Pie"		
+	},
+	
+	
 	/*-------------Harry Potter ---------------------*/
 	{
 		"id": "671",
