@@ -33,13 +33,26 @@ let seriesList = [
         ]
     },
         {
+        id: "yellowstone",
+        title: "YellowStone (2018)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/peNC0eyc3TQJa6x4TdKcBPNP4t0.jpg",
+        tmdb_id: "73586",
+        seasons: [
+                { season: 1, episodes: 9 },
+                { season: 2, episodes: 10 },
+                { season: 3, episodes: 10 },
+                { season: 4, episodes: 10 }
+                { season: 5, episodes: 14 }
+            
+        ]
+    },
+        {
         id: "dutton-ranch",
         title: "Dutton Ranch (2026)",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
         tmdb_id: "299167",
         seasons: [
-            { season: 1, episodes: 9 }
-            
+                { season: 1, episodes: 9 } 
         ]
     },
         {
