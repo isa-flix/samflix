@@ -106,6 +106,19 @@ let movies = [
 	},
 /* ---------------- Movies ---------------- */
 
+	{
+		"id": "9757",
+		"title": "Norbit (2007)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/XcZ5NzygPp54csxCnzvQKuxFL2.jpg",
+		"category": "Movie"
+	},
+{
+		"id": "1263337",
+		"title": "Hear of the Beast (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mYqiF90igComG2L2qm8SwFbaMwn.jpg",
+		"category": "Movie"
+	},
+
 { 
 		"id": "1058424",
 		"title": "Hope 2026",
@@ -168,12 +181,6 @@ let movies = [
 		"id": "tt3566834",
 		"title": "A Minecraft Movie",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iPPTGh2OXuIv6d7cwuoPkw8govp.jpg",
-		"category": "Movie"
-	},
-{
-		"id": "9757",
-		"title": "Norbit 2007",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/XcZ5NzygPp54csxCnzvQKuxFL2.jpg",
 		"category": "Movie"
 	},
 	
