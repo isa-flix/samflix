@@ -41,7 +41,7 @@ let seriesList = [
                 { season: 1, episodes: 9 },
                 { season: 2, episodes: 10 },
                 { season: 3, episodes: 10 },
-                { season: 4, episodes: 10 }
+                { season: 4, episodes: 10 },
                 { season: 5, episodes: 14 }
             
         ]
