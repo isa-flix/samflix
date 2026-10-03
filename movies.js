@@ -170,6 +170,12 @@ let movies = [
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iPPTGh2OXuIv6d7cwuoPkw8govp.jpg",
 		"category": "Movie"
 	},
+{
+		"id": "9757",
+		"title": "Norbit 2007",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/XcZ5NzygPp54csxCnzvQKuxFL2.jpg",
+		"category": "Movie"
+	},
 	
 	
 	{ "id": "tt2094766", "title": "Assassin's Creed", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/v0Grw2r5iHohH2TMepZnRQCpWB3.jpg", "category": "Movie" },
