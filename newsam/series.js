@@ -1,5 +1,16 @@
 let seriesList = [
 
+                {
+        id: "Coven-academy",
+        title: "Coven Academy (2026)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/f4R4YGeMQrXEu6jm3oAbSPeGC3M.jpg",
+        tmdb_id: "298505",
+        seasons: [
+                { season: 1, episodes: 10 }
+                
+             ]
+    },
+
         {
         id: "Landman",
         title: "Landman (2024)",
@@ -11,27 +22,7 @@ let seriesList = [
              ]
     },
         
-        {
-        id: "Andor",
-        title: "Andor (2022)",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
-        tmdb_id: "83867",
-        seasons: [
-                { season: 1, episodes: 12 },
-                { season: 2, episodes: 12 }
-             ]
-    },
         
-        {
-        id: "A Knight of the Seven Kingdoms (2026)",
-        title: "A Knight of the Seven Kingdoms (2026)",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/k8yARbD9iYn2nRX2HvsopfKDN2r.jpg",
-        tmdb_id: "224372",
-        seasons: [
-            { season: 1, episodes: 6 }
-            
-        ]
-    },
         {
         id: "yellowstone",
         title: "YellowStone (2018)",
@@ -55,6 +46,28 @@ let seriesList = [
                 { season: 1, episodes: 9 } 
         ]
     },
+        {
+        id: "Andor",
+        title: "Andor (2022)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
+        tmdb_id: "83867",
+        seasons: [
+                { season: 1, episodes: 12 },
+                { season: 2, episodes: 12 }
+             ]
+    },
+        
+        {
+        id: "A Knight of the Seven Kingdoms (2026)",
+        title: "A Knight of the Seven Kingdoms (2026)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/k8yARbD9iYn2nRX2HvsopfKDN2r.jpg",
+        tmdb_id: "224372",
+        seasons: [
+            { season: 1, episodes: 6 }
+            
+        ]
+    },
+        
         {
         id: "chernobyl",
         title: "Chernobyl (2019)",
