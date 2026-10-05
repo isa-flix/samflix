@@ -107,9 +107,9 @@ let movies = [
 /* ---------------- Movies ---------------- */
 
 	{
-		"id": "9757",
-		"title": "Norbit (2007)",
-		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/XcZ5NzygPp54csxCnzvQKuxFL2.jpg",
+		"id": "95350",
+		"title": "Lanterns (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gpC7h43xPMEV3goYMQShfJbTtLq.jpg",
 		"category": "Movie"
 	},
 {
