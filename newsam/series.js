@@ -10,6 +10,16 @@ let seriesList = [
                 
              ]
     },
+      {
+        id: "Vision-Quest",
+        title: "VisionQuest (2026)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
+        tmdb_id: "213375",
+        seasons: [
+                { season: 1, episodes: 8 }
+                
+             ]
+    },
 
         {
         id: "Landman",
