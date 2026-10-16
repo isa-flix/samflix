@@ -10,16 +10,7 @@ let seriesList = [
                 
              ]
     },
-      {
-        id: "Vision-Quest",
-        title: "VisionQuest (2026)",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
-        tmdb_id: "213375",
-        seasons: [
-                { season: 1, episodes: 8 }
-                
-             ]
-    },
+      
 
         {
         id: "Landman",
@@ -176,6 +167,38 @@ let seriesList = [
         ]
     },
 
+{
+        id: "WandaVision",
+        title: "WandaVision (2021)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijWWwINc8h71NQ8j1LTJMFSj5wr.jpg",
+        tmdb_id: "85271",
+        seasons: [
+                { season: 1, episodes: 9 }
+                
+             ]
+    },
+
+  {
+        id: "Agatha-All-Along",
+        title: "Agatha All Along (2024)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
+        tmdb_id: "138501",
+        seasons: [
+                { season: 1, episodes: 9 }
+                
+             ]
+    },
+{
+        id: "Vision-Quest",
+        title: "VisionQuest (2026)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
+        tmdb_id: "213375",
+        seasons: [
+                { season: 1, episodes: 8 }
+                
+             ]
+    },
+  
     {
         id: "the-munsters",
         title: "The Munsters",
