@@ -10,6 +10,16 @@ let seriesList = [
                 
              ]
     },
+                {
+        id: "bayblade-x",
+        title: "Beyblade X (2023)",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/66wkm14IWdrY5LaKZDAbkD2T9Jt.jpg",
+        tmdb_id: "226688",
+        seasons: [
+                { season: 1, episodes: 136 }
+                
+             ]
+    },
       
 
         {
