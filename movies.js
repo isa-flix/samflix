@@ -105,6 +105,20 @@ let movies = [
 		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
 	},
 /* ---------------- Movies ---------------- */
+	{
+		"id": "1153576",
+		"title": "Street Fighter (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dJPT2Uf12X6aFg8i5N67NTpIZ9t.jpg",
+		"category": "Movie"
+	},
+
+	{
+		"id": "1561726",
+		"title": "MasterPlan (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5xmXVd7nCK3tAo34XkO58SxUCip.jpg",
+		"category": "Movie"
+	},
+
 
 	{
 		"id": "95350",
