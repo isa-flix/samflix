@@ -37,7 +37,7 @@ function changeProvider(p) {
     playEpisode(current.season, current.episode);
 }
 
-/* HOME */
+/* HOME 
 function showSeries() {
     const html = `
         <div class="grid">
@@ -51,6 +51,35 @@ function showSeries() {
     `;
     document.getElementById("app").innerHTML = html;
 }
+
+*/
+/* HOME  new with categories*/
+function showSeries() {
+    const categories = [...new Set(seriesList.map(s => s.category))];
+
+    let html = "";
+
+    categories.forEach(cat => {
+        html += `<h2>${cat}</h2>`;
+        html += `<div class="grid">`;
+
+        seriesList
+            .filter(s => s.category === cat)
+            .forEach(s => {
+                html += `
+                    <div class="card" onclick="openSeries('${s.id}')">
+                        <img src="${s.img}">
+                        <p>${s.title}</p>
+                    </div>
+                `;
+            });
+
+        html += `</div>`;
+    });
+
+    document.getElementById("app").innerHTML = html;
+}
+
 
 /* OPEN SERIES */
 function openSeries(id) {
