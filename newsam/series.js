@@ -178,6 +178,67 @@ let seriesList = [
                 { season: 2, episodes: 10 }
              ]
     },
+
+ {
+        id: "your-friends-and-neighbors",
+        title: "Your Friends And Neighbors",
+      category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lcp63INKEsVHUly9eayx7gEEOcG.jpg",
+        tmdb_id: "241609",
+        seasons: [
+            { season: 1, episodes: 9 },
+            { season: 2, episodes: 10 }
+
+        ]
+    },
+{
+        id: "prison-break",
+        title: "Prison Break",
+    category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg",
+        tmdb_id: "2288",
+        seasons: [
+      
+            { season: 1, episodes: 22 },
+            { season: 2, episodes: 22 },
+            { season: 3, episodes: 13 },
+            { season: 4, episodes: 22 },
+            { season: 5, episodes: 9 }
+            
+        ]
+    },
+   
+    {
+        id: "breaking-bad",
+        title: "Breaking Bad",
+      category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
+        tmdb_id: "1396",
+        seasons: [
+            { season: 1, episodes: 7 },
+            { season: 2, episodes: 13 },
+            { season: 3, episodes: 13 },
+            { season: 4, episodes: 13 },
+            { season: 5, episodes: 16 }
+        ]
+    },
+        {
+        id: "better-call-saul",
+        title: "Better Call Saul",
+          category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
+        tmdb_id: "60059",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 },
+            { season: 4, episodes: 10 },
+            { season: 5, episodes: 10 },
+            { season: 6, episodes: 13 }
+        ]
+    },
+
+
 /**********************************************************************
    star wars 
 ******************************************************************/
@@ -260,7 +321,9 @@ let seriesList = [
   
   
   
-  /***********************************************************************/      
+  /***********************************************************************
+  Medieval Fantasy
+  *************************************************************************/
         {
         id: "A Knight of the Seven Kingdoms (2026)",
         title: "A Knight of the Seven Kingdoms (2026)",
@@ -272,7 +335,55 @@ let seriesList = [
             
         ]
     },
-        
+{
+        id: "house_of_the_dragon",
+        title: "House of the Dragon",
+      category: "Medieval Fantasy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
+        tmdb_id: "94997",
+        seasons: [
+            { season: 0, episodes: 73 },
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 }
+        ]
+    },
+    {
+        id: "game-of-thrones",
+        title: "Game of Thrones",
+      category: "Medieval Fantasy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijKEdinAQUfYNQTKfrhGnSdm5HQ.jpg",
+        tmdb_id: "1399",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 },
+            { season: 4, episodes: 10 },
+            { season: 5, episodes: 10 },
+            { season: 6, episodes: 10 },
+            { season: 7, episodes: 7 },
+            { season: 8, episodes: 6 }
+        ]
+    },
+{
+        id: "the-witcher",
+        title: "The Witcher",
+  category: "Medieval Fantasy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
+        tmdb_id: "71912",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 8 }
+        ]
+    },
+
+
+  /***********************************************************************
+  Historical
+  *************************************************************************/
+
         {
         id: "chernobyl",
         title: "Chernobyl (2019)",
@@ -284,6 +395,53 @@ let seriesList = [
             
         ]
     },
+{
+        id: "chief-of-war",
+        title: "Chief Of War",
+      category: "Historical",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Mckh3qJRTzXTQNZtpb133RHmO4.jpg",
+        tmdb_id: "196890",
+        seasons: [
+            { season: 1, episodes: 9 }
+        ]
+    },
+
+{
+        id: "vikings",
+        title: "Vikings",
+  category: "Historical",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
+        tmdb_id: "44217",
+        seasons: [
+            { season: 0, episodes: 31 },
+            { season: 1, episodes: 9 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 },
+            { season: 4, episodes: 20 },
+            { season: 5, episodes: 20 },
+            { season: 6, episodes: 20 }
+        ]
+    },
+{
+        id: "vikings-valhalla",
+        title: "Vikings Valhalla",
+  category: "Historical",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uCr7Ov7Rpzx0c0EPqbPcoEruTYl.jpg",
+        tmdb_id: "116135",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 }
+        ]
+    },
+
+    
+
+  /***********************************************************************
+  Sci-Fi
+  *************************************************************************/
+
+
  {
         id: "the-handmaids-tale",
         title: "The Handmaid's Tale 2017",
@@ -313,8 +471,72 @@ let seriesList = [
             { season: 2, episodes: 1 }
         ]
     },
+
+    {
+        id: "silo",
+        title: "Silo",
+      category: "Sci-Fi",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/sFHqpRoGiwUkwhvwW93udP7ImFa.jpg",
+        tmdb_id: "125988",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 }            
+
+        ]
+    },
+
+{
+        id: "foundation",
+        title: "Foundation",
+      category: "Sci-Fi",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/tg9I5pOY4M9CKj8U0cxVBTsm5eh.jpg",
+        tmdb_id: "93740",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 10 },
+            { season: 3, episodes: 10 }
+        ]
+    },
+
+    {
+        id: "the_boys",
+        title: "The Boys",
+      category: "Sci-Fi",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
+        tmdb_id: "76479",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 8 },
+            { season: 5, episodes: 7 }
+        ]
+    },
+{
+        id: "the-100",
+        title: "The 100",
+  category: "Sci-Fi",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg",
+        tmdb_id: "48866",
+        seasons: [
+            { season: 1, episodes: 13 },
+            { season: 2, episodes: 16 },
+            { season: 3, episodes: 16 },
+            { season: 4, episodes: 13 },
+            { season: 5, episodes: 13 },
+            { season: 6, episodes: 13 },
+            { season: 7, episodes: 16 }
+        ]
+    },
+
+
         
-  
+  /***********************************************************************
+  Marvel / DC
+  *************************************************************************/
+
+
 {
         id: "WandaVision",
         title: "WandaVision (2021)",
@@ -349,7 +571,42 @@ let seriesList = [
                 
              ]
     },
-  
+
+{
+        id: "spider_noir",
+        title: "Spider Noir'",
+      category: "Marvel/DC",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/oD8WSVqz84ZRfelkr7JPeJwR9Iv.jpg",
+        tmdb_id: "220102",
+        seasons: [
+            { season: 1, episodes: 8 }
+        ]
+    },
+
+{
+        id: "the_flash",
+        title: "The Flash",
+      category: "Marvel/DC",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
+        tmdb_id: "60735",
+        seasons: [
+            { season: 1, episodes: 23 },
+            { season: 2, episodes: 23 },
+            { season: 3, episodes: 23 },
+            { season: 4, episodes: 23 },
+            { season: 5, episodes: 22 },
+            { season: 6, episodes: 19 },
+            { season: 7, episodes: 18 },
+            { season: 8, episodes: 20 },
+            { season: 9, episodes: 13 }
+        ]
+    },
+
+
+/***********************************************************************
+  Classic
+  *************************************************************************/
+
     {
         id: "the-munsters",
         title: "The Munsters",
@@ -375,32 +632,10 @@ let seriesList = [
         ]
     },
 
-    {
-        id: "chief-of-war",
-        title: "Chief Of War",
-      category: "Historical",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Mckh3qJRTzXTQNZtpb133RHmO4.jpg",
-        tmdb_id: "196890",
-        seasons: [
-            { season: 1, episodes: 9 }
-        ]
-    },
     
-    {
-        id: "silo",
-        title: "Silo",
-      category: "Sci-Fi",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/sFHqpRoGiwUkwhvwW93udP7ImFa.jpg",
-        tmdb_id: "125988",
-        seasons: [
-            { season: 1, episodes: 10 },
-            { season: 2, episodes: 10 },
-            { season: 3, episodes: 10 }            
-
-        ]
-    },
-
-
+/*********************************************************
+Fantasy
+*********************************************************/
         {
         id: "the-lord-of-the-rings-the-rings-of-power",
         title: "The Lord of the Rings: The Rings of Power (2022)",
@@ -413,7 +648,9 @@ let seriesList = [
             { season: 2, episodes: 8 }
         ]
     },
-
+/***********************************************************
+Comedy
+***********************************************************/
         {
         id: "silicon-valley",
         title: "Silicon Valley (2014)",
@@ -432,212 +669,15 @@ let seriesList = [
 
 
         
-    {
-        id: "your-friends-and-neighbors",
-        title: "Your Friends And Neighbors",
-      category: "Crime",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lcp63INKEsVHUly9eayx7gEEOcG.jpg",
-        tmdb_id: "241609",
-        seasons: [
-            { season: 1, episodes: 9 },
-            { season: 2, episodes: 10 }
-
-        ]
-    },
+       
     
-    {
-        id: "spider_noir",
-        title: "Spider Noir'",
-      category: "Marvel/DC",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/oD8WSVqz84ZRfelkr7JPeJwR9Iv.jpg",
-        tmdb_id: "220102",
-        seasons: [
-            { season: 1, episodes: 8 }
-        ]
-    },
+    
+  
+    
 
-    {
-        id: "foundation",
-        title: "Foundation",
-      category: "Sci-Fi",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/tg9I5pOY4M9CKj8U0cxVBTsm5eh.jpg",
-        tmdb_id: "93740",
-        seasons: [
-            { season: 1, episodes: 10 },
-            { season: 2, episodes: 10 },
-            { season: 3, episodes: 10 }
-        ]
-    },
 
-    {
-        id: "the_boys",
-        title: "The Boys",
-      category: "Sci-Fi",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
-        tmdb_id: "76479",
-        seasons: [
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 8 },
-            { season: 3, episodes: 8 },
-            { season: 4, episodes: 8 },
-            { season: 5, episodes: 7 }
-        ]
-    },
-  {
-        id: "prison-break",
-        title: "Prison Break",
-    category: "Crime",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg",
-        tmdb_id: "2288",
-        seasons: [
-      
-            { season: 1, episodes: 22 },
-            { season: 2, episodes: 22 },
-            { season: 3, episodes: 13 },
-            { season: 4, episodes: 22 },
-            { season: 5, episodes: 9 }
-            
-        ]
-    },
-   
-    {
-        id: "breaking-bad",
-        title: "Breaking Bad",
-      category: "Crime",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
-        tmdb_id: "1396",
-        seasons: [
-            { season: 1, episodes: 7 },
-            { season: 2, episodes: 13 },
-            { season: 3, episodes: 13 },
-            { season: 4, episodes: 13 },
-            { season: 5, episodes: 16 }
-        ]
-    },
-        {
-        id: "better-call-saul",
-        title: "Better Call Saul",
-          category: "Crime",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
-        tmdb_id: "60059",
-        seasons: [
-            { season: 1, episodes: 10 },
-            { season: 2, episodes: 10 },
-            { season: 3, episodes: 10 },
-            { season: 4, episodes: 10 },
-            { season: 5, episodes: 10 },
-            { season: 6, episodes: 13 }
-        ]
-    },
-
-    {
-        id: "house_of_the_dragon",
-        title: "House of the Dragon",
-      category: "Medieval Fantasy",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
-        tmdb_id: "94997",
-        seasons: [
-            { season: 0, episodes: 73 },
-            { season: 1, episodes: 10 },
-            { season: 2, episodes: 8 },
-            { season: 3, episodes: 8 }
-        ]
-    },
-    {
-        id: "game-of-thrones",
-        title: "Game of Thrones",
-      category: "Medieval Fantasy",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijKEdinAQUfYNQTKfrhGnSdm5HQ.jpg",
-        tmdb_id: "1399",
-        seasons: [
-            { season: 1, episodes: 10 },
-            { season: 2, episodes: 10 },
-            { season: 3, episodes: 10 },
-            { season: 4, episodes: 10 },
-            { season: 5, episodes: 10 },
-            { season: 6, episodes: 10 },
-            { season: 7, episodes: 7 },
-            { season: 8, episodes: 6 }
-        ]
-    },
-
-{
-        id: "vikings",
-        title: "Vikings",
-  category: "Historical",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
-        tmdb_id: "44217",
-        seasons: [
-            { season: 0, episodes: 31 },
-            { season: 1, episodes: 9 },
-            { season: 2, episodes: 10 },
-            { season: 3, episodes: 10 },
-            { season: 4, episodes: 20 },
-            { season: 5, episodes: 20 },
-            { season: 6, episodes: 20 }
-        ]
-    },
-{
-        id: "vikings-valhalla",
-        title: "Vikings Valhalla",
-  category: "Historical",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uCr7Ov7Rpzx0c0EPqbPcoEruTYl.jpg",
-        tmdb_id: "116135",
-        seasons: [
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 8 },
-            { season: 3, episodes: 8 }
-        ]
-    },
-
-{
-        id: "the-witcher",
-        title: "The Witcher",
-  category: "Medieval Fantasy",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
-        tmdb_id: "71912",
-        seasons: [
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 8 },
-            { season: 3, episodes: 8 },
-            { season: 4, episodes: 8 }
-        ]
-    },
-{
-        id: "the-100",
-        title: "The 100",
-  category: "Sci-Fi",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg",
-        tmdb_id: "48866",
-        seasons: [
-            { season: 1, episodes: 13 },
-            { season: 2, episodes: 16 },
-            { season: 3, episodes: 16 },
-            { season: 4, episodes: 13 },
-            { season: 5, episodes: 13 },
-            { season: 6, episodes: 13 },
-            { season: 7, episodes: 16 }
-        ]
-    },
 
     
-    {
-        id: "the_flash",
-        title: "The Flash",
-      category: "Marvel/DC",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
-        tmdb_id: "60735",
-        seasons: [
-            { season: 1, episodes: 23 },
-            { season: 2, episodes: 23 },
-            { season: 3, episodes: 23 },
-            { season: 4, episodes: 23 },
-            { season: 5, episodes: 22 },
-            { season: 6, episodes: 19 },
-            { season: 7, episodes: 18 },
-            { season: 8, episodes: 20 },
-            { season: 9, episodes: 13 }
-        ]
-    },
+    /******************************************list end*************************************************/
 
     ];
