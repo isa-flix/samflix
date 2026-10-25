@@ -3,6 +3,7 @@ let seriesList = [
                 {
         id: "Coven-academy",
         title: "Coven Academy (2026)",
+        category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/f4R4YGeMQrXEu6jm3oAbSPeGC3M.jpg",
         tmdb_id: "298505",
         seasons: [
@@ -13,7 +14,8 @@ let seriesList = [
                 {
         id: "bayblade-x",
         title: "Beyblade X (2023)",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/66wkm14IWdrY5LaKZDAbkD2T9Jt.jpg",
+        category: "Fantasy",
+                  img: "https://www.themoviedb.org/t/p/w600_and_h900_face/66wkm14IWdrY5LaKZDAbkD2T9Jt.jpg",
         tmdb_id: "226688",
         seasons: [
                 { season: 1, episodes: 136 }
@@ -25,6 +27,7 @@ let seriesList = [
         {
         id: "Landman",
         title: "Landman (2024)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
         tmdb_id: "157741",
         seasons: [
@@ -37,6 +40,7 @@ let seriesList = [
         {
         id: "yellowstone",
         title: "YellowStone (2018)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/peNC0eyc3TQJa6x4TdKcBPNP4t0.jpg",
         tmdb_id: "73586",
         seasons: [
@@ -51,6 +55,7 @@ let seriesList = [
         {
         id: "dutton-ranch",
         title: "Dutton Ranch (2026)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
         tmdb_id: "299167",
         seasons: [
@@ -61,6 +66,7 @@ let seriesList = [
   {
         id: "mobland",
         title: "MobLand (2025)",
+    category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5Xc7WpWsgflfgEMoBlf9TmWhfbH.jpg",
         tmdb_id: "247718",
         seasons: [
@@ -72,6 +78,7 @@ let seriesList = [
   {
         id: "Andor",
         title: "Andor (2022)",
+    category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
         tmdb_id: "83867",
         seasons: [
@@ -83,6 +90,7 @@ let seriesList = [
         {
         id: "A Knight of the Seven Kingdoms (2026)",
         title: "A Knight of the Seven Kingdoms (2026)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/k8yARbD9iYn2nRX2HvsopfKDN2r.jpg",
         tmdb_id: "224372",
         seasons: [
@@ -94,6 +102,7 @@ let seriesList = [
         {
         id: "chernobyl",
         title: "Chernobyl (2019)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
         tmdb_id: "87108",
         seasons: [
@@ -104,6 +113,7 @@ let seriesList = [
  {
         id: "the-handmaids-tale",
         title: "The Handmaid's Tale 2017",
+   category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/eGUT7j3n3rn5yGihlCgwUnD70HV.jpg",
         tmdb_id: "69478",
         seasons: [
@@ -120,6 +130,7 @@ let seriesList = [
         {
         id: "murderbot",
         title: "Murderbot (2025)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mIKfKo2uDk3itzAPYIcSeYr4KtF.jpg",
         tmdb_id: "241554",
         seasons: [
@@ -132,6 +143,7 @@ let seriesList = [
         {
         id: "tom-and-jerry-show",
         title: "Tom and Jerry Show 2014",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/41EWXLXTZO4MLb2BL28mWZuydyq.jpg",
         tmdb_id: "47480",
         seasons: [
@@ -145,6 +157,7 @@ let seriesList = [
     {
         id: "tom-and-jerry-tales",
         title: "Tom and Jerry Tales 2006",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gthxkV1MHAwqsVNLIU93MDm3ApL.jpg",
         tmdb_id: "676",
         seasons: [
@@ -156,6 +169,7 @@ let seriesList = [
     {
         id: "stranger_things_tales_from_85",
         title: "Stranger Things: Tales from 85'",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
         tmdb_id: "224263",
         seasons: [
@@ -166,6 +180,7 @@ let seriesList = [
     {
         id: "stranger_things",
         title: "Stranger Things",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
         tmdb_id: "66732",
         seasons: [
@@ -180,6 +195,7 @@ let seriesList = [
 {
         id: "WandaVision",
         title: "WandaVision (2021)",
+  category: "WandaVision",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijWWwINc8h71NQ8j1LTJMFSj5wr.jpg",
         tmdb_id: "85271",
         seasons: [
@@ -191,6 +207,7 @@ let seriesList = [
   {
         id: "Agatha-All-Along",
         title: "Agatha All Along (2024)",
+    category: "Wandavision",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
         tmdb_id: "138501",
         seasons: [
@@ -201,6 +218,7 @@ let seriesList = [
 {
         id: "Vision-Quest",
         title: "VisionQuest (2026)",
+  category: "Wandavision",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
         tmdb_id: "213375",
         seasons: [
@@ -212,6 +230,7 @@ let seriesList = [
     {
         id: "the-munsters",
         title: "The Munsters",
+      category: "Classic",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5yZqkRP79TXqeeedTuHMlF0TZn7.jpg",
         tmdb_id: "1712",
         seasons: [
@@ -222,6 +241,7 @@ let seriesList = [
 {
         id: "the-munsters-today",
         title: "The Munsters Today",
+  category: "Classic",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u1rQAFFmRDRgWOdqxv6VRXL5P0b.jpg",
         tmdb_id: "11030",
         seasons: [
@@ -235,6 +255,7 @@ let seriesList = [
     {
         id: "chief-of-war",
         title: "Chief Of War",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Mckh3qJRTzXTQNZtpb133RHmO4.jpg",
         tmdb_id: "196890",
         seasons: [
@@ -245,6 +266,7 @@ let seriesList = [
     {
         id: "silo",
         title: "Silo",
+      category: "Sci-Fi",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/sFHqpRoGiwUkwhvwW93udP7ImFa.jpg",
         tmdb_id: "125988",
         seasons: [
@@ -259,6 +281,7 @@ let seriesList = [
         {
         id: "the-lord-of-the-rings-the-rings-of-power",
         title: "The Lord of the Rings: The Rings of Power (2022)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/kf5Hz70tjNAHg4swGDzOr9BfoZ1.jpg",
         tmdb_id: "84773",
         seasons: [
@@ -271,6 +294,7 @@ let seriesList = [
         {
         id: "silicon-valley",
         title: "Silicon Valley (2014)",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/4ptpmWBVD9HY9hMh8Cbs6SMiy7p.jpg",
         tmdb_id: "60573",
         seasons: [
@@ -288,6 +312,7 @@ let seriesList = [
     {
         id: "your-friends-and-neighbors",
         title: "Your Friends And Neighbors",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lcp63INKEsVHUly9eayx7gEEOcG.jpg",
         tmdb_id: "241609",
         seasons: [
@@ -300,6 +325,7 @@ let seriesList = [
     {
         id: "spider_noir",
         title: "Spider Noir'",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/oD8WSVqz84ZRfelkr7JPeJwR9Iv.jpg",
         tmdb_id: "220102",
         seasons: [
@@ -310,6 +336,7 @@ let seriesList = [
     {
         id: "foundation",
         title: "Foundation",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/tg9I5pOY4M9CKj8U0cxVBTsm5eh.jpg",
         tmdb_id: "93740",
         seasons: [
@@ -322,6 +349,7 @@ let seriesList = [
     {
         id: "the_boys",
         title: "The Boys",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
         tmdb_id: "76479",
         seasons: [
@@ -335,6 +363,7 @@ let seriesList = [
   {
         id: "prison-break",
         title: "Prison Break",
+    category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg",
         tmdb_id: "2288",
         seasons: [
@@ -351,6 +380,7 @@ let seriesList = [
     {
         id: "breaking-bad",
         title: "Breaking Bad",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
         tmdb_id: "1396",
         seasons: [
@@ -364,6 +394,7 @@ let seriesList = [
         {
         id: "better-call-saul",
         title: "Better Call Saul",
+          category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
         tmdb_id: "60059",
         seasons: [
@@ -379,6 +410,7 @@ let seriesList = [
     {
         id: "house_of_the_dragon",
         title: "House of the Dragon",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
         tmdb_id: "94997",
         seasons: [
@@ -391,6 +423,7 @@ let seriesList = [
     {
         id: "game-of-thrones",
         title: "Game of Thrones",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijKEdinAQUfYNQTKfrhGnSdm5HQ.jpg",
         tmdb_id: "1399",
         seasons: [
@@ -408,6 +441,7 @@ let seriesList = [
 {
         id: "vikings",
         title: "Vikings",
+  category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
         tmdb_id: "44217",
         seasons: [
@@ -423,6 +457,7 @@ let seriesList = [
 {
         id: "vikings-valhalla",
         title: "Vikings Valhalla",
+  category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uCr7Ov7Rpzx0c0EPqbPcoEruTYl.jpg",
         tmdb_id: "116135",
         seasons: [
@@ -435,6 +470,7 @@ let seriesList = [
 {
         id: "the-witcher",
         title: "The Witcher",
+  category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
         tmdb_id: "71912",
         seasons: [
@@ -447,6 +483,7 @@ let seriesList = [
 {
         id: "the-100",
         title: "The 100",
+  category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg",
         tmdb_id: "48866",
         seasons: [
@@ -464,6 +501,7 @@ let seriesList = [
     {
         id: "the_flash",
         title: "The Flash",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
         tmdb_id: "60735",
         seasons: [
@@ -482,6 +520,7 @@ let seriesList = [
     {
         id: "avatar-the-last-airbender",
         title: "Avatar: The Last Airbender",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg",
         tmdb_id: "82452",
         seasons: [
@@ -493,6 +532,7 @@ let seriesList = [
     {
         id: "wednesday",
         title: "Wednesday",
+      category: "Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
         tmdb_id: "119051",
         seasons: [
