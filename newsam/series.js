@@ -27,7 +27,7 @@ let seriesList = [
         {
         id: "Landman",
         title: "Landman (2024)",
-          category: "Fantasy",
+          category: "Neo-Western",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hYthRgS1nvQkGILn9YmqsF8kSk6.jpg",
         tmdb_id: "157741",
         seasons: [
@@ -40,7 +40,7 @@ let seriesList = [
         {
         id: "yellowstone",
         title: "YellowStone (2018)",
-          category: "Fantasy",
+          category: "Neo-Western",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/peNC0eyc3TQJa6x4TdKcBPNP4t0.jpg",
         tmdb_id: "73586",
         seasons: [
@@ -55,7 +55,7 @@ let seriesList = [
         {
         id: "dutton-ranch",
         title: "Dutton Ranch (2026)",
-          category: "Fantasy",
+          category: "Neo-Western",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xsiecCxd8lkcAluw0wWwbW5CwSv.jpg",
         tmdb_id: "299167",
         seasons: [
