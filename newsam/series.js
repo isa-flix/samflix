@@ -294,7 +294,7 @@ let seriesList = [
         {
         id: "silicon-valley",
         title: "Silicon Valley (2014)",
-          category: "Fantasy",
+          category: "Comedy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/4ptpmWBVD9HY9hMh8Cbs6SMiy7p.jpg",
         tmdb_id: "60573",
         seasons: [
