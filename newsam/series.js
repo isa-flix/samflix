@@ -651,7 +651,46 @@ Fantasy
 /***********************************************************
 Comedy
 ***********************************************************/
-        {
+  {
+        id: "Sienfeld",
+        title: "Sienfeld (1989)",
+          category: "Comedy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aCw8ONfyz3AhngVQa1E2Ss4KSUQ.jpg",
+        tmdb_id: "1400",
+        seasons: [
+            { season: 1, episodes: 5 },
+            { season: 2, episodes: 12 },
+            { season: 3, episodes: 23 },
+            { season: 4, episodes: 24 },
+            { season: 5, episodes: 22 },
+          { season: 6, episodes: 24 },
+            { season: 7, episodes: 24 },
+            { season: 8, episodes: 22 },
+            { season: 9, episodes: 24 }
+        ]
+    },     
+  
+  {
+        id: "friends",
+        title: "Friends (1994)",
+          category: "Comedy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
+        tmdb_id: "1668",
+        seasons: [
+            { season: 1, episodes: 24 },
+            { season: 2, episodes: 24 },
+            { season: 3, episodes: 25 },
+            { season: 4, episodes: 23 },
+            { season: 5, episodes: 23 },
+          { season: 6, episodes: 23 },
+            { season: 7, episodes: 23 },
+            { season: 8, episodes: 22 },
+            { season: 9, episodes: 23 },
+          { season: 10, episodes: 17 }
+        ]
+    },
+  
+  {
         id: "silicon-valley",
         title: "Silicon Valley (2014)",
           category: "Comedy",
