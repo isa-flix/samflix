@@ -1,5 +1,8 @@
 let seriesList = [
 
+  /**********************************************************************
+   Kids
+******************************************************************/
                 {
         id: "Coven-academy",
         title: "Coven Academy (2026)",
@@ -22,6 +25,87 @@ let seriesList = [
                 
              ]
     },
+      {
+        id: "tom-and-jerry-show",
+        title: "Tom and Jerry Show 2014",
+          category: "Kids",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/41EWXLXTZO4MLb2BL28mWZuydyq.jpg",
+        tmdb_id: "47480",
+        seasons: [
+            { season: 1, episodes: 52 },
+            { season: 2, episodes: 78 },
+            { season: 3, episodes: 78 },
+            { season: 4, episodes: 78 },
+            { season: 5, episodes: 39 }
+        ]
+    },
+    {
+        id: "tom-and-jerry-tales",
+        title: "Tom and Jerry Tales 2006",
+      category: "Kids",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gthxkV1MHAwqsVNLIU93MDm3ApL.jpg",
+        tmdb_id: "676",
+        seasons: [
+            { season: 1, episodes: 39 },
+            { season: 2, episodes: 39 }
+        ]
+    },
+
+    {
+        id: "stranger_things_tales_from_85",
+        title: "Stranger Things: Tales from 85'",
+      category: "Kids",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
+        tmdb_id: "224263",
+        seasons: [
+            { season: 1, episodes: 10 }
+        ]
+    },
+
+    {
+        id: "stranger_things",
+        title: "Stranger Things",
+      category: "Kids",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
+        tmdb_id: "66732",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 9 },
+            { season: 3, episodes: 8 },
+            { season: 4, episodes: 9 },
+            { season: 5, episodes: 9 }
+        ]
+    },
+{
+        id: "avatar-the-last-airbender",
+        title: "Avatar: The Last Airbender",
+      category: "Kids",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg",
+        tmdb_id: "82452",
+        seasons: [
+            { season: 1, episodes: 10 },
+            { season: 2, episodes: 7 }
+        ]
+    },
+
+    {
+        id: "wednesday",
+        title: "Wednesday",
+      category: "Kids",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
+        tmdb_id: "119051",
+        seasons: [
+            { season: 1, episodes: 8 },
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 1 }
+        ]
+    }
+
+  
+  /**********************************************************************
+   Neo-Western
+******************************************************************/
+  
       
  {
         id: "Justified",
@@ -77,7 +161,12 @@ let seriesList = [
                 { season: 1, episodes: 9 } 
         ]
     },
-      
+
+  /**********************************************************************
+   Crime
+******************************************************************/
+
+  
   {
         id: "mobland",
         title: "MobLand (2025)",
@@ -225,58 +314,7 @@ let seriesList = [
         ]
     },
         
-        {
-        id: "tom-and-jerry-show",
-        title: "Tom and Jerry Show 2014",
-          category: "Kids",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/41EWXLXTZO4MLb2BL28mWZuydyq.jpg",
-        tmdb_id: "47480",
-        seasons: [
-            { season: 1, episodes: 52 },
-            { season: 2, episodes: 78 },
-            { season: 3, episodes: 78 },
-            { season: 4, episodes: 78 },
-            { season: 5, episodes: 39 }
-        ]
-    },
-    {
-        id: "tom-and-jerry-tales",
-        title: "Tom and Jerry Tales 2006",
-      category: "Kids",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gthxkV1MHAwqsVNLIU93MDm3ApL.jpg",
-        tmdb_id: "676",
-        seasons: [
-            { season: 1, episodes: 39 },
-            { season: 2, episodes: 39 }
-        ]
-    },
-
-    {
-        id: "stranger_things_tales_from_85",
-        title: "Stranger Things: Tales from 85'",
-      category: "Kids",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
-        tmdb_id: "224263",
-        seasons: [
-            { season: 1, episodes: 10 }
-        ]
-    },
-
-    {
-        id: "stranger_things",
-        title: "Stranger Things",
-      category: "Kids",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
-        tmdb_id: "66732",
-        seasons: [
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 9 },
-            { season: 3, episodes: 8 },
-            { season: 4, episodes: 9 },
-            { season: 5, episodes: 9 }
-        ]
-    },
-
+  
 {
         id: "WandaVision",
         title: "WandaVision (2021)",
@@ -602,28 +640,4 @@ let seriesList = [
         ]
     },
 
-    {
-        id: "avatar-the-last-airbender",
-        title: "Avatar: The Last Airbender",
-      category: "Kids",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg",
-        tmdb_id: "82452",
-        seasons: [
-            { season: 1, episodes: 10 },
-            { season: 2, episodes: 7 }
-        ]
-    },
-
-    {
-        id: "wednesday",
-        title: "Wednesday",
-      category: "Kids",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
-        tmdb_id: "119051",
-        seasons: [
-            { season: 1, episodes: 8 },
-            { season: 2, episodes: 8 },
-            { season: 3, episodes: 1 }
-        ]
-    }
-];
+    ];
