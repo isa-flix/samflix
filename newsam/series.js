@@ -102,7 +102,7 @@ let seriesList = [
         {
         id: "chernobyl",
         title: "Chernobyl (2019)",
-          category: "Fantasy",
+          category: "Historical",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hlLXt2tOPT6RRnjiUmoxyG1LTFi.jpg",
         tmdb_id: "87108",
         seasons: [
@@ -441,7 +441,7 @@ let seriesList = [
 {
         id: "vikings",
         title: "Vikings",
-  category: "Fantasy",
+  category: "Historical",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u3oInkxcnNV2pZQbkFY3ovHYExR.jpg",
         tmdb_id: "44217",
         seasons: [
@@ -457,7 +457,7 @@ let seriesList = [
 {
         id: "vikings-valhalla",
         title: "Vikings Valhalla",
-  category: "Fantasy",
+  category: "Historical",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/uCr7Ov7Rpzx0c0EPqbPcoEruTYl.jpg",
         tmdb_id: "116135",
         seasons: [
