@@ -89,6 +89,40 @@ let seriesList = [
                 { season: 2, episodes: 10 }
              ]
     },
+/**********************************************************************
+   star wars 
+******************************************************************/
+  {
+        id: "Skeleton Crew",
+        title: "Star Wars: Skeleton Crew (2024)",
+    category: "Star Wars",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/srQbJhLRKoAwRrNN5ga7webPHbC.jpg",
+        tmdb_id: "202879",
+        seasons: [
+                { season: 1, episodes: 8 }
+                
+             ]
+    },
+{
+        id: "The Acolyte (2024)",
+        title: "The Acolyte (2024)",
+    category: "Star Wars",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mztdt3y6GBsJR69zHtszFezTCLT.jpg",
+        tmdb_id: "114479",
+        seasons: [
+                { season: 1, episodes: 8 }
+             ]
+    },
+  {
+        id: "Ahsoka (2023)",
+        title: "Ahsoka (2023)",
+    category: "Star Wars",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/eiJeWeCAEZAmRppnXHiTWDcCd3Q.jpg",
+        tmdb_id: "114461",
+        seasons: [
+                { season: 1, episodes: 8 }
+             ]
+    },
   
   {
         id: "Andor",
@@ -101,7 +135,43 @@ let seriesList = [
                 { season: 2, episodes: 12 }
              ]
     },
-        
+  
+  {
+        id: "Obi-Wan Kenobi (2022)",
+        title: "Obi-Wan Kenobi (2022)",
+    category: "Star Wars",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/qJRB789ceLryrLvOKrZqLKr2CGf.jpg",
+        tmdb_id: "92830",
+        seasons: [
+                { season: 1, episodes: 6 }
+             ]
+    },
+  {
+        id: "The Book of Boba Fett (2021)",
+        title: "The Book of Boba Fett (2021)",
+    category: "Star Wars",
+        img: "115036",
+        tmdb_id: "https://www.themoviedb.org/t/p/w600_and_h900_face/gNbdjDi1HamTCrfvM9JeA94bNi2.jpg",
+        seasons: [
+                { season: 1, episodes: 7 }
+             ]
+    },
+  {
+        id: "The Mandalorian (2019)",
+        title: "The Mandalorian (2019)",
+    category: "Star Wars",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
+        tmdb_id: "82856",
+        seasons: [
+                { season: 1, episodes: 8 },
+          { season: 2, episodes: 8 },
+                { season: 3, episodes: 8 }
+             ]
+    },
+  
+  
+  
+  /***********************************************************************/      
         {
         id: "A Knight of the Seven Kingdoms (2026)",
         title: "A Knight of the Seven Kingdoms (2026)",
