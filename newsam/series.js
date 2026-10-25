@@ -90,7 +90,7 @@ let seriesList = [
         {
         id: "A Knight of the Seven Kingdoms (2026)",
         title: "A Knight of the Seven Kingdoms (2026)",
-          category: "Fantasy",
+          category: "Medieval Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/k8yARbD9iYn2nRX2HvsopfKDN2r.jpg",
         tmdb_id: "224372",
         seasons: [
@@ -470,7 +470,7 @@ let seriesList = [
 {
         id: "the-witcher",
         title: "The Witcher",
-  category: "Fantasy",
+  category: "Medieval Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/AoGsDM02UVt0npBA8OvpDcZbaMi.jpg",
         tmdb_id: "71912",
         seasons: [
