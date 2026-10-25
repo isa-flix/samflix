@@ -66,7 +66,7 @@ let seriesList = [
   {
         id: "mobland",
         title: "MobLand (2025)",
-    category: "Fantasy",
+    category: "Crime",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5Xc7WpWsgflfgEMoBlf9TmWhfbH.jpg",
         tmdb_id: "247718",
         seasons: [
@@ -78,7 +78,7 @@ let seriesList = [
   {
         id: "Andor",
         title: "Andor (2022)",
-    category: "Fantasy",
+    category: "Star Wars",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/khZqmwHQicTYoS7Flreb9EddFZC.jpg",
         tmdb_id: "83867",
         seasons: [
@@ -363,7 +363,7 @@ let seriesList = [
   {
         id: "prison-break",
         title: "Prison Break",
-    category: "Fantasy",
+    category: "Crime",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wnmNPaLvhnMeOqnWlhNkYCZxtda.jpg",
         tmdb_id: "2288",
         seasons: [
