@@ -255,7 +255,7 @@ let seriesList = [
     {
         id: "chief-of-war",
         title: "Chief Of War",
-      category: "Fantasy",
+      category: "Historical",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8Mckh3qJRTzXTQNZtpb133RHmO4.jpg",
         tmdb_id: "196890",
         seasons: [
