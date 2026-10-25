@@ -410,7 +410,7 @@ let seriesList = [
     {
         id: "house_of_the_dragon",
         title: "House of the Dragon",
-      category: "Fantasy",
+      category: "Medieval Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/1awMFhtgWiucCJyCVkgbyJjfnJH.jpg",
         tmdb_id: "94997",
         seasons: [
@@ -423,7 +423,7 @@ let seriesList = [
     {
         id: "game-of-thrones",
         title: "Game of Thrones",
-      category: "Fantasy",
+      category: "Medieval Fantasy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijKEdinAQUfYNQTKfrhGnSdm5HQ.jpg",
         tmdb_id: "1399",
         seasons: [
