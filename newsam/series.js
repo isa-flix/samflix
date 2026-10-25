@@ -689,6 +689,30 @@ Comedy
           { season: 10, episodes: 17 }
         ]
     },
+
+{
+        id: "The-Big-Bang-Theory",
+        title: "The Big Bang Theory (2007)",
+          category: "Comedy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/euKFiO5M125rpngFRBbSW83beeI.jpg",
+        tmdb_id: "1418",
+        seasons: [
+            { season: 1, episodes: 17 },
+            { season: 2, episodes: 23 },
+            { season: 3, episodes: 23 },
+            { season: 4, episodes: 24 },
+            { season: 5, episodes: 24 },
+          { season: 6, episodes: 24 },
+            { season: 7, episodes: 24 },
+            { season: 8, episodes: 24 },
+            { season: 9, episodes: 24 },
+          { season: 10, episodes: 24 },
+            { season: 11, episodes: 24 },
+          { season: 12, episodes: 24 }
+        ]
+    },
+
+  
   
   {
         id: "silicon-valley",
