@@ -380,7 +380,7 @@ let seriesList = [
     {
         id: "breaking-bad",
         title: "Breaking Bad",
-      category: "Fantasy",
+      category: "Crime",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ztkUQFLlC19CCMYHW9o1zWhJRNq.jpg",
         tmdb_id: "1396",
         seasons: [
@@ -394,7 +394,7 @@ let seriesList = [
         {
         id: "better-call-saul",
         title: "Better Call Saul",
-          category: "Fantasy",
+          category: "Crime",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/fC2HDm5t0kHl7mTm7jxMR31b7by.jpg",
         tmdb_id: "60059",
         seasons: [
