@@ -3,7 +3,7 @@ let seriesList = [
                 {
         id: "Coven-academy",
         title: "Coven Academy (2026)",
-        category: "Fantasy",
+        category: "Kids",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/f4R4YGeMQrXEu6jm3oAbSPeGC3M.jpg",
         tmdb_id: "298505",
         seasons: [
@@ -14,7 +14,7 @@ let seriesList = [
                 {
         id: "bayblade-x",
         title: "Beyblade X (2023)",
-        category: "Fantasy",
+        category: "Kids",
                   img: "https://www.themoviedb.org/t/p/w600_and_h900_face/66wkm14IWdrY5LaKZDAbkD2T9Jt.jpg",
         tmdb_id: "226688",
         seasons: [
@@ -143,7 +143,7 @@ let seriesList = [
         {
         id: "tom-and-jerry-show",
         title: "Tom and Jerry Show 2014",
-          category: "Fantasy",
+          category: "Kids",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/41EWXLXTZO4MLb2BL28mWZuydyq.jpg",
         tmdb_id: "47480",
         seasons: [
@@ -157,7 +157,7 @@ let seriesList = [
     {
         id: "tom-and-jerry-tales",
         title: "Tom and Jerry Tales 2006",
-      category: "Fantasy",
+      category: "Kids",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gthxkV1MHAwqsVNLIU93MDm3ApL.jpg",
         tmdb_id: "676",
         seasons: [
@@ -169,7 +169,7 @@ let seriesList = [
     {
         id: "stranger_things_tales_from_85",
         title: "Stranger Things: Tales from 85'",
-      category: "Fantasy",
+      category: "Kids",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xyVpiSZNA2fYJUuuagkqiSHJqjr.jpg",
         tmdb_id: "224263",
         seasons: [
@@ -180,7 +180,7 @@ let seriesList = [
     {
         id: "stranger_things",
         title: "Stranger Things",
-      category: "Fantasy",
+      category: "Kids",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/cVxVGwHce6xnW8UaVUggaPXbmoE.jpg",
         tmdb_id: "66732",
         seasons: [
@@ -207,7 +207,7 @@ let seriesList = [
   {
         id: "Agatha-All-Along",
         title: "Agatha All Along (2024)",
-    category: "Wandavision",
+    category: "WandaVision",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
         tmdb_id: "138501",
         seasons: [
@@ -218,7 +218,7 @@ let seriesList = [
 {
         id: "Vision-Quest",
         title: "VisionQuest (2026)",
-  category: "Wandavision",
+  category: "WandaVision",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
         tmdb_id: "213375",
         seasons: [
@@ -520,7 +520,7 @@ let seriesList = [
     {
         id: "avatar-the-last-airbender",
         title: "Avatar: The Last Airbender",
-      category: "Fantasy",
+      category: "Kids",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lzZpWEaqzP0qVA5nkCc5ASbNcSy.jpg",
         tmdb_id: "82452",
         seasons: [
@@ -532,7 +532,7 @@ let seriesList = [
     {
         id: "wednesday",
         title: "Wednesday",
-      category: "Fantasy",
+      category: "Kids",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/36xXlhEpQqVVPuiZhfoQuaY4OlA.jpg",
         tmdb_id: "119051",
         seasons: [
