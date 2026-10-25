@@ -113,7 +113,7 @@ let seriesList = [
  {
         id: "the-handmaids-tale",
         title: "The Handmaid's Tale 2017",
-   category: "Fantasy",
+   category: "Sci-Fi",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/eGUT7j3n3rn5yGihlCgwUnD70HV.jpg",
         tmdb_id: "69478",
         seasons: [
