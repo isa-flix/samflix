@@ -1,36 +1,6 @@
 let seriesList = [
 
-  /**********************************************************************
-   Hindi
-******************************************************************/
-                {
-        id: "Panchayat",
-        title: "Panchayat (2020)",
-        category: "Hindi",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8ivTX5q2otqXvH815BcOhxVkTPW.jpg",
-        tmdb_id: "101352",
-        seasons: [
-                { season: 1, episodes: 8 },
-          { season: 1, episodes: 8 },
-          { season: 1, episodes: 8 },
-          { season: 1, episodes: 8 }
-                
-             ]
-    },
-
-          {
-        id: "Mirzapur",
-        title: "Mirzapur (2018)",
-        category: "Hindi",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/p0qM8hhlMF5DuxHBzl2EZR6TehX.jpg",
-        tmdb_id: "84105",
-        seasons: [
-                { season: 1, episodes: 9 },
-          { season: 1, episodes: 10 },
-          { season: 1, episodes: 10 }
-             ]
-    },
-
+  
   
   
   /**********************************************************************
@@ -635,6 +605,36 @@ let seriesList = [
         ]
     },
 
+/**********************************************************************
+   Hindi
+******************************************************************/
+                {
+        id: "Panchayat",
+        title: "Panchayat (2020)",
+        category: "Hindi",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/8ivTX5q2otqXvH815BcOhxVkTPW.jpg",
+        tmdb_id: "101352",
+        seasons: [
+                { season: 1, episodes: 8 },
+          { season: 1, episodes: 8 },
+          { season: 1, episodes: 8 },
+          { season: 1, episodes: 8 }
+                
+             ]
+    },
+
+          {
+        id: "Mirzapur",
+        title: "Mirzapur (2018)",
+        category: "Hindi",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/p0qM8hhlMF5DuxHBzl2EZR6TehX.jpg",
+        tmdb_id: "84105",
+        seasons: [
+                { season: 1, episodes: 9 },
+          { season: 1, episodes: 10 },
+          { season: 1, episodes: 10 }
+             ]
+    },
 
 /***********************************************************************
   Classic
