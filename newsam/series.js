@@ -99,7 +99,7 @@ let seriesList = [
             { season: 2, episodes: 8 },
             { season: 3, episodes: 1 }
         ]
-    }
+    },
 
   
   /**********************************************************************
@@ -665,7 +665,7 @@ Comedy
             { season: 5, episodes: 8 },
             { season: 6, episodes: 7 }
         ]
-    },
+    }
 
 
         
