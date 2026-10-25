@@ -243,7 +243,7 @@ let seriesList = [
    star wars 
 ******************************************************************/
   {
-        id: "Skeleton Crew",
+        id: "Skeleton-Crew",
         title: "Star Wars: Skeleton Crew (2024)",
     category: "Star Wars",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/srQbJhLRKoAwRrNN5ga7webPHbC.jpg",
@@ -254,7 +254,7 @@ let seriesList = [
              ]
     },
 {
-        id: "The Acolyte (2024)",
+        id: "The-Acolyte",
         title: "The Acolyte (2024)",
     category: "Star Wars",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mztdt3y6GBsJR69zHtszFezTCLT.jpg",
@@ -264,7 +264,7 @@ let seriesList = [
              ]
     },
   {
-        id: "Ahsoka (2023)",
+        id: "Ahsoka",
         title: "Ahsoka (2023)",
     category: "Star Wars",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/eiJeWeCAEZAmRppnXHiTWDcCd3Q.jpg",
@@ -287,7 +287,7 @@ let seriesList = [
     },
   
   {
-        id: "Obi-Wan Kenobi (2022)",
+        id: "Obi-Wan-Kenobi",
         title: "Obi-Wan Kenobi (2022)",
     category: "Star Wars",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/qJRB789ceLryrLvOKrZqLKr2CGf.jpg",
@@ -297,7 +297,7 @@ let seriesList = [
              ]
     },
   {
-        id: "The Book of Boba Fett (2021)",
+        id: "The-Book-of-Boba-Fett",
         title: "The Book of Boba Fett (2021)",
     category: "Star Wars",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gNbdjDi1HamTCrfvM9JeA94bNi2.jpg",
@@ -307,7 +307,7 @@ let seriesList = [
              ]
     },
   {
-        id: "The Mandalorian (2019)",
+        id: "The-Mandalorian",
         title: "The Mandalorian (2019)",
     category: "Star Wars",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/sWgBv7LV2PRoQgkxwlibdGXKz1S.jpg",
