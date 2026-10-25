@@ -239,8 +239,8 @@ let seriesList = [
         id: "The Book of Boba Fett (2021)",
         title: "The Book of Boba Fett (2021)",
     category: "Star Wars",
-        img: "115036",
-        tmdb_id: "https://www.themoviedb.org/t/p/w600_and_h900_face/gNbdjDi1HamTCrfvM9JeA94bNi2.jpg",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/gNbdjDi1HamTCrfvM9JeA94bNi2.jpg",
+        tmdb_id: "115036",
         seasons: [
                 { season: 1, episodes: 7 }
              ]
