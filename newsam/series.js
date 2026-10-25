@@ -23,8 +23,23 @@ let seriesList = [
              ]
     },
       
-
-        {
+ {
+        id: "Justified",
+        title: "Justified (2010)",
+          category: "Neo-Western",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/22spod781iNFwJbhW0qakHfGMbZ.jpg",
+        tmdb_id: "1436",
+        seasons: [
+                { season: 1, episodes: 13 },
+          { season: 2, episodes: 13 },
+          { season: 3, episodes: 13 },
+          { season: 4, episodes: 13 },
+          { season: 5, episodes: 13 },
+                { season: 6, episodes: 13 }
+             ]
+    },
+       
+  {
         id: "Landman",
         title: "Landman (2024)",
           category: "Neo-Western",
