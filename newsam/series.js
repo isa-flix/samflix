@@ -195,7 +195,7 @@ let seriesList = [
 {
         id: "WandaVision",
         title: "WandaVision (2021)",
-  category: "WandaVision",
+  category: "Marvel/DC",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/ijWWwINc8h71NQ8j1LTJMFSj5wr.jpg",
         tmdb_id: "85271",
         seasons: [
@@ -207,7 +207,7 @@ let seriesList = [
   {
         id: "Agatha-All-Along",
         title: "Agatha All Along (2024)",
-    category: "WandaVision",
+    category: "Marvel/DC",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/mGsxKwXUjojitRv2E9qMTbxbBRd.jpg",
         tmdb_id: "138501",
         seasons: [
@@ -218,7 +218,7 @@ let seriesList = [
 {
         id: "Vision-Quest",
         title: "VisionQuest (2026)",
-  category: "WandaVision",
+  category: "Marvel/DC",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/WGyAyBPncfuu8MZhLY9RtfZPM0.jpg",
         tmdb_id: "213375",
         seasons: [
@@ -312,7 +312,7 @@ let seriesList = [
     {
         id: "your-friends-and-neighbors",
         title: "Your Friends And Neighbors",
-      category: "Fantasy",
+      category: "Crime",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/lcp63INKEsVHUly9eayx7gEEOcG.jpg",
         tmdb_id: "241609",
         seasons: [
@@ -325,7 +325,7 @@ let seriesList = [
     {
         id: "spider_noir",
         title: "Spider Noir'",
-      category: "Fantasy",
+      category: "Marvel/DC",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/oD8WSVqz84ZRfelkr7JPeJwR9Iv.jpg",
         tmdb_id: "220102",
         seasons: [
@@ -336,7 +336,7 @@ let seriesList = [
     {
         id: "foundation",
         title: "Foundation",
-      category: "Fantasy",
+      category: "Sci-Fi",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/tg9I5pOY4M9CKj8U0cxVBTsm5eh.jpg",
         tmdb_id: "93740",
         seasons: [
@@ -349,7 +349,7 @@ let seriesList = [
     {
         id: "the_boys",
         title: "The Boys",
-      category: "Fantasy",
+      category: "Sci-Fi",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/in1R2dDc421JxsoRWaIIAqVI2KE.jpg",
         tmdb_id: "76479",
         seasons: [
@@ -483,7 +483,7 @@ let seriesList = [
 {
         id: "the-100",
         title: "The 100",
-  category: "Fantasy",
+  category: "Sci-Fi",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/wcaDIAG1QdXQLRaj4vC1EFdBT2.jpg",
         tmdb_id: "48866",
         seasons: [
@@ -501,7 +501,7 @@ let seriesList = [
     {
         id: "the_flash",
         title: "The Flash",
-      category: "Fantasy",
+      category: "Marvel/DC",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/yZevl2vHQgmosfwUdVNzviIfaWS.jpg",
         tmdb_id: "60735",
         seasons: [
