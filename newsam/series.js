@@ -169,6 +169,21 @@ let seriesList = [
    Crime
 ******************************************************************/
 
+  {
+        id: "Person-of-Interest",
+        title: "Person Of Interest (2011)",
+    category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/f8aIvYk5h7Z8EP3dinCmVgQFYow.jpg",
+        tmdb_id: "1411",
+        seasons: [
+                { season: 1, episodes: 23 },
+              { season: 2, episodes: 22 },
+                { season: 3, episodes: 23 },
+                { season: 4, episodes: 22 },
+                
+                { season: 5, episodes: 13 }
+             ]
+    },
   
   {
         id: "mobland",
