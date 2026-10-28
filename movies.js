@@ -30,20 +30,20 @@ let movies = [
     "category": "Live Stream",
     "video": "https://arydigital.aryzap.com/dc2dc67658cc5a71a92476b702cd2ae8/69ea2a66/v1/0183ea2408f90b8ed5941a38bc72/0183ea24302d0b8ed5941a38bc75/634E5F8E000072F08E6D-p0_tmpl360p_360p-1776867496168.ts"
   },
-	/* ---------------- Cartoons ---------------- */
+	/* ---------------- Kids ---------------- */
 
 	{ 
 		"id": "1315772",
 		"title": "Minions & Monsters (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 	},
 
 	{
 		"id": "1185806",
 		"title": "PAW Patrol: The Dino Movie (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jqxuYbNEaaGJNxmoj2n4vNyehRB.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 
 	},
 
@@ -52,7 +52,7 @@ let movies = [
 		"id": "980431",
 		"title": "Avatar Aang: The Last Airbender (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3sgnSfNT27Bx5O5ukr7B26mhEQq.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 
 	},
 
@@ -61,7 +61,7 @@ let movies = [
 		"id": "1301421",
 		"title": "The Sheep Detectives 2026",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mGWOmj2jHFol3kOGNv1EhbSDDE1.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 
 	},
 
@@ -70,7 +70,7 @@ let movies = [
 		"id": "539745",
 		"title": "Animal Farm 2026",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6pzI1DIlxwAFffw9OZcG6cr031U.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 
 	},
 	
@@ -78,33 +78,66 @@ let movies = [
 		"id": "tt0121164",
 		"title": "Corpse Bride",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/isb2Qow76GpqYmsSyfdMfsYAjts.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 	},
 	{
 		"id": "1007757",
 		"title": "Swapped",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tHhxWxge06goXU6ZQH1hj7vK8Hd.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 	},
 	{
 		"id": "tt27613895",
 		"title": "GOAT",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wfuqMlaExcoYiUEvKfVpUTt1v4u.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 	},
 	
     { 
 		"id": "tt15678738",
 		"title": "David", 
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7lFG1WrCwAxBfyGK8ahlBVzXno7.jpg",
-		"category": "Cartoons"
+		"category": "Kids"
 	},
 
 		
 	{ 
-		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Cartoons" 
+		"id": "tt26443616", "title": "Hoppers", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xjtWQ2CL1mpmMNwuU5HeS4Iuwuu.jpg", "category": "Kids" 
 	},
+
+{ 
+		"id": "1465063", "title": "Forgotten Island (2026)",
+	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/myd1K3gefdNAWFsGNRDdMeiK9Qg.jpg", "category": "Kids" 
+	},
+{ 
+		"id": "791523", "title": "Wild Wood (2026)",
+	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/snFM00mpNAfUzUtkdEW0uDEvXA0.jpg", "category": "Kids" 
+	},
+	
 /* ---------------- Movies ---------------- */
+	
+{
+		"id": "1562777",
+		"title": "The Stunt Driver (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jFiMdTG8Hw41A3VxrzLEWtMFIYX.jpg",
+		"category": "Movie"
+	},
+
+	{
+		"id": "1195803",		"title": "Wicker (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/eOYkNDalgt1v6UGjw3AoFR5qo9D.jpg",
+		"category": "Movie"
+	},
+
+	
+	{
+		"id": "1384216",
+		"title": "The Dog Stars (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/A7i16oDi03qrKep5pBfuTWNUTb.jpg",
+		"category": "Movie"
+	},
+
+	
 	{
 		"id": "1153576",
 		"title": "Street Fighter (2026)",
