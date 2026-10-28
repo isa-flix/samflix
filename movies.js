@@ -295,6 +295,12 @@ let movies = [
 		"category": "MovieSet",
 		"set": "Dune"
 	},
+	{
+		"id": "841",	"title": "Dune (1984)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4kJmUCE7mkVJjXa7A0g2rY4IGTm.jpg",
+		"category": "MovieSet",
+		"set": "Dune"
+	},
 			
 	/*-------------Expandables---------------------*/
 	{
