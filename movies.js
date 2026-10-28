@@ -276,6 +276,26 @@ let movies = [
 	
 	/* ---------------- Movie Sets ---------------- */
 
+/*-------------Dune---------------------*/
+	{
+		"id": "438631",		"title": "Dune (2021)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/v1tRXZ4JtD2Iv6fjkPvT4GiwslV.jpg",
+		"category": "MovieSet",
+		"set": "Dune"
+	},
+	{
+		"id": "693134",		"title": "Dune: Part Two (2024)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
+		"category": "MovieSet",
+		"set": "Dune"
+	},
+		{
+		"id": "1170608",		"title": "Dune: Part Three (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg",
+		"category": "MovieSet",
+		"set": "Dune"
+	},
+			
 	/*-------------Expandables---------------------*/
 	{
 		"id": "27578",
