@@ -776,6 +776,27 @@ Comedy
             { season: 5, episodes: 8 },
             { season: 6, episodes: 7 }
         ]
+    },
+
+  {
+        id: "Cheers",
+        title: "Cheers (1982)",
+          category: "Comedy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/nD1ZQBKbgKSmKcrAkWTofohsScj.jpg",
+        tmdb_id: "141",
+        seasons: [
+            { season: 1, episodes: 22 },
+            { season: 2, episodes: 22 },
+            { season: 3, episodes: 25 },
+            { season: 4, episodes: 26 },
+            { season: 5, episodes: 26 },
+            { season: 6, episodes: 25 },
+            { season: 7, episodes: 22 },
+            { season: 8, episodes: 26 },
+            { season: 9, episodes: 25 },
+            { season: 10, episodes: 25 },
+            { season: 11, episodes: 25 }
+        ]
     }
 
 
