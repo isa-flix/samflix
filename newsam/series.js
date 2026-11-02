@@ -760,6 +760,22 @@ Comedy
         ]
     },
 
+  {
+        id: "Just-Shoot-Me",
+        title: "Just Shoot Me! (1997)",
+          category: "Comedy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xP2JuabiJvvmVvGsHjDj4IL8gcO.jpg",
+        tmdb_id: "4576",
+        seasons: [
+            { season: 1, episodes: 6 },
+            { season: 2, episodes: 25 },
+            { season: 3, episodes: 25 },
+            { season: 4, episodes: 24 },
+            { season: 5, episodes: 22 },
+            { season: 6, episodes: 22 },
+            { season: 7, episodes: 24 }
+        ]
+    },
   
   
   {
