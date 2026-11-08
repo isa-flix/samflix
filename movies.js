@@ -40,6 +40,13 @@ let movies = [
 	},
 
 	{ 
+		"id": "1204680",
+		"title": "Coyote vs. Acme (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kYDCl2y0VPvhT5eYWbMRInPoB03.jpg",
+		"category": "Kids"
+	},
+	
+	{ 
 		"id": "1315772",
 		"title": "Minions & Monsters (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4LwvU9SZc8QQzW1X1FAPhNbXnEU.jpg",
