@@ -117,6 +117,13 @@ let movies = [
 /* ---------------- Movies ---------------- */
 	
 {
+		"id": "1294189", 		"title": "The Mongoose (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/eSS5mvSG84UUuvtbHel5Yu3Wik4.jpg",
+		"category": "Movie"
+	},
+
+	
+	{
 		"id": "1562777",
 		"title": "The Stunt Driver (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jFiMdTG8Hw41A3VxrzLEWtMFIYX.jpg",
