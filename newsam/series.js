@@ -623,7 +623,19 @@ let seriesList = [
 /**********************************************************************
    Hindi
 ******************************************************************/
-                {
+          {
+        id: "Akka",
+        title: "Akka (2026)",
+        category: "Hindi",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/tdnHaR0vlKMQbjmaCs2V3LDmzSd.jpg",
+        tmdb_id: "243555",
+        seasons: [
+                { season: 1, episodes: 5 }
+                
+             ]
+    },      
+  
+  {
         id: "Panchayat",
         title: "Panchayat (2020)",
         category: "Hindi",
