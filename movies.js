@@ -131,6 +131,11 @@ let movies = [
 /* ---------------- Movies ---------------- */
 	
 {
+		"id": "", 		"title": "Ghost Soldier (2026)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
+		"category": "Movie"
+	},
+	{
 		"id": "1148365", 		"title": "Matchbox the Movie (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aHhHRz6nOpwkqJs5ASeRGAdK2dt.jpg",
 		"category": "Movie"
