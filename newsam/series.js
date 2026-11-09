@@ -670,7 +670,7 @@ let seriesList = [
     {
         id: "the-munsters",
         title: "The Munsters",
-      category: "Classic",
+      category: "Comedy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5yZqkRP79TXqeeedTuHMlF0TZn7.jpg",
         tmdb_id: "1712",
         seasons: [
@@ -681,7 +681,7 @@ let seriesList = [
 {
         id: "the-munsters-today",
         title: "The Munsters Today",
-  category: "Classic",
+  category: "Comedy",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u1rQAFFmRDRgWOdqxv6VRXL5P0b.jpg",
         tmdb_id: "11030",
         seasons: [
@@ -711,6 +711,22 @@ Fantasy
 /***********************************************************
 Comedy
 ***********************************************************/
+
+  
+  {
+        id: "monty-python-s-flying-circus",
+        title: "Monty Python's Flying Circus (1969)",
+          category: "Comedy",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hZtMtL8Pqv9FAMljN9911U4qBhI.jpg",
+        tmdb_id: "849",
+        seasons: [
+            { season: 1, episodes: 13 },
+            { season: 2, episodes: 13 },
+            { season: 3, episodes: 13 },
+            { season: 4, episodes: 6 }
+        ]
+    },     
+  
   {
         id: "Sienfeld",
         title: "Sienfeld (1989)",
