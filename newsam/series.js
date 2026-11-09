@@ -667,31 +667,7 @@ let seriesList = [
   Classic
   *************************************************************************/
 
-    {
-        id: "the-munsters",
-        title: "The Munsters",
-      category: "Comedy",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5yZqkRP79TXqeeedTuHMlF0TZn7.jpg",
-        tmdb_id: "1712",
-        seasons: [
-            { season: 1, episodes: 38 },
-            { season: 2, episodes: 32 }
-        ]
-    },
-{
-        id: "the-munsters-today",
-        title: "The Munsters Today",
-  category: "Comedy",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u1rQAFFmRDRgWOdqxv6VRXL5P0b.jpg",
-        tmdb_id: "11030",
-        seasons: [
-            { season: 1, episodes: 25 },
-            { season: 2, episodes: 24 },
-            { season: 3, episodes: 24 }
-
-        ]
-    },
-
+  
     
 /*********************************************************
 Fantasy
@@ -709,16 +685,15 @@ Fantasy
         ]
     },
 /***********************************************************
-Comedy
+Sitcoms
 ***********************************************************/
 
-  
   {
-        id: "monty-python-s-flying-circus",
-        title: "Monty Python's Flying Circus (1969)",
-          category: "Comedy",
-        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hZtMtL8Pqv9FAMljN9911U4qBhI.jpg",
-        tmdb_id: "849",
+        id: "m-a-s-h",
+        title: "M*A*S*H (1972)",
+          category: "Sitcoms",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/6rhuM3oMoEWKxAdrm7IyM8oq8cC.jpg",
+        tmdb_id: "918",
         seasons: [
             { season: 1, episodes: 13 },
             { season: 2, episodes: 13 },
@@ -726,11 +701,59 @@ Comedy
             { season: 4, episodes: 6 }
         ]
     },     
+
+  
+  {
+        id: "monty-python-s-flying-circus",
+        title: "Monty Python's Flying Circus (1969)",
+          category: "Sitcoms",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/hZtMtL8Pqv9FAMljN9911U4qBhI.jpg",
+        tmdb_id: "849",
+        seasons: [
+            { season: 1, episodes: 24 },
+            { season: 2, episodes: 24 },
+            { season: 3, episodes: 24 },
+          { season: 4, episodes: 24 },
+            { season: 5, episodes: 24 },
+            { season: 6, episodes: 24 },
+          { season: 7, episodes: 25 },
+            { season: 8, episodes: 25 },
+            { season: 9, episodes: 20 },
+          { season: 10, episodes: 21 },
+            { season: 11, episodes: 16 }
+        ]
+    },     
+  
+    {
+        id: "the-munsters",
+        title: "The Munsters",
+      category: "Sitcoms",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/5yZqkRP79TXqeeedTuHMlF0TZn7.jpg",
+        tmdb_id: "1712",
+        seasons: [
+            { season: 1, episodes: 38 },
+            { season: 2, episodes: 32 }
+        ]
+    },
+{
+        id: "the-munsters-today",
+        title: "The Munsters Today",
+  category: "Sitcoms",
+        img: "https://www.themoviedb.org/t/p/w600_and_h900_face/u1rQAFFmRDRgWOdqxv6VRXL5P0b.jpg",
+        tmdb_id: "11030",
+        seasons: [
+            { season: 1, episodes: 25 },
+            { season: 2, episodes: 24 },
+            { season: 3, episodes: 24 }
+
+        ]
+    },
+
   
   {
         id: "Sienfeld",
         title: "Sienfeld (1989)",
-          category: "Comedy",
+          category: "Sitcoms",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/aCw8ONfyz3AhngVQa1E2Ss4KSUQ.jpg",
         tmdb_id: "1400",
         seasons: [
@@ -749,7 +772,7 @@ Comedy
   {
         id: "friends",
         title: "Friends (1994)",
-          category: "Comedy",
+          category: "Sitcoms",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/2koX1xLkpTQM4IZebYvKysFW1Nh.jpg",
         tmdb_id: "1668",
         seasons: [
@@ -769,7 +792,7 @@ Comedy
 {
         id: "The-Big-Bang-Theory",
         title: "The Big Bang Theory (2007)",
-          category: "Comedy",
+          category: "Sitcoms",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/euKFiO5M125rpngFRBbSW83beeI.jpg",
         tmdb_id: "1418",
         seasons: [
@@ -791,7 +814,7 @@ Comedy
   {
         id: "Just-Shoot-Me",
         title: "Just Shoot Me! (1997)",
-          category: "Comedy",
+          category: "Sitcoms",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/xP2JuabiJvvmVvGsHjDj4IL8gcO.jpg",
         tmdb_id: "4576",
         seasons: [
@@ -809,7 +832,7 @@ Comedy
   {
         id: "silicon-valley",
         title: "Silicon Valley (2014)",
-          category: "Comedy",
+          category: "Sitcoms",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/4ptpmWBVD9HY9hMh8Cbs6SMiy7p.jpg",
         tmdb_id: "60573",
         seasons: [
@@ -825,7 +848,7 @@ Comedy
   {
         id: "Cheers",
         title: "Cheers (1982)",
-          category: "Comedy",
+          category: "Sitcoms",
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/nD1ZQBKbgKSmKcrAkWTofohsScj.jpg",
         tmdb_id: "141",
         seasons: [
