@@ -33,6 +33,13 @@ let movies = [
 	/* ---------------- Kids ---------------- */
 
 	{ 
+		"id": "10588",
+		"title": "The Cat in the Hat (2023)",
+		"img": "https://www.themoviedb.org/t/p/w1280/7I1FevUX4PrxWOOOBTmjT70v553.jpg",
+		"category": "Kids"
+	},
+
+	{ 
 		"id": "1117898",
 		"title": "The Cat in the Hat (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mWN6knIVJ2o7eGwSm7mOgSCwNUc.jpg",
