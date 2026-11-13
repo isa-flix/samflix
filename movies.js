@@ -28,7 +28,7 @@ let movies = [
     "title": "ARY Digita",
     "img": "live.png",
     "category": "Live Stream",
-    "video": "https://arydigital.aryzap.com/dc2dc67658cc5a71a92476b702cd2ae8/69ea2a66/v1/0183ea2408f90b8ed5941a38bc72/0183ea24302d0b8ed5941a38bc75/634E5F8E000072F08E6D-p0_tmpl360p_360p-1776867496168.ts"
+    "video": "https://www.mta.tv/aaf1f3f1-6ebe-440e-8662-22727b5991b0"
   },
 	/* ---------------- Kids ---------------- */
 
