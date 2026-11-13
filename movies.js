@@ -28,7 +28,7 @@ let movies = [
     "title": "MTA",
     "img": "live.png",
     "category": "Live Stream",
-    "video": "https://www.mta.tv/aaf1f3f1-6ebe-440e-8662-22727b5991b0"
+    "video": "https://www.youtube.com/watch?v=cu-0mGA8x50"
   },
 	/* ---------------- Kids ---------------- */
 
