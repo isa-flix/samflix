@@ -19,7 +19,7 @@ let movies = [
 	{
     "id": "002hls",
     "title": "BBC Earth",
-    "img": "live.png",
+    "img": "https://i.imgur.com/nGSsUd4.png",
     "category": "Live Stream",
     "video": "https://amg00793-bbcstudios-amg00793c3-lg-us-2528.playouts.now.amagi.tv/playlist/amg00793-bbcstudios-bbcearta-lgus/playlist.m3u8"
   },
