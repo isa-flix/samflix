@@ -30,6 +30,13 @@ let movies = [
     "category": "Live Stream",
     "video": "http://45.171.64.30:6060/play/a005/index.m3u8"
   },
+{
+    "id": "004hls",    "title": "AXN",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/AXN_logo_%282015%29.svg/960px-AXN_logo_%282015%29.svg.png",
+    "category": "Live Stream",     "video": "http://103.253.74.210:7070/stream/89/index.m3u8"
+  },
+
+	
 	/* ---------------- Kids ---------------- */
 
 	{ 
