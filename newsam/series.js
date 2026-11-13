@@ -679,9 +679,9 @@ Fantasy
         img: "https://www.themoviedb.org/t/p/w600_and_h900_face/kf5Hz70tjNAHg4swGDzOr9BfoZ1.jpg",
         tmdb_id: "84773",
         seasons: [
-            { season: 0, episodes: 36 },
             { season: 1, episodes: 8 },
-            { season: 2, episodes: 8 }
+            { season: 2, episodes: 8 },
+            { season: 3, episodes: 8 }
         ]
     },
 /***********************************************************
