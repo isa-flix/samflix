@@ -36,6 +36,22 @@ let movies = [
     "category": "Live Stream",     "video": "http://103.253.74.210:7070/stream/89/index.m3u8"
   },
 
+{
+    "id": "005hls",    "title": "SuperNatural",
+    "img": "https://images.pluto.tv/channels/5f24662bebe0f0000767de32/colorLogoPNG.png",
+    "category": "Live Stream",     "video": "https://jmp2.uk/plu-5f24662bebe0f0000767de32.m3u8"
+  },
+
+	/*
+	{
+    "id": "006hls",    "title": "",
+    "img": "",
+    "category": "Live Stream",     "video": ""
+  },
+	
+*/
+
+	
 	
 	/* ---------------- Kids ---------------- */
 
