@@ -25,7 +25,7 @@ let movies = [
   },
 {
     "id": "003hls",
-    "title": "ARY Digita",
+    "title": "MTA",
     "img": "live.png",
     "category": "Live Stream",
     "video": "https://www.mta.tv/aaf1f3f1-6ebe-440e-8662-22727b5991b0"
