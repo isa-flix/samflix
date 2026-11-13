@@ -26,9 +26,9 @@ let movies = [
 {
     "id": "003hls",
     "title": "MTA",
-    "img": "live.png",
+    "img": "https://i.imgur.com/bYiRfAg.png",
     "category": "Live Stream",
-    "video": "https://www.youtube.com/watch?v=cu-0mGA8x50"
+    "video": "https://chlivemta1.akamaized.net/hls/live/2008145/mta1/playlist.m3u8"
   },
 	/* ---------------- Kids ---------------- */
 
