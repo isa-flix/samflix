@@ -25,10 +25,10 @@ let movies = [
   },
 {
     "id": "003hls",
-    "title": "MTA",
-    "img": "https://i.imgur.com/bYiRfAg.png",
+    "title": "AMC Series LA",
+    "img": "https://amc-series.s3.amazonaws.com/menu/hbfen1Gom0_k1cyqi7rw4-amc-series-train-w.png",
     "category": "Live Stream",
-    "video": "https://chlivemta1.akamaized.net/hls/live/2008145/mta1/playlist.m3u8"
+    "video": "http://45.171.64.30:6060/play/a005/index.m3u8"
   },
 	/* ---------------- Kids ---------------- */
 
