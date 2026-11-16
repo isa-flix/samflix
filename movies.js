@@ -23,7 +23,10 @@ let movies = [
     "category": "Live Stream",
     "video": "https://amg00793-bbcstudios-amg00793c3-lg-us-2528.playouts.now.amagi.tv/playlist/amg00793-bbcstudios-bbcearta-lgus/playlist.m3u8"
   },
-{
+
+	
+	/*
+	{
     "id": "003hls",
     "title": "AMC Series LA",
     "img": "https://amc-series.s3.amazonaws.com/menu/hbfen1Gom0_k1cyqi7rw4-amc-series-train-w.png",
