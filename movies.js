@@ -53,7 +53,6 @@ let movies = [
   },
 	
 */
-
 	
 	
 	/* ---------------- Kids ---------------- */
@@ -472,6 +471,18 @@ let movies = [
 		
 	},
 
+		/* ---------------- Resident Evil ---------------- */
+
+
+		{ "id": "1576", "title": "Resident Evil (2002)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1UKNef590A0ZaMnxsscIcWuK1Em.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "1577", "title": "Resident Evil: Apocalypse (2004)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/r9j1FEYGGMkZAM47jFeVf4yTlVV.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "7737", "title": "Resident Evil: Extinction (2007)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6yaLr7Ymg5cvbtSVi5hHwBKx35I.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "35791", "title": "Resident Evil: Afterlife (2010)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qZHDnt8bnsD2cSJfIbjWbCkIq3G.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "71679", "title": "Resident Evil: Retribution (2012)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/zkgu3iFKHEU1Gr1hPCC6eK4KfOf.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "173897", "title": "Resident Evil: The Final Chapter (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gytKL6fimeiTIjd9kl5bfjY2k4C.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "460458", "title": "Resident Evil: Welcome to Raccoon City (2021)(Reboot I)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7uRbWOXxpWDMtnsd2PF3clu65jc.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "1423191", "title": "Resident Evil (2026) (Reboot II)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gAgWJhUSQWCgtKR8170nMkYlBda.jpg", "category": "MovieSet", "set": "Resident Evil" },
+			
 	
 
 	
