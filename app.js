@@ -64,11 +64,11 @@ function displayAll() {
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    if (category === "MovieSet") {
+    if (category === "BoxSet") {
 
       const sets = [...new Set(
         movies
-          .filter(m => m.category === "MovieSet")
+          .filter(m => m.category === "BoxSet")
           .map(m => m.set)
       )];
 
