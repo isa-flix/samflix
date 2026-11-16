@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>M3U Web Player</title>
+  <script src="https://jsdelivr.net"></script>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #1e293b;
+      --border: #334155;
+      --text: #f8fafc;
+      --muted: #94a3b8;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    header {
+      background: var(--panel);
+      border-bottom: 1px solid var(--border);
+      padding: 12px 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+    header h1 { font-size: 1.1rem; margin-right: auto; }
+    input[type="text"], select {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    #urlInput { width: 280px; max-width: 100%; }
+    button, .file-label {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+    button:hover, .file-label:hover { background: var(--accent-hover); }
+    .file-label { background: #475569; }
+    .file-label:hover { background: #64748b; }
+    input[type="file"] { display: none; }
+
+    .main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 340px;
+      background: var(--panel);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+    }
+    .filters {
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .channel-list {
+      flex: 1;
+      overflow-y: auto;
+      list-style: none;
+    }
+    .channel-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .channel-item:hover { background: rgba(255, 255, 255, 0.05); }
+    .channel-item.active { background: rgba(59, 130, 246, 0.2); border-left: 3px solid var(--accent); }
+    .channel-logo {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      background: #0f172a;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+    .channel-info { overflow: hidden; }
+    .channel-name {
+      font-size: 0.92rem;
+      font-weight: 500;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .channel-group { font-size: 0.75rem; color: var(--muted); }
+
+    .player-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #000;
+      position: relative;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      max-height: calc(100vh - 95px);
+      background: #000;
+    }
+    .status-bar {
+      background: var(--panel);
+      border-top: 1px solid var(--border);
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+    }
+    @media (max-width: 768px) {
+      .main { flex-direction: column-reverse; }
+      .sidebar { width: 100%; height: 50%; }
+      video { max-height: 40vh; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>M3U Player</h1>
+    <input type="text" id="urlInput" placeholder="Paste .m3u or .m3u8 URL..." />
+    <button id="loadUrlBtn">Load URL</button>
+    <label class="file-label" for="fileInput">Upload File</label>
+    <input type="file" id="fileInput" accept=".m3u,.m3u8,text/plain" />
+  </header>
+
+  <div class="main">
+    <aside class="sidebar">
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search channels..." />
+        <select id="groupSelect">
+          <option value="ALL">All Groups</option>
+        </select>
+      </div>
+      <ul class="channel-list" id="channelList"></ul>
+    </aside>
+
+    <section class="player-area">
+      <video id="video" controls playsinline></video>
+      <div class="status-bar">
+        <span id="nowPlaying">Select a channel or load a playlist</span>
+        <span id="channelCount">0 channels</span>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const video = document.getElementById('video');
+    const urlInput = document.getElementById('urlInput');
+    const loadUrlBtn = document.getElementById('loadUrlBtn');
+    const fileInput = document.getElementById('fileInput');
+    const searchInput = document.getElementById('searchInput');
+    const groupSelect = document.getElementById('groupSelect');
+    const channelList = document.getElementById('channelList');
+    const nowPlaying = document.getElementById('nowPlaying');
+    const channelCount = document.getElementById('channelCount');
+
+    let channels = [];
+    let hls = null;
+    let activeUrl = '';
+
+    // Parse #EXTM3U content into structured channel objects
+    function parseM3U(text) {
+      const lines = text.split(/\r?\n/);
+      const parsed = [];
+      let current = null;
+
+      for (let rawLine of lines) {
+        const line = rawLine.trim();
+        if (!line) continue;
+
+        if (line.startsWith('#EXTINF:')) {
+          const commaIdx = line.lastIndexOf(',');
+          const name = commaIdx !== -1 ? line.slice(commaIdx + 1).trim() : 'Unnamed Channel';
+          const logoMatch = line.match(/tvg-logo="([^"]*)"/i);
+          const groupMatch = line.match(/group-title="([^"]*)"/i);
+
+          current = {
+            name: name || 'Unnamed Channel',
+            logo: logoMatch ? logoMatch[1] : '',
+            group: groupMatch && groupMatch[1] ? groupMatch[1] : 'Uncategorized'
+          };
+        } else if (!line.startsWith('#')) {
+          if (current) {
+            current.url = line;
+            parsed.push(current);
+            current = null;
+          } else {
+            // Handle raw stream URLs without #EXTINF headers
+            parsed.push({
+              name: line.split('/').pop() || 'Direct Stream',
+              logo: '',
+              group: 'Uncategorized',
+              url: line
+            });
+          }
+        }
+      }
+      return parsed;
+    }
+
+    function populateGroups() {
+      const groups = [...new Set(channels.map(c => c.group))].sort();
+      groupSelect.innerHTML = '<option value="ALL">All Groups</option>';
+      groups.forEach(g => {
+        const opt = document.createElement('option');
+        opt.value = g;
+        opt.textContent = g;
+        groupSelect.appendChild(opt);
+      });
+    }
+
+    function renderChannels() {
+      const query = searchInput.value.toLowerCase();
+      const selectedGroup = groupSelect.value;
+
+      const filtered = channels.filter(c => {
+        const matchesSearch = c.name.toLowerCase().includes(query);
+        const matchesGroup = selectedGroup === 'ALL' || c.group === selectedGroup;
+        return matchesSearch && matchesGroup;
+      });
+
+      channelCount.textContent = `${filtered.length} channel${filtered.length === 1 ? '' : 's'}`;
+      channelList.innerHTML = '';
+
+      const fragment = document.createDocumentFragment();
+      filtered.forEach(channel => {
+        const li = document.createElement('li');
+        li.className = 'channel-item' + (channel.url === activeUrl ? ' active' : '');
+
+        if (channel.logo) {
+          const img = document.createElement('img');
+          img.className = 'channel-logo';
+          img.src = channel.logo;
+          img.alt = '';
+          img.onerror = () => { img.style.display = 'none'; };
+          li.appendChild(img);
+        }
+
+        const info = document.createElement('div');
+        info.className = 'channel-info';
+
+        const nameDiv = document.createElement('div');
+        nameDiv.className = 'channel-name';
+        nameDiv.textContent = channel.name;
+
+        const groupDiv = document.createElement('div');
+        groupDiv.className = 'channel-group';
+        groupDiv.textContent = channel.group;
+
+        info.appendChild(nameDiv);
+        info.appendChild(groupDiv);
+        li.appendChild(info);
+
+        li.addEventListener('click', () => playStream(channel));
+        fragment.appendChild(li);
+      });
+
+      channelList.appendChild(fragment);
+    }
+
+    function playStream(channel) {
+      activeUrl = channel.url;
+      nowPlaying.textContent = `Playing: ${channel.name}`;
+      renderChannels();
+
+      if (hls) {
+        hls.destroy();
+        hls = null;
+      }
+
+      if (Hls.isSupported() && (channel.url.includes('.m3u8') || !channel.url.match(/\.(mp4|webm|ogg)$/i))) {
+        hls = new Hls();
+        hls.loadSource(channel.url);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, () => video.play().catch(() => {}));
+        hls.on(Hls.Events.ERROR, (_, data) => {
+          if (data.fatal) {
+            nowPlaying.textContent = `Stream error (${data.details}): ${channel.name}`;
+          }
+        });
+      } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = channel.url;
+        video.play().catch(() => {});
+      } else {
+        video.src = channel.url;
+        video.play().catch(() => {});
+      }
+    }
+
+    function loadPlaylistText(text) {
+      channels = parseM3U(text);
+      populateGroups();
+      renderChannels();
+      if (channels.length > 0) {
+        playStream(channels[0]);
+      } else {
+        nowPlaying.textContent = 'No playable streams found in playlist.';
+      }
+    }
+
+    loadUrlBtn.addEventListener('click', async () => {
+      const url = urlInput.value.trim();
+      if (!url) return;
