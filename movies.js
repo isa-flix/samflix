@@ -356,25 +356,25 @@ let movies = [
 	{
 		"id": "438631",		"title": "Dune (2021)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/v1tRXZ4JtD2Iv6fjkPvT4GiwslV.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Dune"
 	},
 	{
 		"id": "693134",		"title": "Dune: Part Two (2024)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6izwz7rsy95ARzTR3poZ8H6c5pp.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Dune"
 	},
 		{
 		"id": "1170608",		"title": "Dune: Part Three (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/d43fvHQsIMa4kpyhKXw0haEJIvI.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Dune"
 	},
 	{
 		"id": "841",	"title": "Dune (1984)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/4kJmUCE7mkVJjXa7A0g2rY4IGTm.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Dune"
 	},
 			
@@ -383,7 +383,7 @@ let movies = [
 		"id": "27578",
 		"title": "The Expendables (2010)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/j09ZkH6R4JWVylBcDai1laCmGw7.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Expendables"
 		
 	},
@@ -392,7 +392,7 @@ let movies = [
 		"id": "76163",
 		"title": "The Expendables 2 (2012)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/74rTIGyGoIu5KSxDVMdr8H3MtMo.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Expendables"
 		
 	},
@@ -401,7 +401,7 @@ let movies = [
 		"id": "138103",
 		"title": "The Expendables 3 (2014)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/utS5euWHlEdKBNnEFwjpZ2oGuhF.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Expendables"
 		
 	},
@@ -410,7 +410,7 @@ let movies = [
 		"id": "299054",
 		"title": "Expend4bles (2023)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iwsMu0ehRPbtaSxqiaUDQB9qMWT.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Expendables"
 		
 	},
@@ -421,7 +421,7 @@ let movies = [
 		"id": "218",
 		"title": "The Terminator (1984)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qvktm0BHcnmDpul4Hz01GIazWPr.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Terminator"
 		
 	},
@@ -430,7 +430,7 @@ let movies = [
 		"id": "280",
 		"title": "Terminator 2: Judgment Day (1991)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jFTVD4XoWQTcg7wdyJKa8PEds5q.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Terminator"
 		
 	},
@@ -439,7 +439,7 @@ let movies = [
 		"id": "296",
 		"title": "Terminator 3: Rise of the Machines (2003)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vvevzdYIrk2636maNW4qeWmlPFG.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Terminator"
 		
 	},
@@ -448,7 +448,7 @@ let movies = [
 		"id": "534",
 		"title": "Terminator Salvation (2009)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gw6JhlekZgtKUFlDTezq3j5JEPK.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Terminator"
 		
 	},
@@ -457,7 +457,7 @@ let movies = [
 		"id": "87101",
 		"title": "Terminator Genisys (2015)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/oZRVDpNtmHk8M1VYy1aeOWUXgbC.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Terminator"
 		
 	},
@@ -466,7 +466,7 @@ let movies = [
 		"id": "290859",
 		"title": "Terminator: Dark Fate (2019)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vqzNJRH4YyquRiWxCCOH0aXggHI.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Terminator"
 		
 	},
@@ -474,14 +474,14 @@ let movies = [
 		/* ---------------- Resident Evil ---------------- */
 
 
-		{ "id": "1576", "title": "Resident Evil (2002)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1UKNef590A0ZaMnxsscIcWuK1Em.jpg", "category": "MovieSet", "set": "Resident Evil" },
-		{ "id": "1577", "title": "Resident Evil: Apocalypse (2004)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/r9j1FEYGGMkZAM47jFeVf4yTlVV.jpg", "category": "MovieSet", "set": "Resident Evil" },
-		{ "id": "7737", "title": "Resident Evil: Extinction (2007)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6yaLr7Ymg5cvbtSVi5hHwBKx35I.jpg", "category": "MovieSet", "set": "Resident Evil" },
-		{ "id": "35791", "title": "Resident Evil: Afterlife (2010)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qZHDnt8bnsD2cSJfIbjWbCkIq3G.jpg", "category": "MovieSet", "set": "Resident Evil" },
-		{ "id": "71679", "title": "Resident Evil: Retribution (2012)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/zkgu3iFKHEU1Gr1hPCC6eK4KfOf.jpg", "category": "MovieSet", "set": "Resident Evil" },
-		{ "id": "173897", "title": "Resident Evil: The Final Chapter (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gytKL6fimeiTIjd9kl5bfjY2k4C.jpg", "category": "MovieSet", "set": "Resident Evil" },
-		{ "id": "460458", "title": "Resident Evil: Welcome to Raccoon City (2021)(Reboot I)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7uRbWOXxpWDMtnsd2PF3clu65jc.jpg", "category": "MovieSet", "set": "Resident Evil" },
-		{ "id": "1423191", "title": "Resident Evil (2026) (Reboot II)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gAgWJhUSQWCgtKR8170nMkYlBda.jpg", "category": "MovieSet", "set": "Resident Evil" },
+		{ "id": "1576", "title": "Resident Evil (2002)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1UKNef590A0ZaMnxsscIcWuK1Em.jpg", "category": "BoxSet", "set": "Resident Evil" },
+		{ "id": "1577", "title": "Resident Evil: Apocalypse (2004)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/r9j1FEYGGMkZAM47jFeVf4yTlVV.jpg", "category": "BoxSet", "set": "Resident Evil" },
+		{ "id": "7737", "title": "Resident Evil: Extinction (2007)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6yaLr7Ymg5cvbtSVi5hHwBKx35I.jpg", "category": "BoxSet", "set": "Resident Evil" },
+		{ "id": "35791", "title": "Resident Evil: Afterlife (2010)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qZHDnt8bnsD2cSJfIbjWbCkIq3G.jpg", "category": "BoxSet", "set": "Resident Evil" },
+		{ "id": "71679", "title": "Resident Evil: Retribution (2012)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/zkgu3iFKHEU1Gr1hPCC6eK4KfOf.jpg", "category": "BoxSet", "set": "Resident Evil" },
+		{ "id": "173897", "title": "Resident Evil: The Final Chapter (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gytKL6fimeiTIjd9kl5bfjY2k4C.jpg", "category": "BoxSet", "set": "Resident Evil" },
+		{ "id": "460458", "title": "Resident Evil: Welcome to Raccoon City (2021)(Reboot I)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7uRbWOXxpWDMtnsd2PF3clu65jc.jpg", "category": "BoxSet", "set": "Resident Evil" },
+		{ "id": "1423191", "title": "Resident Evil (2026) (Reboot II)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gAgWJhUSQWCgtKR8170nMkYlBda.jpg", "category": "BoxSet", "set": "Resident Evil" },
 			
 	
 
@@ -491,7 +491,7 @@ let movies = [
 		"id": "245891",
 		"title": "John Wick (2014)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wXqWR7dHncNRbxoEGybEy7QTe9h.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "John Wick"
 		
 	},
@@ -500,7 +500,7 @@ let movies = [
 		"id": "324552",
 		"title": "John Wick: Chapter 2 (2017)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/hXWBc0ioZP3cN4zCu6SN3YHXZVO.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "John Wick"
 		
 	},
@@ -509,7 +509,7 @@ let movies = [
 		"id": "458156",
 		"title": "John Wick: Chapter 3 - Parabellum (2019)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ziEuG1essDuWuC5lpWUaw1uXY2O.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "John Wick"
 		
 	},
@@ -518,7 +518,7 @@ let movies = [
 		"id": "603692",
 		"title": "John Wick: Chapter 4 (2023)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "John Wick"
 		
 	},
@@ -527,7 +527,7 @@ let movies = [
 		"id": "541671",
 		"title": "Ballerina (2025)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2VUmvqsHb6cEtdfscEA6fqqVzLg.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "John Wick"
 		
 	},
@@ -539,7 +539,7 @@ let movies = [
 		"id": "671",
 		"title": "Harry Potter and the Philosopher's Stone (2001)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wuMc08IPKEatf9rnMNXvIDxqP4W.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -547,7 +547,7 @@ let movies = [
 		"id": "672",
 		"title": "Harry Potter and the Chamber of Secrets (2002)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/sdEOH0992YZ0QSxgXNIGLq1ToUi.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -555,7 +555,7 @@ let movies = [
 		"id": "673",
 		"title": "Harry Potter and the Prisoner of Azkaban (2004)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aWxwnYoe8p2d2fcxOqtvAtJ72Rw.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -563,7 +563,7 @@ let movies = [
 		"id": "674",
 		"title": "Harry Potter and the Goblet of Fire (2005)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fECBtHlr0RB3foNHDiCBXeg9Bv9.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -571,7 +571,7 @@ let movies = [
 		"id": "675",
 		"title": "Harry Potter and the Order of the Phoenix (2007)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5aOyriWkPec0zUDxmHFP9qMmBaj.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -579,7 +579,7 @@ let movies = [
 		"id": "767",
 		"title": "Harry Potter and the Half-Blood Prince (2009)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/z7uo9zmQdQwU5ZJHFpv2Upl30i1.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -587,7 +587,7 @@ let movies = [
 		"id": "12444",
 		"title": "Harry Potter and the Deathly Hallows: Part 1 (2010)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iGoXIpQb7Pot00EEdwpwPajheZ5.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -595,7 +595,7 @@ let movies = [
 		"id": "12445",
 		"title": "Harry Potter and the Deathly Hallows: Part 2 (2011)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/c54HpQmuwXjHq2C9wmoACjxoom3.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "Harry Potter"
 		
 	},
@@ -612,128 +612,128 @@ let movies = [
 
 		{"id": "587807", "title": "Tom & Jerry 2021",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8XZI9QZ7Pm3fVkigWJPbrXCMzjq.jpg",
-	 "category": "MovieSet", "set": "Tom & Jerry"},
+	 "category": "BoxSet", "set": "Tom & Jerry"},
 		{"id": "1497970", "title": "Tom & Jerry: Forbidden Compass 2025",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fb91YKKxeG7kzB1oEicmvQICwC5.jpg",
-	 "category": "MovieSet", "set": "Tom & Jerry"},
+	 "category": "BoxSet", "set": "Tom & Jerry"},
 		{"id": "892153", "title": "Tom & Jerry: Cow Boy UP! 2022",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/muIaHotSaSUQr0KZCIJOYQEe7y2.jpg",
-	 "category": "MovieSet", "set": "Tom & Jerry"},
+	 "category": "BoxSet", "set": "Tom & Jerry"},
 	{"id": "22582", "title": "Tom & Jerry: The Movie 1993",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/rfxBsSLoB2caPAxsNhKVZyxZ6CB.jpg",
-	 "category": "MovieSet", "set": "Tom & Jerry"},
+	 "category": "BoxSet", "set": "Tom & Jerry"},
 	{"id": "42246", "title": "Tom & Jerry: The Fast and the Furry 2005",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/7PeNpz4mDyRqDxMhC0g0FCpVwPB.jpg",
-	 "category": "MovieSet", "set": "Tom & Jerry"},
+	 "category": "BoxSet", "set": "Tom & Jerry"},
 {"id": "60293", "title": "Tom & Jerry: Shiver Me Whisker 2006",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/b964RtitRMbUSwTnv4qdbRzUwug.jpg",
-	 "category": "MovieSet", "set": "Tom & Jerry"},
+	 "category": "BoxSet", "set": "Tom & Jerry"},
 {"id": "14787", "title": "Tom & Jerry: The Magic Ring 2002",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fF6I48WGKktHfGYYSVKPTVildWE.jpg",
-	 "category": "MovieSet", "set": "Tom & Jerry"},
+	 "category": "BoxSet", "set": "Tom & Jerry"},
 
 	/* ---------------- The Smurfs ---------------- */
 
 
-		{ "id": "41513", "title": "The Smurfs (2011)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vRhnslP2gW0QDym7BsMeSuioUfK.jpg", "category": "MovieSet", "set": "The Smurfs" },
-		{ "id": "77931", "title": "The Smurfs 2 (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tmjvgbEH4BKYFfHmWXjXrHgi8wT.jpg", "category": "MovieSet", "set": "The Smurfs" },
-		{ "id": "137116", "title": "Smurfs: The Lost Village (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/swt9crREg1UcKgg3wGWfoFNlXOz.jpg", "category": "MovieSet", "set": "The Smurfs" },
-		{ "id": "936108", "title": "Smurfs (2025)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8o6lkhL32xQJeB52IIG1us5BVey.jpg", "category": "MovieSet", "set": "The Smurfs" },
-		{ "id": "220845", "title": "The Smurfs: The Legend of Smurfy Hollow (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AgFkdZawIUFY20rLRX9ejQtn0q2.jpg", "category": "MovieSet", "set": "The Smurfs" },
+		{ "id": "41513", "title": "The Smurfs (2011)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vRhnslP2gW0QDym7BsMeSuioUfK.jpg", "category": "BoxSet", "set": "The Smurfs" },
+		{ "id": "77931", "title": "The Smurfs 2 (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/tmjvgbEH4BKYFfHmWXjXrHgi8wT.jpg", "category": "BoxSet", "set": "The Smurfs" },
+		{ "id": "137116", "title": "Smurfs: The Lost Village (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/swt9crREg1UcKgg3wGWfoFNlXOz.jpg", "category": "BoxSet", "set": "The Smurfs" },
+		{ "id": "936108", "title": "Smurfs (2025)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8o6lkhL32xQJeB52IIG1us5BVey.jpg", "category": "BoxSet", "set": "The Smurfs" },
+		{ "id": "220845", "title": "The Smurfs: The Legend of Smurfy Hollow (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AgFkdZawIUFY20rLRX9ejQtn0q2.jpg", "category": "BoxSet", "set": "The Smurfs" },
 	
 
 	/* ---------------- Spider Man ---------------- */
 
 
-		{ "id": "557", "title": "spider-man", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kjdJntyBeEvqm9w97QGBdxPptzj.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "558", "title": "spider-man-2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/myvj6Slsv3wWtDKKS2IOmbqBTCa.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "559", "title": "spider-man-3", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "1930", "title": "the-amazing-spder-man", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3zbb5XD0hEA8IpAcUmv1J9Rej3B.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "102382", "title": "the-amazing-spder-man 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/op0a1oqtQgmbkfzGgwnMIOk8QzC.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "315635", "title": "spider-man-homecoming", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wFNNv1ZHglNdXJLYiEgpLY5sa9S.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "429617", "title": "spider-man-far-from-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8QwrFOKh7rhWPa0XaXrowMcyAio.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "634649", "title": "spider-man-no-way-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg", "category": "MovieSet", "set": "Spider Man" },
-		{ "id": "969681", "title": "spider-man-brand-new-day", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yyB2VJEW3an2xCdcYCPQhn9QERR.jpg", "category": "MovieSet", "set": "Spider Man" },
+		{ "id": "557", "title": "spider-man", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kjdJntyBeEvqm9w97QGBdxPptzj.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "558", "title": "spider-man-2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/myvj6Slsv3wWtDKKS2IOmbqBTCa.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "559", "title": "spider-man-3", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qFmwhVUoUSXjkKRmca5yGDEXBIj.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "1930", "title": "the-amazing-spder-man", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3zbb5XD0hEA8IpAcUmv1J9Rej3B.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "102382", "title": "the-amazing-spder-man 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/op0a1oqtQgmbkfzGgwnMIOk8QzC.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "315635", "title": "spider-man-homecoming", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wFNNv1ZHglNdXJLYiEgpLY5sa9S.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "429617", "title": "spider-man-far-from-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8QwrFOKh7rhWPa0XaXrowMcyAio.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "634649", "title": "spider-man-no-way-home", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg", "category": "BoxSet", "set": "Spider Man" },
+		{ "id": "969681", "title": "spider-man-brand-new-day", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yyB2VJEW3an2xCdcYCPQhn9QERR.jpg", "category": "BoxSet", "set": "Spider Man" },
 
 		/* ---------------- Fast and Furious ---------------- */
 
 
-		{ "id": "9799", "title": "The Fast and the Furious (2001)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gqY0ITBgT7A82poL9jv851qdnIb.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "584", "title": "2 Fast 2 Furious (2003)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6nDZExrDKIXvSAghsFKVFRVJuSf.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "9615", "title": "The Fast and the Furious: Tokyo Drift (2006)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/46xqGOwHbh2TH2avWSw3SMXph4E.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "13804", "title": "Fast & Furious (2009)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/lUtVoRukW7WNtUySwd8hWlByBds.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "51497", "title": "Fast Five (2011)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gEfQjjQwY7fh5bI4GlG0RrBu7Pz.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "82992", "title": "Fast & Furious 6 (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/thSmnRdrzPBBospIOJjLZBReqzo.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "168259", "title": "Furious 7 (2015)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSJkkZMQHajPan62wrK377c6zQj.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "337339", "title": "The Fate of the Furious (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dImWM7GJqryWJO9LHa3XQ8DD5NH.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "384018", "title": "Fast & Furious Presents: Hobbs & Shaw (2019)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "385128", "title": "F9 (2021)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/deEmLILTPejEb6OGsXRJ5MCvyDW.jpg", "category": "MovieSet", "set": "Fast and Furious" },
-		{ "id": "385687", "title": "Fast X (2023)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fiVW06jE7z9YnO4trhaMEdclSiC.jpg", "category": "MovieSet", "set": "Fast and Furious" },
+		{ "id": "9799", "title": "The Fast and the Furious (2001)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gqY0ITBgT7A82poL9jv851qdnIb.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "584", "title": "2 Fast 2 Furious (2003)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6nDZExrDKIXvSAghsFKVFRVJuSf.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "9615", "title": "The Fast and the Furious: Tokyo Drift (2006)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/46xqGOwHbh2TH2avWSw3SMXph4E.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "13804", "title": "Fast & Furious (2009)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/lUtVoRukW7WNtUySwd8hWlByBds.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "51497", "title": "Fast Five (2011)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gEfQjjQwY7fh5bI4GlG0RrBu7Pz.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "82992", "title": "Fast & Furious 6 (2013)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/thSmnRdrzPBBospIOJjLZBReqzo.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "168259", "title": "Furious 7 (2015)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSJkkZMQHajPan62wrK377c6zQj.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "337339", "title": "The Fate of the Furious (2017)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dImWM7GJqryWJO9LHa3XQ8DD5NH.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "384018", "title": "Fast & Furious Presents: Hobbs & Shaw (2019)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/qRyy2UmjC5ur9bDi3kpNNRCc5nc.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "385128", "title": "F9 (2021)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/deEmLILTPejEb6OGsXRJ5MCvyDW.jpg", "category": "BoxSet", "set": "Fast and Furious" },
+		{ "id": "385687", "title": "Fast X (2023)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/fiVW06jE7z9YnO4trhaMEdclSiC.jpg", "category": "BoxSet", "set": "Fast and Furious" },
 		
 
 
 	
 	/* ---------------- Cars ---------------- */
 
-	{"id": "tt0317219", "title": "Cars 2006", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg", "category": "MovieSet", "set": "Cars"},
-	{"id": "tt1216475", "title": "Cars II 2011", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vu2PuKtP24Php0vKzhEKbqft59Q.jpg", "category": "MovieSet", "set": "Cars"},
-	{"id": "tt3606752", "title": "Cars III 2017", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jJ8TnHvWHaVadW5JJjGYsM07j9i.jpg", "category": "MovieSet", "set": "Cars"},
+	{"id": "tt0317219", "title": "Cars 2006", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/u4G8EkiIBZYx0wEg2xDlXZigTOZ.jpg", "category": "BoxSet", "set": "Cars"},
+	{"id": "tt1216475", "title": "Cars II 2011", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vu2PuKtP24Php0vKzhEKbqft59Q.jpg", "category": "BoxSet", "set": "Cars"},
+	{"id": "tt3606752", "title": "Cars III 2017", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jJ8TnHvWHaVadW5JJjGYsM07j9i.jpg", "category": "BoxSet", "set": "Cars"},
 
 		/* ---------------- Super Troopers ---------------- */
 
-	{"id": "tt0247745", "title": "Super Troopers 2001", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xBvAHPOSSOdmjJ4Se5fT4ipYQy2.jpg", "category": "MovieSet", "set": "Super Troopers"},
-{"id": "tt0859635", "title": "Super Troopers 2018", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/57SZgdugVClIy22rfnANeBJ5KsN.jpg", "category": "MovieSet", "set": "Super Troopers"},
+	{"id": "tt0247745", "title": "Super Troopers 2001", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xBvAHPOSSOdmjJ4Se5fT4ipYQy2.jpg", "category": "BoxSet", "set": "Super Troopers"},
+{"id": "tt0859635", "title": "Super Troopers 2018", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/57SZgdugVClIy22rfnANeBJ5KsN.jpg", "category": "BoxSet", "set": "Super Troopers"},
 	
 	/* ---------------- Toy Story ---------------- */
 
-	{"id": "tt0114709", "title": "Toy Story", "img": "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", "category": "MovieSet", "set": "Toy story"},
-	{"id": "tt0120363", "title": "Toy Story 2", "img": "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", "category": "MovieSet", "set": "Toy story"},
-	{"id": "tt0435761", "title": "Toy Story 3", "img": "https://www.themoviedb.org/t/p/w1280/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg", "category": "MovieSet", "set": "Toy story"},
-	{"id": "tt1979376", "title": "Toy Story 4", "img": "https://www.themoviedb.org/t/p/w1280/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg", "category": "MovieSet", "set": "Toy story"},
-	{"id": "tt29355505", "title": "Toy Story 5", "img": "https://www.themoviedb.org/t/p/w1280/gaiMtK2ll6BLdK1qKFuZGDwwEuD.jpg", "category": "MovieSet", "set": "Toy story"},
+	{"id": "tt0114709", "title": "Toy Story", "img": "https://www.themoviedb.org/t/p/w1280/uXDfjJbdP4ijW5hWSBrPrlKpxab.jpg", "category": "BoxSet", "set": "Toy story"},
+	{"id": "tt0120363", "title": "Toy Story 2", "img": "https://www.themoviedb.org/t/p/w1280/4rbcp3ng8n1MKHjpeqW0L7Fnpzz.jpg", "category": "BoxSet", "set": "Toy story"},
+	{"id": "tt0435761", "title": "Toy Story 3", "img": "https://www.themoviedb.org/t/p/w1280/AbbXspMOwdvwWZgVN0nabZq03Ec.jpg", "category": "BoxSet", "set": "Toy story"},
+	{"id": "tt1979376", "title": "Toy Story 4", "img": "https://www.themoviedb.org/t/p/w1280/w9kR8qbmQ01HwnvK4alvnQ2ca0L.jpg", "category": "BoxSet", "set": "Toy story"},
+	{"id": "tt29355505", "title": "Toy Story 5", "img": "https://www.themoviedb.org/t/p/w1280/gaiMtK2ll6BLdK1qKFuZGDwwEuD.jpg", "category": "BoxSet", "set": "Toy story"},
 
 
 
 /* ---------------- The Lego Movie ---------------- */
 
-	{"id": "tt1490017", "title": "The LEGO Movie", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9klB7qKC9aCeGyyM4uU5hSA6xDV.jpg", "category": "MovieSet", "set": "The Lego Movie"},
-	{"id": "tt3513498", "title": "The LEGO Movie 2: The Second Part", "img": "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg", "category": "MovieSet", "set": "The Lego Movie"},
-	{"id": "tt4116284", "title": "The Lego Batman Movie", "img": "https://www.themoviedb.org/t/p/w1280/auwW8g1btlXdDCwHkhsD3XcQDxZ.jpg", "category": "MovieSet", "set": "The Lego Movie"},
+	{"id": "tt1490017", "title": "The LEGO Movie", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9klB7qKC9aCeGyyM4uU5hSA6xDV.jpg", "category": "BoxSet", "set": "The Lego Movie"},
+	{"id": "tt3513498", "title": "The LEGO Movie 2: The Second Part", "img": "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg", "category": "BoxSet", "set": "The Lego Movie"},
+	{"id": "tt4116284", "title": "The Lego Batman Movie", "img": "https://www.themoviedb.org/t/p/w1280/auwW8g1btlXdDCwHkhsD3XcQDxZ.jpg", "category": "BoxSet", "set": "The Lego Movie"},
 	{
 		"id": "tt9673190",
 		"title": "The Lego Batman Movie 2: The Second Part",
 		"img": "https://www.themoviedb.org/t/p/w1280/ymHghL9iS7X0QpSDqp7jhiEDVFh.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Lego Movie",
 		"disabled": true
 	},
-	{"id": "tt3014284", "title": "The Lego Ninjago Movie", "img": "https://www.themoviedb.org/t/p/w1280/etPGtOrDCuRAw4NI34RCOK6bAoS.jpg", "category": "MovieSet", "set": "The Lego Movie"},
+	{"id": "tt3014284", "title": "The Lego Ninjago Movie", "img": "https://www.themoviedb.org/t/p/w1280/etPGtOrDCuRAw4NI34RCOK6bAoS.jpg", "category": "BoxSet", "set": "The Lego Movie"},
 
 	/* ---------------- SOnic ---------------- */
 
 	
-	{ "id": "tt3794354", "title": "Sonic the Hedgehog", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bljXY2zZSD6poD4dOPwIxQkFTUB.jpg", "category": "MovieSet", "set": "Sonic the Hedgehog" },
-	{ "id": "tt12412888", "title": "Sonic the Hedgehog 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8E7mIpEpSATxX5JEuw55GYx9hfk.jpg", "category": "MovieSet", "set": "Sonic the Hedgehog" },
-	{ "id": "tt18259086", "title": "Sonic the Hedgehog 3", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg", "category": "MovieSet", "set": "Sonic the Hedgehog" },
+	{ "id": "tt3794354", "title": "Sonic the Hedgehog", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bljXY2zZSD6poD4dOPwIxQkFTUB.jpg", "category": "BoxSet", "set": "Sonic the Hedgehog" },
+	{ "id": "tt12412888", "title": "Sonic the Hedgehog 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8E7mIpEpSATxX5JEuw55GYx9hfk.jpg", "category": "BoxSet", "set": "Sonic the Hedgehog" },
+	{ "id": "tt18259086", "title": "Sonic the Hedgehog 3", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/nyEr1VqvKx1YiesMC3oTB2fZvpY.jpg", "category": "BoxSet", "set": "Sonic the Hedgehog" },
 
 	/* ---------------- Zootopia ---------------- */
 
-    { "id": "tt2948356", "title": "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg", "category": "MovieSet", "set": "Zootopia"},
-    { "id": "1084242", "title": "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg", "category": "MovieSet", "set": "Zootopia" },
+    { "id": "tt2948356", "title": "Zootopia", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9LRFNLthb0jfWC0HUDUWjYgpP9F.jpg", "category": "BoxSet", "set": "Zootopia"},
+    { "id": "1084242", "title": "Zootopia 2", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/bjUWGw0Ao0qVWxagN3VCwBJHVo6.jpg", "category": "BoxSet", "set": "Zootopia" },
 
 	/* ---------------- The Super Mario ---------------- */
 
-	{ "id": "tt28650488", "title": "Mario Galaxy", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
-	{ "id": "tt6718170", "title": "Super Mario Bros", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
-	{ "id": "tt0108255", "title": "Super Mario Bros 1993", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg", "category": "MovieSet", "set": "Super Mario Bros" },
+	{ "id": "tt28650488", "title": "Mario Galaxy", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aSmAmNAK2VYfb0rYlleYJ10s3CC.jpg", "category": "BoxSet", "set": "Super Mario Bros" },
+	{ "id": "tt6718170", "title": "Super Mario Bros", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/uzNSqyEhB0Dsnmwjwslrez37jY5.jpg", "category": "BoxSet", "set": "Super Mario Bros" },
+	{ "id": "tt0108255", "title": "Super Mario Bros 1993", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/cudfWiiFDxj8rq1Myolzv6yY3ah.jpg", "category": "BoxSet", "set": "Super Mario Bros" },
 
 /* ---------------- Mortal Kombat ---------------- */
 
-	{"id": "tt0113855", "title": "Mortal Kombat 1995", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jY4b61Jm8v5iayxYx0VRPaD0AF1.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
-	{"id": "tt0119707", "title": "Mortal Kombat: Annihilation 1997", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9PmtU0XrF2BwG186jWzMVJufZJQ.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
-	{"id": "tt0293429", "title": "Mortal Kombat 2021", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
-	{"id": "931285", "title": "Mortal Kombat II 2026 ", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/lIsMeDbwntNXSUVHmWMMRXEZOVc.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
-//	{"id": "tt29355505", "title": "Mortal Kombat", "img": "https://www.themoviedb.org/t/p/w1280/gaiMtK2ll6BLdK1qKFuZGDwwEuD.jpg", "category": "MovieSet", "set": "Mortal Kombat"},
+	{"id": "tt0113855", "title": "Mortal Kombat 1995", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/jY4b61Jm8v5iayxYx0VRPaD0AF1.jpg", "category": "BoxSet", "set": "Mortal Kombat"},
+	{"id": "tt0119707", "title": "Mortal Kombat: Annihilation 1997", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9PmtU0XrF2BwG186jWzMVJufZJQ.jpg", "category": "BoxSet", "set": "Mortal Kombat"},
+	{"id": "tt0293429", "title": "Mortal Kombat 2021", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/nkayOAUBUu4mMvyNf9iHSUiPjF1.jpg", "category": "BoxSet", "set": "Mortal Kombat"},
+	{"id": "931285", "title": "Mortal Kombat II 2026 ", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/lIsMeDbwntNXSUVHmWMMRXEZOVc.jpg", "category": "BoxSet", "set": "Mortal Kombat"},
+//	{"id": "tt29355505", "title": "Mortal Kombat", "img": "https://www.themoviedb.org/t/p/w1280/gaiMtK2ll6BLdK1qKFuZGDwwEuD.jpg", "category": "BoxSet", "set": "Mortal Kombat"},
 
 	
 	/* ---------------- The Maze Runner ---------------- */
@@ -741,109 +741,109 @@ let movies = [
 		"id": "tt1790864",
 		"title": "The Maze Runner 2014",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2rOonEo6b6wENhucsuoXXzoXejM.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Maze Runner",
 	},
 		{
 		"id": "tt4046784",
 		"title": "Maze Runner: The Scorch Trials 2015",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/pCIdUSdcSfXzSlBGjqfzIREeFIl.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Maze Runner",
 	},
 		{
 		"id": "tt4500922",
 		"title": "Maze Runner: The Death Cure 2018",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/2zYfzA3TBwrMC8tfFbpiTLODde0.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "The Maze Runner",
 	},
 
 /* ---------------- The Hunger Games ---------------- */
 
 	
-	{ "id": "tt1392170", "title": "The Hunger Games", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3Z9LDLiNp9j3GthL02pzHt9d6r.jpg", "category": "MovieSet", "set": "The Hunger Games" },
-	{ "id": "tt1951264", "title": "The Hunger Games: Catching Fire", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5EEeUbSPi3lr6YsLUpiGcYtRMWk.jpg", "category": "MovieSet", "set": "The Hunger Games" },
-	{ "id": "tt1951265", "title": "The Hunger Games: MokingJay Part I", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", "category": "MovieSet", "set": "The Hunger Games" },
-	{ "id": "tt1951266", "title": "The Hunger Games: MokingJay Part II", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg", "category": "MovieSet", "set": "The Hunger Games" },
-	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "MovieSet", "set": "The Hunger Games" },
-	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "MovieSet", "set": "The Hunger Games" },
+	{ "id": "tt1392170", "title": "The Hunger Games", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3Z9LDLiNp9j3GthL02pzHt9d6r.jpg", "category": "BoxSet", "set": "The Hunger Games" },
+	{ "id": "tt1951264", "title": "The Hunger Games: Catching Fire", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5EEeUbSPi3lr6YsLUpiGcYtRMWk.jpg", "category": "BoxSet", "set": "The Hunger Games" },
+	{ "id": "tt1951265", "title": "The Hunger Games: MokingJay Part I", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", "category": "BoxSet", "set": "The Hunger Games" },
+	{ "id": "tt1951266", "title": "The Hunger Games: MokingJay Part II", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg", "category": "BoxSet", "set": "The Hunger Games" },
+	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "BoxSet", "set": "The Hunger Games" },
+	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "BoxSet", "set": "The Hunger Games" },
 
 	/* ---------------- Final Destination ---------------- */
 
 	
 	{ "id": "9532", "title": "final_destination",
 	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1mXhlQMnlfvJ2frxTjZSQNnA9Vp.jpg",
-	 		"category": "MovieSet", "set": "Final Destination" },
+	 		"category": "BoxSet", "set": "Final Destination" },
 	{ "id": "9358", "title": "final_destination_2",
 	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/vnFgxRlLTA9fDNcGXLiHmgwmIEo.jpg",
-	 		"category": "MovieSet", "set": "Final Destination" },
+	 		"category": "BoxSet", "set": "Final Destination" },
 	{ "id": "9286", "title": "final_destination_3",
 	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/p7ARuNKUGPGvkBiDtIDvAzYzonX.jpg",
-	 		"category": "MovieSet", "set": "Final Destination" },
+	 		"category": "BoxSet", "set": "Final Destination" },
 	{ "id": "19912", "title": "final_destination_4", 
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5vxXrr1MqGsT4NNeRITpfDnl4Rq.jpg", 
-	 		"category": "MovieSet", "set": "Final Destination" },
+	 		"category": "BoxSet", "set": "Final Destination" },
 	{ "id": "55779", "title": "final_destination_5",
 	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/Akx1Po4ZLetOWfYJhQf75tbhTtK.jpg", 
-	 		"category": "MovieSet", "set": "Final Destination" },
+	 		"category": "BoxSet", "set": "Final Destination" },
 	{ "id": "574475", "title": "Final Destination: Bloodlines",
 	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6WxhEvFsauuACfv8HyoVX6mZKFj.jpg", 
-	 	"category": "MovieSet", "set": "Final Destination" },
+	 	"category": "BoxSet", "set": "Final Destination" },
 
 	/*-------------American Pie ---------------------*/
 	{
 		"id": "2105",		"title": "American Pie (1999)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5P68by2Thn8wHAziyWGEw2O7hco.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 {
 		"id": "2770",		"title": "American Pie 2 (2001)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/854ZZxXdeabAs90mrV72NqShJqR.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 	{
 		"id": "8273",		"title": "American Wedding (2003)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/pCO3lJv2PzPkJty29APxCVSjyoE.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 	{
 		"id": "8274",		"title": "American Pie Presents: Band Camp (2005)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6BgKeWEGROpWwEWvpw7vwfTCr9C.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 	{
 		"id": "8275",		"title": "American Pie Presents: The Naked Mile (2006)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6CPJVJrqVjibP5Uub8yCg4FKtJi.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 	{
 		"id": "8277",		"title": "American Pie Presents: Beta House (2007)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/j7eGbwVb9hTaRFWMlSa7C1OYp3T.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 	{
 		"id": "26123",		"title": "American Pie Presents: The Book of Love (2009)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/hwP0GEP0zy8ar965Xaht19SmMd3.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 	{
 		"id": "71552",		"title": "American Reunion (2012)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/de5QBIdVR4dnkBZ4a0zjkS4lTg.jpg",
-		"category": "MovieSet",		"set": "American Pie"
+		"category": "BoxSet",		"set": "American Pie"
 		
 	},
 	{
 		"id": "660982",		"title": "American Pie Presents: Girls' Rules (2020)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xqvX5A24dbIWaeYsMTxxKX5qOfz.jpg",
-		"category": "MovieSet",		"set": "American Pie"		
+		"category": "BoxSet",		"set": "American Pie"		
 	},
 		
 		/* ---------------- James Bond 007 ---------------- */
@@ -851,7 +851,7 @@ let movies = [
 		"id": "646",
 		"title": "dr_no 1962",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/f9HsemSsBEHN5eoMble1bj6fDxs.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -859,7 +859,7 @@ let movies = [
 		"id": "657",
 		"title": "from_russia_with_love 1963",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/zx4V17FP8oclNvOpTgs2iCCtiYk.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -867,7 +867,7 @@ let movies = [
 		"id": "658",
 		"title": "goldfinger 1964",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dSfUkFBIvjRNehHeK8dQKCY04yZ.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -875,7 +875,7 @@ let movies = [
 		"id": "660",
 		"title": "thunderball 1964",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/3TXQJXpURF16nM43Mdf1X3VZhBE.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -883,7 +883,7 @@ let movies = [
 		"id": "667",
 		"title": "you_only_live_twice 1967",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/d4TsrvH9Rw5OG1xYcjdnDiHN4qm.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -891,7 +891,7 @@ let movies = [
 		"id": "12208",
 		"title": "Casino Royale 1967 (unofficial)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/9wdw5H018bgIM8bK2HuDvh8BwOh.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -899,7 +899,7 @@ let movies = [
 		"id": "668",
 		"title": "on-her-majesty-s-secret-service 1969",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iLAp1ODaZ8lbBh0K8bldHkUHITx.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -907,7 +907,7 @@ let movies = [
 		"id": "681",
 		"title": "diamonds-are-forever 1971",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ooDT0eKrWCxJCsn9JehPkD0QYNj.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -915,7 +915,7 @@ let movies = [
 		"id": "253",
 		"title": "Live and Let Die 1973",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/39qkrjqMZs6utwNmihVImC3ghas.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -923,7 +923,7 @@ let movies = [
 		"id": "682",
 		"title": "The Man with the Golden Gun 1974",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xVkbKwGnBVNQ122GN5bCTMyPbWz.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -931,7 +931,7 @@ let movies = [
 		"id": "691",
 		"title": "The Spy Who Loved Me 1977",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/mQD9XMe6Z6mrVzdf3Ca3fJSn5xz.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -939,7 +939,7 @@ let movies = [
 		"id": "698",
 		"title": "Moonraker 1979",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/6LrJdXNmu5uHOVALZxVYd44Lva0.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 
@@ -947,98 +947,98 @@ let movies = [
 		"id": "699",
 		"title": "For Your Eyes Only 1981",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xV4Nnr6DjjERlqNikqDQX8LUgua.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "700",
 		"title": "Octopussy 1983",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yoosZitM9igSk3Sd0sBXIhKlAh1.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "707",
 		"title": "A view to a Kill 1985",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/arJF829RP9cYvh0NU70dC5TtXSa.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "708",
 		"title": "The Living Daylights 1987",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1oRlmWX9hewpn2B44wawBjHd7dx.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "709",
 		"title": "Licence to Kill 1989",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8nzJve63EXA79HGAyidZwivZrQ2.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "710",
 		"title": "GoldenEye 1995",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/z0ljRnNxIO7CRBhLEO0DvLgAFPR.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "714",
 		"title": "Tomorrow Never Dies 1997",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yEhv6K79FAvBj5zUAqYs9rRgvfO.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "36643",
 		"title": "The World Is Not Enough 1999",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/xv73kIAm5xba6cDh6tlK36GtdQ1.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "36669",
 		"title": "Die Another Day 2002",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/i67gII3CoM4bpyTGuZb1TiRKUbZ.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "36557",
 		"title": "Casino Royale 2006",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wmRTS3WrXRi8GJdpDae1NifYNwx.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "10764",
 		"title": "Quantum of Solace 2008",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/e3DXXLJHGqMx9yYpXsql1XNljmM.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "37724",
 		"title": "Skyfall 2012",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/izrHg2UzxG3YXTBcKFaUbYp9LWA.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "206647",
 		"title": "Spectre 2015",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/672kUEMtTHcaVYSVY4eiHEliHFa.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 {
 		"id": "370172",
 		"title": "No Time to Die 2021",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg",
-		"category": "MovieSet",
+		"category": "BoxSet",
 		"set": "James Bond"
 	},
 	
