@@ -31,8 +31,8 @@ function resolveStreamUrl(movie) {
   if (/^\d+$/.test(id)) {
     return {
       type: "iframe",
-      //src: `https://vidsrc.me/embed/movie?tmdb=${id}`
-      src: `https://vidlink.pro/embed/movie?tmdb=${id}`
+      src: `https://vidsrc.me/embed/movie?tmdb=${id}`
+      //src: `https://vidlink.pro/embed/movie?tmdb=${id}`
       
     };
   }
@@ -41,8 +41,8 @@ function resolveStreamUrl(movie) {
   if (id.startsWith("tt")) {
     return {
       type: "iframe",
-      //src: `https://vidsrc.me/embed/movie?imdb=${id}`
-      src: `https://vidlink.pro/embed/movie?tmdb=${id}`
+      src: `https://vidsrc.me/embed/movie?imdb=${id}`
+      //src: `https://vidlink.pro/embed/movie?tmdb=${id}`
     };
   }
 
