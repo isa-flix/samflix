@@ -7,13 +7,20 @@
 <title>Live TV</title>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-//<script src="./hls.min.js"></script>
+
 <style>
 * {
     box-sizing: border-box;
 }
 
-/* ---------------- NAVBAR ---------------- */
+body {
+    margin: 0;
+    background: #10131b;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
 
 .navbar {
     display: flex;
@@ -32,21 +39,7 @@
     font-weight: bold;
 }
 
-    
-body {
-    margin: 0;
-    background: #10131b;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-header {
-    background: #191f2b;
-    padding: 18px;
-    text-align: center;
-    font-size: 23px;
-    font-weight: bold;
-}
+/* MAIN LAYOUT */
 
 .container {
     display: flex;
@@ -73,6 +66,8 @@ video {
     font-size: 18px;
 }
 
+/* SIDEBAR */
+
 .sidebar {
     width: 340px;
     background: #191f2b;
@@ -82,6 +77,28 @@ video {
     display: flex;
     flex-direction: column;
 }
+
+/* PLAYLIST SELECTOR */
+
+#playlistSelector {
+    width: 100%;
+    padding: 13px;
+    margin-bottom: 10px;
+    border: 1px solid #39445b;
+    border-radius: 7px;
+    background: #292f3d;
+    color: white;
+    font-size: 15px;
+    outline: none;
+    cursor: pointer;
+}
+
+#playlistSelector option {
+    background: #191f2b;
+    color: white;
+}
+
+/* SEARCH */
 
 #search {
     width: 100%;
@@ -134,6 +151,8 @@ video {
     margin-top: 10px;
 }
 
+/* MOBILE */
+
 @media(max-width: 750px) {
     .container {
         flex-direction: column;
@@ -150,185 +169,169 @@ video {
 <body>
 
 <div class="navbar">
+
     <div class="logo">Live TV</div>
 
-        <div style="position:fixed; top:10px; left:200px; z-index:9999; display:flex; gap:10px;">
+    <div style="display:flex; gap:7px; flex-wrap:wrap; justify-content:flex-end;">
 
-  <a href="https://isa-flix.github.io/samflix/" 
-     title="Main SamFlix"
-     style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-     🎬Movies
-  </a>
-
-  <a href="https://isa-flix.github.io/samflix/newsam/" 
-     title="NewSam"
-     style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-     📺Series
-  </a>
-            <a href="https://isa-flix.github.io/samflix/Oldsam/" 
-           title="Server Stream"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-           🖥️Server
+        <a href="https://isa-flix.github.io/samflix/"
+           style="padding:10px;background:#222;color:white;text-decoration:none;border-radius:20px;">
+           🎬 Movies
         </a>
-<a href="https://isa-flix.github.io/samflix/LiveTV/" 
-           title="Server Stream"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
+
+        <a href="https://isa-flix.github.io/samflix/newsam/"
+           style="padding:10px;background:#222;color:white;text-decoration:none;border-radius:20px;">
+           📺 Series
+        </a>
+
+        <a href="https://isa-flix.github.io/samflix/Oldsam/"
+           style="padding:10px;background:#222;color:white;text-decoration:none;border-radius:20px;">
+           🖥️ Server
+        </a>
+
+        <a href="https://isa-flix.github.io/samflix/LiveTV/"
+           style="padding:10px;background:#3056a8;color:white;text-decoration:none;border-radius:20px;">
            📺 LIVE TV
         </a>
-
 
     </div>
 </div>
 
 
-
 <div class="container">
 
     <section class="player-section">
+
         <video id="video" controls playsinline></video>
-        <div id="nowPlaying">Select a channel to start watching</div>
-        <div class="status" id="status">Ready</div>
+
+        <div id="nowPlaying">
+            Select a channel to start watching
+        </div>
+
+        <div class="status" id="status">
+            Ready
+        </div>
+
     </section>
 
+
     <aside class="sidebar">
+
+        <!-- PLAYLIST SELECTOR -->
+
+        <select id="playlistSelector">
+            <option value="">Loading playlists...</option>
+        </select>
+
+        <!-- SEARCH -->
+
         <input
             id="search"
             type="text"
             placeholder="🔍 Search channels..."
         >
 
-        <div id="channels">Loading channels...</div>
+        <!-- CHANNEL LIST -->
+
+        <div id="channels">
+            Loading channels...
+        </div>
+
     </aside>
 
 </div>
 
+
 <script>
 
-// =====================================
-// YOUR PRIVATE PLAYLIST CONFIGURATION
-// ENTER YOUR M3U URL BELOW
-// =====================================
+// ==========================================
+// MULTIPLE M3U PLAYLIST CONFIGURATION
+// ADD MORE PLAYLISTS HERE
+// ==========================================
 
-//const PLAYLIST_URL = "https://iptv-org.github.io/iptv/languages/hin.m3u";
-//const PLAYLIST_URL = "https://github.com/isa-flix/samflix/chanel.m3u";
-const PLAYLIST_URL = "https://iptv-org.github.io/iptv/languages/eng.m3u";
+const PLAYLISTS = [
 
-    
-// =====================================
+    {
+        name: "English TV",
+        url: "https://iptv-org.github.io/iptv/languages/eng.m3u"
+    },
+
+    {
+        name: "Hindi TV",
+        url: "https://iptv-org.github.io/iptv/languages/hin.m3u"
+    },
+
+    {
+        name: "US",
+        url: "https://iptv-org.github.io/iptv/countries/us.m3u"
+    }
+
+];
+
+// ==========================================
 
 const video = document.getElementById("video");
 const channelsBox = document.getElementById("channels");
 const search = document.getElementById("search");
 const nowPlaying = document.getElementById("nowPlaying");
 const statusBox = document.getElementById("status");
+const playlistSelector = document.getElementById("playlistSelector");
 
 let channels = [];
 let hls = null;
 let activeChannel = null;
 
-async function loadPlaylist() {
-    try {
-        statusBox.textContent = "Loading playlist...";
 
-        const response = await fetch(PLAYLIST_URL);
+// ==========================================
+// CREATE PLAYLIST DROPDOWN
+// ==========================================
 
-        if (!response.ok) {
-            throw new Error("Playlist could not be loaded");
-        }
+function initializePlaylists() {
 
-        const data = await response.text();
-        channels = parseM3U(data);
+    playlistSelector.innerHTML = "";
 
-        renderChannels(channels);
+    PLAYLISTS.forEach((playlist, index) => {
 
-        statusBox.textContent =
-            channels.length + " channels available";
+        const option = document.createElement("option");
 
-    } catch (error) {
-        channelsBox.textContent = "Unable to load channels.";
-        statusBox.textContent =
-            "Playlist error: " + error.message;
-    }
-}
+        option.value = index;
+        option.textContent = playlist.name;
 
-function parseM3U(data) {
-    const lines = data.split(/\r?\n/);
-    const result = [];
-    let current = {};
+        playlistSelector.appendChild(option);
 
-    for (const line of lines) {
-        const value = line.trim();
-
-        if (value.startsWith("#EXTINF")) {
-            const name = value.split(",").pop().trim();
-
-            const logo = value.match(/tvg-logo="([^"]*)"/);
-            const group = value.match(/group-title="([^"]*)"/);
-
-            current = {
-                name: name || "Unknown Channel",
-                logo: logo ? logo[1] : "",
-                group: group ? group[1] : ""
-            };
-
-        } else if (value && !value.startsWith("#")) {
-            if (current.name) {
-                result.push({
-                    ...current,
-                    url: value
-                });
-            }
-
-            current = {};
-        }
-    }
-
-    return result;
-}
-
-function renderChannels(list) {
-    channelsBox.innerHTML = "";
-
-    if (!list.length) {
-        channelsBox.textContent = "No channels found.";
-        return;
-    }
-
-    list.forEach(channel => {
-        const item = document.createElement("div");
-        item.className = "channel";
-
-        if (activeChannel === channel) {
-            item.classList.add("active");
-        }
-
-        const logo = document.createElement("img");
-        logo.src = channel.logo || "";
-        logo.alt = "";
-        logo.onerror = () => {
-            logo.style.display = "none";
-        };
-
-        const name = document.createElement("div");
-        name.className = "channel-name";
-        name.textContent = channel.name;
-
-        item.appendChild(logo);
-        item.appendChild(name);
-
-        item.addEventListener("click", () => {
-            playChannel(channel);
-        });
-
-        channelsBox.appendChild(item);
     });
+
+    if (PLAYLISTS.length > 0) {
+        playlistSelector.value = "0";
+        loadPlaylist(0);
+    }
 }
 
-function playChannel(channel) {
-    activeChannel = channel;
 
-    nowPlaying.textContent = "▶ " + channel.name;
-    statusBox.textContent = "Connecting...";
+// ==========================================
+// CHANGE PLAYLIST
+// ==========================================
+
+playlistSelector.addEventListener("change", function() {
+
+    const index = Number(this.value);
+
+    loadPlaylist(index);
+
+});
+
+
+// ==========================================
+// LOAD SELECTED PLAYLIST
+// ==========================================
+
+async function loadPlaylist(index) {
+
+    const playlist = PLAYLISTS[index];
+
+    if (!playlist) return;
+
+    // Stop previous channel
 
     if (hls) {
         hls.destroy();
@@ -339,61 +342,294 @@ function playChannel(channel) {
     video.removeAttribute("src");
     video.load();
 
+    activeChannel = null;
+    channels = [];
+
+    search.value = "";
+
+    channelsBox.innerHTML = "Loading channels...";
+
+    nowPlaying.textContent = "Select a channel to start watching";
+
+    statusBox.textContent = "Loading " + playlist.name + "...";
+
+    try {
+
+        const response = await fetch(playlist.url);
+
+        if (!response.ok) {
+            throw new Error("Playlist could not be loaded");
+        }
+
+        const data = await response.text();
+
+        channels = parseM3U(data);
+
+        renderChannels(channels);
+
+        statusBox.textContent =
+            playlist.name + " - " + channels.length + " channels available";
+
+    } catch (error) {
+
+        channelsBox.textContent = "Unable to load channels.";
+
+        statusBox.textContent =
+            "Playlist error: " + error.message;
+
+    }
+
+}
+
+
+// ==========================================
+// PARSE M3U
+// ==========================================
+
+function parseM3U(data) {
+
+    const lines = data.split(/\r?\n/);
+
+    const result = [];
+
+    let current = {};
+
+    for (const line of lines) {
+
+        const value = line.trim();
+
+        if (value.startsWith("#EXTINF")) {
+
+            const name = value.split(",").pop().trim();
+
+            const logo = value.match(/tvg-logo="([^"]*)"/);
+            const group = value.match(/group-title="([^"]*)"/);
+
+            current = {
+
+                name: name || "Unknown Channel",
+
+                logo: logo ? logo[1] : "",
+
+                group: group ? group[1] : ""
+
+            };
+
+        }
+
+        else if (value && !value.startsWith("#")) {
+
+            if (current.name) {
+
+                result.push({
+
+                    ...current,
+
+                    url: value
+
+                });
+
+            }
+
+            current = {};
+
+        }
+
+    }
+
+    return result;
+
+}
+
+
+// ==========================================
+// DISPLAY CHANNELS
+// ==========================================
+
+function renderChannels(list) {
+
+    channelsBox.innerHTML = "";
+
+    if (!list.length) {
+
+        channelsBox.textContent = "No channels found.";
+
+        return;
+
+    }
+
+    list.forEach(channel => {
+
+        const item = document.createElement("div");
+
+        item.className = "channel";
+
+        if (activeChannel === channel) {
+
+            item.classList.add("active");
+
+        }
+
+        const logo = document.createElement("img");
+
+        logo.src = channel.logo || "";
+
+        logo.alt = "";
+
+        logo.onerror = () => {
+
+            logo.style.display = "none";
+
+        };
+
+        const name = document.createElement("div");
+
+        name.className = "channel-name";
+
+        name.textContent = channel.name;
+
+        item.appendChild(logo);
+
+        item.appendChild(name);
+
+        item.addEventListener("click", () => {
+
+            playChannel(channel);
+
+        });
+
+        channelsBox.appendChild(item);
+
+    });
+
+}
+
+
+// ==========================================
+// PLAY CHANNEL
+// ==========================================
+
+function playChannel(channel) {
+
+    activeChannel = channel;
+
+    nowPlaying.textContent = "▶ " + channel.name;
+
+    statusBox.textContent = "Connecting...";
+
+    if (hls) {
+
+        hls.destroy();
+
+        hls = null;
+
+    }
+
+    video.pause();
+
+    video.removeAttribute("src");
+
+    video.load();
+
     if (Hls.isSupported()) {
+
         hls = new Hls();
 
         hls.loadSource(channel.url);
+
         hls.attachMedia(video);
 
         hls.on(Hls.Events.MANIFEST_PARSED, () => {
+
             video.play().catch(() => {
+
                 statusBox.textContent =
                     "Press Play to start the channel.";
+
             });
+
         });
 
         hls.on(Hls.Events.ERROR, (event, data) => {
+
             if (data.fatal) {
+
                 statusBox.textContent =
                     "Stream unavailable or playback error.";
+
                 hls.destroy();
+
                 hls = null;
+
             }
+
         });
 
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+    }
+
+    else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+
         video.src = channel.url;
 
         video.play().catch(() => {
+
             statusBox.textContent =
                 "Press Play to start the channel.";
+
         });
 
-    } else {
+    }
+
+    else {
+
         statusBox.textContent =
             "Your browser does not support this stream.";
+
     }
 
     renderChannels(
+
         channels.filter(channel =>
+
             channel.name.toLowerCase().includes(
+
                 search.value.toLowerCase()
+
             )
+
         )
+
     );
+
 }
 
+
+// ==========================================
+// SEARCH CHANNELS
+// ==========================================
+
 search.addEventListener("input", () => {
+
     const query = search.value.toLowerCase();
 
     renderChannels(
+
         channels.filter(channel =>
+
             channel.name.toLowerCase().includes(query)
+
         )
+
     );
+
 });
 
-loadPlaylist();
+
+// ==========================================
+// START
+// ==========================================
+
+initializePlaylists();
 
 </script>
 
