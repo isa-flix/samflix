@@ -16,18 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     allMovies = movies.filter(movie => movie && !movie.disabled);
 
-searchInput = document.getElementById("search");
+    searchInput = document.getElementById("search");
 
-// NEW: Featured New Additions carousel
-setupNewAdditions();
-
-displayAll();
-setupNewAdditions(); // NEW: featured additions carousel
+    displayAll();
+    setupNewAdditions();
     setupHero();
-setupSearch();
-setupPlayerEvents();
+    setupSearch();
+    setupPlayerEvents();
 });
-
 /* ---------------- STREAM RESOLVER ---------------- */
 
 function resolveStreamUrl(movie) {
