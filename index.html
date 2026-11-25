@@ -1,126 +1,180 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SamFlix</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<link rel="stylesheet" href="style02.css">
+    <meta name="theme-color" content="#07070b">
+    <meta name="description" content="SamFlix - Your cinematic entertainment experience.">
+
+    <title>SamFlix | Cinema Nexus</title>
+
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style02.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">SamFlix</div>
-<div>
-    <!--
-    <div style=" top:10px; left:200px; z-index:9999; display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-centre">
-    -->    
-    <a href="https://isa-flix.github.io/samflix/" 
-           title="Main SamFlix"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-           🎬Movies
+    <!-- NAVIGATION -->
+    <header class="navbar">
+
+        <a href="https://isa-flix.github.io/samflix/"
+           class="logo"
+           aria-label="SamFlix home">
+            SamFlix
         </a>
 
-        <a href="https://isa-flix.github.io/samflix/newsam/" 
-           title="NewSam"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-           📺Series
-        </a>
-        <a href="https://isa-flix.github.io/samflix/Oldsam/" 
-           title="Server Stream"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-           🖥️Server
-        </a>
-        <a href="https://isa-flix.github.io/samflix/LiveTV/" 
-           title="Live TV"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
-           📺 LIVE TV
-        </a>
-        
-    </div>
-</div>
+        <nav class="nav-links" aria-label="Main navigation">
 
-<!------- new content selection added -->
+            <a href="https://isa-flix.github.io/samflix/">
+                🎬 Movies
+            </a>
+
+            <a href="https://isa-flix.github.io/samflix/newsam/">
+                📺 Series
+            </a>
+
+            <a href="https://isa-flix.github.io/samflix/Oldsam/">
+                🖥️ Server
+            </a>
+
+            <a href="https://isa-flix.github.io/samflix/LiveTV/">
+                📺 LIVE TV
+            </a>
+
+        </nav>
+
+    </header>
+
+
     <!-- CINEMATIC HERO -->
-<section class="hero" id="hero">
+    <main>
 
-    <div class="hero-background" id="heroBackground"></div>
-    <div class="hero-overlay"></div>
+        <section class="hero" id="hero">
 
-    <div class="hero-content">
+            <div class="hero-background" id="heroBackground"></div>
 
-        <div class="hero-tag">
-            <span class="hero-dot"></span>
-            SAMFLIX ORIGINAL EXPERIENCE
-        </div>
+            <div class="hero-overlay"></div>
 
-        <p class="hero-category" id="heroCategory">
-            FEATURED MOVIE
-        </p>
+            <div class="hero-content">
 
-        <h1 id="heroTitle">THE WILD ROBOT</h1>
+                <div class="hero-tag">
+                    <span class="hero-dot"></span>
+                    SAMFLIX ORIGINAL EXPERIENCE
+                </div>
 
-        <div class="hero-meta" id="heroMeta">
-            <span>2024</span>
-            <span>Animation</span>
-            <span>Adventure</span>
-        </div>
+                <p class="hero-category" id="heroCategory">
+                    FEATURED MOVIE
+                </p>
 
-        <p class="hero-description" id="heroDescription">
-            An unforgettable adventure about a robot
-            discovering friendship and life in the wild.
-        </p>
+                <h1 id="heroTitle">
+                    THE WILD ROBOT
+                </h1>
 
-        <div class="hero-actions">
+                <div class="hero-meta" id="heroMeta">
+                    <span>2024</span>
+                    <span>Animation</span>
+                    <span>Adventure</span>
+                </div>
 
-            <button class="watch-btn" id="heroWatch">
-                ▶ WATCH NOW
-            </button>
+                <p class="hero-description" id="heroDescription">
+                    An unforgettable adventure about a robot
+                    discovering friendship and life in the wild.
+                </p>
 
-            <button class="info-btn" id="heroInfo">
-                ⓘ MORE INFO
-            </button>
+                <div class="hero-actions">
 
-        </div>
+                    <button class="watch-btn" id="heroWatch" type="button">
+                        ▶ WATCH NOW
+                    </button>
+
+                    <button class="info-btn" id="heroInfo" type="button">
+                        ⓘ MORE INFO
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-indicator">
+                <span></span>
+                FEATURED ON SAMFLIX
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH -->
+        <section class="search-box" aria-label="Movie search">
+
+            <input
+                type="search"
+                id="search"
+                placeholder="Search movies..."
+                autocomplete="off"
+                aria-label="Search movies"
+            >
+
+        </section>
+
+
+        <!-- MOVIE COLLECTIONS -->
+        <section id="mainContainer" aria-label="Movie collections">
+
+        </section>
+
+    </main>
+
+
+    <!-- VIDEO PLAYER -->
+    <div id="player" role="dialog" aria-label="Video player" aria-modal="true">
+
+        <button
+            id="closeBtn"
+            type="button"
+            onclick="closePlayer()"
+            aria-label="Close video player">
+            ✖
+        </button>
+
+        <video
+            id="videoPlayer"
+            controls
+            playsinline
+            preload="metadata"
+            style="display:none;">
+        </video>
+
+        <iframe
+            id="frame"
+            style="display:none;"
+            allowfullscreen
+            allow="autoplay; encrypted-media; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            title="Movie player">
+        </iframe>
 
     </div>
 
-    <div class="hero-indicator">
-        <span></span>
-        FEATURED ON SAMFLIX
-    </div>
 
-</section>
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <p>© <span id="footerYear">2026</span> SamFlix</p>
+        <p>YOUR CINEMA. YOUR UNIVERSE.</p>
+    </footer>
 
-    
-<div class="search-box">
-    <input type="text" id="search" placeholder="Search ...">
-</div>
 
-    <!--
-<div class="navbar">
-    <marquee>upcoming movies:
-         <b style="color: red;">
-             [19-Jun] Toy Story 5 || [31 July] Spider Man Brand New Day
-         </b>
-    </marquee>
-</div>
--->
-<div id="mainContainer"></div>
+    <!-- JAVASCRIPT -->
+    <script src="movies.js"></script>
+    <script src="app.js"></script>
 
-<!-- ⭐ PERFECT PLAYER SECTION ⭐ -->
-<div id="player">
-    <button id="closeBtn" onclick="closePlayer()">✖</button>
-    <video id="videoPlayer" controls style="display:none;"></video>
-    <iframe id="frame" style="display:none;"></iframe>
-</div>
-
-<script src="movies.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-<script src="app.js"></script>
+    <script>
+        document.getElementById("footerYear").textContent =
+            new Date().getFullYear();
+    </script>
 
 </body>
 </html>
