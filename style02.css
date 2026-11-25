@@ -789,12 +789,34 @@ body.sam-modal-open,body.sam-player-open { overflow:hidden; }
 .addition-backdrop {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: center 25%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
     opacity: 0.65;
-    transition: background-image 0.3s ease;
+    z-index: 0;
 }
 
+/* Dark gradient over the image for readable text */
+.addition-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        90deg,
+        #07070b 0%,
+        rgba(7, 7, 11, 0.85) 35%,
+        rgba(7, 7, 11, 0.25) 100%
+    );
+}
+
+/* Keep carousel text and buttons above the image */
+.addition-content {
+    position: relative;
+    z-index: 2;
+}
 .addition-content {
     position: relative;
     z-index: 2;
