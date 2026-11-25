@@ -1,9 +1,9 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <meta name="theme-color" content="#07070b">
     <meta name="description" content="SamFlix - Your cinematic entertainment experience.">
@@ -12,44 +12,45 @@
 
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style02.css">
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+
+    <!-- HLS Streaming Support -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 </head>
 
 <body>
 
-   <div class="navbar">
-    <div class="logo">SamFlix</div>
+    <!-- NAVIGATION -->
+    <header class="navbar">
+        <div class="logo">SamFlix</div>
 
-        <div class="nav-links">
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="https://isa-flix.github.io/samflix/"
+               title="Main SamFlix">
+                🎬 Movies
+            </a>
 
-  <a href="https://isa-flix.github.io/samflix/" 
-     title="Main SamFlix"
-     >
-     🎬Movies
-  </a>
+            <a href="https://isa-flix.github.io/samflix/newsam/"
+               title="NewSam">
+                📺 Series
+            </a>
 
-  <a href="https://isa-flix.github.io/samflix/newsam/" 
-     title="NewSam">
-     📺Series 
-</a>  
-            <a href="https://isa-flix.github.io/samflix/Oldsam/" 
-           title="Server Stream">
-           🖥️Server 
-        </a>
+            <a href="https://isa-flix.github.io/samflix/Oldsam/"
+               title="Server Stream">
+                🖥️ Server
+            </a>
 
-            <a href="https://isa-flix.github.io/samflix/LiveTV/" 
-           title="Live TV">
-           📺 LIVE TV 
-        </a>
+            <a href="https://isa-flix.github.io/samflix/LiveTV/"
+               title="Live TV">
+                📺 LIVE TV
+            </a>
+        </nav>
+    </header>
 
-
-        </div></div>    
-
-    
+    <!-- MAIN CONTENT -->
+    <main id="mainContent">
 
         <!-- SEARCH -->
         <section class="search-box" aria-label="Movie search">
-
             <input
                 type="search"
                 id="search"
@@ -57,26 +58,34 @@
                 autocomplete="off"
                 aria-label="Search movies"
             >
-
         </section>
 
+        <!--
+            New Additions carousel is inserted here automatically
+            by app2.js, before the movie collections.
+        -->
 
         <!-- MOVIE COLLECTIONS -->
-        <section id="mainContainer" aria-label="Movie collections">
-
+        <section
+            id="mainContainer"
+            aria-label="Movie collections">
         </section>
 
     </main>
 
-
     <!-- VIDEO PLAYER -->
-    <div id="player" role="dialog" aria-label="Video player" aria-modal="true">
+    <div
+        id="player"
+        role="dialog"
+        aria-label="Video player"
+        aria-modal="true"
+    >
 
         <button
             id="closeBtn"
             type="button"
-            onclick="closePlayer()"
-            aria-label="Close video player">
+            aria-label="Close video player"
+        >
             ✖
         </button>
 
@@ -85,8 +94,8 @@
             controls
             playsinline
             preload="metadata"
-            style="display:none;">
-        </video>
+            style="display:none;"
+        ></video>
 
         <iframe
             id="frame"
@@ -94,11 +103,10 @@
             allowfullscreen
             allow="autoplay; encrypted-media; picture-in-picture"
             referrerpolicy="strict-origin-when-cross-origin"
-            title="Movie player">
-        </iframe>
+            title="Movie player"
+        ></iframe>
 
     </div>
-
 
     <!-- FOOTER -->
     <footer class="site-footer">
@@ -106,11 +114,11 @@
         <p>YOUR CINEMA. YOUR UNIVERSE.</p>
     </footer>
 
-
     <!-- JAVASCRIPT -->
     <script src="movies.js"></script>
     <script src="app2.js"></script>
 
+    <!-- AUTOMATIC FOOTER YEAR -->
     <script>
         document.getElementById("footerYear").textContent =
             new Date().getFullYear();
@@ -118,3 +126,4 @@
 
 </body>
 </html>
+```
