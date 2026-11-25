@@ -1,329 +1,478 @@
-let hlsInstance = null;
 
-/* ---------------- INIT ---------------- */
+"use strict";
+
+let hlsInstance = null;
+let currentMovie = null;
+let allMovies = [];
+let searchInput = null;
+
+/* ---------------- INITIALIZATION ---------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof movies !== "undefined") {
-    movies = movies.filter(m => !m.disabled);
-  }
+    if (!Array.isArray(movies)) {
+        console.error("movies.js must define a movies array.");
+        return;
+    }
 
-  displayAll();
+    allMovies = movies.filter(movie => movie && !movie.disabled);
+
+    searchInput = document.getElementById("search");
+
+    displayAll();
+    setupHero();
+    setupSearch();
+    setupPlayerEvents();
 });
 
 /* ---------------- STREAM RESOLVER ---------------- */
 
 function resolveStreamUrl(movie) {
-  if (!movie) return null;
+    if (!movie) return null;
 
-  // Local video
-  if (movie.video) {
-    return {
-      type: "video",
-      src: movie.video
-    };
-  }
+    if (movie.video) {
+        return {
+            type: "video",
+            src: movie.video
+        };
+    }
 
-  const id = movie.id;
+    const id = String(movie.id || "").trim();
 
-  if (!id) return null;
+    if (!id) return null;
 
-  // TMDB ID
-  if (/^\d+$/.test(id)) {
-    return {
-      type: "iframe",
-      src: `https://vidsrc.me/embed/movie?tmdb=${id}`
-      //src: `https://vidlink.pro/embed/movie?tmdb=${id}`
-      
-    };
-  }
+    if (/^\d+$/.test(id)) {
+        return {
+            type: "iframe",
+            src: `https://vidsrc.me/embed/movie?tmdb=${encodeURIComponent(id)}`
+        };
+    }
 
-  // IMDb ID
-  if (id.startsWith("tt")) {
-    return {
-      type: "iframe",
-      src: `https://vidsrc.me/embed/movie?imdb=${id}`
-      //src: `https://vidlink.pro/embed/movie?tmdb=${id}`
-    };
-  }
+    if (/^tt\d+$/i.test(id)) {
+        return {
+            type: "iframe",
+            src: `https://vidsrc.me/embed/movie?imdb=${encodeURIComponent(id)}`
+        };
+    }
 
-  return null;
+    return null;
 }
 
-/* ---------------- DISPLAY ---------------- */
+/* ---------------- DISPLAY COLLECTIONS ---------------- */
 
 function displayAll() {
-  const container = document.getElementById("mainContainer");
-  container.innerHTML = "";
+    const container = document.getElementById("mainContainer");
+    if (!container) return;
 
-  const categories = [...new Set(movies.map(m => m.category))];
+    container.replaceChildren();
 
-  categories.forEach(category => {
+    const categories = [
+        ...new Set(allMovies.map(movie => movie.category || "Other"))
+    ];
 
-    const section = document.createElement("div");
+    categories.forEach(category => {
+        const section = document.createElement("section");
 
-    const title = document.createElement("h2");
-    title.textContent = category;
+        const heading = document.createElement("h2");
+        heading.textContent = category;
+
+        const grid = document.createElement("div");
+        grid.className = "grid";
+
+        if (category === "BoxSet") {
+            const sets = [
+                ...new Set(
+                    allMovies
+                        .filter(movie => movie.category === "BoxSet")
+                        .map(movie => movie.set)
+                        .filter(Boolean)
+                )
+            ];
+
+            sets.forEach(setName => {
+                const firstMovie = allMovies.find(
+                    movie => movie.category === "BoxSet" &&
+                             movie.set === setName
+                );
+
+                if (firstMovie) {
+                    grid.appendChild(
+                        createCard(firstMovie, () => openSet(setName))
+                    );
+                }
+            });
+        } else {
+            allMovies
+                .filter(movie => (movie.category || "Other") === category)
+                .forEach(movie => grid.appendChild(createCard(movie)));
+        }
+
+        if (grid.children.length) {
+            section.append(heading, grid);
+            container.appendChild(section);
+        }
+    });
+}
+
+/* ---------------- BOX SETS ---------------- */
+
+function openSet(setName) {
+    const container = document.getElementById("mainContainer");
+    if (!container) return;
+
+    container.replaceChildren();
+
+    const heading = document.createElement("h2");
+    heading.textContent = setName;
+
+    const back = document.createElement("button");
+    back.className = "back-btn";
+    back.type = "button";
+    back.textContent = "← Back to collections";
+    back.addEventListener("click", displayAll);
 
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    if (category === "BoxSet") {
+    allMovies
+        .filter(movie => movie.set === setName)
+        .forEach(movie => grid.appendChild(createCard(movie)));
 
-      const sets = [...new Set(
-        movies
-          .filter(m => m.category === "BoxSet")
-          .map(m => m.set)
-      )];
+    container.append(heading, back, grid);
 
-      sets.forEach(setName => {
-
-        const first = movies.find(m => m.set === setName);
-
-        if (first) {
-          grid.appendChild(createCard(first, () => openSet(setName)));
-        }
-
-      });
-
-    } else {
-
-      movies
-        .filter(m => m.category === category)
-        .forEach(movie => {
-          grid.appendChild(createCard(movie));
-        });
-
-    }
-
-    section.appendChild(title);
-    section.appendChild(grid);
-
-    container.appendChild(section);
-
-  });
+    container.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-/* ---------------- MOVIE SET ---------------- */
-
-function openSet(setName) {
-
-  const container = document.getElementById("mainContainer");
-
-  container.innerHTML = "";
-
-  const title = document.createElement("h2");
-  title.textContent = setName;
-
-  const back = document.createElement("button");
-  back.textContent = "⬅ Back";
-  back.onclick = displayAll;
-
-  const grid = document.createElement("div");
-  grid.className = "grid";
-
-  movies
-    .filter(m => m.set === setName)
-    .forEach(movie => {
-      grid.appendChild(createCard(movie));
-    });
-
-  container.appendChild(title);
-  container.appendChild(back);
-  container.appendChild(grid);
-}
-
-/* ---------------- CARD ---------------- */
+/* ---------------- MOVIE CARD ---------------- */
 
 function createCard(movie, customClick) {
+    const card = document.createElement("article");
+    card.className = "movie";
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute("aria-label", `Play ${movie.title || "movie"}`);
 
-  const card = document.createElement("div");
-  card.className = "movie";
+    const img = document.createElement("img");
+    img.src = movie.img || "";
+    img.alt = movie.title || "Movie poster";
+    img.loading = "lazy";
 
-  const img = document.createElement("img");
-  img.src = movie.img || "";
-  img.onerror = () => img.style.display = "none";
+    img.onerror = () => {
+        img.style.display = "none";
+    };
 
-  const title = document.createElement("div");
-  title.className = "title";
-  title.textContent = movie.title || "Untitled";
+    const title = document.createElement("div");
+    title.className = "title";
+    title.textContent = movie.title || "Untitled";
 
-  card.appendChild(img);
-  card.appendChild(title);
+    card.append(img, title);
 
-  card.onclick = customClick || (() => playMovie(movie));
+    const activate = customClick || (() => playMovie(movie));
 
-  return card;
+    card.addEventListener("click", activate);
+
+    card.addEventListener("keydown", event => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            activate();
+        }
+    });
+
+    return card;
+}
+
+/* ---------------- HERO ---------------- */
+
+function setupHero() {
+    const heroMovie =
+        allMovies.find(movie => movie.id === "1184918") ||
+        allMovies.find(movie => movie.title?.toLowerCase().includes("wild robot")) ||
+        allMovies[0];
+
+    if (!heroMovie) return;
+
+    const title = document.getElementById("heroTitle");
+    const description = document.getElementById("heroDescription");
+    const meta = document.getElementById("heroMeta");
+    const background = document.getElementById("heroBackground");
+    const watch = document.getElementById("heroWatch");
+    const info = document.getElementById("heroInfo");
+
+    if (title) title.textContent = heroMovie.title || "Featured Movie";
+
+    if (description) {
+        description.textContent =
+            heroMovie.description ||
+            "Discover your next cinematic adventure on SamFlix.";
+    }
+
+    if (background && heroMovie.img) {
+        background.style.backgroundImage =
+            `url("${heroMovie.img.replace(/"/g, "")}")`;
+    }
+
+    if (meta) {
+        meta.replaceChildren();
+
+        [heroMovie.year, heroMovie.category, heroMovie.genre]
+            .filter(Boolean)
+            .forEach(value => {
+                const span = document.createElement("span");
+                span.textContent = value;
+                meta.appendChild(span);
+            });
+    }
+
+    if (watch) {
+        watch.onclick = () => playMovie(heroMovie);
+    }
+
+    if (info) {
+        info.onclick = () => showMovieInfo(heroMovie);
+    }
+}
+
+/* ---------------- MOVIE INFORMATION ---------------- */
+
+function showMovieInfo(movie) {
+    const oldModal = document.querySelector(".movie-info-modal");
+    if (oldModal) oldModal.remove();
+
+    const modal = document.createElement("div");
+    modal.className = "movie-info-modal";
+    modal.setAttribute("role", "dialog");
+    modal.setAttribute("aria-modal", "true");
+    modal.setAttribute("aria-label", movie.title || "Movie information");
+
+    const content = document.createElement("div");
+    content.className = "movie-info-content";
+
+    const close = document.createElement("button");
+    close.className = "movie-info-close";
+    close.type = "button";
+    close.textContent = "✕";
+    close.setAttribute("aria-label", "Close information");
+
+    close.onclick = () => modal.remove();
+
+    const heading = document.createElement("h2");
+    heading.textContent = movie.title || "Movie";
+
+    const description = document.createElement("p");
+    description.textContent =
+        movie.description ||
+        "Movie information is not available.";
+
+    const watch = document.createElement("button");
+    watch.className = "watch-btn";
+    watch.type = "button";
+    watch.textContent = "▶ WATCH NOW";
+    watch.onclick = () => {
+        modal.remove();
+        playMovie(movie);
+    };
+
+    content.append(close, heading, description, watch);
+    modal.appendChild(content);
+
+    modal.addEventListener("click", event => {
+        if (event.target === modal) modal.remove();
+    });
+
+    document.body.appendChild(modal);
+    close.focus();
 }
 
 /* ---------------- PLAYER ---------------- */
 
 function playMovie(movie) {
+    const player = document.getElementById("player");
+    const video = document.getElementById("videoPlayer");
+    const frame = document.getElementById("frame");
 
-  const player = document.getElementById("player");
-  const video = document.getElementById("videoPlayer");
-  const frame = document.getElementById("frame");
-  const closeBtn = document.getElementById("closeBtn");
+    if (!player || !video || !frame) return;
 
-  resetPlayer(video, frame);
+    currentMovie = movie;
+    resetPlayer(video, frame);
 
-  player.style.display = "flex";
-  player.innerHTML = "";
-  player.appendChild(closeBtn);
+    video.style.display = "none";
+    frame.style.display = "none";
 
-  const stream = resolveStreamUrl(movie);
+    player.style.display = "flex";
 
-  if (!stream) {
+    const stream = resolveStreamUrl(movie);
 
-    const error = document.createElement("div");
-    error.style.color = "#fff";
-    error.textContent = "No playable source.";
+    if (!stream) {
+        showPlayerMessage("No playable source is available for this title.");
+        return;
+    }
 
-    player.appendChild(error);
+    if (stream.type === "video") {
+        video.style.display = "block";
+        playVideo(stream.src, video);
+        return;
+    }
 
-    return;
-  }
-
-  if (stream.type === "video") {
-
-    player.appendChild(video);
-
-    playVideo(stream.src, video);
-
-    return;
-  }
-
-  player.appendChild(frame);
-
-  frame.style.display = "block";
-  frame.style.width = "100%";
-  frame.style.height = "100%";
-  frame.src = stream.src;
+    frame.style.display = "block";
+    frame.src = stream.src;
 }
 
-/* ---------------- VIDEO ---------------- */
+/* ---------------- VIDEO PLAYBACK ---------------- */
 
 function playVideo(url, video) {
+    video.style.display = "block";
 
-  video.style.display = "block";
+    const source = String(url || "");
+    const isHls = /\.m3u8($|\?)/i.test(source);
 
-  if (url.endsWith(".mp4")) {
+    if (isHls) {
+        if (window.Hls && Hls.isSupported()) {
+            hlsInstance = new Hls();
 
-    video.src = url;
+            hlsInstance.loadSource(source);
+            hlsInstance.attachMedia(video);
 
-    video.play().catch(() => {});
+            hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
+                video.play().catch(() => {});
+            });
 
-    return;
-  }
+            hlsInstance.on(Hls.Events.ERROR, (_, data) => {
+                if (data.fatal) {
+                    showPlayerMessage("This stream could not be played.");
+                }
+            });
+        } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+            video.src = source;
+            video.play().catch(() => {});
+        } else {
+            showPlayerMessage("HLS playback is not supported by this browser.");
+        }
 
-  if (url.includes(".m3u8")) {
-
-    if (window.Hls && Hls.isSupported()) {
-
-      if (hlsInstance) {
-        hlsInstance.destroy();
-      }
-
-      hlsInstance = new Hls();
-
-      hlsInstance.loadSource(url);
-      hlsInstance.attachMedia(video);
-
-      hlsInstance.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play().catch(() => {});
-      });
-
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-
-      video.src = url;
-
-      video.play().catch(() => {});
+        return;
     }
-  }
+
+    video.src = source;
+    video.play().catch(() => {});
 }
 
-/* ---------------- RESET ---------------- */
+/* ---------------- PLAYER MESSAGE ---------------- */
+
+function showPlayerMessage(message) {
+    const player = document.getElementById("player");
+    if (!player) return;
+
+    let messageBox = player.querySelector(".player-error");
+
+    if (!messageBox) {
+        messageBox = document.createElement("div");
+        messageBox.className = "player-error";
+        player.appendChild(messageBox);
+    }
+
+    messageBox.textContent = message;
+}
+
+/* ---------------- PLAYER RESET ---------------- */
 
 function resetPlayer(video, frame) {
+    if (hlsInstance) {
+        hlsInstance.destroy();
+        hlsInstance = null;
+    }
 
-  if (hlsInstance) {
+    if (video) {
+        video.pause();
+        video.removeAttribute("src");
+        video.load();
+    }
 
-    hlsInstance.destroy();
+    if (frame) {
+        frame.src = "about:blank";
+        frame.removeAttribute("src");
+    }
 
-    hlsInstance = null;
-  }
-
-  if (video) {
-
-    video.pause();
-
-    video.removeAttribute("src");
-
-    video.load();
-  }
-
-  if (frame) {
-
-    frame.removeAttribute("src");
-  }
+    const message = document.querySelector(".player-error");
+    if (message) message.remove();
 }
 
-/* ---------------- CLOSE ---------------- */
+/* ---------------- CLOSE PLAYER ---------------- */
 
 function closePlayer() {
+    const player = document.getElementById("player");
+    const video = document.getElementById("videoPlayer");
+    const frame = document.getElementById("frame");
 
-  const player = document.getElementById("player");
-  const video = document.getElementById("videoPlayer");
-  const frame = document.getElementById("frame");
-  const closeBtn = document.getElementById("closeBtn");
+    resetPlayer(video, frame);
 
-  resetPlayer(video, frame);
+    if (player) player.style.display = "none";
 
-  player.style.display = "none";
-  player.innerHTML = "";
+    currentMovie = null;
+}
 
-  player.appendChild(closeBtn);
-  player.appendChild(video);
-  player.appendChild(frame);
+function setupPlayerEvents() {
+    const player = document.getElementById("player");
+    const closeButton = document.getElementById("closeBtn");
+
+    if (closeButton) {
+        closeButton.addEventListener("click", closePlayer);
+    }
+
+    document.addEventListener("keydown", event => {
+        if (event.key === "Escape" && player?.style.display === "flex") {
+            closePlayer();
+        }
+    });
 }
 
 /* ---------------- SEARCH ---------------- */
 
-const search = document.getElementById("search");
+function setupSearch() {
+    if (!searchInput) return;
 
-if (search) {
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.trim().toLowerCase();
 
-  search.addEventListener("input", function () {
+        if (!query) {
+            displayAll();
+            return;
+        }
 
-    const value = this.value.toLowerCase().trim();
+        const results = allMovies.filter(movie => {
+            const searchable = [
+                movie.title,
+                movie.category,
+                movie.set,
+                movie.genre
+            ].filter(Boolean).join(" ").toLowerCase();
 
-    if (!value) {
-      displayAll();
-      return;
-    }
+            return searchable.includes(query);
+        });
 
+        displaySearchResults(results);
+    });
+}
+
+function displaySearchResults(results) {
     const container = document.getElementById("mainContainer");
+    if (!container) return;
 
-    container.innerHTML = "";
+    container.replaceChildren();
 
-    const title = document.createElement("h2");
-    title.textContent = "Search Results";
+    const heading = document.createElement("h2");
+    heading.textContent = `Search Results (${results.length})`;
 
     const grid = document.createElement("div");
     grid.className = "grid";
 
-    movies
-      .filter(movie =>
-        (movie.title || "")
-          .toLowerCase()
-          .includes(value)
-      )
-      .forEach(movie => {
-        grid.appendChild(createCard(movie));
-      });
+    results.forEach(movie => grid.appendChild(createCard(movie)));
 
-    container.appendChild(title);
-    container.appendChild(grid);
+    container.appendChild(heading);
 
-  });
-
+    if (results.length) {
+        container.appendChild(grid);
+    } else {
+        const empty = document.createElement("p");
+        empty.className = "empty-message";
+        empty.textContent = "No movies found. Try another search.";
+        container.appendChild(empty);
+    }
 }
