@@ -61,16 +61,17 @@ body::before {
 
 .navbar {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 25px;
 
     position: sticky;
     top: 0;
     z-index: 900;
 
-    padding: 18px 25px;
+    background: rgba(7,7,11,.85);
 
-    background: rgba(7,7,11,.82);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
 
@@ -79,11 +80,17 @@ body::before {
 
 /* LOGO */
 
-    .logo {
-    color: red;
-    font-size: 28px;
-    font-weight: bold;
+.logo {
+    font-size: 32px;
+    font-weight: 1000;
+    letter-spacing: -2px;
 
+    background: linear-gradient(
+        100deg,
+        #ff2348,
+        #ff7394,
+        #a78bfa
+    );
 
     background-clip: text;
     -webkit-background-clip: text;
@@ -96,32 +103,60 @@ body::before {
 }
 
 .logo:hover {
-    filter: drop-shadow(0 0 20px #ff2348);
+    filter: drop-shadow(0 0 22px var(--red));
 }
 
-/* NAV LINKS */
+/* NAVIGATION BUTTONS */
 
-.navbar a {
+.nav-buttons {
+    position: fixed;
+    top: 10px;
+    left: 300px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    z-index: 9999;
+}
+
+.nav-buttons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 15px;
+
+    background: rgba(255,255,255,.06);
+    color: white;
+
+    text-decoration: none;
+    border-radius: 12px;
+
     border: 1px solid rgba(255,255,255,.1);
-    background: rgba(255,255,255,.06) !important;
+
+    font-size: 15px;
+    font-weight: bold;
 
     backdrop-filter: blur(10px);
 
     transition: .3s ease;
 }
 
-.navbar a:hover {
+.nav-buttons a:hover {
     background: linear-gradient(
         120deg,
-        #ff2348,
-        #a855f7
-    ) !important;
+        var(--red),
+        var(--purple)
+    );
 
     border-color: transparent;
-    box-shadow: 0 0 22px rgba(255,35,72,.4);
 
     transform: translateY(-3px);
+
+    box-shadow: 0 0 22px rgba(255,35,72,.4);
 }
+
 
 /* SEARCH */
 
