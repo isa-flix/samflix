@@ -108,7 +108,7 @@ body::before {
 
 /* NAVIGATION BUTTONS */
 
-.nav-buttons {
+.nav-links {
     position: fixed;
     top: 10px;
     left: 300px;
@@ -120,7 +120,7 @@ body::before {
     z-index: 9999;
 }
 
-.nav-buttons a {
+.nav-links a {
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -143,7 +143,7 @@ body::before {
     transition: .3s ease;
 }
 
-.nav-buttons a:hover {
+.nav-links a:hover {
     background: linear-gradient(
         120deg,
         var(--red),
