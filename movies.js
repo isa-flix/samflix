@@ -65,6 +65,14 @@ let movies = [
 	},
 
 	{ 
+		"id": "170687",
+		"title": "The Boxtrolls (2014)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/npBf0yc5Gt7aAyyVOcYtFyT2IPa.jpg",
+		"category": "Kids"
+	},
+
+	
+	{ 
 		"id": "10588",
 		"title": "The Cat in the Hat (2023)",
 		"img": "https://www.themoviedb.org/t/p/w1280/7I1FevUX4PrxWOOOBTmjT70v553.jpg",
