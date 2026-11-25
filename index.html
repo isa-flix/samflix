@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +6,8 @@
 <title>SamFlix</title>
 
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
@@ -16,32 +15,29 @@
 <div class="navbar">
     <div class="logo">SamFlix</div>
 
-    <div style="position:fixed; top:10px; left:200px; z-index:9999; display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-start">
-
-        <a href="https://isa-flix.github.io/samflix/"
+    <div style="position:fixed; top:10px; left:200px; z-index:9999; display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-centre">
+        <a href="https://isa-flix.github.io/samflix/" 
            title="Main SamFlix"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:10px; font-size:18px;">
+           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
            🎬Movies
         </a>
 
-        <a href="https://isa-flix.github.io/samflix/newsam/"
+        <a href="https://isa-flix.github.io/samflix/newsam/" 
            title="NewSam"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:10px; font-size:18px;">
+           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
            📺Series
         </a>
-
-        <a href="https://isa-flix.github.io/samflix/Oldsam/"
+        <a href="https://isa-flix.github.io/samflix/Oldsam/" 
            title="Server Stream"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:10px; font-size:18px;">
+           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
            🖥️Server
         </a>
-
-        <a href="https://isa-flix.github.io/samflix/LiveTV/"
-           title="Live TV"
-           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:10px; font-size:18px;">
+        <a href="https://isa-flix.github.io/samflix/LiveTV/" 
+           title="Server Stream"
+           style="padding:10px; background:#111; color:white; text-decoration:none; border-radius:50%; font-size:18px;">
            📺 LIVE TV
         </a>
-
+        
     </div>
 </div>
 
@@ -49,9 +45,18 @@
     <input type="text" id="search" placeholder="Search ...">
 </div>
 
+    <!--
+<div class="navbar">
+    <marquee>upcoming movies:
+         <b style="color: red;">
+             [19-Jun] Toy Story 5 || [31 July] Spider Man Brand New Day
+         </b>
+    </marquee>
+</div>
+-->
 <div id="mainContainer"></div>
 
-<!-- PLAYER SECTION -->
+<!-- ⭐ PERFECT PLAYER SECTION ⭐ -->
 <div id="player">
     <button id="closeBtn" onclick="closePlayer()">✖</button>
     <video id="videoPlayer" controls style="display:none;"></video>
