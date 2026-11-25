@@ -332,10 +332,16 @@ function setupNewAdditions() {
         number.textContent =
             `NEW ADDITION ${currentIndex + 1} / ${featuredMovies.length}`;
 
-        backdrop.style.backgroundImage = movie.img
-            ? `linear-gradient(90deg, #07070b 5%, transparent 100%), url("${movie.img.replace(/"/g, "")}")`
-            : "none";
+        // Load the movie image directly, just like your movie cards
+backdrop.src = movie.img || "";
+backdrop.alt = movie.title || "Featured movie";
 
+backdrop.style.display = movie.img ? "block" : "none";
+
+backdrop.onerror = () => {
+    backdrop.style.display = "none";
+};
+        
         dots.querySelectorAll(".addition-dot").forEach((dot, i) => {
             dot.classList.toggle("active", i === currentIndex);
         });
