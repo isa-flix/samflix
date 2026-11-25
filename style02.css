@@ -1009,4 +1009,55 @@ body:has(#player[style*="display: flex"]) {
 .hero-background {
     background-color: #101018;
 }
+/* SamFlix Upgrade styles — append to the END of style02.css */
+.sam-section { margin: 30px 0 42px; }
+.sam-section > h2 { display:flex; align-items:center; gap:12px; margin:0 0 16px; font-size:clamp(1.1rem,2vw,1.55rem); }
+.sam-count { display:inline-flex; align-items:center; justify-content:center; min-width:24px; padding:3px 8px; border:1px solid rgba(255,255,255,.12); border-radius:99px; color:#a9a9b6; font-size:.72rem; font-weight:600; }
+.sam-row { position:relative; }
+.sam-rail { display:flex; gap:16px; overflow-x:auto; padding:6px 4px 18px; scroll-snap-type:x mandatory; scrollbar-width:thin; scrollbar-color:#444 transparent; }
+.sam-card { position:relative; overflow:hidden; cursor:pointer; isolation:isolate; outline:none; }
+.sam-card.sam-compact { flex:0 0 clamp(145px,17vw,220px); scroll-snap-align:start; }
+.sam-card img { display:block; width:100%; aspect-ratio:2/3; object-fit:cover; background:#1b1b24; transition:transform .35s ease,filter .35s ease; }
+.sam-card:hover img,.sam-card:focus-visible img { transform:scale(1.045); filter:brightness(.78); }
+.sam-card:focus-visible { outline:2px solid #00e5ff; outline-offset:3px; }
+.sam-card-caption { padding:10px 4px 4px; }
+.sam-card-title { font-weight:700; line-height:1.35; }
+.sam-card-caption small { display:block; margin-top:4px; color:#a5a5b2; }
+.sam-fav { position:absolute; top:10px; right:10px; width:36px; height:36px; border:1px solid rgba(255,255,255,.22); border-radius:50%; color:white; background:rgba(10,10,16,.75); backdrop-filter:blur(12px); font-size:19px; cursor:pointer; }
+.sam-fav:hover { background:#e50914; }
+.sam-progress { position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(255,255,255,.24); }
+.sam-progress span { display:block; height:100%; background:#e50914; }
+.sam-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:22px 16px; }
+.sam-empty { grid-column:1/-1; padding:38px 12px; color:#aaa; text-align:center; }
+.sam-nav-action { margin-left:14px; border:1px solid rgba(255,255,255,.16); border-radius:999px; padding:9px 15px; color:#fff; background:rgba(255,255,255,.06); font:inherit; cursor:pointer; }
+.sam-nav-action:hover { border-color:#e50914; background:rgba(229,9,20,.15); }
+.sam-modal { position:fixed; z-index:10020; inset:0; display:grid; place-items:center; padding:20px; background:rgba(0,0,0,.78); backdrop-filter:blur(9px); }
+.sam-modal-panel { position:relative; width:min(760px,100%); overflow:hidden; border:1px solid rgba(255,255,255,.1); border-radius:20px; background:#14141d; box-shadow:0 25px 90px #0009; }
+.sam-modal-backdrop { min-height:260px; background-position:center 25%; background-size:cover; background-color:#20202b; }
+.sam-modal-content { padding:26px clamp(20px,5vw,42px) 36px; }
+.sam-modal-content h2 { margin:0 0 10px; font-size:clamp(1.7rem,5vw,2.7rem); }
+.sam-modal-content p { color:#c3c3cd; line-height:1.65; }
+.sam-modal-meta { color:#9292a2!important; font-size:.9rem; }
+.sam-modal-close { position:absolute; z-index:2; top:14px; right:14px; width:42px; height:42px; border:0; border-radius:50%; color:#fff; background:#09090dcc; font-size:28px; cursor:pointer; }
+.sam-modal-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+.sam-primary,.sam-secondary { border:0; border-radius:8px; padding:12px 20px; font:inherit; font-weight:700; cursor:pointer; }
+.sam-primary { color:#fff; background:#e50914; }
+.sam-primary:hover { background:#b80710; }
+.sam-secondary { color:#fff; background:#343440; }
+.sam-toast { position:fixed; z-index:10040; bottom:26px; left:50%; transform:translate(-50%,20px); padding:12px 20px; border:1px solid #ffffff24; border-radius:999px; color:#fff; background:#24242e; box-shadow:0 10px 35px #0008; opacity:0; pointer-events:none; transition:opacity .2s,transform .2s; }
+.sam-toast.is-visible { opacity:1; transform:translate(-50%,0); }
+.sam-player-message { position:absolute; z-index:3; left:50%; top:50%; transform:translate(-50%,-50%); max-width:80%; padding:15px 20px; border-radius:12px; color:#fff; background:#171720; text-align:center; }
+body.sam-modal-open,body.sam-player-open { overflow:hidden; }
+#player video,#player iframe { max-width:100%; max-height:100%; }
+@media(max-width:650px) {
+  .sam-card.sam-compact { flex-basis:140px; }
+  .sam-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 12px; }
+  .sam-nav-action { margin:8px 0 0; }
+  .sam-modal-backdrop { min-height:190px; }
+  .sam-modal-content { padding:22px 20px 28px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .sam-card img,.sam-toast { transition:none; }
+}
+
 
