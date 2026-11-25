@@ -62,20 +62,24 @@ let movies = [
 		"title": "The Wild Robot (2024)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
 		"category": "Kids"
+		
 	},
 
 	{ 
 		"id": "170687",
 		"title": "The Boxtrolls (2014)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/npBf0yc5Gt7aAyyVOcYtFyT2IPa.jpg",
-		"category": "Kids"
+		
+		"category": "Kids",
+		newAddition: true
 	},
 
 	{ 
 		"id": "116711",
 		"title": "Epic (2013)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/81cSsWzjTfR3cJSqnTiHwy1eyPK.jpg",
-		"category": "Kids"
+		"category": "Kids",
+		newAddition: true
 	},
 
 	
@@ -83,14 +87,16 @@ let movies = [
 		"id": "1538497",
 		"title": "Hexed (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yykeYKbDBM9eUMJUucaaDo2mi1p.jpg",
-		"category": "Kids"
+		"category": "Kids",
+		newAddition: true
 	},
 	
 	{ 
 		"id": "10588",
 		"title": "The Cat in the Hat (2023)",
 		"img": "https://www.themoviedb.org/t/p/w1280/7I1FevUX4PrxWOOOBTmjT70v553.jpg",
-		"category": "Kids"
+		"category": "Kids",
+		newAddition: true
 	},
 
 	{ 
@@ -104,7 +110,8 @@ let movies = [
 		"id": "1204680",
 		"title": "Coyote vs. Acme (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kYDCl2y0VPvhT5eYWbMRInPoB03.jpg",
-		"category": "Kids"
+		"category": "Kids",
+		newAddition: true
 	},
 	
 	{ 
