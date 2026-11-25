@@ -1,0 +1,505 @@
+
+/* ==========================================
+   SAMFLIX // CINEMA NEXUS
+   A distinctive futuristic cinema experience
+========================================== */
+
+:root {
+    --void: #07070b;
+    --panel: #101018;
+    --red: #ff2348;
+    --purple: #8b5cf6;
+    --cyan: #35e5ff;
+    --white: #f7f4ff;
+    --muted: #888899;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--white);
+    background:
+        radial-gradient(ellipse at 15% 5%, #35102c 0%, transparent 35%),
+        radial-gradient(ellipse at 90% 25%, #151d43 0%, transparent 38%),
+        var(--void);
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* AMBIENT BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        black,
+        transparent 85%
+    );
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: sticky;
+    top: 0;
+    z-index: 900;
+
+    padding: 18px 25px;
+
+    background: rgba(7,7,11,.82);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 34px;
+    font-weight: 1000;
+    letter-spacing: -2px;
+
+    color: white;
+
+    background: linear-gradient(
+        100deg,
+        #ff2348,
+        #ff7394,
+        #a78bfa
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 0 12px rgba(255,35,72,.35));
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 20px #ff2348);
+}
+
+/* NAV LINKS */
+
+.navbar a {
+    border: 1px solid rgba(255,255,255,.1);
+    background: rgba(255,255,255,.06) !important;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s ease;
+}
+
+.navbar a:hover {
+    background: linear-gradient(
+        120deg,
+        #ff2348,
+        #a855f7
+    ) !important;
+
+    border-color: transparent;
+    box-shadow: 0 0 22px rgba(255,35,72,.4);
+
+    transform: translateY(-3px);
+}
+
+/* SEARCH */
+
+.search-box {
+    display: flex;
+    justify-content: center;
+    padding: 30px 15px;
+}
+
+.search-box input {
+    width: min(480px, 92%);
+    padding: 16px 22px;
+
+    color: white;
+    font-size: 15px;
+
+    background: rgba(20,20,32,.85);
+
+    border: 1px solid rgba(139,92,246,.35);
+    border-radius: 14px;
+
+    outline: none;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,.3),
+        inset 0 0 15px rgba(139,92,246,.04);
+
+    transition: .3s ease;
+}
+
+.search-box input::placeholder {
+    color: #888899;
+}
+
+.search-box input:focus {
+    width: min(520px, 96%);
+
+    border-color: var(--cyan);
+
+    box-shadow:
+        0 0 0 3px rgba(53,229,255,.08),
+        0 0 30px rgba(53,229,255,.15);
+}
+
+/* SECTION HEADINGS */
+
+h2 {
+    position: relative;
+
+    margin: 30px 18px 20px;
+    padding-left: 16px;
+
+    font-size: 23px;
+    font-weight: 900;
+    letter-spacing: .5px;
+
+    border-left: 3px solid var(--red);
+
+    text-shadow: 0 0 18px rgba(255,35,72,.3);
+}
+
+h2::after {
+    content: "";
+    display: block;
+
+    width: 65px;
+    height: 2px;
+
+    margin-top: 9px;
+
+    background: linear-gradient(
+        90deg,
+        var(--red),
+        var(--purple),
+        transparent
+    );
+}
+
+/* MOVIE GRID */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(155px, 1fr));
+
+    gap: 24px;
+
+    padding: 12px 20px 40px;
+}
+
+/* MOVIE CARD */
+
+.movie {
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+
+    border-radius: 14px;
+
+    background: var(--panel);
+
+    border: 1px solid rgba(255,255,255,.07);
+
+    transform: translateY(0);
+
+    transition:
+        transform .4s cubic-bezier(.2,.8,.2,1),
+        border-color .4s,
+        box-shadow .4s;
+}
+
+/* POSTER */
+
+.movie img {
+    display: block;
+
+    width: 100%;
+    aspect-ratio: 2 / 3;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    transition:
+        transform .6s cubic-bezier(.2,.8,.2,1),
+        filter .4s;
+}
+
+/* CARD TITLE */
+
+.movie .title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 35px 9px 13px;
+
+    font-size: 13px;
+    font-weight: 800;
+    text-align: center;
+
+    color: white;
+
+    background: linear-gradient(
+        transparent,
+        rgba(5,5,12,.98)
+    );
+
+    border-radius: 0 0 13px 13px;
+
+    z-index: 2;
+}
+
+/* NEON HOVER */
+
+.movie:hover {
+    transform: translateY(-10px) scale(1.035);
+
+    border-color: rgba(255,35,72,.8);
+
+    box-shadow:
+        0 0 0 1px rgba(255,35,72,.2),
+        0 15px 35px rgba(255,35,72,.16),
+        0 0 30px rgba(139,92,246,.12);
+}
+
+.movie:hover img {
+    transform: scale(1.09);
+    filter: saturate(1.2) brightness(1.08);
+}
+
+/* PLAYER */
+
+#player {
+    position: fixed;
+    inset: 0;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+
+    background: rgba(4,4,9,.97);
+
+    backdrop-filter: blur(20px);
+
+    overflow: hidden;
+}
+
+#player::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            rgba(139,92,246,.12),
+            transparent 65%
+        );
+}
+
+#player video,
+#player iframe {
+    position: relative;
+
+    width: 92%;
+    height: 88%;
+
+    border: 1px solid rgba(139,92,246,.3);
+    border-radius: 16px;
+
+    background: black;
+
+    box-shadow:
+        0 0 45px rgba(139,92,246,.12),
+        0 0 80px rgba(255,35,72,.08);
+}
+
+/* CLOSE BUTTON */
+
+#closeBtn {
+    position: fixed;
+    top: 18px;
+    right: 22px;
+
+    z-index: 10000;
+
+    width: 48px;
+    height: 48px;
+
+    color: white;
+    font-size: 23px;
+
+    background: rgba(255,35,72,.15);
+
+    border: 1px solid rgba(255,35,72,.5);
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+#closeBtn:hover {
+    background: var(--red);
+
+    transform: rotate(90deg);
+
+    box-shadow: 0 0 25px rgba(255,35,72,.5);
+}
+
+/* LOADER */
+
+.loader {
+    width: 55px;
+    height: 55px;
+
+    border: 3px solid rgba(255,255,255,.1);
+    border-top-color: var(--red);
+    border-right-color: var(--purple);
+
+    border-radius: 50%;
+
+    animation: nexusSpin .8s linear infinite;
+}
+
+@keyframes nexusSpin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* MOVIE ENTRANCE */
+
+@keyframes nexusEnter {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.movie {
+    animation: nexusEnter .5s ease both;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 13px 10px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+        padding: 10px 12px 30px;
+    }
+
+    h2 {
+        font-size: 19px;
+        margin: 23px 12px 15px;
+    }
+
+    .movie .title {
+        font-size: 12px;
+        padding: 25px 5px 10px;
+    }
+
+    .search-box {
+        padding: 20px 10px;
+    }
+
+    #player video,
+    #player iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+
+    #closeBtn {
+        width: 42px;
+        height: 42px;
+        top: 10px;
+        right: 10px;
+    }
+}
+
+/* TABLET */
+
+@media (min-width: 601px) and (max-width: 950px) {
+    .grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* LARGE DISPLAY */
+
+@media (min-width: 1400px) {
+    .grid {
+        grid-template-columns: repeat(7, minmax(0, 1fr));
+    }
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
