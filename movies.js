@@ -70,7 +70,16 @@ let movies = [
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/npBf0yc5Gt7aAyyVOcYtFyT2IPa.jpg",
 		"category": "Kids"
 	},
-{ 
+
+	{ 
+		"id": "116711",
+		"title": "Epic (2013",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/81cSsWzjTfR3cJSqnTiHwy1eyPK.jpg",
+		"category": "Kids"
+	},
+
+	
+	{ 
 		"id": "1538497",
 		"title": "Hexed (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yykeYKbDBM9eUMJUucaaDo2mi1p.jpg",
