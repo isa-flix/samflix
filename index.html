@@ -1,129 +1,63 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#07070b">
     <meta name="description" content="SamFlix - Your cinematic entertainment experience.">
-
     <title>SamFlix | Cinema Nexus</title>
-
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="style02.css">
-
-    <!-- HLS Streaming Support -->
-    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest" defer></script>
+    <script src="movies.js" defer></script>
+    <script src="app2.js" defer></script>
 </head>
-
 <body>
-
-    <!-- NAVIGATION -->
     <header class="navbar">
-        <div class="logo">SamFlix</div>
-
+        <a class="logo" href="https://isa-flix.github.io/samflix/" aria-label="SamFlix home">SamFlix</a>
         <nav class="nav-links" aria-label="Main navigation">
-            <a href="https://isa-flix.github.io/samflix/"
-               title="Main SamFlix">
-                🎬 Movies
-            </a>
-
-            <a href="https://isa-flix.github.io/samflix/newsam/"
-               title="NewSam">
-                📺 Series
-            </a>
-
-            <a href="https://isa-flix.github.io/samflix/Oldsam/"
-               title="Server Stream">
-                🖥️ Server
-            </a>
-
-            <a href="https://isa-flix.github.io/samflix/LiveTV/"
-               title="Live TV">
-                📺 LIVE TV
-            </a>
+            <a href="https://isa-flix.github.io/samflix/" title="Main SamFlix">🎬 Movies</a>
+            <a href="https://isa-flix.github.io/samflix/newsam/" title="NewSam">📺 Series</a>
+            <a href="https://isa-flix.github.io/samflix/Oldsam/" title="Server Stream">🖥️ Server</a>
+            <a href="https://isa-flix.github.io/samflix/LiveTV/" title="Live TV">📺 LIVE TV</a>
         </nav>
     </header>
 
-    <!-- MAIN CONTENT -->
     <main id="mainContent">
-
-        <!-- SEARCH -->
         <section class="search-box" aria-label="Movie search">
-            <input
-                type="search"
-                id="search"
-                placeholder="Search movies..."
-                autocomplete="off"
-                aria-label="Search movies"
-            >
+            <input id="search" type="search" placeholder="Search movies..." autocomplete="off"
+                   aria-label="Search movies">
         </section>
 
-        <!--
-            New Additions carousel is inserted here automatically
-            by app2.js, before the movie collections.
-        -->
-
-        <!-- MOVIE COLLECTIONS -->
-        <section
-            id="mainContainer"
-            aria-label="Movie collections">
+        <section id="hero" class="hero" aria-label="Featured movie" hidden>
+            <div id="heroBackground" class="hero-background"></div>
+            <div class="hero-content">
+                <div id="heroMeta" class="hero-meta"></div>
+                <h1 id="heroTitle">Featured Movie</h1>
+                <p id="heroDescription"></p>
+                <div class="hero-actions">
+                    <button id="heroWatch" type="button">▶ Watch Now</button>
+                    <button id="heroInfo" type="button">More Info</button>
+                </div>
+            </div>
         </section>
 
+        <section id="newAdditionsMount" aria-label="New additions"></section>
+        <section id="mainContainer" aria-label="Movie collections"></section>
     </main>
 
-    <!-- VIDEO PLAYER -->
-    <div
-        id="player"
-        role="dialog"
-        aria-label="Video player"
-        aria-modal="true"
-    >
-
-        <button
-            id="closeBtn"
-            type="button"
-            aria-label="Close video player"
-        >
-            ✖
-        </button>
-
-        <video
-            id="videoPlayer"
-            controls
-            playsinline
-            preload="metadata"
-            style="display:none;"
-        ></video>
-
-        <iframe
-            id="frame"
-            style="display:none;"
-            allowfullscreen
-            allow="autoplay; encrypted-media; picture-in-picture"
-            referrerpolicy="strict-origin-when-cross-origin"
-            title="Movie player"
-        ></iframe>
-
+    <div id="player" role="dialog" aria-label="Video player" aria-modal="true" hidden>
+        <button id="closeBtn" type="button" aria-label="Close video player">✖</button>
+        <video id="videoPlayer" controls playsinline preload="metadata" hidden></video>
+        <iframe id="frame" hidden allowfullscreen
+                allow="autoplay; encrypted-media; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                title="Movie player"></iframe>
     </div>
 
-    <!-- FOOTER -->
     <footer class="site-footer">
-        <p>© <span id="footerYear">2026</span> SamFlix</p>
+        <p>© <span id="footerYear"></span> SamFlix</p>
         <p>YOUR CINEMA. YOUR UNIVERSE.</p>
     </footer>
-
-    <!-- JAVASCRIPT -->
-    <script src="movies.js"></script>
-    <script src="app2.js"></script>
-
-    <!-- AUTOMATIC FOOTER YEAR -->
-    <script>
-        document.getElementById("footerYear").textContent =
-            new Date().getFullYear();
-    </script>
-
 </body>
 </html>
-```
