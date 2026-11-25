@@ -1,0 +1,559 @@
+
+/* ==========================================
+   SAMFLIX CINEMA NEXUS
+   SERIES EDITION
+========================================== */
+
+:root {
+    --void: #07070b;
+    --panel: #101018;
+    --panel-light: #191925;
+    --red: #ff2348;
+    --purple: #8b5cf6;
+    --cyan: #35e5ff;
+    --white: #f7f4ff;
+    --muted: #9292a5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--white);
+
+    background:
+        radial-gradient(ellipse at 15% 5%, #35102c 0%, transparent 35%),
+        radial-gradient(ellipse at 90% 25%, #151d43 0%, transparent 38%),
+        var(--void);
+
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND GRID */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.018) 1px, transparent 1px);
+
+    background-size: 45px 45px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #07070b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        var(--red),
+        var(--purple)
+    );
+    border-radius: 10px;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 25px;
+
+    position: sticky;
+    top: 0;
+    z-index: 900;
+
+    background: rgba(7,7,11,.85);
+
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+
+    border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+/* LOGO */
+
+.logo {
+    font-size: 32px;
+    font-weight: 1000;
+    letter-spacing: -2px;
+
+    background: linear-gradient(
+        100deg,
+        #ff2348,
+        #ff7394,
+        #a78bfa
+    );
+
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(0 0 12px rgba(255,35,72,.35));
+
+    cursor: pointer;
+    transition: .3s;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 22px var(--red));
+}
+
+/* NAVIGATION BUTTONS */
+
+.nav-buttons {
+    position: fixed;
+    top: 10px;
+    left: 300px;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    z-index: 9999;
+}
+
+.nav-buttons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 10px 15px;
+
+    background: rgba(255,255,255,.06);
+    color: white;
+
+    text-decoration: none;
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,.1);
+
+    font-size: 15px;
+    font-weight: bold;
+
+    backdrop-filter: blur(10px);
+
+    transition: .3s ease;
+}
+
+.nav-buttons a:hover {
+    background: linear-gradient(
+        120deg,
+        var(--red),
+        var(--purple)
+    );
+
+    border-color: transparent;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 0 22px rgba(255,35,72,.4);
+}
+
+/* MAIN HEADING */
+
+h1 {
+    padding: 15px 20px;
+    margin: 15px 0;
+
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: .5px;
+
+    border-left: 4px solid var(--red);
+
+    text-shadow: 0 0 20px rgba(255,35,72,.3);
+}
+
+/* SERIES GRID */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(155px, 1fr));
+
+    gap: 22px;
+
+    padding: 20px;
+}
+
+/* SERIES CARD */
+
+.card {
+    position: relative;
+    overflow: hidden;
+
+    cursor: pointer;
+    text-align: center;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    background: rgba(16,16,24,.85);
+
+    border: 1px solid rgba(255,255,255,.07);
+    border-radius: 14px;
+
+    transition:
+        transform .4s ease,
+        border-color .4s ease,
+        box-shadow .4s ease;
+
+    animation: nexusEnter .5s ease both;
+}
+
+/* SERIES POSTER */
+
+.card img {
+    display: block;
+
+    width: 100%;
+    height: 230px;
+
+    object-fit: cover;
+
+    border-radius: 13px;
+
+    transition:
+        transform .5s ease,
+        filter .4s ease;
+}
+
+/* SERIES CARD HOVER */
+
+.card:hover {
+    transform: translateY(-9px) scale(1.035);
+
+    border-color: rgba(255,35,72,.8);
+
+    box-shadow:
+        0 0 0 1px rgba(255,35,72,.2),
+        0 15px 35px rgba(255,35,72,.16),
+        0 0 30px rgba(139,92,246,.12);
+}
+
+.card:hover img {
+    transform: scale(1.08);
+    filter: brightness(1.12) saturate(1.2);
+}
+
+/* PLAYER */
+
+#player {
+    padding: 20px;
+
+    background: rgba(7,7,11,.55);
+
+    border: 1px solid rgba(139,92,246,.18);
+    border-radius: 18px;
+
+    margin: 20px;
+
+    box-shadow:
+        0 0 35px rgba(139,92,246,.08),
+        inset 0 0 30px rgba(255,255,255,.015);
+}
+
+/* VIDEO AND IFRAME */
+
+video,
+iframe {
+    display: block;
+
+    width: 100%;
+    height: 500px;
+
+    border: 1px solid rgba(139,92,246,.3);
+    border-radius: 14px;
+
+    background: black;
+
+    box-shadow:
+        0 0 35px rgba(139,92,246,.12),
+        0 0 60px rgba(255,35,72,.06);
+}
+
+/* EPISODE CONTROLS */
+
+.controls {
+    padding: 15px 20px;
+
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    background: rgba(16,16,24,.7);
+
+    border: 1px solid rgba(255,255,255,.06);
+    border-radius: 14px;
+
+    margin: 15px 20px;
+}
+
+/* EPISODE GRID */
+
+.episode-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fill, minmax(110px, 1fr));
+
+    gap: 13px;
+
+    padding: 20px;
+}
+
+/* EPISODE BUTTON */
+
+.ep-btn {
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(
+        145deg,
+        #191925,
+        #101018
+    );
+
+    color: white;
+
+    padding: 12px 9px;
+
+    border-radius: 11px;
+
+    border: 1px solid rgba(255,255,255,.08);
+
+    cursor: pointer;
+
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: .3s ease;
+}
+
+.ep-btn:hover {
+    background: linear-gradient(
+        120deg,
+        #54152d,
+        #34205d
+    );
+
+    border-color: var(--purple);
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 5px 20px rgba(139,92,246,.2);
+}
+
+/* ACTIVE EPISODE */
+
+.ep-btn.active {
+    background: linear-gradient(
+        120deg,
+        var(--red),
+        var(--purple)
+    );
+
+    color: white;
+
+    border-color: transparent;
+
+    box-shadow:
+        0 0 18px rgba(255,35,72,.35);
+}
+
+/* EPISODE IMAGE */
+
+.ep-btn img {
+    display: block;
+
+    width: 100%;
+
+    border-radius: 8px;
+    margin-bottom: 8px;
+
+    object-fit: cover;
+
+    transition: .3s;
+}
+
+.ep-btn:hover img {
+    transform: scale(1.03);
+}
+
+/* GENERAL BUTTONS */
+
+button {
+    margin: 5px;
+    padding: 11px 17px;
+
+    color: white;
+
+    background: linear-gradient(
+        120deg,
+        #24152e,
+        #17172a
+    );
+
+    border: 1px solid rgba(139,92,246,.4);
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .3s ease;
+}
+
+button:hover {
+    background: linear-gradient(
+        120deg,
+        var(--red),
+        var(--purple)
+    );
+
+    border-color: transparent;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 0 18px rgba(255,35,72,.25);
+}
+
+/* ANIMATION */
+
+@keyframes nexusEnter {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET */
+
+@media (max-width: 950px) {
+
+    .grid {
+        grid-template-columns:
+            repeat(4, minmax(0, 1fr));
+    }
+
+    .nav-buttons {
+        left: auto;
+        right: 10px;
+    }
+
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 13px 12px;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .nav-buttons {
+        position: static;
+        gap: 5px;
+        justify-content: flex-end;
+    }
+
+    .nav-buttons a {
+        padding: 8px;
+        font-size: 12px;
+        border-radius: 9px;
+    }
+
+    h1 {
+        font-size: 23px;
+        padding: 12px;
+    }
+
+    .grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 13px;
+        padding: 12px;
+    }
+
+    .card img {
+        height: auto;
+        aspect-ratio: 2 / 3;
+    }
+
+    #player {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    video,
+    iframe {
+        height: 260px;
+        border-radius: 10px;
+    }
+
+    .controls {
+        margin: 10px;
+        padding: 12px;
+    }
+
+    .episode-grid {
+        grid-template-columns:
+            repeat(3, minmax(0, 1fr));
+
+        gap: 9px;
+        padding: 12px;
+    }
+
+    .ep-btn {
+        font-size: 11px;
+        padding: 9px 5px;
+    }
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
