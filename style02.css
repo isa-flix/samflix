@@ -964,3 +964,49 @@ button:focus-visible {
     outline-offset: 4px;
 }
 
+/* FIX: Keep logo separate from navigation buttons */
+.navbar .logo {
+    border: none !important;
+    background: transparent !important;
+    backdrop-filter: none;
+    padding: 0;
+    box-shadow: none;
+    transform: none;
+}
+
+.navbar .logo:hover {
+    background: transparent !important;
+    transform: none;
+}
+
+/* Movie cards should work well with keyboard navigation */
+.movie:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 4px;
+}
+
+/* Prevent iframe/video overflow */
+#player video,
+#player iframe {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Prevent background scrolling while player is open */
+body:has(#player[style*="display: flex"]) {
+    overflow: hidden;
+}
+
+/* Better empty search result spacing */
+.empty-message {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Hero background fallback */
+.hero-background {
+    background-color: #101018;
+}
+
