@@ -58,6 +58,13 @@ let movies = [
 	/* ---------------- Kids ---------------- */
 
 	{ 
+		"id": "1184918",
+		"title": "The Wild Robot (2024)",
+		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
+		"category": "Kids"
+	},
+
+	{ 
 		"id": "10588",
 		"title": "The Cat in the Hat (2023)",
 		"img": "https://www.themoviedb.org/t/p/w1280/7I1FevUX4PrxWOOOBTmjT70v553.jpg",
