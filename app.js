@@ -31,11 +31,11 @@
   document.addEventListener("DOMContentLoaded", init);
 
   function init() {
-    if (!Array.isArray(window.movies)) {
+    if (typeof movies === "undefined" || !Array.isArray(movies)) {
       console.error("SamFlix: movies.js must define a global movies array.");
       return;
     }
-    catalog = window.movies.filter(movie => movie && !movie.disabled);
+    catalog = movies.filter(movie => movie && !movie.disabled);
     wireSearch();
     wirePlayer();
     renderHero();
