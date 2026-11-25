@@ -22,7 +22,8 @@ searchInput = document.getElementById("search");
 setupNewAdditions();
 
 displayAll();
-setupHero();
+setupNewAdditions(); // NEW: featured additions carousel
+    setupHero();
 setupSearch();
 setupPlayerEvents();
 });
@@ -240,12 +241,11 @@ function setupNewAdditions() {
     const mainContainer = document.getElementById("mainContainer");
     if (!mainContainer) return;
 
-    // Select up to 5 movies from the existing movies array.
-    // This does not remove them from their original categories.
-    const featuredMovies = allMovies
-        .filter(movie => movie.category !== "BoxSet")
-        .slice(-5)
-        .reverse();
+    // Only movies marked newAddition: true appear here
+    const featuredMovies = allMovies.filter(
+        movie => movie.newAddition === true &&
+                 movie.category !== "BoxSet"
+    );
 
     if (!featuredMovies.length) return;
 
@@ -286,7 +286,6 @@ function setupNewAdditions() {
 
     mainContainer.parentNode.insertBefore(carousel, mainContainer);
 
-    const stage = carousel.querySelector(".addition-stage");
     const backdrop = carousel.querySelector(".addition-backdrop");
     const title = carousel.querySelector(".addition-title");
     const meta = carousel.querySelector(".addition-meta");
@@ -297,9 +296,8 @@ function setupNewAdditions() {
     const infoButton = carousel.querySelector(".addition-info");
 
     let currentIndex = 0;
-    let carouselTimer = null;
+    let timer = null;
 
-    // Create navigation dots
     featuredMovies.forEach((movie, index) => {
         const dot = document.createElement("button");
         dot.className = "addition-dot";
@@ -320,6 +318,7 @@ function setupNewAdditions() {
         const movie = featuredMovies[currentIndex];
 
         title.textContent = movie.title || "Featured Movie";
+
         meta.textContent = [
             movie.year,
             movie.category,
@@ -333,13 +332,9 @@ function setupNewAdditions() {
         number.textContent =
             `NEW ADDITION ${currentIndex + 1} / ${featuredMovies.length}`;
 
-        if (movie.img) {
-            backdrop.style.backgroundImage =
-                `linear-gradient(90deg, #07070b 5%, transparent 100%),
-                 url("${movie.img.replace(/"/g, "")}")`;
-        } else {
-            backdrop.style.backgroundImage = "none";
-        }
+        backdrop.style.backgroundImage = movie.img
+            ? `linear-gradient(90deg, #07070b 5%, transparent 100%), url("${movie.img.replace(/"/g, "")}")`
+            : "none";
 
         dots.querySelectorAll(".addition-dot").forEach((dot, i) => {
             dot.classList.toggle("active", i === currentIndex);
@@ -359,13 +354,13 @@ function setupNewAdditions() {
 
     function startTimer() {
         stopTimer();
-        carouselTimer = setInterval(nextSlide, 9000);
+        timer = setInterval(nextSlide, 9000);
     }
 
     function stopTimer() {
-        if (carouselTimer) {
-            clearInterval(carouselTimer);
-            carouselTimer = null;
+        if (timer) {
+            clearInterval(timer);
+            timer = null;
         }
     }
 
@@ -373,19 +368,16 @@ function setupNewAdditions() {
         startTimer();
     }
 
-    carousel.querySelector(".addition-next")
-        .addEventListener("click", () => {
-            nextSlide();
-            restartTimer();
-        });
+    carousel.querySelector(".addition-next").onclick = () => {
+        nextSlide();
+        restartTimer();
+    };
 
-    carousel.querySelector(".addition-prev")
-        .addEventListener("click", () => {
-            previousSlide();
-            restartTimer();
-        });
+    carousel.querySelector(".addition-prev").onclick = () => {
+        previousSlide();
+        restartTimer();
+    };
 
-    // Pause while the visitor hovers or focuses on the carousel
     carousel.addEventListener("mouseenter", stopTimer);
     carousel.addEventListener("mouseleave", startTimer);
     carousel.addEventListener("focusin", stopTimer);
@@ -394,7 +386,6 @@ function setupNewAdditions() {
     showSlide(0);
     startTimer();
 }
-
 
 
 /* ---------------- MOVIE INFORMATION ---------------- */
