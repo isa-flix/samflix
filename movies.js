@@ -8,7 +8,7 @@ let movies = [
     "video": "https://dn720401.ca.archive.org/0/items/padosan-1978/Padosan%201978.mp4"
   },*/
 
-	/*---------------Live Stream------------------	
+	/*---------------Live Stream------------------*/	
 	{
     "id": "001hls",
     "title": "Willow Sports",
@@ -84,7 +84,7 @@ let movies = [
 		"title": "Hexed (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/yykeYKbDBM9eUMJUucaaDo2mi1p.jpg",
 		"category": "Kids"
-	}
+	},
 	
 	{ 
 		"id": "10588",
