@@ -796,3 +796,68 @@ h2::after {
         font-size: 11px;
     }
 }
+
+/* ==========================================
+   SAMFLIX NAVIGATION & FOOTER IMPROVEMENTS
+========================================== */
+
+.navbar {
+    gap: 20px;
+}
+
+.navbar .logo {
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.site-footer {
+    padding: 28px 15px;
+    text-align: center;
+    color: #888899;
+    font-size: 12px;
+    letter-spacing: 1px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    background: rgba(7,7,11,.8);
+}
+
+.site-footer p {
+    margin: 7px 0;
+}
+
+@media(max-width:600px) {
+
+    .navbar {
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        gap: 6px;
+    }
+
+    .nav-links a {
+        padding: 9px 10px;
+        font-size: 11px;
+    }
+}
