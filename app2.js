@@ -245,8 +245,8 @@ function setupNewAdditions() {
 
     // Only movies marked newAddition: true appear here
     const featuredMovies = allMovies.filter(
-        movie => movie.newAddition === true &&
-                 movie.category !== "BoxSet"
+        movie => movie.newAddition === true //&&
+                 //movie.category !== "BoxSet"
     );
 
     if (!featuredMovies.length) return;
