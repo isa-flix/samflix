@@ -9,6 +9,11 @@ let searchInput = null;
 /* ---------------- INITIALIZATION ---------------- */
 
 document.addEventListener("DOMContentLoaded", () => {
+    const footerYear = document.getElementById("footerYear");
+    if (footerYear) {
+        footerYear.textContent = new Date().getFullYear();
+    }
+    
     if (!Array.isArray(movies)) {
         console.error("movies.js must define a movies array.");
         return;
@@ -234,8 +239,9 @@ function setupHero() {
 /* ---------------- NEW ADDITIONS CAROUSEL ---------------- */
 
 function setupNewAdditions() {
+    const mount = document.getElementById("newAdditionsMount");
     const mainContainer = document.getElementById("mainContainer");
-    if (!mainContainer) return;
+    if (!mount && !mainContainer) return;
 
     // Only movies marked newAddition: true appear here
     const featuredMovies = allMovies.filter(
@@ -245,7 +251,7 @@ function setupNewAdditions() {
 
     if (!featuredMovies.length) return;
 
-    const carousel = document.createElement("section");
+    const carousel = document.createElement("div");
     carousel.className = "new-additions";
 
     carousel.innerHTML = `
@@ -281,8 +287,13 @@ function setupNewAdditions() {
         <div class="addition-dots"></div>
     `;
 
-    mainContainer.parentNode.insertBefore(carousel, mainContainer);
+    if (mount) {
+        mount.replaceChildren(carousel);
+    } else {
+        mainContainer.parentNode.insertBefore(carousel, mainContainer);
+    }
 
+    // ... keep the rest of setupNewAdditions() unchanged
     const backdrop = carousel.querySelector(".addition-backdrop");
     const poster = carousel.querySelector(".addition-poster");
     const title = carousel.querySelector(".addition-title");
