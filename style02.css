@@ -63,19 +63,20 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
 
-    padding: 18px 25px;
+    padding: 16px 25px;
 
     position: sticky;
     top: 0;
     z-index: 900;
 
-    background: rgba(7,7,11,.85);
-
+    background: rgba(7, 7, 11, 0.88);
     backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
 
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 /* LOGO */
@@ -84,6 +85,7 @@ body::before {
     font-size: 32px;
     font-weight: 1000;
     letter-spacing: -2px;
+    text-decoration: none;
 
     background: linear-gradient(
         100deg,
@@ -96,10 +98,10 @@ body::before {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
-    filter: drop-shadow(0 0 12px rgba(255,35,72,.35));
+    filter: drop-shadow(0 0 12px rgba(255, 35, 72, 0.35));
 
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 .logo:hover {
@@ -109,15 +111,10 @@ body::before {
 /* NAVIGATION BUTTONS */
 
 .nav-links {
-    position: fixed;
-    top: 10px;
-    left: 300px;
-
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     gap: 10px;
-
-    z-index: 9999;
 }
 
 .nav-links a {
@@ -125,22 +122,20 @@ body::before {
     justify-content: center;
     align-items: center;
 
-    padding: 10px 15px;
+    padding: 9px 14px;
 
-    background: rgba(255,255,255,.06);
+    background: rgba(255, 255, 255, 0.06);
     color: white;
 
     text-decoration: none;
     border-radius: 12px;
 
-    border: 1px solid rgba(255,255,255,.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
-    font-size: 15px;
+    font-size: 14px;
     font-weight: bold;
 
-    backdrop-filter: blur(10px);
-
-    transition: .3s ease;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -461,7 +456,18 @@ h2::after {
 @media (max-width: 600px) {
 
     .navbar {
-        padding: 13px 10px;
+        padding: 12px 14px;
+       justify-content: center;
+    }
+
+   .nav-links {
+        justify-content: center;
+        gap: 8px;
+    }
+
+    .nav-links a {
+        padding: 7px 11px;
+        font-size: 13px;
     }
 
     .logo {
