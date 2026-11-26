@@ -348,7 +348,13 @@ let movies = [
 	
 	/* ---------------- Hindi ---------------- */
 
-	
+	{
+		"id": "801688", "title": "Kalki 2898-AD (2024)",
+	 	"img": "https://www.themoviedb.org/t/p/w1280/zNE88KjSX2nDSWjdsNqeIFGAXo8.jpg",
+	 	"newAddition": true,
+		"category": "Indian Movies"
+	},
+
 	{
 		"id": "tt29540862", "title": "Bhooth Bangla 2026",
 	 	"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/ArIS4vwUxdhm3j7tsTHmffdfU8W.jpg",
