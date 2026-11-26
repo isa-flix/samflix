@@ -525,9 +525,9 @@ let movies = [
 	
 	/* ---------------- Hobbit ---------------- */
 	
-	{ "id": "49051", "title": "The Hobbit: An Unexpected Journey (2012)", "img": "https://www.themoviedb.org/t/p/w1280/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
-	{ "id": "57158", "title": "The Hobbit: The Desolation of Smaug (2013)", "img": "https://www.themoviedb.org/t/p/w1280/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
-	{ "id": "122917", "title": "The Hobbit: The Battle of the Five Armies (2014)", "img": "https://www.themoviedb.org/t/p/w1280/xT98tLqatZPQApyRmlPL12LtiWp.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
+	{ "id": "49051", "title": "The Hobbit: An Unexpected Journey (2012)", "img": "https://www.themoviedb.org/t/p/w1280/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg", "category": "BoxSet", "set": "Hobbit" },
+	{ "id": "57158", "title": "The Hobbit: The Desolation of Smaug (2013)", "img": "https://www.themoviedb.org/t/p/w1280/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg", "category": "BoxSet", "set": "Hobbit" },
+	{ "id": "122917", "title": "The Hobbit: The Battle of the Five Armies (2014)", "img": "https://www.themoviedb.org/t/p/w1280/xT98tLqatZPQApyRmlPL12LtiWp.jpg", "category": "BoxSet", "set": "Hobbit" },
 		
 			
 		
