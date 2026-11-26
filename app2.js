@@ -388,7 +388,7 @@ backdrop.onerror = () => {
 
     function startTimer() {
         stopTimer();
-        timer = setInterval(nextSlide, 3000);
+        timer = setInterval(nextSlide, 5000);
     }
 
     function stopTimer() {
