@@ -262,7 +262,7 @@ function setupNewAdditions() {
         </div>
 
         <div class="addition-stage">
-            <div class="addition-backdrop"></div>
+            <img class="addition-backdrop" alt="">
 
             <div class="addition-content">
                 <span class="addition-number"></span>
