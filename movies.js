@@ -111,7 +111,7 @@ let movies = [
 		"title": "Coyote vs. Acme (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/kYDCl2y0VPvhT5eYWbMRInPoB03.jpg",
 		"category": "Kids",
-		newAddition: true
+		newAddition: false
 	},
 	
 	{ 
