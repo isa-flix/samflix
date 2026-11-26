@@ -207,7 +207,7 @@ let movies = [
 	{
 		"id": "1562642", 		"title": "Ghost Soldier (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
-		"category": "Movie"
+		"category": "Movie",
 		"newAddition": true
 	},
 	{
@@ -249,7 +249,7 @@ let movies = [
 		"id": "1153576",
 		"title": "Street Fighter (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dJPT2Uf12X6aFg8i5N67NTpIZ9t.jpg",
-		"category": "Movie"
+		"category": "Movie",
 		"newAddition": true
 	},
 
