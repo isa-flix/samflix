@@ -263,6 +263,7 @@ function setupNewAdditions() {
 
         <div class="addition-stage">
             <img class="addition-backdrop" alt="">
+            <img class="addition-poster" alt="">
 
             <div class="addition-content">
                 <span class="addition-number"></span>
@@ -283,6 +284,7 @@ function setupNewAdditions() {
     mainContainer.parentNode.insertBefore(carousel, mainContainer);
 
     const backdrop = carousel.querySelector(".addition-backdrop");
+    const poster = carousel.querySelector(".addition-poster");
     const title = carousel.querySelector(".addition-title");
     const meta = carousel.querySelector(".addition-meta");
     const description = carousel.querySelector(".addition-description");
@@ -329,14 +331,33 @@ function setupNewAdditions() {
             `NEW ADDITION ${currentIndex + 1} / ${featuredMovies.length}`;
 
         // Load the movie image directly, just like your movie cards
-backdrop.src = movie.img || "";
+/*
+        backdrop.src = movie.img || "";
 backdrop.alt = movie.title || "Featured movie";
 
 backdrop.style.display = movie.img ? "block" : "none";
 
 backdrop.onerror = () => {
     backdrop.style.display = "none";
-};
+*/
+             const imgSrc = movie.img || "";
+        const imgAlt = movie.title || "Featured movie";
+
+        backdrop.src = imgSrc;
+        backdrop.alt = "";
+        backdrop.style.display = imgSrc ? "block" : "none";
+
+        poster.src = imgSrc;
+        poster.alt = imgAlt;
+        poster.style.display = imgSrc ? "block" : "none";
+
+        backdrop.onerror = () => {
+            backdrop.style.display = "none";
+            poster.style.display = "none";
+        };
+   
+    
+
         
         dots.querySelectorAll(".addition-dot").forEach((dot, i) => {
             dot.classList.toggle("active", i === currentIndex);
