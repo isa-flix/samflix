@@ -777,26 +777,32 @@ body.sam-modal-open,body.sam-player-open { overflow:hidden; }
 
 .addition-stage {
     position: relative;
-    min-height: 390px;
+    min-height: 400px;
     overflow: hidden;
     border-radius: 18px;
-    background: #111;
+    background: #101018;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 36px 48px;
 }
-
+/* Blurred ambient background fill */
 .addition-backdrop {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    inset: -20px;
+    width: calc(100% + 40px);
+    height: calc(100% + 40px);
     object-fit: cover;
-    object-position: center 25%;
-    opacity: 0.65;
+    object-position: center;
+    filter: blur(22px) saturate(1.3);
+    opacity: 0.35;
     z-index: 0;
+    pointer-events: none;
 }
 
-/* Dark gradient over the image for readable text */
+/* Dark gradient overlay for high text contrast */
 .addition-stage::after {
     content: "";
     position: absolute;
@@ -805,22 +811,40 @@ body.sam-modal-open,body.sam-player-open { overflow:hidden; }
     pointer-events: none;
     background: linear-gradient(
         90deg,
-        #07070b 0%,
-        rgba(7, 7, 11, 0.85) 35%,
-        rgba(7, 7, 11, 0.25) 100%
+        rgba(7, 7, 11, 0.95) 0%,
+        rgba(7, 7, 11, 0.78) 55%,
+        rgba(7, 7, 11, 0.45) 100%
     );
 }
 
 /* Keep carousel text and buttons above the image */
+/* Left side text and buttons */
 .addition-content {
     position: relative;
     z-index: 2;
+    flex: 1;
+    max-width: 620px;
+    padding: 0;
 }
-.addition-content {
+
+/* Right side crisp, uncropped 2:3 poster */
+.addition-poster {
     position: relative;
     z-index: 2;
-    width: min(650px, 90%);
-    padding: 45px;
+    flex-shrink: 0;
+    width: 220px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.75),
+        0 0 28px rgba(255, 35, 72, 0.18);
+    transition: transform 0.35s ease;
+}
+
+.addition-stage:hover .addition-poster {
+    transform: scale(1.03);
 }
 
 .addition-number {
@@ -901,13 +925,17 @@ body.sam-modal-open,body.sam-player-open { overflow:hidden; }
     background: #e50914;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 650px) {
     .addition-stage {
-        min-height: 350px;
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        min-height: auto;
+        padding: 24px;
+        gap: 20px;
     }
 
-    .addition-content {
-        padding: 25px;
+    .addition-poster {
+        width: 150px;
     }
 
     .addition-description {
