@@ -61,8 +61,8 @@ let movies = [
 		"id": "1184918",
 		"title": "The Wild Robot (2024)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/wTnV3PCVW5O92JMrFvvrRcV39RU.jpg",
-		"category": "Kids"
-		
+		"category": "Kids",
+		newAddition: true
 	},
 
 	{ 
@@ -71,7 +71,7 @@ let movies = [
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/npBf0yc5Gt7aAyyVOcYtFyT2IPa.jpg",
 		
 		"category": "Kids",
-		newAddition: true
+		newAddition: false
 	},
 
 	{ 
@@ -79,7 +79,7 @@ let movies = [
 		"title": "Epic (2013)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/81cSsWzjTfR3cJSqnTiHwy1eyPK.jpg",
 		"category": "Kids",
-		newAddition: true
+		newAddition: false
 	},
 
 	
@@ -96,7 +96,7 @@ let movies = [
 		"title": "The Cat in the Hat (2023)",
 		"img": "https://www.themoviedb.org/t/p/w1280/7I1FevUX4PrxWOOOBTmjT70v553.jpg",
 		"category": "Kids",
-		newAddition: true
+		newAddition: false
 	},
 
 	{ 
@@ -208,6 +208,7 @@ let movies = [
 		"id": "1562642", 		"title": "Ghost Soldier (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
 		"category": "Movie"
+		newAddition: true
 	},
 	{
 		"id": "1148365", 		"title": "Matchbox the Movie (2026)",
@@ -249,6 +250,7 @@ let movies = [
 		"title": "Street Fighter (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/dJPT2Uf12X6aFg8i5N67NTpIZ9t.jpg",
 		"category": "Movie"
+		newAddition: true
 	},
 
 	{
@@ -803,7 +805,11 @@ let movies = [
 	{ "id": "tt1951265", "title": "The Hunger Games: MokingJay Part I", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/gYfI9j00w4s4gsuIky9qELR56kH.jpg", "category": "BoxSet", "set": "The Hunger Games" },
 	{ "id": "tt1951266", "title": "The Hunger Games: MokingJay Part II", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/AdssSv6zeZQ8wCHHSM7InlXpExI.jpg", "category": "BoxSet", "set": "The Hunger Games" },
 	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "BoxSet", "set": "The Hunger Games" },
-	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/aGDKyv5825jQpbY55qk3r73PGts.jpg", "category": "BoxSet", "set": "The Hunger Games" },
+	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping",
+	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5ffVOGY3x3Sn3jovzvycJeizpks.jpg",
+	 "category": "BoxSet", "set": "The Hunger Games"
+	newAddition: true
+	},
 
 	/* ---------------- Final Destination ---------------- */
 
