@@ -169,6 +169,51 @@ let seriesList = [
    Crime
 ******************************************************************/
 
+{
+        id: "Dexter",
+        title: "Dexter (2006)",
+    category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w1280/i8ORB1biusVy703lGxUi5Rle6zA.jpg",
+        tmdb_id: "1405",
+        seasons: [
+                { season: 1, episodes: 12 },
+              { season: 2, episodes: 12 },
+                { season: 3, episodes: 12 },
+                { season: 4, episodes: 12 },
+                { season: 5, episodes: 12 },
+              { season: 6, episodes: 12 },
+                { season: 7, episodes: 12 },
+                { season: 8, episodes: 12 }
+             ]
+    },
+ 
+{
+        id: "dexter-resurrection",
+        title: "Dexter: Resurrection (2025)",
+    category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w1280/o2Oyi3boT100bY5kCP4MBiTeetO.jpg",
+        tmdb_id: "259909",
+        seasons: [
+                { season: 1, episodes: 10 },
+                { season: 2, episodes: 10 }
+             ]
+    },
+ 
+{
+        id: "dexter-new-blood",
+        title: "Dexter: New Blood (2021)",
+    category: "Crime",
+        img: "https://www.themoviedb.org/t/p/w1280/9EBKgrFIsCFSV1RZKWhYUdbtGiv.jpg",
+        tmdb_id: "131927",
+        seasons: [
+                { season: 1, episodes: 10 }
+             ]
+    },
+ 
+
+
+
+  
   {
         id: "Person-of-Interest",
         title: "Person Of Interest (2011)",
