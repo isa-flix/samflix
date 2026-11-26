@@ -515,7 +515,24 @@ let movies = [
 		
 	},
 
-		/* ---------------- Resident Evil ---------------- */
+	/* ---------------- Lords of the rings ---------------- */
+
+
+		{ "id": "120", "title": "The Lord of the Rings: The Fellowship of the Ring (2001)", "img": "https://www.themoviedb.org/t/p/w1280/6oom5QYQ2yQTMJIbnvbkBL9cHo6.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
+	{ "id": "121", "title": "The Lord of the Rings: The Two Towers (2002)", "img": "https://www.themoviedb.org/t/p/w1280/5VTN0pR8gcqV3EPUHHfMGnJYN9L.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
+	{ "id": "122", "title": "The Lord of the Rings: The Return of the King (2003)", "img": "https://www.themoviedb.org/t/p/w1280/rCzpDGLbOoPwLjy3OAm5NUPOTrC.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
+
+	
+	/* ---------------- Hobbit ---------------- */
+	
+	{ "id": "49051", "title": "The Hobbit: An Unexpected Journey (2012)", "img": "https://www.themoviedb.org/t/p/w1280/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
+	{ "id": "57158", "title": "The Hobbit: The Desolation of Smaug (2013)", "img": "https://www.themoviedb.org/t/p/w1280/xQYiXsheRCDBA39DOrmaw1aSpbk.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
+	{ "id": "122917", "title": "The Hobbit: The Battle of the Five Armies (2014)", "img": "https://www.themoviedb.org/t/p/w1280/xT98tLqatZPQApyRmlPL12LtiWp.jpg", "category": "BoxSet", "set": "Lords of the Rings" },
+		
+			
+		
+	
+	/* ---------------- Resident Evil ---------------- */
 
 
 		{ "id": "1576", "title": "Resident Evil (2002)", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/1UKNef590A0ZaMnxsscIcWuK1Em.jpg", "category": "BoxSet", "set": "Resident Evil" },
