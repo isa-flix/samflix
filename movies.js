@@ -807,7 +807,7 @@ let movies = [
 	{ "id": "tt10545296", "title": "The Hunger Games: The Ballad of Songbirds & Snakes", "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/iYNnnkZshI5La1bJCrblUVA181F.jpg", "category": "BoxSet", "set": "The Hunger Games" },
 	{ "id": "tt32558705", "title": "The Hunger Games: Sunrise on the Reaping",
 	 "img": "https://www.themoviedb.org/t/p/w600_and_h900_face/5ffVOGY3x3Sn3jovzvycJeizpks.jpg",
-	 "category": "BoxSet", "set": "The Hunger Games"
+	 "category": "BoxSet", "set": "The Hunger Games",
 	newAddition: true
 	},
 
