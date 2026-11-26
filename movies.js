@@ -208,7 +208,7 @@ let movies = [
 		"id": "1562642", 		"title": "Ghost Soldier (2026)",
 		"img": "https://www.themoviedb.org/t/p/w600_and_h900_face/8Y4oJ5iUs3hgPcDB3SIEmsNYjZk.jpg",
 		"category": "Movie",
-		"newAddition": true
+		"newAddition": false
 	},
 	{
 		"id": "1148365", 		"title": "Matchbox the Movie (2026)",
